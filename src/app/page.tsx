@@ -1,23 +1,23 @@
-import ContactUs from "@/components/Contact US/Contact-us";
-import About from "@/components/About Us/About-us";
-import Event from "@/components/Events/Events1";
-import Glimpses from "@/components/Glimpses/Glimpses";
-import Hero from "@/components/Hero/Hero";
-import Sponsors from "@/components/Sponsers/Sponsers";
-import Navbar from "@/components/Navbar/Navbar";
+import ContactUs from "@/components/landing/contact-us";
+import About from "@/components/landing/about-us";
+import Event from "@/components/landing/events";
+import Glimpses from "@/components/landing/glimpses";
+import Hero from "@/components/landing/hero";
+import Sponsors from "@/components/landing/sponsers";
+import Navbar from "@/components/layout/navbar";
 // import Timeline from '@/components/Timeline/Timeline';
 
 export default function Home() {
   return (
     <main>
-      <Navbar></Navbar>
-      <Hero></Hero>
-      <About></About>
-      {/* <Event></Event> */}
-      <Glimpses></Glimpses>
-      {/* <Timeline></Timeline> */}
-      <Sponsors></Sponsors>
-      <ContactUs></ContactUs>
+      <Navbar />
+      <Hero />
+      <About />
+      {/* <Event /> */}
+      <Glimpses />
+      {/* <Timeline /> */}
+      <Sponsors />
+      <ContactUs />
     </main>
   );
 }

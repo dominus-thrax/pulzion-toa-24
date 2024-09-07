@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss"
 
+
 const config = {
   darkMode: ["class"],
   content: [
@@ -71,6 +72,14 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      backgroundImage: {
+        'card-bg': "url('/images/cardbg.png')", // Ensure this path is correct relative to the public directory
+      },
+      fontFamily: {
+        WallpoetFont: ['WallpoetFont', 'sans-serif'], // Add the custom font here
+        vt323: ['VT323', 'monospace'],
+        diary: ['diary', 'sans-serif']
       },
     },
   },

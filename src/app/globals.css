@@ -69,8 +69,8 @@
 }
 
 @font-face {
-  font-family: 'VT323-Regular';
-  src: url('/font/VT323-Regular.ttf') format('truetype');
+  font-family: "VT323-Regular";
+  src: url("/font/VT323-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
@@ -81,10 +81,52 @@
 }
 
 select {
-  background-color: inherit; 
+  background-color: inherit;
 }
 
 select option {
-  background-color: black; 
-  color: white; 
+  background-color: black;
+  color: white;
+}
+body {
+  background: #000;
+}
+
+.hide-scrollbar {
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* App.css */
+.custom-scrollbar {
+  overflow: auto;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+  height: 8px; /* Height of the horizontal scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent; /* Background of the scrollbar track */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #8bffce; /* Scrollbar color */
+  border-radius: 10px; /* Rounded edges */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #7ae1b5; /* Color when hovered */
+}
+
+/* Firefox scrollbar */
+.custom-scrollbar {
+  scrollbar-width: thin; /* Make scrollbar thin */
+  scrollbar-color: #8bffce transparent; /* Scrollbar color */
 }

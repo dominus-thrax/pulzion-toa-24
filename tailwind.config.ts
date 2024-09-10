@@ -12,6 +12,8 @@ module.exports = {
     extend: {
       colors:{
        'borderColor':'#CFC36D', 
+       'textColor':'#8BFFCE',
+       'statusColor':'#E8AF49'
       }
     },
   },

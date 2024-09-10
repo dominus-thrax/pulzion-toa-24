@@ -14,13 +14,13 @@ const page = () => {
   const DATA : Item={
     id:"12345678",
     date:"17.08.2024",
-    event:"Electorquest",
+    event:"Electroquest",
     amount:20,
     status:"Pending",
   }
 
   return (
-    <div>
+    <div className='bg-black'>
         <Card id={DATA.id} date={DATA.date} event={DATA.event} amount={DATA.amount} status={DATA.status}/>
     </div>
   )

@@ -4,6 +4,14 @@ import { FC } from "react";
 import Image from "next/image";
 import '../../styles/font.css'
 
+import location from "../../../public/assets/landing/contact-us/location.svg";
+import gmail from "../../../public/assets/landing/contact-us/gmail.svg";
+import linkedin from "../../../public/assets/landing/contact-us/linkedin.svg";
+import twitter from "../../../public/assets/landing/contact-us/twitter.svg";
+import internet from "../../../public/assets/landing/contact-us/internet.svg";
+import insta from "../../../public/assets/landing/contact-us/insta.svg";
+import facebook from "../../../public/assets/landing/contact-us/facebook.svg";
+
 const ContactUs: FC = () => {
   return (
     <div className="min-h-screen w-full flex flex-col justify-center items-center text-center bg-black pt-40">
@@ -16,7 +24,7 @@ const ContactUs: FC = () => {
           <div className="flex items-center mb-4">
             <span className="text-red-500 mr-2 text-xl">
             <Image
-              src="/Contact Us/location.svg"
+              src={location}
               alt="Gmail"
               width={48}
               height={48}
@@ -34,7 +42,7 @@ const ContactUs: FC = () => {
         <div className="text-center mb-12 md:mb-0 w-full md:w-1/3">
           <div className="flex flex-col items-center mb-4">
             <Image
-              src="/Contact Us/gmail.svg"
+              src={gmail}
               alt="Gmail"
               width={48}
               height={48}
@@ -71,7 +79,7 @@ const ContactUs: FC = () => {
           className="text-blue-600"
         >
           <Image
-            src="/Contact Us/facebook.svg"
+            src={facebook}
             alt="Facebook"
             width={40}
             height={40}
@@ -85,7 +93,7 @@ const ContactUs: FC = () => {
           className="text-pink-500"
         >
           <Image
-            src="/Contact Us/insta.svg"
+            src={insta}
             alt="Instagram"
             width={40}
             height={40}
@@ -99,7 +107,7 @@ const ContactUs: FC = () => {
           className="text-blue-500"
         >
           <Image
-            src="/Contact Us/internet.svg"
+            src={internet}
             alt="Website"
             width={40}
             height={40}
@@ -113,7 +121,7 @@ const ContactUs: FC = () => {
           className="text-blue-700"
         >
           <Image
-            src="/Contact Us/linkedin.svg"
+            src={linkedin}
             alt="LinkedIn"
             width={40}
             height={40}
@@ -127,7 +135,7 @@ const ContactUs: FC = () => {
           className="text-white"
         >
           <Image
-            src="/Contact Us/twitter.svg"
+            src={twitter}
             alt="Twitter"
             width={40}
             height={40}

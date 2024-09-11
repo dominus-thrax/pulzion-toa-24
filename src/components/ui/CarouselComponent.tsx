@@ -7,10 +7,13 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Image from "next/image";
+
+import glimpses from "../../../public/assets/landing/glimpses/image.jpg";
 
 const CarouselComponent: FC = () => {
   return (
-    <div className="w-[72%] h-[72%] flex justify-center items-center relative">
+    <div className="max-w-[50%] w-full flex justify-center items-center relative">
       {/* Fixed Borders */}
       <div className="absolute top-0 left-0 w-full h-full z-10">
         <div className="border-8 border-[#00C853] w-full h-full box-border rounded-3xl">
@@ -19,19 +22,24 @@ const CarouselComponent: FC = () => {
       </div>
 
       {/* Carousel */}
-      <div className="h-full w-full">
+      <div className="">
         <Carousel className="bg-transparent w-full h-full relative">
           <CarouselContent className="w-full h-full ">
             {Array.from({ length: 5 }).map((_, index) => (
               <CarouselItem
                 key={index}
-                className="w-full h-full flex justify-center items-center"
+                className="flex justify-center items-center"
               >
                 <Card className="bg-transparent w-full h-[600px] rounded-3xl overflow-hidden border-none">
                   <CardContent className="w-full h-full">
-                    <img
+                    <Image
                       className="w-full h-full rounded-3xl ml-2 mt-3"
-                      src="/Glimpses/image.jpg"
+                      src={glimpses}
+                      alt="image"
+                      height={600}
+                      width={600}
+                      quality={100}
+                      layout="fixed"
                     />
                   </CardContent>
                 </Card>

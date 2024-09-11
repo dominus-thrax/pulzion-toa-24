@@ -2,13 +2,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-
+import logo from "../../../public/assets/landing/hero/logo.png";
+import tagline from "../../../public/assets/landing/hero/tagline.png";
 
 const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false);
   const logoRef = useRef<HTMLImageElement>(null);
 
-  
   useEffect(() => {
     let ticking = false;
 
@@ -17,10 +17,9 @@ const Navbar = () => {
         window.requestAnimationFrame(() => {
           const scrollValue = window.scrollY;
           if (logoRef.current) {
-            if(scrollValue<=600){
+            if (scrollValue <= 600) {
               logoRef.current.style.scale = "0";
-            }
-            else{
+            } else {
               logoRef.current.style.scale = "1";
             }
           }
@@ -47,13 +46,14 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 w-full px-6 z-50 backdrop-blur-md transition-all duration-300 ease-in-out">
       <div className="flex justify-between items-center">
-        <div className="transition-transform duration-300" ref={logoRef}>
+        <div className="transition-transform duration-300 flex flex-col justify-center items-center" ref={logoRef}>
+          <Image src={logo} alt="Logo" width={200} height={200} className="" />
           <Image
-            src="/Hero/final_nobg 2.svg"
-            alt="Logo"
-            width={200}
+            src={tagline}
+            alt="tagline"
+            width={150}
             height={150}
-            className="min-w-[120px] min-h-[90px] z-[-100]" // Ensures logo doesn't get too small
+            className=""
           />
         </div>
         <div className="hidden md:flex text-white gap-8 items-center z-30">
@@ -83,7 +83,11 @@ const Navbar = () => {
             onClick={toggleNav}
             className="text-white text-3xl z-50 transition-transform duration-300 ease-in-out"
           >
-            {navOpen ? <AiOutlineClose className="transform rotate-180" /> : <AiOutlineMenu />}
+            {navOpen ? (
+              <AiOutlineClose className="transform rotate-180" />
+            ) : (
+              <AiOutlineMenu />
+            )}
           </button>
         </div>
       </div>

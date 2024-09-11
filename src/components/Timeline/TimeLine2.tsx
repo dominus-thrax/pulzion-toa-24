@@ -9,24 +9,21 @@ import Particles from '../magicui/particles';
 import Link from 'next/link'; // Import Link for navigation
 
 const events = [
-  { name: 'CODEX', path: '/events/codex' },
-  { name: 'CODELICIOUS', path: '/events/codelicious' },
+  { name: 'CODEX', path: '/events/23' },
+  { name: 'CODELICIOUS', path: '/events/25' },
   { name: 'COMPUTE-N-COMPETE', path: '/events/compute-n-compete' },
-  { name: 'DATAQUEST', path: '/events/dataquest' },
-  { name: 'WEBNAPP', path: '/events/webnapp' },
-  { name: 'ELECTROQUEST', path: '/events/electrquest' },
-  
-  
-  
+  { name: 'DATAQUEST', path: '/events/18' },
+  { name: 'WEBNAPP', path: '/events/17' },
+  { name: 'ELECTROQUEST', path: '/events/15' },
 ];
 
 const nonTechEvents = [
-  { name: 'HIRE HUSTLE', path: '/events/hire hustle' },
-  { name: 'DEXTROUS', path: '/events/dextrous' },
-  { name: 'FANDOM', path: '/events/fandom' },
-  { name: 'INSIGHT', path: '/events/insight' },
-  { name: 'FREEZE THE SECOND', path: '/events/freeze the second' },
-  { name: 'PAPER PRESENTATION', path: '/events/paper presentation' },
+  { name: 'HIRE HUSTLE', path: '/events/22' },
+  { name: 'DEXTROUS', path: '/events/21' },
+  { name: 'FANDOM', path: '/events/24' },
+  { name: 'INSIGHT', path: '/events/20' },
+  { name: 'FREEZE THE SECOND', path: '/events/19' },
+  { name: 'PAPER PRESENTATION', path: '/events/paper-presentation' },
 ];
 
 const colors = ['#FF5733', '#33FF57', '#3357FF', '#FF33A5', '#FFBF00', '#00FFBF'];

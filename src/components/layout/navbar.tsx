@@ -62,7 +62,7 @@ const Navbar = () => {
               <a
                 key={index}
                 className="font-diary hover:bg-[#e7b14c] hover:text-green-900 px-3 py-3 rounded-2xl text-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1"
-                style={{ fontFamily: "PulzionFont" }}
+                // style={{ fontFamily: "PulzionFont" }}
                 href={`#${item.toLowerCase()}`}
               >
                 {item}
@@ -73,7 +73,7 @@ const Navbar = () => {
         <div className="hidden md:flex mr-10">
           <button
             className="text-green-700 font-diary px-5 py-4 rounded-2xl text-xl transition-all duration-300 ease-in-out hover:bg-green-700 hover:text-white hover:border-white transform hover:-translate-y-1"
-            style={{ fontFamily: "PulzionFont" }}
+            // style={{ fontFamily: "PulzionFont" }}
           >
             LOGIN
           </button>
@@ -99,7 +99,7 @@ const Navbar = () => {
               <a
                 key={index}
                 className="font-diary text-white text-3xl py-4 transform transition-transform duration-300 ease-in-out hover:scale-110"
-                style={{ fontFamily: "PulzionFont" }}
+                // style={{ fontFamily: "PulzionFont" }}
                 href={`#${item.toLowerCase()}`}
                 onClick={toggleNav}
               >
@@ -109,7 +109,7 @@ const Navbar = () => {
           )}
           <button
             className="text-green-700 font-diary px-5 py-4 rounded-2xl text-xl transition-all duration-300 ease-in-out hover:bg-green-700 hover:text-white mt-10 transform hover:scale-110"
-            style={{ fontFamily: "PulzionFont" }}
+            // style={{ fontFamily: "PulzionFont" }}
             onClick={toggleNav}
           >
             LOGIN

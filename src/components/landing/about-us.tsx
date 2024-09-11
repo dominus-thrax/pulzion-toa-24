@@ -2,7 +2,14 @@
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Particles from '../magicui/particles';
+import localFont from "next/font/local";
+// @import url('https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap');
 
+
+const sixtyfour = localFont({
+  src: "../../../public/font/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf"
+})
 const About: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -24,17 +31,24 @@ const About: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen w-full flex flex-col justify-center items-center bg-black">
+    <div className="relative min-h-screen w-full flex flex-col justify-center items-center bg-black overflow-hidden">
+      <Particles
+        className="absolute inset-0 z-0"
+        quantity={200}
+        size={1}
+        ease={80}
+        color="#ffffff"
+        refresh
+      />
       {/* Heading */}
       <h1
-        className="text-4xl md:text-5xl lg:text-6xl text-[#cfc36d] text-center mb-8 pt-32 glowing-text"
-        style={{ fontFamily: 'PulzionFont1' }}
+        className={`${sixtyfour.className} text-4xl md:text-5xl lg:text-6xl text-[#cfc36d] text-center mb-8 pt-32 glowing-text`}
       >
         ABOUT US
       </h1>
 
       {/* Content Section */}
-      <div className="container mx-auto flex flex-col lg:flex-row items-center lg:items-start w-full">
+      <div className="mx-auto flex flex-col lg:flex-row items-center lg:items-start w-full relative z-10">
 
         {/* Left Robot Section */}
         <div className="h-96 w-32 animate-bounce">
@@ -48,7 +62,7 @@ const About: React.FC = () => {
         </div>
 
         {/* Left Section: Circles */}
-        <div id="animated-circles" className={`relative w-full lg:w-1/2 flex justify-center lg:justify-start transition-all duration-1000 ease-in-out transform ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}>
+        <div id="animated-circles" className={`${sixtyfour.className} relative w-full lg:w-1/2 flex justify-center lg:justify-start transition-all duration-1000 ease-in-out transform ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}>
           <div className="grid grid-cols-2 gap-0 place-items-center">
             {/* Top Left Circle */}
             <div className="relative w-[225px] h-[225px]">

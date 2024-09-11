@@ -1,9 +1,24 @@
 import React from "react";
 import CarouselComponent from "../ui/CarouselComponent";
+import Particles from "@/components/magicui/particles";
+import { useState } from "react";
+import localFont from "next/font/local"
+
+const sixtyfour = localFont({
+  src: "../../../public/font/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf"
+})
 
 const Glimpses: React.FC = () => {
   return (
-    <div className="min-h-screen w-full flex flex-col justify-center items-center text-center bg-black p-8 relative">
+    <div className="min-h-screen w-full flex flex-col justify-center items-center text-center p-8 relative bg-black">
+      <Particles
+        className="absolute inset-0"
+        quantity={200}
+        size={1.0}
+        ease={80}
+        color="#ffffff"
+        refresh
+      />
       {/* Background Image */}
       {/* <img
         src="/Glimpses/bg.png"
@@ -13,7 +28,7 @@ const Glimpses: React.FC = () => {
 
       {/* Glimpses Title */}
       <h1
-        className="text-center mb-12 text-[#cfc36d] text-6xl" style={{ fontFamily: 'Pulzionfont' }}>
+        className={`${sixtyfour.className} text-center mb-12 text-[#cfc36d] text-6xl`}>
         Glimpses
       </h1>
 

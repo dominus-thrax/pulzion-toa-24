@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -66,4 +67,20 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+
+@layer components {
+  .input {
+    @apply block w-full px-4 py-2 mt-1  text-xl  text-white placeholder-white bg-transparent border-b-2 border-white outline-none;
+  }
+}
+
+select {
+  background-color: inherit; 
+}
+
+select option {
+  background-color: black; 
+  color: white; 
 }

@@ -30,7 +30,7 @@ export default function Home() {
       <div id="events">
         <Events />
       </div>
-        <ContactUs />
+      <ContactUs />
     </main>
   );
 }

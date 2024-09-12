@@ -86,8 +86,10 @@ const About: React.FC = () => {
                 fill
                 style={{ objectFit: "contain" }}
               />
-              <div className="absolute inset-0 flex items-center justify-center text-white text-center">
-                <span className="text-xs md:text-lg font-semibold">10 EVENTS</span>
+              <div
+              style={{ fontFamily: "Wallpoet" }}
+               className="absolute inset-0 flex items-center justify-center text-white text-center">
+                <span className="text-xs md:text-sm font-semibold">10 EVENTS</span>
               </div>
             </div>
 
@@ -101,8 +103,10 @@ const About: React.FC = () => {
                 fill
                 style={{ objectFit: "contain" }}
               />
-              <div className="absolute inset-0 flex items-center justify-center text-white text-center">
-                <span className="text-xs md:text-lg font-semibold">300 VOLUNTEERS</span>
+              <div
+              style={{ fontFamily: "Wallpoet" }}
+               className="absolute inset-0 flex items-center justify-center text-white text-center">
+                <span className="text-xs md:text-sm font-semibold">300 VOLUNTEERS</span>
               </div>
             </div>
 
@@ -116,8 +120,10 @@ const About: React.FC = () => {
                 fill
                 style={{ objectFit: "contain" }}
               />
-              <div className="absolute inset-0 flex items-center justify-center text-white text-center">
-                <span className="text-xs md:text-lg font-semibold">8000 FOOTFALL</span>
+              <div 
+              style={{ fontFamily: "Wallpoet" }}
+               className="absolute inset-0 flex items-center justify-center text-white text-center">
+                <span className="text-xs md:text-sm font-semibold">8000 FOOTFALL</span>
               </div>
             </div>
           </div>

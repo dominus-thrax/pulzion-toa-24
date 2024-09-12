@@ -66,7 +66,7 @@ const Navbar = () => {
             (item, index) => (
               <button
                 key={index}
-                className="font-diary hover:text-green-900 px-3 py-3 rounded-2xl text-xl transition-all duration-300 ease-in-out transform hover:-translate-y-0.5"
+                className="font-Wallpoet hover:text-green-900 px-3 py-3 rounded-2xl text-sm transition-all duration-300 ease-in-out transform hover:-translate-y-0.5"
                 onClick={() => scrollToSection(item.toLowerCase())}
               >
                 {item}
@@ -76,13 +76,13 @@ const Navbar = () => {
           {/* For 'TEAM', use anchor link to navigate */}
           <a
             href="/team"
-            className="font-diary hover:text-green-900 px-3 py-3 rounded-2xl text-xl transition-all duration-300 ease-in-out transform hover:-translate-y-0.5"
+            className="font-Wallpoet hover:text-green-900 px-3 py-3 rounded-2xl text-sm transition-all duration-300 ease-in-out transform hover:-translate-y-0.5"
           >
             TEAM
           </a>
         </div>
         <div className="hidden md:flex mr-10">
-          <button className="text-green-700 font-diary px-5 py-4 rounded-2xl text-xl transition-all duration-300 ease-in-out hover:text-white hover:border-white transform hover:-translate-y-0.5">
+          <button className="text-green-700 font-Wallpoet px-5 py-4 rounded-2xl text-sm transition-all duration-300 ease-in-out hover:text-white hover:border-white transform hover:-translate-y-0.5">
             LOGIN
           </button>
         </div>
@@ -111,7 +111,7 @@ const Navbar = () => {
             (item, index) => (
               <button
                 key={index}
-                className="text-lg font-diary text-white py-4 transform transition-transform duration-300 ease-in-out hover:scale-110"
+                className="text-sm font-Wallpoet text-white py-4 transform transition-transform duration-300 ease-in-out hover:scale-110"
                 onClick={() => {
                   scrollToSection(item.toLowerCase());
                   toggleNav();
@@ -124,13 +124,13 @@ const Navbar = () => {
           {/* For 'TEAM', use anchor link */}
           <a
             href="/team"
-            className="text-lg font-diary text-white py-4 transform transition-transform duration-300 ease-in-out hover:scale-110"
+            className="text-lg font-Wallpoet text-white py-4 transform transition-transform duration-300 ease-in-out hover:scale-110"
             onClick={toggleNav}
           >
             TEAM
           </a>
           <button
-            className="text-green-700 font-diary px-5 py-4 rounded-2xl text-lg transition-all duration-300 ease-in-out hover:bg-green-700 hover:text-white mt-10 transform hover:scale-110"
+            className="text-green-700 font-Wallpoet px-5 py-4 rounded-2xl text-lg transition-all duration-300 ease-in-out hover:bg-green-700 hover:text-white mt-10 transform hover:scale-110"
             onClick={toggleNav}
           >
             LOGIN

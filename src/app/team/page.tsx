@@ -2,7 +2,7 @@ import React from 'react';
 import { FaLinkedin } from 'react-icons/fa'; // Import LinkedIn icon
 import Image from 'next/image'; // Import Next.js Image component
 import Particles from '@/components/magicui/particles';
-import { Leads, teamMembers } from '@/data/teamData';
+import { Leads, teamMembers } from '@/data/data';
 
 export default function Home() {
   return (

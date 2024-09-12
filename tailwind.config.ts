@@ -67,10 +67,21 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        swing: {
+          "0%": { transform: "rotate(-30deg)" },
+          "50%": { transform: "rotate(30deg)" },
+          "100%": { transform: "rotate(-30deg)" },
+        },
+        rotate: {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "swing": "swing 6s infinite ease-in-out",
+        "rotate": "rotate 5s linear infinite",
       },
     },
   },

@@ -1,25 +1,30 @@
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+
 import { transform } from "next/dist/build/swc"
 import type { Config } from "tailwindcss"
 
 
 const config = {
   darkMode: ["class"],
+
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
-  prefix: "",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+ 
+    // Or if using `src` directory:
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
     extend: {
+      colors:{
+       'borderColor':'#CFC36D', 
+       'textColor':'#8BFFCE',
+       'statusColor':'#E8AF49'
+      }
+    },
       colors: {
         logincardcolor:"hsla(130, 19%, 49%, 0.29)",
         registercardcolor1:"hsla(147, 100%, 33%, 0.32)",
@@ -93,7 +98,6 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         marquee: 'marquee 10s linear infinite',
-=======
         "reverse-spin": "reverse-spin 4s linear infinite",
         "spin-slow": "spin 7s linear infinite",
       },
@@ -110,7 +114,5 @@ const config = {
       },
     }
   },
-  plugins: [require("tailwindcss-animate")],
-} satisfies Config
-
-export default config
+  plugins: [],
+}

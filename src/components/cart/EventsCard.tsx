@@ -50,7 +50,7 @@ const Card: React.FC<CardProps> = ({
       <div className="flex justify-between font-vt323">
         <div className="flex gap-3 md:gap-4">
           <img
-            src={`/${title}.png`}
+            src={`/assets/add-to-cart/${title}.png`}
             alt={title}
             className="w-16 md:w-20 p-1 bg-[#E8AF49] rounded-md"
           />

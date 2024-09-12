@@ -15,7 +15,7 @@ const Card = ({ id, date, name, amount, status }: Item) => {
   
   return (
 
-      <div className="relative w-[300px] h-[300px] my-10 md:mx-28"> {/* Parent div with 300px by 300px */}
+      <div className="relative w-[300px] h-[300px] my-10 md:mx-28 min-[320px]:max-[375px]:ml-[20px] min-[320px]:max-[374px]:mr-[15px] min-[375px]:max-[425px]:ml-[50px] min-[376px]:max-[424px]:mr-[20px] min-[425px]:max-[768px]:ml-[70px] min-[426px]:max-[768px]:mr-[30px]"> {/* Parent div with 300px by 300px */}
         <Image
           src={ticket}
           alt="Hollow Border"
@@ -51,3 +51,6 @@ const Card = ({ id, date, name, amount, status }: Item) => {
 };
 
 export default Card;
+
+
+ 

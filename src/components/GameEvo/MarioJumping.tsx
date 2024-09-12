@@ -1,10 +1,19 @@
 import Image from 'next/image';
 import styles from './MarioJumping.module.css'; // Import the CSS module
+import Particles from '../magicui/particles';
 
 const MarioJumping = () => {
   return (
     <div className={styles.container}>
       {/* Mario jumping animation */}
+      <Particles
+        className="fixed inset-0"
+        quantity={100}
+        size={1.0}
+        ease={80}
+        color='#ffffff'
+        refresh
+      />
       <div className={styles.mario}>
         <Image
           src="/Game-Evolution/mario-jumping.png" // Adjust the path to your Mario image

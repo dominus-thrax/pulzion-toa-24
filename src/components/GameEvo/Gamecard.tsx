@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import MarioJumping from '@/components/MarioJumping'; // Import the MarioJumping component
+import MarioJumping from '@/components/GameEvo/MarioJumping'; // Import the MarioJumping component
 
 interface GameCardProps {
   year: number;

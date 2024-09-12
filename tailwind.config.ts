@@ -21,6 +21,14 @@ const config = {
     },
     extend: {
       colors: {
+        logincardcolor:"hsla(130, 19%, 49%, 0.29)",
+        registercardcolor1:"hsla(147, 100%, 33%, 0.32)",
+        registercardcolor2:"hsla(43, 96%, 58%, 0.35)",
+        loginbordercolor:"hsla(162, 56%, 28%, 1)",
+        registerbordercolor:"hsla(39, 59%, 55%, 0.5)",
+        inputfildcolor:"hsla(115, 34%, 78%, 0.5)",
+        submitbtncolor:"hsla(0, 0%, 0%, 0.5)",
+        loginsignuplinkcolor:"hsla(61, 40%, 58%, 1)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -92,7 +100,10 @@ const config = {
         vt323: ['VT323', 'monospace'],
         diary: ['diary', 'sans-serif']
       },
-    },
+      fontFamily: {
+        vt323: ['VT323-Regular', 'sans-serif'],
+      },
+    }
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config

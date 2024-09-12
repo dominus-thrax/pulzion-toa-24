@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import axios from "axios";
-import Card from "@/components/Card";
+import Card from "@/components/user-events/Card";
 import { ThreeDots } from "react-loader-spinner";
+import api from "@/api/api";
 
 export type Item = {
   id: string;
@@ -18,21 +18,14 @@ const Page: React.FC = () => {
 
   const getData = async () => {
     try {
-      const response = await axios.get(
-        "https://pulzion22-ems-backend-evj4.onrender.com/user_events",
-        {
-          headers: {
-            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzI2MTQ5NDA4fQ.En4TZHofokTOVXcKV3C4xTIZbMe-8dBTtH5UJSClc_A`,
-          },
-        }
-      );
+      const response = await api.get("/user_events");
 
       // Extract data from the response
       const rawData = response.data;
       setData(rawData.events);
     } catch (error: any) {
       // Error handling
-      console.log(error)
+      console.log(error);
     } finally {
       setLoading(false);
     }

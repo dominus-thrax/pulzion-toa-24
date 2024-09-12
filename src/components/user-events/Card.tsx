@@ -1,8 +1,8 @@
 import React from "react";
 import Image from 'next/image';
-import ticket from "./../../public/assets/l.png"
+import ticket from "../../../public/assets/user-events/l.png"
 
-import { Item } from "@/app/feature/user-events/page";
+import { Item } from "@/app/user-events/page";
 
 const Card = ({ id, date, name, amount, status }: Item) => {
   //Card design

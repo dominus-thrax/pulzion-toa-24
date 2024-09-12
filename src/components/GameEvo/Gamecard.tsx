@@ -35,13 +35,15 @@ const GameCard: React.FC<GameCardProps> = ({ year, title, description = 'no desc
       {/* Layout alternates based on isReversed prop */}
       <div className={`flex flex-col md:flex-row ${isReversed ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
         {/* Game Image */}
-        <div className="w-full md:w-1/2">
-          <Image
+        <div className="w-full md:w-1/2 flex justify-center">
+          <img
             src={imageUrl}
             alt="Cropped Image"
-            width={500}
-            height={300}
-            className="object-cover w-full h-auto"
+            // width={200}
+            // height={100}
+            // layout='responsive'
+            // objectFit='cover'
+            className="w-full md:w-1/2 h-[450px]"
           />
         </div>
 

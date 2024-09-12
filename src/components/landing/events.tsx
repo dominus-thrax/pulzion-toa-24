@@ -34,7 +34,7 @@ const VerticalText = ({ text }: { text: string }) => {
   return (
     <div className="flex flex-col justify-center items-center">
       {text.split('').map((char: string, index: number) => (
-        <span key={index} className="text-3xl p-2">{char}</span>
+        <span key={index} className="text-sm md:text-3xl p-2">{char}</span>
       ))}
     </div>
   );
@@ -52,7 +52,7 @@ const Events = () => {
         color="#ffffff"
         refresh
       />
-      <div className='text-[#cfc36d] text-center text-6xl'>
+      <div className='text-[#cfc36d] text-center text-2xl md:text-6xl'>
         EVENTS
       </div>
       <div className="relative z-10 grid grid-cols-2 w-full h-full">
@@ -79,7 +79,7 @@ const Events = () => {
                   </TimelineSeparator>
                   <TimelineContent sx={{ width: '300px',height: '100px'}}>
                     <Link href={event.path}>
-                      <span className="text-white hover:no-underline hover:text-[#94fbcf]">{event.name}</span>
+                      <span className="text-white hover:no-underline hover:text-[#94fbcf] text-xs md:text-lg">{event.name}</span>
                     </Link>
                   </TimelineContent>
                 </TimelineItem>
@@ -106,7 +106,7 @@ const Events = () => {
                   </TimelineSeparator>
                   <TimelineContent sx={{ width: '300px',height: '100px'}}>
                     <Link href={event.path}>
-                      <span className="text-white hover:np-underline hover:text-[#94fbcf]">{event.name}</span>
+                      <span className="text-white hover:np-underline hover:text-[#94fbcf] text-xs md:text-lg">{event.name}</span>
                     </Link>
                   </TimelineContent>
                 </TimelineItem>

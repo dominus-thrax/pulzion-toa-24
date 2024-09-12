@@ -20,7 +20,7 @@ const Glimpses: React.FC = () => {
       />
       {/* Glimpses Title */}
       <h1
-        className={`${sixtyfour.className} text-center mb-12 text-[#cfc36d] text-6xl`}
+        className={`${sixtyfour.className} text-center mb-12 text-[#cfc36d] text-2xl md:text-6xl`}
       >
         Glimpses
       </h1>

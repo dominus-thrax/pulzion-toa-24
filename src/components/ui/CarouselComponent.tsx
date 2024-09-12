@@ -13,11 +13,11 @@ import glimpses from "../../../public/assets/landing/glimpses/image.jpg";
 
 const CarouselComponent: FC = () => {
   return (
-    <div className="max-w-[50%] w-full flex justify-center items-center relative">
+    <div className="md:max-w-[50%] w-full flex justify-center items-center relative">
       {/* Fixed Borders */}
       <div className="absolute top-0 left-0 w-full h-full z-10">
-        <div className="border-8 border-[#00C853] w-full h-full box-border rounded-3xl">
-          <div className="border-8 border-[#F0C66B] w-full h-full box-border rounded-2xl"></div>
+        <div className="border-4 border-[#00C853] w-full h-full box-border rounded-3xl">
+          <div className="border-4 border-[#F0C66B] w-full h-full box-border rounded-2xl"></div>
         </div>
       </div>
 

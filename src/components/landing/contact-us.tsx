@@ -1,7 +1,18 @@
 // ContactUs.tsx
-import React from 'react';
+import { MdEmail } from "react-icons/md";
+import { FaPhoneAlt } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
+import React from "react";
 import localFont from "next/font/local";
 import Particles from "@/components/magicui/particles";
+
+import Link from "next/link";
+import Image from "next/image";
+import facebook from "../../../public/assets/landing/contact-us/facebook.png";
+import insta from "../../../public/assets/landing/contact-us/instagram.png";
+import linkedin from "../../../public/assets/landing/contact-us/linkedin.png";
+import web from "../../../public/assets/landing/contact-us/web.png";
+import twitter from "../../../public/assets/landing/contact-us/twitter.png";
 
 const sixtyfour = localFont({
   src: "../../../public/font/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf",
@@ -27,53 +38,56 @@ const ContactUs: React.FC = () => {
       </h1>
 
       {/* Contact Information and Message Section */}
-      <div className="flex flex-col lg:flex-row justify-center items-center gap-8 md:gap-10 mb-8 z-30">
-
+      <div
+        style={{ fontFamily: "Wallpoet" }}
+        className="flex flex-col lg:flex-row justify-center items-center gap-8 md:gap-10 mb-8 z-30"
+      >
         {/* Contact Information */}
         <div className="bg-[#013220]/70 p-4 md:p-6 rounded-lg w-full lg:w-1/3 h-auto lg:h-96 flex flex-col justify-between border-2 border-yellow-700">
-          <h3 className="text-xl sm:text-2xl md:text-3xl mb-4 text-center text-white" style={{ fontFamily: 'Wallpoet' }}>
+          <h3 className="text-xl sm:text-2xl md:text-3xl mb-4 text-center text-white">
             Contact Information
           </h3>
 
           {/* Phone Numbers */}
-          <div className="flex items-start mb-4">
-            <img
-              src="/assets/landing/contact-us/"
-              alt="Phone"
-              className="w-5 h-5 sm:w-6 sm:h-6 mr-3"
-            />
+          <div className="flex items-start mb-4 gap-4">
+            <FaPhoneAlt className="h-6 w-6 text-green-500" />
             <div>
-              <p className="text-xs sm:text-sm md:text-base text-white" style={{ fontFamily: 'Wallpoet' }}>Samarth Mali: (+91) 9156931100</p>
-              <p className="text-xs sm:text-sm md:text-base text-white" style={{ fontFamily: 'Wallpoet' }}>Pritika Rohera: (+91) 8087606750</p>
+              <p className="text-xs sm:text-sm md:text-base text-white">
+                Samarth Mali: (+91) 9156931100
+              </p>
+              <p className="text-xs sm:text-sm md:text-base text-white">
+                Pritika Rohera: (+91) 8087606750
+              </p>
             </div>
           </div>
 
           {/* Email */}
-          <div className="flex items-start mb-4">
-            <img
-              src="/assets/landing/contact-us/"
-              alt="Email"
-              className="w-5 h-5 sm:w-6 sm:h-6 mr-3"
-            />
-            <p className="text-xs sm:text-sm md:text-base text-white" style={{ fontFamily: 'Wallpoet' }}>acm.pict@gmail.com</p>
+          <div className="flex items-start mb-4 gap-4">
+            <MdEmail className="h-6 w-6 text-green-500" />
+            <p className="text-xs sm:text-sm md:text-base text-white">
+              acm.pict@gmail.com
+            </p>
           </div>
 
           {/* Address */}
-          <div className="flex items-start mb-4">
-            <img
-              src="/path/to/location-icon.png"
-              alt="Location"
-              className="w-5 h-5 sm:w-6 sm:h-6 mr-3"
-            />
-            <p className="text-xs sm:text-sm md:text-base text-white" style={{ fontFamily: 'Wallpoet' }}>
-              Pune Institute of Computer Technology, Behind Bharati Vidyapeeth, Dhankawadi, Pune, Maharashtra-411043
+          <div className="flex items-start mb-4 gap-4">
+            <FaLocationDot className="h-10 w-10 text-green-500" />
+
+            <p className="text-xs sm:text-sm md:text-base text-white">
+              Pune Institute of Computer Technology, Behind Bharati Vidyapeeth,
+              Dhankawadi, Pune, Maharashtra-411043
             </p>
           </div>
         </div>
 
         {/* Send a Message Form */}
-        <div className="bg-[#013220]/70 p-4 md:p-6 rounded-lg w-full lg:w-1/3 h-auto lg:h-96 flex flex-col justify-between border-2 border-yellow-700">
-          <h3 className="text-xl sm:text-2xl md:text-3xl mb-4 text-center text-white" style={{ fontFamily: 'Wallpoet' }}>Send a Message</h3>
+        <div
+          style={{ fontFamily: "Wallpoet" }}
+          className="bg-[#013220]/70 p-4 md:p-6 rounded-lg w-full lg:w-1/3 h-auto lg:h-96 flex flex-col justify-between border-2 border-yellow-700"
+        >
+          <h3 className="text-xl sm:text-2xl md:text-3xl mb-4 text-center text-white">
+            Send a Message
+          </h3>
           <form>
             <input
               type="text"
@@ -92,7 +106,8 @@ const ContactUs: React.FC = () => {
             ></textarea>
             <button
               type="submit"
-              className="w-full bg-transparent border border-white text-white p-2 rounded-md text-xs sm:text-sm md:text-base transition">
+              className="w-full bg-transparent border border-white text-white p-2 rounded-md text-xs sm:text-sm md:text-base transition"
+            >
               SUBMIT
             </button>
           </form>
@@ -101,24 +116,89 @@ const ContactUs: React.FC = () => {
 
       {/* Follow Us Section */}
       <div className="text-center mb-8">
-        <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 text-yellow-300" style={{ fontFamily: "Wallpoet" }}>FOLLOW US</h3>
+        <h3
+          className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 text-yellow-300"
+          style={{ fontFamily: "Wallpoet" }}
+        >
+          FOLLOW US
+        </h3>
         <div className="flex justify-center space-x-4 sm:space-x-6">
           {/* Social Media Links */}
-          <a href="https://www.facebook.com/PICTOfficial/" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/landing/contact-us/facebook icon.png" alt="Facebook" className="w-5 h-5 sm:w-6 sm:h-6" />
-          </a>
-          <a href="https://www.instagram.com/pict.pune/?hl=en" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/landing/contact-us/instagram icon.png" alt="Instagram" className="w-5 h-5 sm:w-6 sm:h-6" />
-          </a>
-          <a href="https://pict.edu/" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/landing/contact-us/web icon.png" alt="Website" className="w-5 h-5 sm:w-6 sm:h-6" />
-          </a>
-          <a href="https://www.linkedin.com/school/pune-institute-of-computer-technology/?originalSubdomain=in" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/landing/contact-us/linkedn icon.png" alt="LinkedIn" className="w-5 h-5 sm:w-6 sm:h-6" />
-          </a>
-          <a href="https://x.com/punepict?lang=en" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/landing/contact-us/x new2 icon.png" alt="Twitter" className="w-5 h-5 sm:w-6 sm:h-6" />
-          </a>
+          <Link
+            className="z-10 hover:cursor-pointer"
+            href="https://www.facebook.com/PICTOfficial/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src={facebook}
+              alt="Facebook"
+              height={50}
+              width={50}
+              layout="fixed"
+              quality={100}
+            />
+          </Link>
+          <Link
+            className="z-10 hover:cursor-pointer"
+            href="https://www.instagram.com/pict.pune/?hl=en"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src={insta}
+              alt="instagram"
+              height={50}
+              width={50}
+              layout="fixed"
+              quality={100}
+            />
+          </Link>
+          <Link
+            className="z-10 hover:cursor-pointer"
+            href="https://pict.edu/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src={web}
+              alt="website"
+              height={50}
+              width={50}
+              layout="fixed"
+              quality={100}
+            />
+          </Link>
+          <Link
+            className="z-10 hover:cursor-pointer"
+            href="https://www.linkedin.com/school/pune-institute-of-computer-technology/?originalSubdomain=in"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src={linkedin}
+              alt="linkedin"
+              height={50}
+              width={50}
+              layout="fixed"
+              quality={100}
+            />
+          </Link>
+          <Link
+            className="z-10 hover:cursor-pointer"
+            href="https://x.com/punepict?lang=en"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src={twitter}
+              alt="twitter"
+              height={50}
+              width={50}
+              layout="fixed"
+              quality={100}
+            />
+          </Link>
         </div>
       </div>
 

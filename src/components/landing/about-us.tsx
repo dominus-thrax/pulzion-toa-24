@@ -46,7 +46,7 @@ const About: React.FC = () => {
       />
       {/* Heading */}
       <h1
-        className={`${sixtyfour.className} text-4xl md:text-5xl lg:text-6xl text-[#cfc36d] text-center mb-8 pt-32 glowing-text`}
+        className={`${sixtyfour.className} text-2xl md:text-5xl lg:text-6xl text-[#cfc36d] text-center mb-8 pt-32 glowing-text`}
       >
         ABOUT US
       </h1>
@@ -54,7 +54,7 @@ const About: React.FC = () => {
       {/* Content Section */}
       <div className="mx-auto flex flex-col lg:flex-row items-center lg:items-start w-full relative z-10">
         {/* Left Robot Section */}
-        <div className="h-96 w-32 animate-bounce">
+        <div className="h-96 w-32 animate-bounce hidden md:block">
           <Image
             src={right}
             alt="robots"
@@ -87,7 +87,7 @@ const About: React.FC = () => {
                 style={{ objectFit: "contain" }}
               />
               <div className="absolute inset-0 flex items-center justify-center text-white text-center">
-                <span className="text-lg font-semibold">10 EVENTS</span>
+                <span className="text-xs md:text-lg font-semibold">10 EVENTS</span>
               </div>
             </div>
 
@@ -102,7 +102,7 @@ const About: React.FC = () => {
                 style={{ objectFit: "contain" }}
               />
               <div className="absolute inset-0 flex items-center justify-center text-white text-center">
-                <span className="text-lg font-semibold">300 VOLUNTEERS</span>
+                <span className="text-xs md:text-lg font-semibold">300 VOLUNTEERS</span>
               </div>
             </div>
 
@@ -117,14 +117,14 @@ const About: React.FC = () => {
                 style={{ objectFit: "contain" }}
               />
               <div className="absolute inset-0 flex items-center justify-center text-white text-center">
-                <span className="text-lg font-semibold">8000 FOOTFALL</span>
+                <span className="text-xs md:text-lg font-semibold">8000 FOOTFALL</span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Right Section: Text */}
-        <div className="w-full lg:w-1/2 text-[#88B788] text-justify text-lg md:text-xl lg:text-2xl max-w-lg space-y-6 mt-8 lg:mt-0">
+        <div className="p-8 md:p-2 w-full lg:w-1/2 text-center text-[#88B788] text-sm md:text-xl lg:text-2xl max-w-lg space-y-6 mt-8 lg:mt-0">
           <p className="text-lg" style={{ fontFamily: "Wallpoet" }}>
             Pulzion is the annual flagship event organized by PICT ACM Student
             Chapter (PASC). Pulzion consists of multiple events in technical as
@@ -142,7 +142,7 @@ const About: React.FC = () => {
         </div>
 
         {/* Right Robot Section */}
-        <div className="h-96 w-32 animate-bounce">
+        <div className="h-96 w-32 animate-bounce hidden md:block">
           <Image
             src={left}
             alt="robots"

@@ -19,7 +19,7 @@ const Sponsors: React.FC = () => {
         refresh
       />
       <div className="container mx-auto py-8 relative z-20">
-        <h1 className="text-center mb-12 text-[#cfc36d] text-6xl">
+        <h1 className="text-center mb-12 text-[#cfc36d] text-2xl md:text-6xl">
           Our Sponsors
         </h1>
 

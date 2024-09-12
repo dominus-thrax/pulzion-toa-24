@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import axios from "axios";
-import Card from "@/components/cart/EventsCard";
+import api from "@/api/api";
 import Order from "@/components/cart/Order";
+import Card from "@/components/cart/EventsCard";
 
 interface CartItem {
   id: number;
@@ -23,15 +23,7 @@ export default function CartPage() {
   useEffect(() => {
     const fetchCartItems = async () => {
       try {
-        const response = await axios.get(
-          "https://pulzion22-ems-backend-evj4.onrender.com/cart",
-          {
-            headers: {
-              Authorization:
-                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzI1OTUzMTc1fQ._LWlL7w4Y3xpOBhGEjB4zTJxpDfEGJ0TvV4PmSnL9yg",
-            },
-          }
-        );
+        const response = await api.get("/cart");
         setCartItems(response.data.events);
       } catch (err) {
         setError("Failed to load cart items.");

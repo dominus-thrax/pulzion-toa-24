@@ -78,11 +78,6 @@
   }
 }
 
-body {
-background: #000;;
-}
-}
-
 select {
   background-color: inherit;
 }
@@ -91,6 +86,7 @@ select option {
   background-color: black;
   color: white;
 }
+
 body {
   background: #000;
 }

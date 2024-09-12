@@ -15,12 +15,22 @@ export default function Home() {
   return (
     <main className={`${sixtyfour.className}`}>
       <Navbar />
-      <Hero />
-      <About />
-      <Glimpses />
-      <Events />
-      <Sponsors />
-      <ContactUs />
+      <div id="home">
+        <Hero />
+      </div>
+      <div id="about">
+        <About />
+      </div>
+      <div id="glimpses">
+        <Glimpses />
+      </div>
+      <div id="sponsors">
+        <Sponsors />
+      </div>
+      <div id="events">
+        <Events />
+      </div>
+        <ContactUs />
     </main>
   );
 }

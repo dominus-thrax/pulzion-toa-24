@@ -9,26 +9,22 @@ import Particles from '../magicui/particles';
 import Link from 'next/link'; // Import Link for navigation
 
 const events = [
-  { name: 'CODEX', path: '/events/23' },
-  { name: 'CODELICIOUS', path: '/events/25' },
-  { name: 'COMPUTE-N-COMPETE', path: '/events/compute-n-compete' },
-  { name: 'DATAQUEST', path: '/events/18' },
-  { name: 'WEBNAPP', path: '/events/17' },
-  { name: 'ELECTROQUEST', path: '/events/15' },
+  { name: 'CODEX', path: '/events/23', image: '/assets/landing/events/t1.png' },
+  { name: 'CODELICIOUS', path: '/events/25', image: '/assets/landing/events/t2.png' },
+  { name: 'COMPUTE-N-COMPETE', path: '/events/compute-n-compete', image: '/assets/landing/events/t3.png' },
+  { name: 'DATAQUEST', path: '/events/18', image: '/assets/landing/events/t4.png' },
+  { name: 'WEBNAPP', path: '/events/17', image: '/assets/landing/events/t5.png' },
+  { name: 'ELECTROQUEST', path: '/events/15', image: '/assets/landing/events/t6.png' },
 ];
 
 const nonTechEvents = [
-  { name: 'HIRE HUSTLE', path: '/events/22' },
-  { name: 'DEXTROUS', path: '/events/21' },
-  { name: 'FANDOM', path: '/events/24' },
-  { name: 'INSIGHT', path: '/events/20' },
-  { name: 'FREEZE THE SECOND', path: '/events/19' },
-  { name: 'PAPER PRESENTATION', path: '/events/paper-presentation' },
+  { name: 'HIRE HUSTLE', path: '/events/22', image: '/assets/landing/events/nt1.png' },
+  { name: 'DEXTROUS', path: '/events/21', image: '/assets/landing/events/nt2.png' },
+  { name: 'FANDOM', path: '/events/24', image: '/assets/landing/events/nt3.png' },
+  { name: 'INSIGHT', path: '/events/20', image: '/assets/landing/events/nt4.png' },
+  { name: 'FREEZE THE SECOND', path: '/events/19', image: '/assets/landing/events/nt5.png' },
+  { name: 'PAPER PRESENTATION', path: '/events/paper-presentation', image: '/assets/landing/events/nt6.png' },
 ];
-
-const colors = ['#FF5733', '#33FF57', '#3357FF', '#FF33A5', '#FFBF00', '#00FFBF'];
-const nonTechColors = ['#FFC300', '#DAF7A6', '#FF5733', '#C70039', '#900C3F', '#581845'];
-
 
 const VerticalText = ({ text }: { text: string }) => {
   return (
@@ -39,7 +35,6 @@ const VerticalText = ({ text }: { text: string }) => {
     </div>
   );
 };
-
 
 const Events = () => {
   return (
@@ -74,10 +69,22 @@ const Events = () => {
               {nonTechEvents.map((event, index) => (
                 <TimelineItem key={index}>
                   <TimelineSeparator>
-                    <TimelineDot sx={{ bgcolor: nonTechColors[index % nonTechColors.length] }} />
+                    <TimelineDot
+                      sx={{
+                        backgroundColor: '#000', 
+                        backgroundImage: `url(${event.image})`,
+                        backgroundSize: 'contain',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat', 
+                        width: 50,
+                        height: 50,
+                        borderRadius: '50%',
+                        // border: '2px solid #ffffff', // Optional white border
+                      }}
+                    />
                     {index < nonTechEvents.length - 1 && <TimelineConnector />}
                   </TimelineSeparator>
-                  <TimelineContent sx={{ width: '300px',height: '100px'}}>
+                  <TimelineContent sx={{ width: '300px', height: '100px' }}>
                     <Link href={event.path}>
                       <span className="text-white hover:no-underline hover:text-[#94fbcf] text-xs md:text-lg">{event.name}</span>
                     </Link>
@@ -101,12 +108,24 @@ const Events = () => {
               {events.map((event, index) => (
                 <TimelineItem key={index}>
                   <TimelineSeparator>
-                    <TimelineDot sx={{ bgcolor: colors[index % colors.length] }} />
+                    <TimelineDot
+                      sx={{
+                        backgroundColor: '#000',
+                        backgroundImage: `url(${event.image})`,
+                        backgroundSize: 'contain',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat',
+                        width: 50,
+                        height: 50,
+                        borderRadius: '50%',
+                        // border: '2px solid #ffffff', // Optional white border
+                      }}
+                    />
                     {index < events.length - 1 && <TimelineConnector />}
                   </TimelineSeparator>
-                  <TimelineContent sx={{ width: '300px',height: '100px'}}>
+                  <TimelineContent sx={{ width: '300px', height: '100px' }}>
                     <Link href={event.path}>
-                      <span className="text-white hover:np-underline hover:text-[#94fbcf] text-xs md:text-lg">{event.name}</span>
+                      <span className="text-white hover:no-underline hover:text-[#94fbcf] text-xs md:text-lg">{event.name}</span>
                     </Link>
                   </TimelineContent>
                 </TimelineItem>

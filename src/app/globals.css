@@ -57,41 +57,37 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
     margin: 0;
     padding: 0;
     background: url('/images/homebg1.png') no-repeat center center fixed;
     background-size: cover;
-    font-family: 'Wallpoet', sans-serif;
+    font-family: 'WallpoetFont', sans-serif;
     color: #fff;
   }
 }
 
 .container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
   padding: 2rem;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  grid-template-rows: repeat(3, 1fr); 
-  gap: 100px; 
-  max-width: 800px;
   width: 100%;
-  justify-items: center; 
-  align-items: start; 
+  max-width: 1200px;
 }
 
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 50%;
+}
 
 @font-face {
   font-family: 'WallpoetFont';
@@ -113,5 +109,3 @@
   font-weight: normal;
   font-style: normal;
 }
-
-

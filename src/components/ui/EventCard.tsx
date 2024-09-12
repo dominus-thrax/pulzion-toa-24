@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+
 interface EventCardProps {
     title: string;
     quote: string;
@@ -8,7 +9,8 @@ interface EventCardProps {
 
 const EventCard: React.FC<EventCardProps> = ({ title, quote }) => {
     const handleViewClick = () => {
-        window.open('/event-details', '_blank');
+        // Pass the title as a query parameter in the URL
+        window.open(`/event-details?title=${encodeURIComponent(title)}`, '_blank');
     };
 
     return (
@@ -21,7 +23,7 @@ const EventCard: React.FC<EventCardProps> = ({ title, quote }) => {
                 width: "450px",
                 height: "450px",
                 boxShadow: "0px 0px 20px rgba(0,0,0,0.5)",
-                borderRadius:"48.51px"  
+                borderRadius: "48.51px"
             }}
         >
             {/* Icon at the top */}
@@ -34,7 +36,6 @@ const EventCard: React.FC<EventCardProps> = ({ title, quote }) => {
                         borderRadius: "10%",
                         padding: "10px",
                         marginTop: "0.9px",
-
                     }}
                 />
             </div>
@@ -43,16 +44,17 @@ const EventCard: React.FC<EventCardProps> = ({ title, quote }) => {
                 className="text-xl font-WallpoetFont text-green-500 text-center"
                 style={{
                     textTransform: "uppercase",
-                    fontSize: "2rem",
-                    marginTop: "100px",
+                    fontSize: '26px',
+                    marginTop: title.length > 15 ? '120px' : '100px',
                     color: "#E4F676",
-                    width:"270px",
-                    lineHeight:"2.5rems",
-                    overflowWrap:"break-word"
+                    width: "270px",
+                    lineHeight: "2.5rem",
+                    overflowWrap: "break-word",
                 }}
             >
                 {title}
             </h1>
+
             {/* Quote */}
             <p
                 className="text-center font-vt323 text-yellow-400 mt-4 px-6"
@@ -61,16 +63,11 @@ const EventCard: React.FC<EventCardProps> = ({ title, quote }) => {
                     fontWeight: "400",
                     lineHeight: "32px",
                     textAlign: "center",
-                    top: "855px",
-                    left: "881px",
-                    overflowWrap:"break-word",
-                    width:"300px",
-
+                    overflowWrap: "break-word",
+                    width: "300px",
                 }}
-
             >
                 &ldquo;{quote}&rdquo;
-
             </p>
 
             {/* View Button */}
@@ -81,7 +78,7 @@ const EventCard: React.FC<EventCardProps> = ({ title, quote }) => {
                     fontSize: "32px",
                     width: "137px",
                     height: "43px",
-                    borderRadius: "64px", // Elliptical shape
+                    borderRadius: "64px",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",

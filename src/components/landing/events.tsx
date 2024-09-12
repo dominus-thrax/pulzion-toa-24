@@ -67,7 +67,7 @@ const Events = () => {
               },
             }}>
               {nonTechEvents.map((event, index) => (
-                <TimelineItem key={index}>
+                <TimelineItem key={index} >
                   <TimelineSeparator>
                     <TimelineDot
                       sx={{
@@ -84,7 +84,7 @@ const Events = () => {
                     />
                     {index < nonTechEvents.length - 1 && <TimelineConnector />}
                   </TimelineSeparator>
-                  <TimelineContent sx={{ width: '300px', height: '100px' }}>
+                  <TimelineContent sx={{ width: '300px', height: '100px' , mt : 2 }}>
                     <Link href={event.path}>
                       <span className="text-white hover:no-underline hover:text-[#94fbcf] text-xs md:text-lg">{event.name}</span>
                     </Link>
@@ -123,7 +123,7 @@ const Events = () => {
                     />
                     {index < events.length - 1 && <TimelineConnector />}
                   </TimelineSeparator>
-                  <TimelineContent sx={{ width: '300px', height: '100px' }}>
+                  <TimelineContent sx={{ width: '300px', height: '100px' , mt : 2  }}>
                     <Link href={event.path}>
                       <span className="text-white hover:no-underline hover:text-[#94fbcf] text-xs md:text-lg">{event.name}</span>
                     </Link>

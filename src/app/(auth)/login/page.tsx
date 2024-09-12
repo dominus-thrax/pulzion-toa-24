@@ -6,9 +6,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 // images
-import phone from "../../../public/assets/auth/phone.png"
-import profile from "../../../public/assets/auth/profile.png"
-import lock from "../../../public/assets/auth/lock.png"
+import phone from "../../../../public/assets/auth/phone.png"
+import profile from "../../../../public/assets/auth/profile.png"
+import lock from "../../../../public/assets/auth/lock.png"
 
 const LoginPage: NextPage = () => {
   const [email, setEmail] = useState<string>('');

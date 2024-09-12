@@ -1,7 +1,7 @@
 "use client";
 import { useParams } from "next/navigation";
 import React from "react";
-import EventDetailsCard from "../../../components/events/event-details-card";
+import EventDetailsCard from "@/components/events/event-details-card";
 
 const EventDetailsPage = () => {
   const params = useParams();

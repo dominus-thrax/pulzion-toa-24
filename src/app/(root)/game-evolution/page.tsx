@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import GameCard from "@/components/GameEvo/Gamecard"; // Import the generalized game component
-import { games } from "../../data/data";
+import { games } from "@/data/data";
 import Particles from "@/components/magicui/particles";
 
 import logo from "../../../public/assets/Game-Evolution/GameEvolution.png"
@@ -32,7 +32,7 @@ const GameEvolution = () => {
       </div>
       {/* Game Cards Section */}
       <div className="space-y-10 p-10 bg-black">
-        {games.map((game, index) => (
+        {games.map((game: any, index: number) => (
           <GameCard
             key={index}
             year={game.year}

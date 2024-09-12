@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Particles from "../magicui/particles";
 import localFont from "next/font/local";
-// @import url('https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap');
 
 import left from "../../../public/assets/landing/about-us/left.png";
 import right from "../../../public/assets/landing/about-us/right.png";

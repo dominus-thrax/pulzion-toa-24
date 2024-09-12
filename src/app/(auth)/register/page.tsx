@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 // images
-import phone_icon from "../../../public/assets/auth/phone.png";
+import phone_icon from "../../../../public/assets/auth/phone.png";
 
 const RegisterForm = () => {
   const [firstName, setFirstName] = useState("");

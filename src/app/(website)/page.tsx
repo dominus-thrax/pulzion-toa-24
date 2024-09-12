@@ -8,7 +8,7 @@ import localFont from "next/font/local";
 import Events from "@/components/landing/events";
 
 const sixtyfour = localFont({
-  src: "../../public/font/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf",
+  src: "../../../public/font/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf",
 });
 
 export default function Home() {

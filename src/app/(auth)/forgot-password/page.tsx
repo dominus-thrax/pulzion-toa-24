@@ -4,7 +4,7 @@ import { NextPage } from "next";
 import SendOTP from "@/components/forgot-reset/SendOTP";
 import EnterOTPComponent from "@/components/forgot-reset/EnterOTP";
 import Image from "next/image";
-import phone from "../../../public/assets/forgot-reset/image 16.png";
+import phone from "../../../../public/assets/forgot-reset/image 16.png";
 
 const ForgotPassword: NextPage = () => {
   const [otp, setOtp] = useState<string>("");

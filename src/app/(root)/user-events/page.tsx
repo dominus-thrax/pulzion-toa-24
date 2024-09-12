@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Card from "@/components/user-events/Card";
-import { ThreeDots } from "react-loader-spinner";
+// import { ThreeDots } from "react-loader-spinner";
 import api from "@/api/api";
 
 export type Item = {
@@ -38,14 +38,15 @@ const Page: React.FC = () => {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <ThreeDots
+        {/* <ThreeDots
           visible={true}
           height="80"
           width="80"
           color="#4fa94d"
           radius="9"
           ariaLabel="three-dots-loading"
-        />
+        /> */}
+        Loading...
       </div>
     );
   }

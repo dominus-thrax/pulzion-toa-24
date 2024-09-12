@@ -17,20 +17,20 @@ const EnterOTPComponent = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('/api/verify-otp', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email: router.query.email, otp }), // Assuming email is passed as query param
-      });
+      // const response = await fetch('/api/verify-otp', {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify({ email: router.query.email, otp }), // Assuming email is passed as query param
+      // });
 
-      if (!response.ok) {
-        throw new Error('Invalid OTP');
-      }
+      // if (!response.ok) {
+      //   throw new Error('Invalid OTP');
+      // }
 
-      const result = await response.json();
-      console.log(result.message); // OTP verified successfully message
+      // const result = await response.json();
+      // console.log(result.message); // OTP verified successfully message
 
       // Redirect to the password reset page or any other appropriate page
       router.push('/reset-password'); // Replace with actual path
@@ -43,21 +43,6 @@ const EnterOTPComponent = () => {
   };
 
   return (
-    // <div className='flex flex-col gap-4 items-center'>
-    //   <label className="block mb-2 text-sm font-medium text-white dark:text-white">Enter OTP</label>
-    //   <input 
-    //     type="text" 
-    //     value={otp}
-    //     onChange={(e) => setOtp(e.target.value)}
-    //     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-    //     placeholder="Enter OTP"
-    //   />
-    //   <Button type="submit" onClick={handleSubmitOTP} variant="default" size="default">
-    //     Verify OTP
-    //   </Button>
-    // </div>
-
-
     <div>
       <div className=' flex my-[20px] flex-col gap-[15px] justify-center items-center'>
 

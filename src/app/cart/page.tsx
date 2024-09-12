@@ -8,7 +8,7 @@ interface CartItem {
   id: number;
   name: string;
   price: number;
-  logo: string; // Assuming logo is the image URL
+  logo: string;
 }
 
 export default function CartPage() {

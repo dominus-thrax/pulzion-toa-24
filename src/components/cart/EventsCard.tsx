@@ -39,8 +39,6 @@ const Card: React.FC<CardProps> = ({
         onDelete(id);
       } catch (error) {
         console.error("Error deleting item:", error);
-        // Example of using a toast notification
-        // toast.error("Failed to delete item. Please try again.");
       }
     }
   };

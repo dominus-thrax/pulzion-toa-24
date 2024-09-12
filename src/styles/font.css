@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'PulzionFont';
+    src: url('/font/Diary of an 8-bit mage-02c5.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PulzionFont1';
+    src: url('/font/Diary of an 8-bit mage-02c5.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Diary of an 8-bit mage-02c5';
+    src: url('/font/Diary\ of\ an\ 8-bit\ mage-02c5.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+  /* @font-face {
+    font-family: 'customfont';
+    src: url('misc/Diary of an 8-bit mage-02c5.woff') format('woff2'),
+         url('DiaryOfAn8BitMage-lYDD.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  } */
+  
+  @font-face {
+    font-family: 'Wallpoet';
+    src: url('/font/Wallpoet-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .font-wallpoet {
+    font-family: 'Wallpoet', sans-serif;
+  }
+  .font-diary{
+    font-family: 'Diary of an 8-bit mage-02c5', sans-sarif;
+  }

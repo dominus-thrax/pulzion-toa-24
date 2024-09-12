@@ -1,3 +1,4 @@
+import { transform } from "next/dist/build/swc"
 import type { Config } from "tailwindcss"
 
 
@@ -68,10 +69,20 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        spin: {
+          from: { transform: "rotate(0deg)" },
+          to: { transform: "rotate(360deg)" },
+        },
+        "reverse-spin":{
+          from:{transform: "rotate(360deg)"},
+          to:{transform: "rotate(0deg)"},
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "reverse-spin": "reverse-spin 4s linear infinite",
+        "spin-slow": "spin 7s linear infinite",
       },
       backgroundImage: {
         'card-bg': "url('/images/cardbg.png')", // Ensure this path is correct relative to the public directory

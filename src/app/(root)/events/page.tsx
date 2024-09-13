@@ -2,11 +2,12 @@ import React from "react";
 import localFont from "next/font/local";
 import EventCard from "@/components/events/event-card";
 import EventBanner from "@/components/events/event-banner";
+import Particles from "@/components/magicui/particles";
 //import Ellipse from '@/components/ui/Ellipse';
 
 const sixtyfour = localFont({
-    src: "../../../../public/fonts/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf",
-  });
+  src: "../../../../public/fonts/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf",
+});
 
 const EventsPage: React.FC = () => {
   return (

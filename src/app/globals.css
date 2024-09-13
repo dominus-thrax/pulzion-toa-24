@@ -67,3 +67,74 @@
     @apply bg-background text-foreground;
   }
 }
+
+* {
+  @apply border-border;
+}
+
+body {
+  @apply bg-[#000] text-foreground;
+  /* margin: 0;
+  padding: 0;
+  background: url("/assets/events/homebg1.png") no-repeat center center fixed;
+  background-size: cover;
+  font-family: "WallpoetFont", sans-serif;
+  color: #fff; */
+}
+
+@font-face {
+  font-family: "VT323-Regular";
+  src: url("/assets/font/VT323-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@layer components {
+  .input {
+    @apply block w-full px-4 py-2 mt-1 font-vt323 text-xl  text-white placeholder-white bg-transparent border-b-2 border-white outline-none;
+  }
+}
+
+select {
+  background-color: inherit;
+}
+
+select option {
+  background-color: black;
+  color: white;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 50%;
+}
+
+@font-face {
+  font-family: "WallpoetFont";
+  src: url("/fonts/Wallpoet-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "vt323";
+  src: url("/fonts/VT323-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "diary";
+  src: url("/fonts/Diary.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}

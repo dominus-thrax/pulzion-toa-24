@@ -22,10 +22,6 @@ const LoginPage: NextPage = () => {
   return (
     <div
       className="flex items-center justify-center min-h-screen bg-black bg-cover bg-center"
-      style={{
-        backgroundImage:
-          "url('/assets/auth/vector-bg.png')",
-      }}
     >
       <div className="p-8 rounded-3xl shadow-lg bg-opacity-65 bg-logincardcolor border-loginbordercolor border-4 flex flex-col items-center">
         <div className="flex text-3xl md:text-5xl items-center">

@@ -4,10 +4,13 @@ import Image from "next/image";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import logo from "../../../public/assets/landing/hero/logo.png";
 import tagline from "../../../public/assets/landing/hero/tagline.png";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false);
   const logoRef = useRef<HTMLImageElement>(null);
+
+  const pathName = usePathname();
 
   useEffect(() => {
     let ticking = false;

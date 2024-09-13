@@ -1,14 +1,13 @@
+import { transform } from "next/dist/build/swc"
 import type { Config } from "tailwindcss"
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}', // Any pages folder
-    './components/**/*.{ts,tsx}', // Any components folder
-    './app/**/*.{ts,tsx}', // Inside app folder
-    './src/**/*.{ts,tsx}', // Any ts/tsx files inside src folder
-    './src/app/**/(root)/**/*.{ts,tsx}', // Any files in the (root) folder, inside app
-    './src/app/**/*.tsx', // Catch-all for any tsx files inside app structure
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
 	],
   prefix: "",
   theme: {
@@ -69,10 +68,25 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        spin: {
+          from: { transform: "rotate(0deg)" },
+          to: { transform: "rotate(360deg)" },
+        },
+        "reverse-spin":{
+          from:{transform: "rotate(360deg)"},
+          to:{transform: "rotate(0deg)"},
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "reverse-spin": "reverse-spin 4s linear infinite",
+        "spin-slow": "spin 7s linear infinite",
+      },
+      fontFamily: {
+        WallpoetFont: ['WallpoetFont', 'sans-serif'], // Add the custom font here
+        vt323: ['VT323', 'monospace'],
+        diary: ['diary', 'sans-serif']
       },
     },
   },

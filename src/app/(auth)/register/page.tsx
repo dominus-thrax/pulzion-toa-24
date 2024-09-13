@@ -7,8 +7,15 @@ import Image from "next/image";
 
 // images
 import phone_icon from "../../../../public/assets/auth/phone.png";
+import { toast } from "sonner";
+import axios from "axios";
+import { baseURL } from "@/api/api";
+import { useRouter } from "next/navigation";
+import { useAuth } from "@/context/Auth";
 
 const RegisterForm = () => {
+  const router = useRouter();
+  const { setUserAuthInfo } = useAuth();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("");
@@ -21,19 +28,22 @@ const RegisterForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [loading, setLoading] = useState<boolean>(false);
 
-  const handleSelectChange = (e: any) => {
-    const college = e.target.value;
-    if (college === "other") {
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedCollege = e.target.value;
+    if (selectedCollege === "other") {
       setCollegeName("");
     } else {
       setCollegeName("Pune Institute Of Computer Technology");
     }
-    setCollege(college);
+    setCollege(selectedCollege);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const loadingToast = toast.loading("Registering...");
+    setLoading(true);
 
     if (
       !firstName ||
@@ -47,26 +57,43 @@ const RegisterForm = () => {
       !confirmPassword ||
       !year
     ) {
-      console.log("Error");
+      toast.dismiss(loadingToast);
+      toast.error("All fields required");
+      setLoading(false);
       return;
     }
 
     if (confirmPassword !== password) {
-      console.log("Error");
+      console.log("Error: Passwords do not match.");
       return;
     }
 
-    // Form submission logic here
-    console.log({
-      first_name: firstName,
-      last_name: lastName,
-      email,
-      mobile_number: phone,
-      country,
-      college,
-      year,
-      password,
-    });
+    try {
+      const result = await axios.post(`${baseURL}/user/signup`, {
+        first_name: firstName,
+        last_name: lastName,
+        email: email,
+        password: password,
+        mobile_number: phone,
+        country: country,
+        college: college,
+        year: year,
+      });
+
+      if (result.status !== 200) {
+        toast.error("Error in registration");
+        setLoading(false);
+        return;
+      }
+      setUserAuthInfo(result.data);
+      toast.dismiss(loadingToast);
+      toast.success("Registration successfull!");
+      router.push("/");
+    } catch (error: any) {
+      toast.dismiss(loadingToast);
+      console.error("Signup error:", error.message);
+      toast.error("Error signing up");
+    }
   };
 
   return (
@@ -76,7 +103,7 @@ const RegisterForm = () => {
         backgroundImage: "url('/assets/auth/vector-bg.png')",
       }}
     >
-      <div className="p-5 md:p-11 rounded-3xl shadow-lg bg-opacity-65 bg-gradient-to-b from-registercardcolor1 to-registercardcolor2 border-loginbordercolor border-4 flex flex-col items-center pt-5">
+      <div className="p-5 md:p-11 z-20 rounded-3xl shadow-lg bg-opacity-65 bg-gradient-to-b from-registercardcolor1 to-registercardcolor2 border-loginbordercolor border-4 flex flex-col items-center pt-5">
         <h1 className="text-center text-4xl text-green-200 font-vt323 mb-6">
           <span className="flex text-3xl md:text-5xl text-white items-center justify-center">
             <Image
@@ -97,6 +124,7 @@ const RegisterForm = () => {
               className="w-1/2 input"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
+              required
             />
             <input
               type="text"
@@ -104,20 +132,23 @@ const RegisterForm = () => {
               className="w-1/2 input"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
+              required
             />
           </div>
           <div className="flex gap-16">
             <input
-              type="text"
+              type="tel"
               placeholder="Enter Phone No."
               className="w-1/2 input"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
+              required
             />
             <select
               className="w-1/2 input"
               value={country}
               onChange={(e) => setCountry(e.target.value)}
+              required
             >
               <option value="" disabled>
                 Select Country
@@ -132,6 +163,7 @@ const RegisterForm = () => {
             className="input"
             value={college}
             onChange={handleSelectChange}
+            required
           >
             <option value="" disabled>
               Select College
@@ -141,7 +173,7 @@ const RegisterForm = () => {
           </select>
 
           <input
-            type="college"
+            type="text"
             placeholder="College Name"
             className="input"
             value={collegeName}
@@ -150,12 +182,14 @@ const RegisterForm = () => {
                 setCollegeName(e.target.value);
               }
             }}
+            required={college === "other"}
           />
 
           <select
             className="input"
             value={year}
             onChange={(e) => setYear(e.target.value)}
+            required
           >
             <option value="" disabled>
               Select Year
@@ -171,6 +205,7 @@ const RegisterForm = () => {
             className="input"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required
           />
           <input
             type="password"
@@ -178,6 +213,7 @@ const RegisterForm = () => {
             className="input"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            required
           />
           <input
             type="password"
@@ -185,11 +221,11 @@ const RegisterForm = () => {
             className="input"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
+            required
           />
           <div className="w-full flex justify-center">
             <Button
-              variant={"default"}
-              className=" hover:bg-opacity-30 mt-5 px-10 py-8 w-full text-lg font-bold text-white bg-submitbtncolor rounded-full"
+              className="hover:bg-opacity-30 mt-5 px-10 py-8 w-full text-lg font-bold text-white bg-submitbtncolor rounded-full"
               type="submit"
             >
               Sign Up
@@ -199,7 +235,7 @@ const RegisterForm = () => {
         <p className="font-vt323 text-xl text-center text-white mt-1">
           Already have an account?{" "}
           <Link
-            href="login"
+            href="/login"
             className="font-vt323 text-loginsignuplinkcolor hover:underline"
           >
             LOGIN

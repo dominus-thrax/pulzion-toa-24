@@ -1,6 +1,7 @@
 import axios from "axios";
 
 export const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
+
 const api = axios.create({
   baseURL,
 });
@@ -8,6 +9,7 @@ const api = axios.create({
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("token");
+
     if (token) {
       config.headers["Authorization"] = `Bearer ${token}`;
     }

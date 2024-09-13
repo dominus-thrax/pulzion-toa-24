@@ -53,7 +53,7 @@ export default function CartPage() {
 
   return (
     <div className="mx-8">
-      <div className="font-vt323 text-5xl md:text-8xl mb-6 text-white text-center">
+      <div className="font-vt323 text-4xl md:text-8xl  mt-10 mb-6 text-white text-center">
         My Cart
       </div>
       {isCartEmpty && (
@@ -66,7 +66,7 @@ export default function CartPage() {
       {!isCartEmpty && (
         <div className="md:flex gap-8">
           <div className="flex-grow my-4 md:my-0">
-            <div className="border-2 rounded-2xl w-full flex flex-col max-h-60 md:max-h-none overflow-y-scroll md:overflow-y-hidden custom-scrollbar">
+            <div className="border-2 rounded-2xl w-full max-h-56 md:max-h-none overflow-y-auto custom-scrollbar">
               <div className="flex-grow p-4">
                 {!isCartEmpty &&
                   cartItems.length > 0 &&

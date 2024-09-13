@@ -7,6 +7,7 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import logo from "../../../public/assets/landing/hero/logo.png";
 import tagline from "../../../public/assets/landing/hero/tagline.png";
 import { usePathname } from "next/navigation";
+import { useAuth } from "@/context/Auth";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -61,7 +62,7 @@ const Navbar = () => {
     document.body.classList.toggle("nav-open-body", !navOpen);
   };
 
-  const [isLogIn,setLoginIn] = useState(true);
+  const { authState:user } = useAuth();
 
   const PageLinks = [
     { label: "HOME", path: "/" },
@@ -95,7 +96,7 @@ const Navbar = () => {
   ))}
 </div>
         <div className="hidden md:flex mr-10">
-          { isLogIn ? (
+          { user.token ? (
             <DropdownMenu>
             <DropdownMenuTrigger>
             <div>
@@ -156,13 +157,26 @@ const Navbar = () => {
     >
       {link.label}
     </Link>
-  ))}
-          <button
+  ))}     
+          {user.token ? (
+            <div className="flex flex-col items-center">
+              <Link href="/cart" className={`${sixtyfour.className} text-white hover:text-green-900 px-3 py-3 text-sm transition-all duration-300 ease-in-out transform hover:-translate-y-0.5`}>
+                My Cart
+              </Link>
+              <Link href="/orders" className={`${sixtyfour.className} text-white hover:text-green-900 px-3 py-3 text-sm transition-all duration-300 ease-in-out transform hover:-translate-y-0.5`}>
+                My Orders
+              </Link>
+            </div>
+            
+          ) : (
+            <button
             className="text-green-700 font-Wallpoet px-5 py-4 rounded-2xl text-lg transition-all duration-300 ease-in-out hover:bg-green-700 hover:text-white mt-10 transform hover:scale-110"
             onClick={toggleNav}
           >
             LOGIN
           </button>
+          )}
+          
         </div>
       </div>
     </nav>

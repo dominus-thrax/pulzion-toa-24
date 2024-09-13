@@ -3,10 +3,12 @@ import type { Config } from "tailwindcss"
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    './pages/**/*.{ts,tsx}', // Any pages folder
+    './components/**/*.{ts,tsx}', // Any components folder
+    './app/**/*.{ts,tsx}', // Inside app folder
+    './src/**/*.{ts,tsx}', // Any ts/tsx files inside src folder
+    './src/app/**/(root)/**/*.{ts,tsx}', // Any files in the (root) folder, inside app
+    './src/app/**/*.tsx', // Catch-all for any tsx files inside app structure
 	],
   prefix: "",
   theme: {

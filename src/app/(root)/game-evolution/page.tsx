@@ -5,7 +5,7 @@ import GameCard from "@/components/GameEvo/Gamecard"; // Import the generalized 
 import { games } from "@/data/data";
 import Particles from "@/components/magicui/particles";
 
-import logo from "../../../public/assets/Game-Evolution/GameEvolution.png"
+// import logo from "../../../public/assets/Game-Evolution/GameEvolution.png"
 
 const GameEvolution = () => {
   return (
@@ -22,7 +22,7 @@ const GameEvolution = () => {
 
       <div className="flex justify-center items-center h-96 bg-black text-white">
         <Image
-          src={logo}
+          src='/assets/Game-Evolution/GameEvolution.png'
           alt="game evolution"
           width={850}
           height={50}

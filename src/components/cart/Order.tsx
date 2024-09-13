@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 interface CartItem {
@@ -38,9 +39,11 @@ function Order({ cartItems = [] }: OrderProps) {
           Checkout
         </button>
         <br />
-        <button className="bg-[#00910EC2] px-5 font-vt323 p-2 rounded-xl min-w-full my-2 md:my-4">
-          Continue Shopping
-        </button>
+        <Link href={"/events"}>
+          <button className="bg-[#00910EC2] px-5 font-vt323 p-2 rounded-xl min-w-full my-2 md:my-4">
+            Explore Events
+          </button>
+        </Link>
       </div>
     </div>
   );

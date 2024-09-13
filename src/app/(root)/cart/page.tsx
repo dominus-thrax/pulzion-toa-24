@@ -52,7 +52,7 @@ export default function CartPage() {
   //   return <div className="text-red-500 text-center mt-8">{error}</div>;
 
   return (
-    <div className="mx-8">
+    <div className="mx-8 mb-10 md:mb-3">
       <div className="font-vt323 text-4xl md:text-8xl  mt-10 mb-6 text-white text-center">
         My Cart
       </div>

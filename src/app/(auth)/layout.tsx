@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "../globals.css";
 import Particles from "@/components/magicui/particles";
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,7 +13,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-      <Particles
+        <Particles
           className="fixed inset-0 z-0 min-h-screen"
           quantity={200}
           size={1}
@@ -20,7 +21,16 @@ export default function RootLayout({
           color="#ffffff"
           refresh
         />
-        {children}</body>
+        <Toaster
+          position="top-right"
+          richColors
+          closeButton
+          duration={2000}
+          pauseWhenPageIsHidden
+          visibleToasts={1}
+        />
+        {children}
+      </body>
     </html>
   );
 }

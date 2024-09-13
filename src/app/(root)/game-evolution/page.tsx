@@ -3,22 +3,12 @@ import React from "react";
 import Image from "next/image";
 import GameCard from "@/components/GameEvo/Gamecard"; // Import the generalized game component
 import { games } from "@/data/data";
-import Particles from "@/components/magicui/particles";
 
-// import logo from "../../../public/assets/Game-Evolution/GameEvolution.png"
 
 const GameEvolution = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <Particles
-        className="fixed inset-0"
-        quantity={300}
-        size={1.0}
-        ease={80}
-        color="#ffffff"
-        refresh
-      />
 
       <div className="flex justify-center items-center h-96 bg-black text-white">
         <Image

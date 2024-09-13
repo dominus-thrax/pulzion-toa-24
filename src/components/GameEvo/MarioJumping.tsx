@@ -16,7 +16,7 @@ const MarioJumping = () => {
       />
       <div className={styles.mario}>
         <Image
-          src="/Game-Evolution/mario-jumping.png" // Adjust the path to your Mario image
+          src="/assets/Game-Evolution/mario-jumping.png" // Adjust the path to your Mario image
           alt="Mario"
           width={50}
           height={50}
@@ -26,7 +26,7 @@ const MarioJumping = () => {
       {/* Blocks */}
       <div className={styles.blocks}>
         <Image
-          src="/Game-Evolution/mario-block.png" // Adjust the path to your blocks image
+          src="/assets/Game-Evolution/mario-block.png" // Adjust the path to your blocks image
           alt="Blocks"
           width={50}
           height={50}
@@ -34,7 +34,7 @@ const MarioJumping = () => {
       </div>
       <div className={styles.blocks2}>
         <Image
-          src="/Game-Evolution/mario-block.png" // Adjust the path to your blocks image
+          src="/assets/Game-Evolution/mario-block.png" // Adjust the path to your blocks image
           alt="Blocks"
           width={50}
           height={50}
@@ -42,7 +42,7 @@ const MarioJumping = () => {
       </div>
       <div className={styles.blocks3}>
         <Image
-          src="/Game-Evolution/mario-block.png" // Adjust the path to your blocks image
+          src="/assets/Game-Evolution/mario-block.png" // Adjust the path to your blocks image
           alt="Blocks"
           width={50}
           height={50}
@@ -50,7 +50,7 @@ const MarioJumping = () => {
       </div>
       <div className={styles.blocks4}>
         <Image
-          src="/Game-Evolution/mario-block.png" // Adjust the path to your blocks image
+          src="/assets/Game-Evolution/mario-block.png" // Adjust the path to your blocks image
           alt="Blocks"
           width={50}
           height={50}
@@ -58,7 +58,7 @@ const MarioJumping = () => {
       </div>
       <div className={styles.blocks5}>
         <Image
-          src="/Game-Evolution/mario-block.png" // Adjust the path to your blocks image
+          src="/assets/Game-Evolution/mario-block.png" // Adjust the path to your blocks image
           alt="Blocks"
           width={50}
           height={50}

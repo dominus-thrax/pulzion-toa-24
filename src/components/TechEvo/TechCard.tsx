@@ -1,18 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import Particles from "../magicui/particles";
 
 export default function TechCard() {
   return (
     <div className="w-full bg-black flex flex-col overflow-hidden text-[#94fbcf]">
-      <Particles
-        className="fixed inset-0"
-        quantity={500}
-        size={1.0}
-        ease={80}
-        color="#ffffff"
-        refresh
-      />
       {/* Logo */}
       <div className="flex justify-center mt-[50px]">
         <Image

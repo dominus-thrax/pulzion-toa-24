@@ -7,6 +7,14 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import logo from "../../../public/assets/landing/hero/logo.png";
 import tagline from "../../../public/assets/landing/hero/tagline.png";
 import { usePathname } from "next/navigation";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 const sixtyfour = localFont({
   src: "../../../public/font/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf",
@@ -53,22 +61,15 @@ const Navbar = () => {
     document.body.classList.toggle("nav-open-body", !navOpen);
   };
 
-  // const scrollToSection = (sectionId: string) => {
-  //   const section = document.getElementById(sectionId);
-  //   if (section) {
-  //     section.scrollIntoView({ behavior: "smooth" });
-  //   }
-  // };
+  const [isLogIn,setLoginIn] = useState(true);
 
-  // Define links for the main page and other pages
   const PageLinks = [
     { label: "HOME", path: "/" },
     { label: "EVENTS", path: "/events" },
-    {label:"MY CART", path: "/cart"},
-    {label: "MY ORDERS",path:"/orders"},
     { label: "GAME EVO", path: "/game-evolution" },
     { label: "TECH EVO", path: "/tech-evolution" },
-    {label:"TEAM",path:"/team"}
+    {label:"DEVELOPERS",path:"/developers"},
+    {label:"TEAM",path:"/team"},
   ];
 
   return (
@@ -94,9 +95,37 @@ const Navbar = () => {
   ))}
 </div>
         <div className="hidden md:flex mr-10">
-          <Link href={'/login'}className={`${sixtyfour.className} text-green-700 px-5 py-4 rounded-2xl text-sm transition-all duration-300 ease-in-out hover:text-white hover:border-white transform hover:-translate-y-0.5`}>
+          { isLogIn ? (
+            <DropdownMenu>
+            <DropdownMenuTrigger>
+            <div>
+              <Image 
+              src="/assets/teams/images.jpeg"
+              alt="profile"
+              width={70}
+              height={70}
+              className="rounded-full"
+              />
+            </div>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem>
+              <Link href="/cart" className={`${sixtyfour.className} hover:text-green-900 px-3 py-3 text-sm transition-all duration-300 ease-in-out transform hover:-translate-y-0.5`}>
+                  My Cart
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+              <Link href="/orders" className={`${sixtyfour.className} hover:text-green-900 px-3 py-3 text-sm transition-all duration-300 ease-in-out transform hover:-translate-y-0.5`}>
+                  My Orders
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+            
+          ) : (<Link href={'/login'}className={`${sixtyfour.className} text-green-700 px-5 py-4 rounded-2xl text-sm transition-all duration-300 ease-in-out hover:text-white hover:border-white transform hover:-translate-y-0.5`}>
             LOGIN
-          </Link>
+          </Link>)
+          }
         </div>
         {/* Mobile Menu Toggle */}
         <div className="md:hidden flex items-center p-6">

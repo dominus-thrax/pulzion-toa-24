@@ -73,7 +73,7 @@ const LoginPage: NextPage = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-black bg-cover bg-center">
-      <div className="p-8 rounded-3xl z-20 shadow-lg bg-opacity-65 bg-logincardcolor border-loginbordercolor border-4 flex flex-col items-center">
+      <div className="p-8 rounded-3xl z-20 shadow-lg bg-opacity-65 bg-gradient-to-b from-registercardcolor1 to-registercardcolor2 border-loginbordercolor border-4 flex flex-col items-center">
         <div className="flex text-3xl md:text-5xl items-center">
           <Image
             src={phone}

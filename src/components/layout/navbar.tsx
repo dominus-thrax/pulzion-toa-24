@@ -53,19 +53,19 @@ const Navbar = () => {
     document.body.classList.toggle("nav-open-body", !navOpen);
   };
 
-  const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  // const scrollToSection = (sectionId: string) => {
+  //   const section = document.getElementById(sectionId);
+  //   if (section) {
+  //     section.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // };
 
   // Define links for the main page and other pages
   const PageLinks = [
     { label: "HOME", path: "/" },
     { label: "EVENTS", path: "/events" },
     {label:"MY CART", path: "/cart"},
-    {label: "MY ORDERS",path:"/order"},
+    {label: "MY ORDERS",path:"/orders"},
     { label: "GAME EVO", path: "/game-evolution" },
     { label: "TECH EVO", path: "/tech-evolution" },
     {label:"TEAM",path:"/team"}
@@ -82,7 +82,7 @@ const Navbar = () => {
           <Image src={tagline} alt="tagline" width={150} height={150} />
         </div>
         {/* Desktop Menu */}
-        <div className="hidden md:flex text-white gap-8 items-center z-30">
+        <div className="hidden md:flex text-white gap-8 items-center z-30"> 
   {PageLinks.map((link, index) => (
     <Link
       key={index}
@@ -102,7 +102,7 @@ const Navbar = () => {
         <div className="md:hidden flex items-center p-6">
           <button
             onClick={toggleNav}
-            className="text-white text-3xl z-50 transition-transform duration-300 ease-in-out"
+            className="text-white text-3xl z-50 transition-transform duration-300 ease-in-out" 
           >
             {navOpen ? (
               <AiOutlineClose className="transform rotate-180" />
@@ -116,14 +116,14 @@ const Navbar = () => {
       <div
         className={`${
           navOpen ? "flex" : "hidden"
-        } flex-col md:hidden fixed inset-0 z-40 transition-opacity duration-300 ease-in-out`}
+        } flex-col md:hidden fixed inset-0 z-40 transition-opacity duration-300 ease-in-out`} 
       >
         <div className="bg-black bg-opacity-90 flex flex-col items-center justify-center min-h-screen space-y-3 animate-fade-in-down">
         {PageLinks.map((link, index) => (
     <Link
       key={index}
       href={link.path}
-      className={`${sixtyfour.className} hover:text-green-900 px-3 py-3 text-sm transition-all duration-300 ease-in-out transform hover:-translate-y-0.5`}
+      className={`${sixtyfour.className} text-white hover:text-green-900 px-3 py-3 text-sm transition-all duration-300 ease-in-out transform hover:-translate-y-0.5`}
     >
       {link.label}
     </Link>

@@ -99,11 +99,11 @@ const RegisterForm = () => {
   return (
     <div
       className="flex items-center justify-center min-h-screen bg-black bg-cover bg-center p-10 md:p-0"
-      style={{
-        backgroundImage: "url('/assets/auth/vector-bg.png')",
-      }}
+      // style={{
+      //   backgroundImage: "url('/assets/auth/vector-bg.png')",
+      // }}
     >
-      <div className="p-5 md:p-11 z-20 rounded-3xl shadow-lg bg-opacity-65 bg-gradient-to-b from-registercardcolor1 to-registercardcolor2 border-loginbordercolor border-4 flex flex-col items-center pt-5">
+      <div className="p-5 md:p-11 z-20 rounded-3xl shadow-lg bg-opacity-35 bg-gradient-to-b from-registercardcolor1 to-registercardcolor2 border-loginbordercolor border-4 flex flex-col items-center pt-5">
         <h1 className="text-center text-4xl text-green-200 font-vt323 mb-6">
           <span className="flex text-3xl md:text-5xl text-white items-center justify-center">
             <Image

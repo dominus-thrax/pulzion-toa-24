@@ -21,10 +21,10 @@ const ForgotPassword: NextPage = () => {
   return (
     <div
       className="flex items-center m-y-[150px] justify-center min-h-screen bg-black bg-cover bg-center"
-      style={{
-        backgroundImage:
-          "url('/assets/forgot-reset/vecteezy_retro-sci-fi-futuristic-background-1980s-and-1990s-style-3d_7795861-ai1.png')",
-      }}
+      // style={{
+      //   backgroundImage:
+      //     "url('/assets/forgot-reset/vecteezy_retro-sci-fi-futuristic-background-1980s-and-1990s-style-3d_7795861-ai1.png')",
+      // }}
     >
       <div
         className=" border-[4px] translate-y-[-40px] border-[#1F6E56] rounded-[50px] flex flex-col py-[4rem] space-y-10

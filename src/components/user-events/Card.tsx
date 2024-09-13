@@ -2,7 +2,7 @@ import React from "react";
 import Image from 'next/image';
 import ticket from "../../../public/assets/user-events/l.png"
 
-import { Item } from "@/app/(root)/user-events/page";
+import { Item } from "@/app/(root)/orders/page";
 
 const Card = ({ id, date, name, amount, status }: Item) => {
   //Card design

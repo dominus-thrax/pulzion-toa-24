@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import api from "@/api/api";
 import {
@@ -62,21 +61,21 @@ const Card: React.FC<CardProps> = ({
           </p>
           <AlertDialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
             <AlertDialogTrigger asChild>
-              <button className="text-white text-sm md:text-xl flex gap-2 my-2">
+              <button className="text-white text-sm md:text-lg flex gap-2 my-2">
                 <span className="my-auto">
                   <RiDeleteBin6Fill />
                 </span>
-                Delete
+                Remove
               </button>
             </AlertDialogTrigger>
-            <AlertDialogContent className="bg-[#1F2937] text-white border border-[#E8AF49] rounded-md">
+            <AlertDialogContent className="bg-[#1F2937] text-white border border-[#E8AF49] rounded-md max-w-xs md:max-w-md p-4">
               <AlertDialogHeader className="text-[#E8AF49]">
-                <AlertDialogTitle className="text-2xl font-bold">
+                <AlertDialogTitle className="text-lg md:text-xl font-bold">
                   Confirm Deletion
                 </AlertDialogTitle>
-                <AlertDialogDescription className="text-md">
-                  Are you sure you want to delete this item? This action cannot
-                  be undone.
+                <AlertDialogDescription className="text-sm md:text-md">
+                  Are you sure you want to remove <strong>{title}</strong> from
+                  the cart? This action cannot be undone.
                 </AlertDialogDescription>
               </AlertDialogHeader>
               <AlertDialogFooter>
@@ -95,7 +94,7 @@ const Card: React.FC<CardProps> = ({
                     variant="destructive"
                     className="bg-red-600 text-white hover:bg-red-500"
                   >
-                    Delete
+                    Remove
                   </Button>
                 </AlertDialogAction>
               </AlertDialogFooter>

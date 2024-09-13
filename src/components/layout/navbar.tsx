@@ -1,18 +1,25 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import localFont from "next/font/local";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import logo from "../../../public/assets/landing/hero/logo.png";
 import tagline from "../../../public/assets/landing/hero/tagline.png";
 import { usePathname } from "next/navigation";
 
+const sixtyfour = localFont({
+  src: "../../../public/font/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf",
+});
+
 const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false);
   const logoRef = useRef<HTMLImageElement>(null);
-
   const pathName = usePathname();
+  const isMainPage = pathName === "/";
 
   useEffect(() => {
+    if(!isMainPage) return;
     let ticking = false;
 
     const handleScroll = () => {
@@ -53,6 +60,17 @@ const Navbar = () => {
     }
   };
 
+  // Define links for the main page and other pages
+  const PageLinks = [
+    { label: "HOME", path: "/" },
+    { label: "EVENTS", path: "/events" },
+    {label:"MY CART", path: "/cart"},
+    {label: "MY ORDERS",path:"/order"},
+    { label: "GAME EVO", path: "/game-evolution" },
+    { label: "TECH EVO", path: "/tech-evolution" },
+    {label:"TEAM",path:"/team"}
+  ];
+
   return (
     <nav className="pt-6 fixed top-0 left-0 w-full px-6 z-50 backdrop-blur-md transition-all duration-300 ease-in-out">
       <div className="flex justify-between items-center">
@@ -65,29 +83,20 @@ const Navbar = () => {
         </div>
         {/* Desktop Menu */}
         <div className="hidden md:flex text-white gap-8 items-center z-30">
-          {["HOME", "ABOUT", "GLIMPSES", "SPONSORS", "EVENTS"].map(
-            (item, index) => (
-              <button
-                key={index}
-                className="font-Wallpoet hover:text-green-900 px-3 py-3 rounded-2xl text-sm transition-all duration-300 ease-in-out transform hover:-translate-y-0.5"
-                onClick={() => scrollToSection(item.toLowerCase())}
-              >
-                {item}
-              </button>
-            )
-          )}
-          {/* For 'TEAM', use anchor link to navigate */}
-          <a
-            href="/team"
-            className="font-Wallpoet hover:text-green-900 px-3 py-3 rounded-2xl text-sm transition-all duration-300 ease-in-out transform hover:-translate-y-0.5"
-          >
-            TEAM
-          </a>
-        </div>
+  {PageLinks.map((link, index) => (
+    <Link
+      key={index}
+      href={link.path}
+      className={`${sixtyfour.className} hover:text-green-900 px-3 py-3 text-sm transition-all duration-300 ease-in-out transform hover:-translate-y-0.5`}
+    >
+      {link.label}
+    </Link>
+  ))}
+</div>
         <div className="hidden md:flex mr-10">
-          <button className="text-green-700 font-Wallpoet px-5 py-4 rounded-2xl text-sm transition-all duration-300 ease-in-out hover:text-white hover:border-white transform hover:-translate-y-0.5">
+          <Link href={'/login'}className={`${sixtyfour.className} text-green-700 px-5 py-4 rounded-2xl text-sm transition-all duration-300 ease-in-out hover:text-white hover:border-white transform hover:-translate-y-0.5`}>
             LOGIN
-          </button>
+          </Link>
         </div>
         {/* Mobile Menu Toggle */}
         <div className="md:hidden flex items-center p-6">
@@ -110,28 +119,15 @@ const Navbar = () => {
         } flex-col md:hidden fixed inset-0 z-40 transition-opacity duration-300 ease-in-out`}
       >
         <div className="bg-black bg-opacity-90 flex flex-col items-center justify-center min-h-screen space-y-3 animate-fade-in-down">
-          {["HOME", "ABOUT", "GLIMPSES", "SPONSORS", "EVENTS"].map(
-            (item, index) => (
-              <button
-                key={index}
-                className="text-sm font-Wallpoet text-white py-4 transform transition-transform duration-300 ease-in-out hover:scale-110"
-                onClick={() => {
-                  scrollToSection(item.toLowerCase());
-                  toggleNav();
-                }}
-              >
-                {item}
-              </button>
-            )
-          )}
-          {/* For 'TEAM', use anchor link */}
-          <a
-            href="/team"
-            className="text-lg font-Wallpoet text-white py-4 transform transition-transform duration-300 ease-in-out hover:scale-110"
-            onClick={toggleNav}
-          >
-            TEAM
-          </a>
+        {PageLinks.map((link, index) => (
+    <Link
+      key={index}
+      href={link.path}
+      className={`${sixtyfour.className} hover:text-green-900 px-3 py-3 text-sm transition-all duration-300 ease-in-out transform hover:-translate-y-0.5`}
+    >
+      {link.label}
+    </Link>
+  ))}
           <button
             className="text-green-700 font-Wallpoet px-5 py-4 rounded-2xl text-lg transition-all duration-300 ease-in-out hover:bg-green-700 hover:text-white mt-10 transform hover:scale-110"
             onClick={toggleNav}

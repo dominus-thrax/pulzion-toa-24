@@ -1,11 +1,10 @@
-import { Linkedin } from "lucide-react";
-
 export const teamMembers = [
   {
     name: "Devashish Bhirdi",
     position: ["EMS Frontend Lead"],
     image: "/assets/teams/Devashish_Bhirdi (3).jpg",
-    linkedin: "https://www.linkedin.com/in/devashish-bhirdi-53835529a/?trk=opento_nprofile_details",
+    linkedin:
+      "https://www.linkedin.com/in/devashish-bhirdi-53835529a/?trk=opento_nprofile_details",
   },
   {
     name: "Shreekar Gade",
@@ -32,16 +31,16 @@ export const teamMembers = [
     linkedin: "",
   },
   {
-    name: "Anjali Rambhad",
-    position: ["Tech Member"],
-    image: "/assets/teams/images.jpeg",
-    linkedin: "http://www.linkedin.com/in/anjali-rambhad-35504021b",
-  },
-  {
     name: "Neeraj Magdum",
     position: ["Tech Member"],
     image: "/assets/teams/Neeraj_Magdum.jpg",
     linkedin: "https://www.linkedin.com/in/neerajmagdum",
+  },
+  {
+    name: "Anjali Rambhad",
+    position: ["Tech Member"],
+    image: "/assets/teams/images.jpeg",
+    linkedin: "http://www.linkedin.com/in/anjali-rambhad-35504021b",
   },
   {
     name: "Pratik Patil",
@@ -50,10 +49,50 @@ export const teamMembers = [
     linkedin: "",
   },
   {
+    name: "Anushree Gattani",
+    position: ["Tech Member"],
+    image: "/assets/teams/Anushree_Gattani.jpg",
+    linkedin: "https://www.linkedin.com/in/anushree-gattani",
+  },
+  {
+    name: "Aditya Kalmegh",
+    position: ["Tech Member"],
+    image: "/assets/teams/Aditya_Kalmegh.jpg",
+    linkedin:
+      "https://www.linkedin.com/in/aditya-kalmegh-87634b2a1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+  },
+  {
+    name: "Sanket Shinde",
+    position: ["Tech Member"],
+    image: "/assets/teams/Sanket_Shinde.jpg",
+    linkedin:
+      "https://www.linkedin.com/in/sanket-shinde-067650288?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+  },
+  {
+    name: "Aditya Balghat",
+    position: ["Tech Member"],
+    image: "/assets/teams/Aditya_Balghat.jpg",
+    linkedin: "https://www.linkedin.com/in/adityabhalgat",
+  },
+  {
+    name: "Deepak Patil",
+    position: ["Tech Member"],
+    image: "/assets/teams/Deepak_Patil.jpg",
+    linkedin:
+      "https://www.linkedin.com/in/deepak-patil-408256288?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+  },
+  {
+    name: "Sarvesh Hase",
+    position: ["Tech Member"],
+    image: "/assets/teams/Sarvesh_Hase.jpg",
+    linkedin: "https://www.linkedin.com/in/sarveshhase/",
+  },
+  {
     name: "Sakshi Sangale",
     position: ["Tech Member"],
     image: "/assets/teams/our team.jpeg",
-    linkedin: "https://www.linkedin.com/in/sakshi-sangale-?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    linkedin:
+      "https://www.linkedin.com/in/sakshi-sangale-?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
   {
     name: "Aahana Padole",
@@ -65,12 +104,6 @@ export const teamMembers = [
     name: "Dev Taneja",
     position: ["Tech Member"],
     image: "/assets/teams/Dev_Taneja.jpg",
-    linkedin: "",
-  },
-  {
-    name: "Aditya Balghat",
-    position: ["Tech Member"],
-    image: "/assets/teams/images.jpeg",
     linkedin: "",
   },
   {
@@ -108,19 +141,19 @@ export const Leads = [
   },
   {
     name: "Aditya Uttarwar",
-    position: ["Operational Lead","Paper Presentation Lead"],
+    position: ["Operational Lead", "Paper Presentation Lead"],
     image: "/assets/teams/Aditya_Uttarwar.jpg",
     linkedin: "https://www.linkedin.com/in/aditya-uttarwar-ab7795245",
   },
   {
     name: "Prabhu Anpat",
-    position: ["Operational Lead","MCQ Frontend Lead","Web & App Lead"],
+    position: ["Operational Lead", "MCQ Frontend Lead", "Web & App Lead"],
     image: "/assets/teams/Prabhu_Anpat.jpg",
     linkedin: "https://www.linkedin.com/in/prabhu-anpat-40aa46263/",
   },
   {
     name: "Madhura Pawar",
-    position: ["Operational Lead","Dexterous Lead"],
+    position: ["Operational Lead", "Dexterous Lead"],
     image: "/assets/teams/Madhura_Pawar.jpg",
     linkedin: "https://www.linkedin.com/in/madhura-pawar-98b728291/",
   },
@@ -131,26 +164,27 @@ export const Leads = [
     linkedin: "",
   },
   {
-    name:"Tanish Charthankar",
-    position: ["Schedule Lead","MCQ Backend Lead"],
-    image:"/assets/teams/Tanish_Charthankar.jpg",
-    linkedin: ""
+    name: "Tanish Charthankar",
+    position: ["Schedule Lead", "MCQ Backend Lead"],
+    image: "/assets/teams/Tanish_Charthankar.jpg",
+    linkedin: "",
   },
   {
     name: "Devashish Bhirdi",
-    position: ["Schedule Lead","EMS Frontend Lead","Fandom Lead"],
+    position: ["Schedule Lead", "EMS Frontend Lead", "Fandom Lead"],
     image: "/assets/teams/Devashish_Bhirdi.jpg",
-    linkedin: "https://www.linkedin.com/in/devashish-bhirdi-53835529a/?trk=opento_nprofile_details",
+    linkedin:
+      "https://www.linkedin.com/in/devashish-bhirdi-53835529a/?trk=opento_nprofile_details",
   },
   {
     name: "Shreekar Gade",
-    position: ["EMS Frontend Lead","Codelicious Lead"],
+    position: ["EMS Frontend Lead", "Codelicious Lead"],
     image: "/assets/teams/Shreekar_Gade.jpg",
     linkedin: "https://www.linkedin.com/in/shreekar-gade-2a9937257",
   },
   {
     name: "Omkar Gade",
-    position: ["EMS Backend Lead","Hire Hustle Lead"],
+    position: ["EMS Backend Lead", "Hire Hustle Lead"],
     image: "/assets/teams/Omkar_Gade.jpg",
     linkedin: "https://www.linkedin.com/in/omkar-gade-214b62253/",
   },
@@ -161,44 +195,44 @@ export const Leads = [
     linkedin: "https://www.linkedin.com/in/balaji-s-922165258",
   },
   {
-    name:"Shreyash Gajbhiye ",
+    name: "Shreyash Gajbhiye ",
     position: ["App Lead"],
-    image:"/assets/teams/Shreyash_Gajbhiye.jpg",
-    linkedin: "https://www.linkedin.com/in/shreyashgajbhiye"
-  }, 
+    image: "/assets/teams/Shreyash_Gajbhiye.jpg",
+    linkedin: "https://www.linkedin.com/in/shreyashgajbhiye",
+  },
   {
-    name:"Sujit Rukade",
+    name: "Sujit Rukade",
     position: ["Submission Frontend Lead", "Fandom Lead"],
-    image:"/assets/teams/Sujit_Rukade.jpg",
-    linkedin: "https://www.linkedin.com/in/sujit-rukade-509308258/"
+    image: "/assets/teams/Sujit_Rukade.jpg",
+    linkedin: "https://www.linkedin.com/in/sujit-rukade-509308258/",
   },
   {
-    name:"Kalyani Patil",
-    position: ["Submission Frontend Lead","Web & App Lead"],
-    image:"/assets/teams/Kalyani_Patil.jpg",
-    linkedin: "http://linkedin.com/in/kalyani-patil-a41476258/"
+    name: "Kalyani Patil",
+    position: ["Submission Frontend Lead", "Web & App Lead"],
+    image: "/assets/teams/Kalyani_Patil.jpg",
+    linkedin: "http://linkedin.com/in/kalyani-patil-a41476258/",
   },
   {
-    name:"Sachi Patankar",
-    position: ["Submission Backend Lead","Web & App Lead"],
-    image:"/assets/teams/Sachi_Patankar.jpg",
-    linkedin: "https://www.linkedin.com/in/sachi-patankar-33549b245"
+    name: "Sachi Patankar",
+    position: ["Submission Backend Lead", "Web & App Lead"],
+    image: "/assets/teams/Sachi_Patankar.jpg",
+    linkedin: "https://www.linkedin.com/in/sachi-patankar-33549b245",
   },
   {
-    name:"Soham Phadke",
+    name: "Soham Phadke",
     position: ["Submission Backend Lead"],
-    image:"/assets/teams/Soham_Phadke.jpeg",
-    linkedin: "https://www.linkedin.com/in/sgphadke/"
+    image: "/assets/teams/Soham_Phadke.jpeg",
+    linkedin: "https://www.linkedin.com/in/sgphadke/",
   },
   {
-    name:"Chaitanya Paraskar",
+    name: "Chaitanya Paraskar",
     position: ["MCQ Backend Lead"],
-    image:"/assets/teams/Chaitanya_Paraskar.jpg",
-    linkedin: ""
-  }, 
+    image: "/assets/teams/Chaitanya_Paraskar.jpg",
+    linkedin: "",
+  },
   {
     name: "Tanisha Jain",
-    position: ["MCQ Backend Lead","Flashmob Lead","Dataquest Lead"],
+    position: ["MCQ Backend Lead", "Flashmob Lead", "Dataquest Lead"],
     image: "/assets/teams/Tanisha_Jain.jpg",
     linkedin: "https://www.linkedin.com/in/tanisha-jain-2b23b2239",
   },
@@ -254,7 +288,8 @@ export const Leads = [
     name: "Sarvesh Joshi",
     position: ["Marketing Lead"],
     image: "/assets/teams/Sarvesh_S.jpeg",
-    linkedin: "https://www.linkedin.com/in/sarvesh-shelgaonkar-04a1b8248?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    linkedin:
+      "https://www.linkedin.com/in/sarvesh-shelgaonkar-04a1b8248?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
   },
   {
     name: "Pratik Survase",
@@ -264,15 +299,15 @@ export const Leads = [
   },
   {
     name: "Pranav Kale",
-    position: ["Publicity Lead","Hire Hustle"],
+    position: ["Publicity Lead", "Hire Hustle"],
     image: "/assets/teams/Pranav_Kale.jpg",
     linkedin: "",
   },
   {
-    name:"Reva Dixit",
+    name: "Reva Dixit",
     position: ["Publicity Lead"],
-    image:"/assets/teams/Reva_Dixit.jpg",
-    linkedin: "https://www.linkedin.com/in/reva-dixit-"
+    image: "/assets/teams/Reva_Dixit.jpg",
+    linkedin: "https://www.linkedin.com/in/reva-dixit-",
   },
   {
     name: "Ishwari Gadewar",
@@ -288,7 +323,7 @@ export const Leads = [
   },
   {
     name: "Rishikesh Chaudhari",
-    position: ["Social Media Lead","Codex Lead"],
+    position: ["Social Media Lead", "Codex Lead"],
     image: "/assets/teams/Rishikesh_Chaudhari.png",
     linkedin: "https://www.linkedin.com/in/rishikesh-chaudhari-13240725b/",
   },
@@ -296,17 +331,19 @@ export const Leads = [
     name: "Shraddha Gangurde",
     position: ["Social Media Lead"],
     image: "/assets/teams/Shraddha_Gangurde.jpg",
-    linkedin: "https://www.linkedin.com/in/shraddha-gangurde-abb8941a5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    linkedin:
+      "https://www.linkedin.com/in/shraddha-gangurde-abb8941a5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
   {
     name: "Gaurav Waghmare",
-    position: ["Video Editing Lead","Photography Lead"],
+    position: ["Video Editing Lead", "Photography Lead"],
     image: "/assets/teams/Gaurav_Waghmare.jpg",
-    linkedin: "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://in.linkedin.com/in/gaurav-waghmare-b9a656258&ved=2ahUKEwj3-frXm76IAxVO-jgGHcTHBDsQjjh6BAgVEAE&usg=AOvVaw3hCwe2fMUanLGGH4U6WeDX",
+    linkedin:
+      "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://in.linkedin.com/in/gaurav-waghmare-b9a656258&ved=2ahUKEwj3-frXm76IAxVO-jgGHcTHBDsQjjh6BAgVEAE&usg=AOvVaw3hCwe2fMUanLGGH4U6WeDX",
   },
   {
     name: "Ajinkya Kachare",
-    position: ["Decoration Lead","Fandom Lead"],
+    position: ["Decoration Lead", "Fandom Lead"],
     image: "/assets/teams/Ajinkya_Kachare.jpg",
     linkedin: "https://www.linkedin.com/in/ajinkya-kachare-93786328b/",
   },
@@ -314,7 +351,8 @@ export const Leads = [
     name: "Prathamesh Naik",
     position: ["Decoration Lead"],
     image: "/assets/teams/Prathamesh_Naik.jpg",
-    linkedin: "https://www.linkedin.com/in/prathamesh-naik-098b96225?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    linkedin:
+      "https://www.linkedin.com/in/prathamesh-naik-098b96225?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
   {
     name: "Vedika Thakur",
@@ -324,7 +362,7 @@ export const Leads = [
   },
   {
     name: "Sonali Birajdar",
-    position: ["Decoration Lead","Insight Lead"],
+    position: ["Decoration Lead", "Insight Lead"],
     image: "/assets/teams/Sonali_Birajdar.jpg",
     linkedin: "https://linkedin.com/in/sonali-birajdar-1290722bb",
   },
@@ -347,16 +385,17 @@ export const Leads = [
     linkedin: "",
   },
   {
-    name:"Soham Kottawar",
+    name: "Soham Kottawar",
     position: ["Web & App Lead"],
-    image:"/assets/teams/Soham_Kottawar.jpg",
-    linkedin: ""
+    image: "/assets/teams/Soham_Kottawar.jpg",
+    linkedin: "",
   },
   {
     name: "Mohammed Abbasi",
     position: ["Electroquest Lead"],
     image: "/assets/teams/Mohammed_Abbasi.jpg",
-    linkedin: "https://www.linkedin.com/in/mohammed-abbasi-a8ab80271?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    linkedin:
+      "https://www.linkedin.com/in/mohammed-abbasi-a8ab80271?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
   {
     name: "Srirang kalantri",
@@ -366,21 +405,21 @@ export const Leads = [
   },
   {
     name: "Aniket Deore",
-    position: ["Electroquest Lead","Compute and Compete Lead"],
+    position: ["Electroquest Lead", "Compute and Compete Lead"],
     image: "/assets/teams/Aniket_Deore.jpg",
     linkedin: "",
   },
   {
-    name:"Prathamesh Khanna",
+    name: "Prathamesh Khanna",
     position: ["Codelicious Lead"],
-    image:"/assets/teams/Prathamesh _Khanna.jpg",
-    linkedin: "https://www.linkedin.com/in/prathamesh-khanna-1ba320258/"
+    image: "/assets/teams/Prathamesh _Khanna.jpg",
+    linkedin: "https://www.linkedin.com/in/prathamesh-khanna-1ba320258/",
   },
   {
-    name:"Tejas Bahurupi",
+    name: "Tejas Bahurupi",
     position: ["Codex Lead"],
-    image:"/assets/teams/Tejas_Bahurupi.jpg",
-    linkedin: "https://www.linkedin.com/in/tejas-b-52641a258/"
+    image: "/assets/teams/Tejas_Bahurupi.jpg",
+    linkedin: "https://www.linkedin.com/in/tejas-b-52641a258/",
   },
   {
     name: "Anushree Gattani",
@@ -389,20 +428,21 @@ export const Leads = [
     linkedin: "",
   },
   {
-    name:"Swarup Pokharkar",
+    name: "Swarup Pokharkar",
     position: ["Dataquest Lead"],
-    image:"/assets/teams/Swarup_Pokharkar.jpg",
-    linkedin: "https://www.linkedin.com/in/swarup-pokharkar?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+    image: "/assets/teams/Swarup_Pokharkar.jpg",
+    linkedin:
+      "https://www.linkedin.com/in/swarup-pokharkar?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
   {
-    name:"Shreenath Bandivadekar",
+    name: "Shreenath Bandivadekar",
     position: ["Compute & Compete Lead"],
-    image:"/assets/teams/Shreenath_Bandivadekar.jpg",
-    linkedin: ""
+    image: "/assets/teams/Shreenath_Bandivadekar.jpg",
+    linkedin: "",
   },
   {
     name: "Anjali Rambhad",
-    position: ["Content Lead","Paper Presentation Lead"],
+    position: ["Content Lead", "Paper Presentation Lead"],
     image: "/assets/teams/images.jpeg",
     linkedin: "http://www.linkedin.com/in/anjali-rambhad-35504021b",
   },
@@ -419,22 +459,22 @@ export const Leads = [
     linkedin: "https://www.linkedin.com/in/maitri-more-261409302",
   },
   {
-    name:"Soumitra Kode",
+    name: "Soumitra Kode",
     position: ["Freeze The Second Lead"],
-    image:"/assets/teams/Soumitra_Kode.png",
-    linkedin: ""
-  }, 
-  {
-    name:"Nilakshi Sonawane",
-    position: ["Dextrous Lead"],
-    image:"/assets/teams/Nilakshi_Sonawane.jpg",
-    linkedin: "https://in.linkedin.com/in/nilakshi-sonawane-350086291"
+    image: "/assets/teams/Soumitra_Kode.png",
+    linkedin: "",
   },
   {
-    name:"Chinmay Raskar ",
+    name: "Nilakshi Sonawane",
+    position: ["Dextrous Lead"],
+    image: "/assets/teams/Nilakshi_Sonawane.jpg",
+    linkedin: "https://in.linkedin.com/in/nilakshi-sonawane-350086291",
+  },
+  {
+    name: "Chinmay Raskar ",
     position: ["Hire Hustle Lead"],
-    image:"/assets/teams/Chinmay_Raskar.jpg",
-    linkedin: ""
+    image: "/assets/teams/Chinmay_Raskar.jpg",
+    linkedin: "",
   },
   // {
   //   name:"",

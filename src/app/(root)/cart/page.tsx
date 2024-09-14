@@ -30,7 +30,6 @@ export default function CartPage() {
       setError("Failed to load cart items.");
       setCartItems([]);
       setIsCartEmpty(true);
-      console.error(err);
     } finally {
       setLoading(false);
     }

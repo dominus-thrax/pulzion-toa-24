@@ -18,13 +18,13 @@ interface OrderProps {
 
 function Order({ cartItems = [], refetch }: OrderProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [transactionId, setTransactionId] = useState(""); // State for transaction ID
+  const [transactionId, setTransactionId] = useState("");
   const total = cartItems.reduce((sum, item) => sum + item.price, 0);
   const [loading, setLoading] = useState(false);
 
   const handleCheckoutClick = () => {
-    setIsModalOpen(true); // Open the modal
-    document.body.style.overflow = "hidden"; // Optional: lock scrolling
+    setIsModalOpen(true);
+    document.body.style.overflow = "hidden";
   };
 
   const closeModal = () => {
@@ -33,39 +33,33 @@ function Order({ cartItems = [], refetch }: OrderProps) {
   };
 
   const handleTransactionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setTransactionId(e.target.value); // Update transaction ID state
+    setTransactionId(e.target.value);
   };
 
-  // Function to handle the checkout process
   const handleCheckout = async () => {
     try {
-      setLoading(true); // Start loading
-      // Prepare the request body for the transaction
-      const eventIds = cartItems.map((item) => item.id); // Collect event IDs from cartItems
+      setLoading(true);
+      const eventIds = cartItems.map((item) => item.id); //
       if (transactionId === "") {
         toast.error("Please enter transaction id", {
           style: { background: "red", color: "white" },
         });
         return;
       }
-      // Send the transaction data to the API
+
       const transactionResponse = await api.post("/transaction", {
         event_id: eventIds,
         transaction_id: transactionId,
       });
 
-      // Check for success
       if (transactionResponse.status === 200) {
-        // Clear the cart
         await api.delete("/cart");
 
-        // Show success toast
         toast.success("Checkout successful!", {
           style: { background: "green", color: "white" },
         });
         closeModal();
         refetch();
-        // Close modal
       } else {
         throw new Error("Transaction failed");
       }
@@ -73,7 +67,6 @@ function Order({ cartItems = [], refetch }: OrderProps) {
       toast.error("Failed to process checkout. Please try again.", {
         style: { background: "red", color: "white" },
       });
-      console.error("Checkout error:", error);
     } finally {
       setLoading(false); // Stop loading
     }
@@ -116,10 +109,8 @@ function Order({ cartItems = [], refetch }: OrderProps) {
       {/* Modal */}
       {isModalOpen && (
         <div>
-          {/* Overlay */}
           <div className="fixed inset-0 bg-black bg-opacity-50 z-40"></div>
 
-          {/* Modal Content */}
           <div className="fixed inset-0 flex items-center justify-center z-50">
             <div className="p-8 rounded-lg shadow-lg bg-[#1F2937] w-11/12 sm:w-3/4 md:w-1/2 lg:w-1/3 text-white">
               <h2 className="text-3xl mb-4 text-center font-vt323 text-[#00910EC2]">
@@ -137,7 +128,6 @@ function Order({ cartItems = [], refetch }: OrderProps) {
                 />
               </div>
 
-              {/* Display Order Total in the Modal */}
               <div className="text-center text-lg mb-4">
                 <p className=" text-white">Order Total: {total}/-</p>
               </div>

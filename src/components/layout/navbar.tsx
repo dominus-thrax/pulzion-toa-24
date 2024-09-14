@@ -87,6 +87,7 @@ const Navbar = () => {
         localStorage.removeItem("token");
         localStorage.removeItem("user");
         router.push("/");
+        window.location.reload();
       }
     } catch (err: any) {
       console.log("Error: ", err);
@@ -209,12 +210,12 @@ const Navbar = () => {
               </Button>
             </div>
           ) : (
-            <button
-              className="text-green-700 font-Wallpoet px-5 py-4 rounded-2xl text-lg transition-all duration-300 ease-in-out hover:bg-green-700 hover:text-white mt-10 transform hover:scale-110"
-              onClick={toggleNav}
+            <Link
+              href={"/login"}
+              className={`${font.className} text-green-700 px-5 py-4 rounded-2xl text-xl transition-all duration-300 ease-in-out hover:text-white hover:border-white transform hover:-translate-y-0.5`}
             >
               LOGIN
-            </button>
+            </Link>
           )}
         </div>
       </div>

@@ -1,10 +1,15 @@
 "use client"
 import React from 'react';
 import TechCard from '@/components/TechEvo/TechCard';
+import localFont from "next/font/local";
+
+const font = localFont({
+  src: "../../../../public/font/SairaStencilOne-Regular.ttf",
+});
 
 const TechEvo = () => {
   return (
-    <div className="min-h-screen">
+    <div className={`min-h-screen ${font.className}`}>
       {/* Hero Section */}
       <TechCard />
     </div>

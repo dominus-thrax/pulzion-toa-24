@@ -14,6 +14,10 @@ import linkedin from "../../../public/assets/landing/contact-us/linkedin.png";
 import web from "../../../public/assets/landing/contact-us/web.png";
 import twitter from "../../../public/assets/landing/contact-us/twitter.png";
 
+const font = localFont({
+  src: "../../../public/font/SairaStencilOne-Regular.ttf",
+});
+
 const sixtyfour = localFont({
   src: "../../../public/font/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf",
 });
@@ -39,8 +43,7 @@ const ContactUs: React.FC = () => {
 
       {/* Contact Information and Message Section */}
       <div
-        style={{ fontFamily: "Wallpoet" }}
-        className="flex flex-col lg:flex-row justify-center items-center gap-8 md:gap-10 mb-8 z-30"
+        className={`${font.className} flex flex-col lg:flex-row justify-center items-center gap-8 md:gap-10 mb-8 z-30`}
       >
         {/* Contact Information */}
         <div className="bg-[#013220]/70 p-4 md:p-6 rounded-lg w-full lg:w-1/3 h-auto lg:h-96 flex flex-col justify-between border-2 border-yellow-700">

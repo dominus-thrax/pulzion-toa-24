@@ -1,18 +1,13 @@
 "use client";
 
+import { EventType } from "@/types";
 import { useRouter } from "next/navigation";
-import React from "react";
 
-interface EventCardProps {
-  title: string;
-  quote: string;
-}
-
-const EventCard: React.FC<EventCardProps> = ({ title, quote }) => {
+const EventCard = ({ event }: { event: EventType }) => {
   const router = useRouter();
   const handleViewClick = () => {
     // Pass the title as a query parameter in the URL
-    router.push(`/events/${title.toLowerCase().replace(/ /g, "-")}`);
+    router.push(`/events/${event.name.toLowerCase().replace(/ /g, "-")}`);
   };
 
   return (
@@ -48,14 +43,14 @@ const EventCard: React.FC<EventCardProps> = ({ title, quote }) => {
         style={{
           textTransform: "uppercase",
           fontSize: "26px",
-          marginTop: title.length > 15 ? "120px" : "100px",
+          marginTop: event.name.length > 15 ? "120px" : "100px",
           color: "#E4F676",
           width: "270px",
           lineHeight: "2.5rem",
           overflowWrap: "break-word",
         }}
       >
-        {title}
+        {event.name}
       </h1>
 
       {/* Quote */}
@@ -70,7 +65,7 @@ const EventCard: React.FC<EventCardProps> = ({ title, quote }) => {
           width: "300px",
         }}
       >
-        &ldquo;{quote}&rdquo;
+        &ldquo;{event.tagline}&rdquo;
       </p>
 
       {/* View Button */}

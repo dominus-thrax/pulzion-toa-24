@@ -13,6 +13,11 @@ import card from "../../../public/assets/landing/about-us/card.png";
 const sixtyfour = localFont({
   src: "../../../public/font/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf",
 });
+
+const font = localFont({
+  src: "../../../public/font/SairaStencilOne-Regular.ttf",
+});
+
 const About: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -86,9 +91,12 @@ const About: React.FC = () => {
                 style={{ objectFit: "contain" }}
               />
               <div
-              style={{ fontFamily: "Wallpoet" }}
-               className="absolute inset-0 flex items-center justify-center text-white text-center">
-                <span className="text-xs md:text-sm font-semibold">10 EVENTS</span>
+                style={{ fontFamily: "Wallpoet" }}
+                className="absolute inset-0 flex items-center justify-center text-white text-center"
+              >
+                <span className="text-xs md:text-sm font-semibold">
+                  10 EVENTS
+                </span>
               </div>
             </div>
 
@@ -103,9 +111,12 @@ const About: React.FC = () => {
                 style={{ objectFit: "contain" }}
               />
               <div
-              style={{ fontFamily: "Wallpoet" }}
-               className="absolute inset-0 flex items-center justify-center text-white text-center">
-                <span className="text-xs md:text-sm font-semibold">300 VOLUNTEERS</span>
+                style={{ fontFamily: "Wallpoet" }}
+                className="absolute inset-0 flex items-center justify-center text-white text-center"
+              >
+                <span className="text-xs md:text-sm font-semibold">
+                  300 VOLUNTEERS
+                </span>
               </div>
             </div>
 
@@ -119,25 +130,30 @@ const About: React.FC = () => {
                 fill
                 style={{ objectFit: "contain" }}
               />
-              <div 
-              style={{ fontFamily: "Wallpoet" }}
-               className="absolute inset-0 flex items-center justify-center text-white text-center">
-                <span className="text-xs md:text-sm font-semibold">8000 FOOTFALL</span>
+              <div
+                style={{ fontFamily: "Wallpoet" }}
+                className="absolute inset-0 flex items-center justify-center text-white text-center"
+              >
+                <span className="text-xs md:text-sm font-semibold">
+                  8000 FOOTFALL
+                </span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Right Section: Text */}
-        <div className="p-8 md:p-2 w-full lg:w-1/2 text-center text-[#88B788] text-sm md:text-xl lg:text-2xl max-w-lg space-y-6 mt-8 lg:mt-0">
-          <p className="text-lg" style={{ fontFamily: "Wallpoet" }}>
+        <div
+          className={`${font.className} p-8 md:p-2 w-full lg:w-1/2 text-center text-[#88B788] text-sm md:text-xl lg:text-2xl max-w-lg space-y-6 mt-8 lg:mt-0`}
+        >
+          <p className="text-lg">
             Pulzion is the annual flagship event organized by PICT ACM Student
             Chapter (PASC). Pulzion consists of multiple events in technical as
             well as non-technical domains including coding competitions, mock
             placement interviews, business management-based events, design and
             development-based contests, and quizzing events.
           </p>
-          <p className="text-lg" style={{ fontFamily: "Wallpoet" }}>
+          <p className="text-lg">
             It is one of the most anticipated events taking place at PICT. This
             year, Pulzion is going global to encourage students of varied
             backgrounds to participate and compete. With sincerity, dedication,
@@ -170,12 +186,11 @@ const About: React.FC = () => {
               height={200}
               style={{ objectFit: "contain" }}
             />
-            <div className="absolute inset-0 flex flex-col justify-center items-center z-10 text-white p-6">
-              <h2 style={{ fontFamily: "PulzionFont1" }}>PASC</h2>
-              <p
-                className="text-xs text-center"
-                style={{ fontFamily: "Wallpoet" }}
-              >
+            <div
+              className={`${font.className} absolute inset-0 flex flex-col justify-center items-center z-10 text-white p-6`}
+            >
+              <h2>PASC</h2>
+              <p className="text-xs text-center">
                 PICT ACM Student&apos;s Chapter (PASC) is the most active ACM
                 chapter in India. #UnitedWeStand At PASC, we all work together,
                 as a team. We take utmost efforts for the success of each and
@@ -195,12 +210,11 @@ const About: React.FC = () => {
               height={200}
               style={{ objectFit: "contain" }}
             />
-            <div className="absolute inset-0 flex flex-col justify-center items-center z-10 text-white p-6">
-              <h2 style={{ fontFamily: "PulzionFont1" }}>ACM-W</h2>
-              <p
-                className="text-xs text-center"
-                style={{ fontFamily: "Wallpoet" }}
-              >
+            <div
+              className={`${font.className} absolute inset-0 flex flex-col justify-center items-center z-10 text-white p-6`}
+            >
+              <h2>ACM-W</h2>
+              <p className="text-xs text-center">
                 With the objective to support and celebrate the full engagement
                 of women in all aspects of computing field, we conducted an
                 event ACM Pune &apos;Celebration of Women in Computing&apos;
@@ -221,12 +235,11 @@ const About: React.FC = () => {
               height={200}
               style={{ objectFit: "contain" }}
             />
-            <div className="absolute inset-0 flex flex-col justify-center items-center z-10 text-white p-6">
-              <h2 style={{ fontFamily: "PulzionFont1" }}>ACM</h2>
-              <p
-                className="text-xs text-center"
-                style={{ fontFamily: "Wallpoet" }}
-              >
+            <div
+              className={`${font.className} absolute inset-0 flex flex-col justify-center items-center z-10 text-white p-6`}
+            >
+              <h2>ACM</h2>
+              <p className="text-xs text-center">
                 The Association for Computing Machinery (ACM) is the
                 world&apos;s largest educational and scientific society uniting
                 professionals, educators and researchers in the field of

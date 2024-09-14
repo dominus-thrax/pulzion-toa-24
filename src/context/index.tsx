@@ -1,6 +1,7 @@
 "use client";
 
-import { UserCredential, AuthContextType } from "../../types/index";
+import api from "@/api/api";
+import { UserCredential, AuthContextType, EventType } from "../types/index";
 import {
   useState,
   useEffect,
@@ -21,6 +22,24 @@ const useAuth = (): AuthContextType => {
 };
 
 const AuthProvider = ({ children }: { children: ReactNode }) => {
+
+  const [events, setEvents] = useState<EventType[]>([]);
+
+  const fetchAllEvents = async () => {
+    try {
+      const response = await api.get("/events");
+      const data = response.data;
+      if (data.events.length > 0) {
+        setEvents(data.events);
+      }
+    } catch (err: any) {
+      console.log("Error: ", err);
+    }
+  };
+  useEffect(() => {
+    fetchAllEvents();
+  }, []);
+
   const [authState, setAuthState] = useState<UserCredential>({
     token: "",
     user: {
@@ -65,6 +84,8 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
         authState,
         setUserAuthInfo,
         isUserAuthenticated,
+        events,
+        setEvents,
       }}
     >
       {children}

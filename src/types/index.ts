@@ -19,6 +19,8 @@ export type AuthContextType = {
     authState: UserCredential;
     setUserAuthInfo: (data: UserCredential) => void;
     isUserAuthenticated: () => boolean;
+    events: EventType[],
+    setEvents: React.Dispatch<React.SetStateAction<EventType[]>>;
 };
 
 export type LoginForm = {
@@ -31,3 +33,18 @@ export type LoginForm = {
     email: string;
     password: string;
 };
+
+export type EventType = {
+    id: number;
+    price: number;
+    name: string;
+    tagline: string;
+    description: string;
+    rounds: string;
+    rules: string;
+    teams: string;
+    notes: string;
+    mode: string;
+    type: string;
+    logo?: string;
+}

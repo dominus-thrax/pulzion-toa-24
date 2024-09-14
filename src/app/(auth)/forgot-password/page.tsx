@@ -5,6 +5,7 @@ import SendOTP from "@/components/forgot-reset/SendOTP";
 import EnterOTPComponent from "@/components/forgot-reset/EnterOTP";
 import Image from "next/image";
 import phone from "../../../../public/assets/forgot-reset/image 16.png";
+import ResetPassword from "../reset-password/page";
 
 const ForgotPassword: NextPage = () => {
   const [otp, setOtp] = useState<string>("");
@@ -44,7 +45,7 @@ const ForgotPassword: NextPage = () => {
           {step === "send" ? (
             <SendOTP onSendOTP={handleSendOTP} />
           ) : (
-            <EnterOTPComponent />
+            <ResetPassword />
           )}
         </div>
       </div>

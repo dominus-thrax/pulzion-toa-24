@@ -7,6 +7,11 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import Particles from "../magicui/particles";
 import Link from "next/link"; // Import Link for navigation
+import localFont from "next/font/local";
+
+const font = localFont({
+  src: "../../../public/font/SairaStencilOne-Regular.ttf",
+});
 
 const events = [
   {
@@ -142,8 +147,7 @@ const Events = () => {
                   >
                     <Link href={event.path}>
                       <span
-                        style={{ fontFamily: "Wallpoet" }}
-                        className="text-white hover:no-underline hover:text-[#94fbcf] text-xs md:text-lg"
+                        className={`${font.className} text-white hover:no-underline hover:text-[#94fbcf] text-xs md:text-lg`}
                       >
                         {event.name}
                       </span>

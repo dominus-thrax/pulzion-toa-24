@@ -1,8 +1,10 @@
 "use client";
-
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { toast } from "sonner";
+
+
 const SendOTP = ({ onSendOTP }: { onSendOTP: () => void }) => {
   const [email, setEmail] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
@@ -20,7 +22,7 @@ const SendOTP = ({ onSendOTP }: { onSendOTP: () => void }) => {
     setLoading(true);
 
     try {
-      const response = await fetch("/api/send-otp", {
+      const response = await fetch("https://pulzion22-ems-backend-evj4.onrender.com/user/otp", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -33,9 +35,10 @@ const SendOTP = ({ onSendOTP }: { onSendOTP: () => void }) => {
       }
 
       const result = await response.json();
-      console.log(result.message); // OTP sent successfully message
+      toast.success(`${result.msg}`)  // OTP sent successfully message
 
       // Redirect to OTP verification page
+      router.push('/reset-password');
     } catch (error) {
       console.error(error);
       alert("Failed to send OTP. Please try again.");

@@ -20,24 +20,22 @@ export default function CartPage() {
   const handleDelete = (id: number) => {
     setCartItems(cartItems.filter((item) => item.id !== id));
   };
+  const fetchCartItems = async () => {
+    try {
+      const response = await api.get("/cart");
 
+      const events = response.data?.events || [];
+      setCartItems(events);
+    } catch (err) {
+      setError("Failed to load cart items.");
+      setCartItems([]);
+      setIsCartEmpty(true);
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
   useEffect(() => {
-    const fetchCartItems = async () => {
-      try {
-        const response = await api.get("/cart");
-
-        const events = response.data?.events || [];
-        setCartItems(events);
-      } catch (err) {
-        setError("Failed to load cart items.");
-        setCartItems([]);
-        setIsCartEmpty(true);
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
     fetchCartItems();
   }, []);
 
@@ -58,7 +56,7 @@ export default function CartPage() {
       </div>
       {isCartEmpty && (
         <div className=" h-[500px] flex justify-center items-center  text-white">
-          <div className="border-2 rounded-xl  w-2/3 p-2  py-4 text-center">
+          <div className="border-2 rounded-xl  w-2/3 p-2  py-4 text-center font-vt323  text-lg md:text-xl ">
             Your cart is currently empty.
           </div>
         </div>
@@ -87,7 +85,7 @@ export default function CartPage() {
           <div className="">
             {!isCartEmpty && (
               <div className="border-2 rounded-2xl">
-                <Order cartItems={cartItems} />
+                <Order cartItems={cartItems} refetch={fetchCartItems} />
               </div>
             )}
           </div>

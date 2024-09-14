@@ -3,12 +3,12 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-
+import { baseURL } from "@/api/api";
 
 const SendOTP = ({ onSendOTP }: { onSendOTP: () => void }) => {
   const [email, setEmail] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
-  const router = useRouter(); // Use Next.js router for redirection
+  const router = useRouter();
 
   const handleSendOTP = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -22,7 +22,7 @@ const SendOTP = ({ onSendOTP }: { onSendOTP: () => void }) => {
     setLoading(true);
 
     try {
-      const response = await fetch("https://pulzion22-ems-backend-evj4.onrender.com/user/otp", {
+      const response = await fetch(`${baseURL}/user/otp`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -35,10 +35,10 @@ const SendOTP = ({ onSendOTP }: { onSendOTP: () => void }) => {
       }
 
       const result = await response.json();
-      toast.success(`${result.msg}`)  // OTP sent successfully message
+      toast.success(`${result.msg}`); // OTP sent successfully message
 
       // Redirect to OTP verification page
-      router.push('/reset-password');
+      router.push("/reset-password");
     } catch (error) {
       console.error(error);
       alert("Failed to send OTP. Please try again.");

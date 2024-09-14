@@ -1,5 +1,5 @@
-"use client"
-import React, { useState } from 'react';
+"use client";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import axios from "axios";
@@ -7,6 +7,7 @@ import { toast } from "sonner";
 import phone from "../../../../public/assets/auth/phone.png";
 import profile from "../../../../public/assets/auth/profile.png";
 import lock from "../../../../public/assets/auth/lock.png";
+import { baseURL } from "@/api/api";
 
 type ResetPassword = {
   email: string;
@@ -18,19 +19,16 @@ const ResetPassword = () => {
   const [user, setUser] = useState<ResetPassword>({
     email: "",
     password: "",
-    otp: ""
+    otp: "",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     // console.log(user);
     try {
-      const response = await axios.post(
-        'https://pulzion22-ems-backend-evj4.onrender.com/user/forgot',
-        user
-      );
+      const response = await axios.post(`${baseURL}/user/forgot`, user);
       toast.success("Password reset successfully!");
-      console.log(response)
+      console.log(response);
       // You might want to redirect or clear the form here
     } catch (error) {
       toast.error("An error occurred. Please try again.");
@@ -54,9 +52,11 @@ const ResetPassword = () => {
           onSubmit={handleSubmit}
           className="flex flex-col items-center space-y-10 mt-10 w-full z-10"
         >
-          <div className='flex flex-col gap-[2px] '>
-            <label className="block mb-2 text-3xl font-vt323 text-white dark:text-white ">Enter OTP</label>
-            <div className='w-[350px] mx-auto '>
+          <div className="flex flex-col gap-[2px] ">
+            <label className="block mb-2 text-3xl font-vt323 text-white dark:text-white ">
+              Enter OTP
+            </label>
+            <div className="w-[350px] mx-auto ">
               <input
                 type="text"
                 value={user.otp}

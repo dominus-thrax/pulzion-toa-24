@@ -11,7 +11,17 @@ import { toast } from "sonner";
 import axios from "axios";
 import { baseURL } from "@/api/api";
 import { useRouter } from "next/navigation";
-import { useAuth } from "@/context/Auth";
+import { useAuth } from "@/context/index";
+
+import localFont from "next/font/local";
+
+const font = localFont({
+  src: "../../../../public/font/SairaStencilOne-Regular.ttf",
+});
+
+const heading = localFont({
+  src: "../../../../public/font/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf",
+});
 
 const RegisterForm = () => {
   const router = useRouter();
@@ -98,14 +108,14 @@ const RegisterForm = () => {
 
   return (
     <div
-      className="flex items-center justify-center min-h-screen bg-black bg-cover bg-center p-10 md:p-0"
+      className="flex items-center justify-center min-h-screen bg-black bg-cover bg-center p-10 md:p-20"
       // style={{
       //   backgroundImage: "url('/assets/auth/vector-bg.png')",
       // }}
     >
       <div className="p-5 md:p-11 z-20 rounded-3xl shadow-lg bg-opacity-35 bg-gradient-to-b from-registercardcolor1 to-registercardcolor2 border-loginbordercolor border-4 flex flex-col items-center pt-5">
-        <h1 className="text-center text-4xl text-green-200 font-vt323 mb-6">
-          <span className="flex text-3xl md:text-5xl text-white items-center justify-center">
+        <h1 className={`${heading.className} text-center text-4xl text-green-200 mb-6`}>
+          <span className="flex text-2xl md:text-4xl text-white items-center justify-center">
             <Image
               src={phone_icon}
               alt="Gameboy Icon"
@@ -116,8 +126,8 @@ const RegisterForm = () => {
             REGISTER
           </span>
         </h1>
-        <form className="space-y-4 w-full" onSubmit={handleSubmit}>
-          <div className="flex gap-16">
+        <form className={`space-y-4 w-full ${font.className}`} onSubmit={handleSubmit}>
+          <div className={`${font.className} flex gap-16`}>
             <input
               type="text"
               placeholder="First Name"
@@ -223,7 +233,7 @@ const RegisterForm = () => {
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
           />
-          <div className="w-full flex justify-center">
+          <div className={`w-full flex justify-center ${font.className}`}>
             <Button
               className="hover:bg-opacity-30 mt-5 px-10 py-8 w-full text-lg font-bold text-white bg-submitbtncolor rounded-full"
               type="submit"
@@ -232,11 +242,11 @@ const RegisterForm = () => {
             </Button>
           </div>
         </form>
-        <p className="font-vt323 text-xl text-center text-white mt-1">
+        <p className={`text-sm text-center text-white mt-1 ${font.className}`}>
           Already have an account?{" "}
           <Link
             href="/login"
-            className="font-vt323 text-loginsignuplinkcolor hover:underline"
+            className="text-loginsignuplinkcolor hover:underline"
           >
             LOGIN
           </Link>

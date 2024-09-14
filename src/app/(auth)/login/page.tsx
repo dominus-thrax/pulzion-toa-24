@@ -13,8 +13,17 @@ import axios from "axios";
 import { baseURL } from "@/api/api";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
-import { useAuth } from "@/context/Auth";
-import { LoginForm } from "../../../../types";
+import { useAuth } from "@/context/index";
+import { LoginForm } from "../../../types";
+import localFont from "next/font/local";
+
+const font = localFont({
+  src: "../../../../public/font/SairaStencilOne-Regular.ttf",
+});
+
+const heading = localFont({
+  src: "../../../../public/font/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf",
+});
 
 const LoginPage: NextPage = () => {
   const router = useRouter();
@@ -73,8 +82,8 @@ const LoginPage: NextPage = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-black bg-cover bg-center">
-      <div className="p-8 rounded-3xl z-20 shadow-lg bg-opacity-65 bg-gradient-to-b from-registercardcolor1 to-registercardcolor2 border-loginbordercolor border-4 flex flex-col items-center">
-        <div className="flex text-3xl md:text-5xl items-center">
+      <div className="p-8 rounded-3xl z-20 px-20 shadow-lg bg-opacity-65 bg-gradient-to-b from-registercardcolor1 to-registercardcolor2 border-loginbordercolor border-4 flex flex-col items-center">
+        <div className={`flex text-2xl md:text-4xl items-center ${heading.className}`}>
           <Image
             src={phone}
             alt="Gameboy Icon"
@@ -82,19 +91,19 @@ const LoginPage: NextPage = () => {
             width={30}
             className="mr-4"
           />
-          <h1 className="font-vt323 text-white text-center">LOGIN</h1>
+          <h1 className="text-white text-center">LOGIN</h1>
         </div>
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col items-center space-y-10 mt-10 w-full z-10"
+          className={`${font.className} flex flex-col items-center space-y-10 mt-10 w-full z-10`}
         >
           <div className="relative w-full">
             <input
-              type="text"
+              type="email"
               value={user.email}
               onChange={(e) => setUser({ ...user, email: e.target.value })}
-              placeholder="example@gmail.com"
-              className="w-full p-2 bg-opacity-[0.92] bg-inputfildcolor rounded-[39px] pl-[2.5rem] text-sm text-black border-none"
+              placeholder="Enter email address"
+              className="w-full p-3 bg-opacity-[0.92] text-[#fff] bg-inputfildcolor rounded-[39px] pl-[3.5rem] text-sm border-none placeholder:text-[#e3e3e3]"
             />
             <Image
               src={profile}
@@ -109,8 +118,8 @@ const LoginPage: NextPage = () => {
               type="password"
               value={user.password}
               onChange={(e) => setUser({ ...user, password: e.target.value })}
-              placeholder="************"
-              className="w-full p-2 bg-opacity-[0.92] bg-inputfildcolor rounded-[39px] pl-[2.5rem] text-sm text-black border-none"
+              placeholder="Enter passsword"
+              className="w-full p-3 bg-opacity-[0.92] text-[#fff] bg-inputfildcolor rounded-[39px] pl-[3.5rem] text-sm placeholder:text-[#e3e3e3] border-none"
             />
             <Image
               src={lock}
@@ -130,16 +139,16 @@ const LoginPage: NextPage = () => {
         </form>
         <Link
           href="/forgot-password"
-          className="hover:underline font-vt323 text-xl text-white text-left mt-2 w-full"
+          className={`${font.className} hover:underline text-sm text-white text-left mt-2 w-full`}
         >
           Forgot password?
         </Link>
 
-        <div className="font-vt323 text-xl text-center text-white mt-4">
+        <div className={`${font.className} text-sm text-start w-full text-white mt-4`}>
           Don&apos;t have an account?{" "}
           <Link
             href="/register"
-            className="font-vt323 text-loginsignuplinkcolor hover:underline"
+            className=" text-loginsignuplinkcolor hover:underline"
           >
             Register
           </Link>

@@ -3,8 +3,16 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import localFont from "next/font/local";
+import api from "@/api/api";
+import { toast } from "sonner";
+
+const font = localFont({
+  src: "../../../public/font/SairaStencilOne-Regular.ttf",
+});
 
 interface EventDetailsCardProps {
+  id: number;
   title: string | string[];
   mode: string;
   price: string;
@@ -15,6 +23,7 @@ interface EventDetailsCardProps {
 }
 
 const EventDetailsCard: React.FC<EventDetailsCardProps> = ({
+  id,
   title,
   mode,
   price,
@@ -23,6 +32,19 @@ const EventDetailsCard: React.FC<EventDetailsCardProps> = ({
   teamDistribution,
   eventLeads,
 }) => {
+  const handleAddToCart = async (id: number) => {
+    try {
+      const response = await api.post("/cart", {
+        event_id: id,
+      });
+      const data = response.data;
+      console.log(data);
+      toast.success("Event successfully added to cart");
+    } catch (err: any) {
+      console.log("Error:", err);
+    }
+  };
+
   return (
     <div
       className="flex flex-col items-center justify-center"
@@ -105,7 +127,7 @@ const EventDetailsCard: React.FC<EventDetailsCardProps> = ({
 
       {/* Mode */}
       <h3
-        className="text-center font-WallpoetFont text-yellow-400 mt-2"
+        className={`${font.className} text-center font-WallpoetFont text-yellow-400 mt-2`}
         style={{
           fontSize: "25px",
           fontWeight: "400",
@@ -125,7 +147,7 @@ const EventDetailsCard: React.FC<EventDetailsCardProps> = ({
       </h3>
 
       {/* Price - Fixed */}
-      <div className="mt-6">
+      <div className={`${font.className} mt-6`}>
         <h4
           className="text-green-500 text-xl font-WallpoetFont font-semibold"
           style={{
@@ -166,7 +188,7 @@ const EventDetailsCard: React.FC<EventDetailsCardProps> = ({
 
       {/* Scrollable Content - Rules, Rounds, Team Distribution */}
       <div
-      className="pt-4 pb-6"
+        className={`${font.className} pt-4 pb-6`}
         style={{
           display: "grid",
           gridTemplateColumns: "1fr", // Single column layout
@@ -248,10 +270,13 @@ const EventDetailsCard: React.FC<EventDetailsCardProps> = ({
             {teamDistribution}
           </p>
         </div>
-      </div>    
+      </div>
 
       {/* Event Leads - Fixed */}
-      <div style={{ position: "absolute", bottom: "20px", right: "20px" }}>
+      <div
+        className={`${font.className}`}
+        style={{ position: "absolute", bottom: "20px", right: "20px" }}
+      >
         <h4
           className="text-green-500 text-xl font-WallpoetFont font-semibold"
           style={{
@@ -284,7 +309,7 @@ const EventDetailsCard: React.FC<EventDetailsCardProps> = ({
 
       {/* Buttons */}
       <div
-        className="flex justify-center items-center"
+        className={`flex justify-center items-center ${font.className}`}
         style={{
           position: "absolute",
           bottom: "20px",
@@ -294,6 +319,7 @@ const EventDetailsCard: React.FC<EventDetailsCardProps> = ({
         }}
       >
         <Button
+          onClick={() => handleAddToCart(id)}
           className="text-xs font-WallpoetFont py-2 px-4 rounded mb-2"
           style={{
             backgroundColor: "#00910E",
@@ -317,27 +343,6 @@ const EventDetailsCard: React.FC<EventDetailsCardProps> = ({
             style={{ marginLeft: "10px" }}
           />
         </Button>
-
-        {/* <button
-          className="font-WallpoetFont py-2 px-4 rounded"
-          style={{
-            backgroundColor: "#00910E",
-            height: "40px",
-            width: "264px",
-            fontSize: "20px",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            marginRight: "600px",
-          }}
-        >
-          Favourite
-          <img
-            src="/assets/events/Heart.png"
-            alt="Heart"
-            style={{ width: "30px", height: "30px", marginLeft: "10px" }}
-          />
-        </button> */}
       </div>
     </div>
   );

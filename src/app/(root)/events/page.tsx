@@ -1,7 +1,12 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import localFont from "next/font/local";
-import EventCard from "@/components/events/event-card";
+import EventCard from "@/components/events/event-details";
 import EventBanner from "@/components/events/event-banner";
+import api from "@/api/api";
+import { EventType } from "@/types";
+import { useAuth } from "@/context";
 // import Particles from "@/components/magicui/particles";
 //import Ellipse from '@/components/ui/Ellipse';
 
@@ -9,14 +14,21 @@ const sixtyfour = localFont({
   src: "../../../../public/fonts/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf",
 });
 
+const font = localFont({
+  src: "../../../../public/font/SairaStencilOne-Regular.ttf",
+});
+
 const EventsPage: React.FC = () => {
+  const { events, setEvents } = useAuth();
+
+  console.log(events);
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4">
       <h1
-        className={`${sixtyfour.className} text-xl md:text-3xl font-diary font-bold mb-8 text-white`}
+        className={`${sixtyfour.className} text-xl md:text-5xl font-diary font-bold mb-8 text-white`}
         style={{
           marginTop: "50px",
-          fontSize: "75px",
           color: "#CFC36D",
         }}
       >
@@ -31,21 +43,9 @@ const EventsPage: React.FC = () => {
           marginTop: "30px",
         }}
       >
-        {/* Left Ellipse
-                <div
-                    className="absolute"
-                    style={{
-                        left: '-20px', // Adjusted for alignment
-                        top: '-191%', // Center vertically
-                        transform: 'translateY(-50%)'
-                    }}
-                >
-                    <Ellipse dynamicContent="&lt;" />
-                </div> */}
-
         {/* Event Banners */}
         <div
-          className="grid grid-cols-2 gap-20 max-w-4xl"
+          className="grid grid-cols-1 md:grid-cols-2 gap-20 max-w-4xl"
           style={{
             marginBottom: "0px",
             marginRight: "120px",
@@ -64,18 +64,6 @@ const EventsPage: React.FC = () => {
             <EventBanner title="NON-TECHNICAL EVENTS" />
           </div>
         </div>
-
-        {/* Right Ellipse
-                <div
-                    className="absolute"
-                    style={{
-                        right: '20px', // Adjusted for alignment
-                        top: '-191%', // Center vertically
-                        transform: 'translateY(-50%)'
-                    }}
-                >
-                    <Ellipse dynamicContent="&gt;" />
-                </div> */}
       </div>
 
       {/* Event Cards */}
@@ -88,34 +76,20 @@ const EventsPage: React.FC = () => {
         }}
       >
         {/* Column 1 with 6 cards */}
-        <div
-          className="flex flex-col gap-10"
-          style={{
-            marginTop: "0px",
-            marginRight: "100px",
-          }}
-        >
-          <EventCard title="Codex" quote="Where Beginners become Champions!" />
-          <EventCard
-            title="Codelicious"
-            quote="Code surrounds, challenge drives—rise and excel"
-          />
-          <EventCard
-            title="Compute and Compete"
-            quote="Feel the thrill of competitive coding!"
-          />
-          <EventCard
-            title="Dataquest"
-            quote="Embark on a Journey to Data Mastery!"
-          />
-          <EventCard
-            title="WebNApp"
-            quote="Transform Ideas into Digital Masterpieces!"
-          />
-          <EventCard
-            title="Electroquest"
-            quote="Get Ready to Dive into the Circuit Adventure!"
-          />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-[10rem] p-8 md:p-0">
+          {events.length > 0 &&
+            events.map((event, index) => (
+              <div
+                key={index}
+                className={`flex flex-col gap-10 ${font.className}`}
+                style={{
+                  marginTop: "0px",
+                  marginRight: "100px",
+                }}
+              >
+                <EventCard event={event} />
+              </div>
+            ))}
         </div>
 
         {/* Column 2 with 6 cards */}
@@ -125,7 +99,7 @@ const EventsPage: React.FC = () => {
             marginTop: "0px",
           }}
         >
-          <EventCard
+          {/* <EventCard
             title="Hire Hustle"
             quote="Prove Your Edge in the Ultimate Hiring Test"
           />
@@ -148,7 +122,7 @@ const EventsPage: React.FC = () => {
           <EventCard
             title="Paper Presentation"
             quote="Showcase your Research and Ignite Curiosity!"
-          />
+          /> */}
         </div>
       </div>
     </div>

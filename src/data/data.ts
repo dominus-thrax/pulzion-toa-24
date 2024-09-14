@@ -2,7 +2,7 @@ export const teamMembers = [
   {
     name: "Devashish Bhirdi",
     position: ["EMS Frontend Lead"],
-    image: "/assets/teams/Devashish_Bhirdi (3).jpg",
+    image: "/assets/teams/Devashish_Bhirdi.jpg",
     linkedin:
       "https://www.linkedin.com/in/devashish-bhirdi-53835529a/?trk=opento_nprofile_details",
   },

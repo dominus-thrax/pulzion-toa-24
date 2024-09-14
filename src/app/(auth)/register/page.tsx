@@ -87,7 +87,7 @@ const RegisterForm = () => {
         password: password,
         mobile_number: phone,
         country: country,
-        college: college,
+        college: collegeName,
         year: year,
       });
 

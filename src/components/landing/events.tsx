@@ -17,32 +17,32 @@ const events = [
   {
     name: "CODEX",
     path: "/events/codex",
-    image: "/assets/landing/events/t1.png",
+    image: "/assets/landing/events/codex.png",
   },
   {
     name: "CODELICIOUS",
     path: "/events/codelicious",
-    image: "/assets/landing/events/t2.png",
+    image: "/assets/landing/events/codelicious.png",
   },
   {
     name: "COMPUTE-N-COMPETE",
     path: "/events/compute-n-compete",
-    image: "/assets/landing/events/t3.png",
+    image: "/assets/landing/events/compete-n-compute.png",
   },
   {
     name: "DATAQUEST",
     path: "/events/dataquest",
-    image: "/assets/landing/events/t4.png",
+    image: "/assets/landing/events/dataquest.png",
   },
   {
     name: "WEBNAPP",
     path: "/events/webnapp",
-    image: "/assets/landing/events/t5.png",
+    image: "/assets/landing/events/web-n-app.png",
   },
   {
     name: "ELECTROQUEST",
     path: "/events/electroquest",
-    image: "/assets/landing/events/t6.png",
+    image: "/assets/landing/events/electroquest.png",
   },
 ];
 
@@ -50,32 +50,32 @@ const nonTechEvents = [
   {
     name: "HIRE HUSTLE",
     path: "/events/hire-hustle",
-    image: "/assets/landing/events/nt1.png",
+    image: "/assets/landing/events/hire-hustle.png",
   },
   {
     name: "DEXTROUS",
     path: "/events/dextrous",
-    image: "/assets/landing/events/nt2.png",
+    image: "/assets/landing/events/dextrous.png",
   },
   {
     name: "FANDOM",
     path: "/events/fandom",
-    image: "/assets/landing/events/nt3.png",
+    image: "/assets/landing/events/fandom.png",
   },
   {
     name: "INSIGHT",
     path: "/events/insight",
-    image: "/assets/landing/events/nt4.png",
+    image: "/assets/landing/events/insight.png",
   },
   {
     name: "FREEZE THE SECOND",
     path: "/events/freeze-the-second",
-    image: "/assets/landing/events/nt5.png",
+    image: "/assets/landing/events/freeze-the-second.png",
   },
   {
     name: "PAPER PRESENTATION",
     path: "/events/paper-presentation",
-    image: "/assets/landing/events/nt6.png",
+    image: "/assets/landing/events/paper-presentation.png",
   },
 ];
 

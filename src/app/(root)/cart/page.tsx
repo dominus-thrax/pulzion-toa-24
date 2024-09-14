@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import api from "@/api/api";
 import Order from "@/components/cart/Order";
 import Card from "@/components/cart/EventsCard";
-
+import isNotAuth from "@/context/user/isNotAuth";
 interface CartItem {
   id: number;
   name: string;
@@ -11,7 +11,7 @@ interface CartItem {
   logo: string;
 }
 
-export default function CartPage() {
+const CartPage = () => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -92,4 +92,6 @@ export default function CartPage() {
       )}
     </div>
   );
-}
+};
+
+export default isNotAuth(CartPage);

@@ -12,6 +12,7 @@ import axios from "axios";
 import { baseURL } from "@/api/api";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/context/index";
+import isAuth from "@/context/user/isAuth";
 
 import localFont from "next/font/local";
 
@@ -114,7 +115,9 @@ const RegisterForm = () => {
       // }}
     >
       <div className="p-5 md:p-11 z-20 rounded-3xl shadow-lg bg-opacity-35 bg-gradient-to-b from-registercardcolor1 to-registercardcolor2 border-loginbordercolor border-4 flex flex-col items-center pt-5">
-        <h1 className={`${heading.className} text-center text-4xl text-green-200 mb-6`}>
+        <h1
+          className={`${heading.className} text-center text-4xl text-green-200 mb-6`}
+        >
           <span className="flex text-2xl md:text-4xl text-white items-center justify-center">
             <Image
               src={phone_icon}
@@ -126,7 +129,10 @@ const RegisterForm = () => {
             REGISTER
           </span>
         </h1>
-        <form className={`space-y-4 w-full ${font.className}`} onSubmit={handleSubmit}>
+        <form
+          className={`space-y-4 w-full ${font.className}`}
+          onSubmit={handleSubmit}
+        >
           <div className={`${font.className} flex gap-16`}>
             <input
               type="text"
@@ -256,4 +262,4 @@ const RegisterForm = () => {
   );
 };
 
-export default RegisterForm;
+export default isAuth(RegisterForm);

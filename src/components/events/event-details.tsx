@@ -1,7 +1,14 @@
 "use client";
 
 import { EventType } from "@/types";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
+import localFont from "next/font/local";
+
+const font = localFont({
+  src: "../../../public/font/SairaStencilOne-Regular.ttf",
+});
+
 
 const EventCard = ({ event }: { event: EventType }) => {
   const router = useRouter();
@@ -25,21 +32,19 @@ const EventCard = ({ event }: { event: EventType }) => {
       }}
     >
       {/* Icon at the top */}
-      <div className="absolute top-16">
-        <img
-          src="/assets/events/CameraIcon.png"
+      <div className="absolute top-20">
+        <Image
+          src={`/assets/landing/events/${event.name
+            .toLowerCase()
+            .replace(/ /g, "-")}.png`}
           alt="Logo"
-          className="w-30 h-35"
-          style={{
-            borderRadius: "10%",
-            padding: "10px",
-            marginTop: "0.9px",
-          }}
+          height={90}
+          width={70}
         />
       </div>
 
       <h1
-        className="text-xl font-WallpoetFont text-green-500 text-center"
+        className="text-xl font-WallpoetFont text-green-500 text-center pt-2"
         style={{
           textTransform: "uppercase",
           fontSize: "26px",
@@ -55,9 +60,8 @@ const EventCard = ({ event }: { event: EventType }) => {
 
       {/* Quote */}
       <p
-        className="text-center font-WallpoetFont text-yellow-400 mt-4 px-6"
+        className={`text-center text-sm text-yellow-400 mt-4 px-6 ${font.className}`}
         style={{
-          fontSize: "20px",
           fontWeight: "400",
           lineHeight: "32px",
           textAlign: "center",

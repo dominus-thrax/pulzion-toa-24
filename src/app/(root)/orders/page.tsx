@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Card from "@/components/user-events/Card";
 // import { ThreeDots } from "react-loader-spinner";
 import api from "@/api/api";
+import isNotAuth from "@/context/user/isNotAuth";
 
 export type Item = {
   id: string;
@@ -12,7 +13,7 @@ export type Item = {
   status: string;
 };
 
-const Page: React.FC = () => {
+const Orders: React.FC = () => {
   const [data, setData] = useState<Item[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -67,4 +68,4 @@ const Page: React.FC = () => {
   );
 };
 
-export default Page;
+export default isNotAuth(Orders);

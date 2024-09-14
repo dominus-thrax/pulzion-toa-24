@@ -4,6 +4,7 @@ import { NextPage } from "next";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import isAuth from "@/context/user/isAuth";
 
 // images
 import phone from "../../../../public/assets/auth/phone.png";
@@ -158,4 +159,4 @@ const LoginPage: NextPage = () => {
   );
 };
 
-export default LoginPage;
+export default isAuth(LoginPage);

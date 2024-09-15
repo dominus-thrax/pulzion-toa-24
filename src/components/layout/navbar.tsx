@@ -105,12 +105,12 @@ const Navbar = () => {
           <Image src={tagline} alt="tagline" width={150} height={150} />
         </div>
         {/* Desktop Menu */}
-        <div className="hidden md:flex text-white gap-8 items-center z-30">
+        <div className="hidden md:flex text-[#E9B04E] gap-8 items-center z-30">
           {PageLinks.map((link, index) => (
             <Link
               key={index}
               href={link.path}
-              className={`${font.className} hover:text-green-900 px-3 py-3 text-xl transition-all duration-300 ease-in-out transform hover:-translate-y-0.5`}
+              className={`${font.className} hover:text-[#ADCC8B] px-3 py-3 text-xl transition-all duration-300 ease-in-out transform hover:-translate-y-0.5`}
             >
               {link.label}
             </Link>
@@ -152,7 +152,10 @@ const Navbar = () => {
           ) : (
             <Link
               href={"/login"}
-              className={`${font.className} text-green-700 px-5 py-4 rounded-2xl text-xl transition-all duration-300 ease-in-out hover:text-white hover:border-white transform hover:-translate-y-0.5`}
+              className={`${font.className} text-[#ADCC8B] 
+              hover:text-[#E9B04E] hover:border-[#E9B04E] border 
+              p-2 px-4 rounded-2xl text-xl transition-all duration-300 
+              ease-in-out transform hover:-translate-y-0.5`}
             >
               LOGIN
             </Link>

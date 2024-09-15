@@ -94,14 +94,6 @@ const VerticalText = ({ text }: { text: string }) => {
 const Events = () => {
   return (
     <div className="bg-black text-white relative w-full min-h-content pt-10">
-      <Particles
-        className="absolute inset-0 z-0"
-        quantity={200}
-        size={1.0}
-        ease={80}
-        color="#ffffff"
-        refresh
-      />
       <div className="text-[#cfc36d] text-center text-2xl md:text-6xl">
         EVENTS
       </div>

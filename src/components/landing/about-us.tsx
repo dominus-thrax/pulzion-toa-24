@@ -2,11 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import Particles from "../magicui/particles";
 import localFont from "next/font/local";
 
-import left from "../../../public/assets/landing/about-us/left.png";
-import right from "../../../public/assets/landing/about-us/right.png";
 import circle from "../../../public/assets/landing/about-us/circle.png";
 import card from "../../../public/assets/landing/about-us/card.png";
 
@@ -40,15 +37,6 @@ const About: React.FC = () => {
 
   return (
     <div className="py-8 md:py-16 relative min-h-screen w-full flex flex-col justify-center items-center bg-black overflow-hidden">
-      <Particles
-        className="absolute inset-0 z-0"
-        quantity={200}
-        size={1}
-        ease={80}
-        color="#ffffff"
-        refresh
-      />
-      {/* Heading */}
       <h1
         className={`${sixtyfour.className} text-2xl md:text-5xl lg:text-6xl text-[#cfc36d] text-center mb-8 pt-32 glowing-text`}
       >
@@ -56,17 +44,7 @@ const About: React.FC = () => {
       </h1>
 
       {/* Content Section */}
-      <div className="mx-auto flex flex-col lg:flex-row items-center lg:items-start w-full relative z-10">
-        {/* Left Robot Section */}
-        <div className="h-96 w-32 animate-bounce hidden md:block">
-          <Image
-            src={right}
-            alt="robots"
-            width={500}
-            height={200}
-            className="left-0 h-full"
-          />
-        </div>
+      <div className="mx-auto flex flex-col lg:flex-row items-center lg:items-start w-full relative z-10">  
 
         {/* Left Section: Circles */}
         <div
@@ -160,17 +138,6 @@ const About: React.FC = () => {
             and high aspirations, our chapter hopes to add value to our college
             and the community.
           </p>
-        </div>
-
-        {/* Right Robot Section */}
-        <div className="h-96 w-32 animate-bounce hidden md:block">
-          <Image
-            src={left}
-            alt="robots"
-            width={500}
-            height={200}
-            className="left-0 h-full"
-          />
         </div>
       </div>
 

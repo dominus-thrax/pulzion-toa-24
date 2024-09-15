@@ -6,6 +6,7 @@ import Sponsors from "@/components/landing/sponsers";
 import Navbar from "@/components/layout/navbar";
 import localFont from "next/font/local";
 import Events from "@/components/landing/events";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 
 const sixtyfour = localFont({
   src: "../../../public/font/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf",
@@ -13,24 +14,29 @@ const sixtyfour = localFont({
 
 export default function Home() {
   return (
-    <main className={`${sixtyfour.className}`}>
+    <main className={``}>
       <Navbar />
-      <div id="home">
-        <Hero />
+      <div className="min-h-screen w-full rounded-md bg-neutral-950 relative flex flex-col items-center justify-center antialiased">
+        <div>
+          <div id="home">
+            <Hero />
+          </div>
+          <div id="about">
+            <About />
+          </div>
+          <div id="glimpses">
+            <Glimpses />
+          </div>
+          <div id="sponsors">
+            <Sponsors />
+          </div>
+          <div id="events">
+            <Events />
+          </div>
+          <ContactUs />
+        </div>
+        <BackgroundBeams />
       </div>
-      <div id="about">
-        <About />
-      </div>
-      <div id="glimpses">
-        <Glimpses />
-      </div>
-      <div id="sponsors">
-        <Sponsors />
-      </div>
-      <div id="events">
-        <Events />
-      </div>
-      <ContactUs />
     </main>
   );
 }

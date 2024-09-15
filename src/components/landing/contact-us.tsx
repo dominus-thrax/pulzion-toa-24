@@ -25,15 +25,6 @@ const sixtyfour = localFont({
 const ContactUs: React.FC = () => {
   return (
     <div className="min-h-screen w-full flex flex-col justify-center p-4 md:p-8 relative bg-black">
-      <Particles
-        className="absolute inset-0"
-        quantity={200}
-        size={1.0}
-        ease={80}
-        color="#ffffff"
-        refresh
-      />
-
       {/* Contact Us Title */}
       <h1
         className={`${sixtyfour.className} text-center mb-8 md:mb-12 text-[#cfc36d] text-4xl sm:text-5xl md:text-6xl`}

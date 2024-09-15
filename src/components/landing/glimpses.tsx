@@ -10,14 +10,6 @@ const sixtyfour = localFont({
 const Glimpses: React.FC = () => {
   return (
     <div className="min-h-screen w-full flex flex-col justify-center items-center text-center p-8 relative bg-black">
-      <Particles
-        className="absolute inset-0"
-        quantity={200}
-        size={1.0}
-        ease={80}
-        color="#ffffff"
-        refresh
-      />
       {/* Glimpses Title */}
       <h1
         className={`${sixtyfour.className} text-center mb-12 text-[#cfc36d] text-2xl md:text-6xl`}

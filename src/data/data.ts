@@ -605,3 +605,75 @@ export const games = [
     marquee: "/assets/Game-Evolution/pacman-gaming.gif",
   },
 ];
+
+export const techs = [
+  {
+    title: "Transistor",
+    description: "The invention of the transistor in 1947 at Bell Labs marked a monumental shift in electronics. Replacing bulky, unreliable vacuum tubes, transistors were made of semiconductors, which allowed electrical current to be controlled more precisely. This breakthrough enabled the miniaturization of electronic devices, leading to smaller, more efficient products. Transistors became the building blocks of modern electronics, powering everything from radios to advanced computing systems. The IBM 7090, an early transistorized computer, demonstrated the immense potential of this technology by performing calculations faster and more reliably than its predecessors. The development of transistors paved the way for modern computing and digital technology, ultimately influencing fields like telecommunications, data storage, and space exploration. Their impact is profound, and they remain fundamental in today’s digital era, driving innovations in smartphones, microprocessors, and other advanced technologies.",
+    imageUrl: "/assets/Tech-Evolution/transistor.png",
+  },
+  {
+    title: "First Computers",
+    description: "The advent of the first electronic computers in the mid-20th century marked the beginning of a new era in computation and data processing. Machines like the ENIAC (Electronic Numerical Integrator and Computer), built in 1945, and the UNIVAC I (Universal Automatic Computer), introduced in 1951, were groundbreaking. They used thousands of vacuum tubes to perform calculations that would have taken humans years to complete. These early computers were massive, occupying entire rooms and requiring large teams to operate. Despite their size and complexity, they laid the groundwork for the development of modern computers. The ENIAC, for example, was used for ballistic trajectory calculations during World War II, while the UNIVAC I was instrumental in early commercial and governmental data processing. These machines marked the shift from mechanical computing devices to fully electronic systems, demonstrating the potential of digital technology. Over time, improvements in speed, efficiency, and size would make computers more accessible to businesses, governments, and eventually, individuals.",
+    imageUrl: "/assets/Tech-Evolution/first_com.png",
+  },
+  {
+    title: "Semiconductors",
+    description: "The development of semiconductors in the 1960s was a critical advancement that enabled the mass production of smaller, more efficient electronic components. Semiconductors, particularly silicon, are materials that can conduct electricity under certain conditions, making them ideal for controlling electrical signals in devices. This technology revolutionized the electronics industry by allowing for the creation of integrated circuits, which are at the heart of virtually all modern electronic devices. Semiconductors enabled the miniaturization of technology, making it possible to pack more power and functionality into smaller devices. This breakthrough led to the development of microprocessors, memory chips, and sensors, which are essential components in computers, smartphones, and countless other gadgets. The rise of semiconductors also fueled the rapid growth of the tech industry, giving birth to Silicon Valley and transforming global economies. Today, semiconductors continue to drive innovation in industries ranging from consumer electronics to automotive and aerospace technologies.",
+    imageUrl: "/assets/Tech-Evolution/semiconductor.png",
+  },
+  {
+    title: "Integrated Circuits (ICs)",
+    description: "Integrated circuits, introduced in the 1960s, were a major leap forward in the evolution of technology. These small chips, which contain multiple transistors and other components, allowed for the creation of more powerful and reliable electronic devices. Before the invention of ICs, electronic devices relied on discrete components that were bulky and difficult to assemble. The development of ICs made it possible to reduce the size of electronic devices while increasing their performance. This was a key factor in the development of early computers, as well as consumer electronics like radios and televisions. ICs also reduced manufacturing costs, making electronics more affordable and accessible to the general public. The impact of integrated circuits is far-reaching, influencing not just the tech industry but also the automotive, medical, and aerospace sectors. Today, ICs are at the core of virtually all modern electronic devices, from smartphones and laptops to medical equipment and spacecraft. Their ability to pack immense computational power into tiny packages continues to drive technological progress.",
+    imageUrl: "/assets/Tech-Evolution/IC.png",
+  },
+  {
+    title: "Graphical User Interfaces (GUIs)",
+    description: "The introduction of graphical user interfaces (GUIs) in the 1980s marked a significant turning point in personal computing. Before GUIs, users interacted with computers through text-based commands, which required a certain level of technical knowledge. GUIs, on the other hand, used graphical elements like windows, icons, and menus, making computers far more user-friendly and accessible to the average person. Apple’s Macintosh, introduced in 1984, and Microsoft Windows were among the first systems to popularize GUIs, which helped drive the widespread adoption of personal computers in homes and offices. GUIs revolutionized how people interacted with technology, making it easier to perform tasks like word processing, graphic design, and data analysis. This accessibility also spurred the development of software applications that could take advantage of the visual interface, further enhancing the capabilities of personal computers. Today, GUIs are standard across all modern operating systems, and their influence can be seen in everything from smartphones and tablets to smart TVs and gaming consoles.",
+    imageUrl: "/assets/Tech-Evolution/GUI.png",
+  },
+  {
+    title: "Networking Technologies",
+    description: "Networking technologies like Ethernet and Wi-Fi, which emerged in the 1990s, transformed the way computers communicate and share information. Ethernet allowed for fast, reliable connections between computers within local area networks (LANs), making it possible for businesses and organizations to link multiple devices and share resources like printers and servers. Wi-Fi, introduced later, extended this capability to wireless connections, enabling the growth of home networks and mobile computing. These technologies were instrumental in the expansion of the internet, which revolutionized communication, commerce, and entertainment on a global scale. Networking also laid the foundation for cloud computing, where data and applications can be accessed from anywhere with an internet connection. The rise of networked computing has had a profound impact on virtually every aspect of modern life, from the way we work and socialize to how we access information and consume media. Today, networking technologies continue to evolve, with advancements in speed, security, and connectivity, enabling the growth of smart cities, the Internet of Things (IoT), and other emerging technologies.",
+    imageUrl: "/assets/Tech-Evolution/network.png",
+  },
+  {
+    title: "Virtual Reality (VR) and Augmented Reality (AR)",
+    description: "Virtual reality (VR) and augmented reality (AR) technologies have been developing since the 1990s, offering new ways to experience and interact with digital content. VR creates fully immersive virtual environments that users can explore and interact with using specialized equipment like headsets and controllers. AR, on the other hand, overlays digital information onto the real world, enhancing reality with interactive elements that can be accessed through devices like smartphones or AR glasses. These technologies have found applications in a wide range of industries, from gaming and entertainment to healthcare and education. In gaming, VR allows players to step into virtual worlds and experience gameplay in a fully immersive way, while AR games like Pokémon GO blend the digital and physical worlds. In healthcare, VR is used for training and simulation, while AR assists in surgery by providing real-time information to surgeons. As these technologies continue to evolve, their potential applications in fields like architecture, engineering, and even social interaction are expanding, promising new ways to interact with both the digital and real worlds.",
+    imageUrl: "/assets/Tech-Evolution/ar_vr.png",
+  },
+  {
+    title: "Blockchain Technology",
+    description: "Blockchain technology, first implemented in 2008 with the creation of Bitcoin, has revolutionized the way data is stored and transactions are recorded. Blockchain is a decentralized ledger that allows data to be stored securely across a network of computers, making it virtually tamper-proof. This technology is most commonly associated with cryptocurrencies, but its applications extend far beyond digital currencies. Blockchain can be used for everything from tracking goods in a supply chain to executing smart contracts that automatically enforce agreements between parties. In the financial industry, blockchain has the potential to streamline processes, reduce fraud, and increase transparency. It is also being explored for use in voting systems, identity verification, and even healthcare record management. The decentralized nature of blockchain makes it a powerful tool for creating trustless systems where no single entity has control over the data. As blockchain technology continues to evolve, it has the potential to disrupt numerous industries, from finance and real estate to logistics and entertainment.",
+    imageUrl: "/assets/Tech-Evolution/blockchain.png",
+  },
+  {
+    title: "Voice Assistants",
+    description: "Voice assistants, powered by advances in artificial intelligence and natural language processing, became mainstream in the 2010s with the rise of devices like Amazon’s Alexa, Google Assistant, and Apple’s Siri. These AI-powered assistants allow users to interact with their devices through voice commands, performing tasks such as setting reminders, playing music, and controlling smart home devices. Voice assistants use machine learning to understand and respond to natural language queries, making them increasingly accurate and helpful over time. Beyond simple commands, these assistants are integrated into various aspects of daily life, from managing personal schedules to providing hands-free control of appliances and even answering complex questions. As the technology continues to improve, voice assistants are becoming more integrated into cars, wearable devices, and other IoT devices, transforming the way people interact with technology. The convenience and accessibility offered by voice technology are driving its adoption across homes, workplaces, and public spaces.",
+    imageUrl: "/assets/Tech-Evolution/voice_assistant.png",
+  },
+  {
+    title: "Smart Home Technology",
+    description: "Smart home technology, which gained significant traction in the 2010s, has redefined the way people interact with their living spaces. Devices such as smart thermostats, lights, and security systems can be controlled remotely via smartphones or voice commands, creating a more convenient and efficient living environment. These systems often use artificial intelligence and machine learning to learn user preferences and optimize performance over time. Smart home devices not only offer convenience but also contribute to energy efficiency and security. For instance, smart thermostats can adjust heating and cooling based on occupancy patterns, while smart security cameras provide real-time monitoring and alerts. The integration of IoT (Internet of Things) technology has made it possible for devices to communicate with one another, creating a seamless ecosystem within the home. As more devices become connected, the smart home concept is expanding to include everything from entertainment systems and kitchen appliances to health-monitoring devices, enhancing both comfort and convenience.",
+    imageUrl: "/assets/Tech-Evolution/smart_home.png",
+  },
+  {
+    title:"5G Technology",
+    description:"5G is the fifth generation of mobile network technology, offering faster data transfer rates, low latency, and enhanced capacity. It supports more connected devices, which is crucial for the development of IoT, smart cities, and autonomous vehicles.5G will enable new innovations in fields such as healthcare (remote surgeries), autonomous driving, and industrial automation. Its high-speed connections are expected to power the next generation of communication and internet experiences.",
+    imageUrl:"/assets/Tech-Evolution/5G.png",
+  },
+  {
+    title:"Quantum Computing",
+    description:"Quantum computing leverages the principles of quantum mechanics to perform calculations at speeds unattainable by classical computers. In 2019, Google’s Sycamore quantum processor achieved quantum supremacy by solving a complex problem faster than any supercomputer could.Quantum computing promises to revolutionize industries such as cryptography, logistics, and pharmaceuticals by enabling faster data processing and solving problems that are currently impossible for classical computers.",
+    imageUrl:"/assets/Tech-Evolution/quan_comp.png",
+  },
+  {
+    title:"Artificial Intelligence (AI) and Machine Learning (ML)",
+    description:"AI and ML, particularly deep learning, saw major breakthroughs in the 2010s. These technologies drive applications like natural language processing, autonomous vehicles, and image recognition.AI and ML have already transformed industries such as healthcare (diagnosis, drug discovery), finance (fraud detection, algorithmic trading), and retail (personalized recommendations). Their influence continues to grow as they become more integrated into daily life.",
+    imageUrl:"/assets/Tech-Evolution/ai.png",
+  },
+];
+
+
+
+

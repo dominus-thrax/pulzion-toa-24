@@ -6,14 +6,14 @@ const MarioJumping = () => {
   return (
     <div className={styles.container}>
       {/* Mario jumping animation */}
-      <Particles
+      {/* <Particles
         className="fixed inset-0"
         quantity={100}
         size={1.0}
         ease={80}
         color='#ffffff'
         refresh
-      />
+      /> */}
       <div className={styles.mario}>
         <Image
           src="/assets/Game-Evolution/mario-jumping.png" // Adjust the path to your Mario image

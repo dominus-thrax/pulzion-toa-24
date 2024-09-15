@@ -6,7 +6,7 @@ import { AuthProvider } from "@/context/index";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Pulzion - Tech across ages",
+  title: "Pulzion - Tech Across Ages",
   description: `Pulzion'24 - Tech Across Ages is the flagship event of the PICT ACM Student Chapter, 
     offering a dynamic blend of technical and non-technical competitions. 
     With events designed to challenge and inspire, it provides a platform for 

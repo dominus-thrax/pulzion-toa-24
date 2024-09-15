@@ -4,13 +4,9 @@ import Glimpses from "@/components/landing/glimpses";
 import Hero from "@/components/landing/hero";
 import Sponsors from "@/components/landing/sponsers";
 import Navbar from "@/components/layout/navbar";
-import localFont from "next/font/local";
 import Events from "@/components/landing/events";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 
-const sixtyfour = localFont({
-  src: "../../../public/font/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf",
-});
 
 export default function Home() {
   return (
@@ -23,12 +19,6 @@ export default function Home() {
           </div>
           <div id="about">
             <About />
-          </div>
-          <div id="glimpses">
-            <Glimpses />
-          </div>
-          <div id="sponsors">
-            <Sponsors />
           </div>
           <div id="events">
             <Events />

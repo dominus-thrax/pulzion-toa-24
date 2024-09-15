@@ -7,7 +7,7 @@ import card from "../../../public/assets/landing/about-us/card.png";
 import NumberTicker from "../magicui/number-ticker";
 
 const sixtyfour = localFont({
-  src: "../../../public/font/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf",
+  src: "../../../public/font/OriginTech personal use.ttf",
 });
 
 const font = localFont({

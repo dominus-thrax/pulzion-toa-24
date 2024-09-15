@@ -19,7 +19,7 @@ const font = localFont({
 });
 
 const sixtyfour = localFont({
-  src: "../../../public/font/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf",
+  src: "../../../public/font/OriginTech personal use.ttf",
 });
 
 const ContactUs: React.FC = () => {
@@ -111,8 +111,7 @@ const ContactUs: React.FC = () => {
       {/* Follow Us Section */}
       <div className="text-center mb-8">
         <h3
-          className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 text-yellow-300"
-          style={{ fontFamily: "Wallpoet" }}
+          className={`${sixtyfour.className} text-[#CFC36D] text-xl sm:text-2xl md:text-3xl font-semibold mb-4`}
         >
           FOLLOW US
         </h3>

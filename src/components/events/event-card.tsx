@@ -1,25 +1,45 @@
 import { CardSpotlight } from "@/components/ui/card-spotlight";
+import { EventType } from "@/types";
+import { Button } from "../ui/button";
+import { useRouter } from "next/navigation";
 
-export function CardSpotlightDemo() {
+export function CardSpotlightDemo({ event }: { event: EventType }) {
+  const router = useRouter();
   return (
-    <CardSpotlight className="h-96 w-96">
-      <p className="text-xl font-bold relative z-20 mt-2 text-white">
-        Authentication steps
-      </p>
-      <div className="text-neutral-200 mt-4 relative z-20">
-        Follow these steps to secure your account:
-        <ul className="list-none  mt-2">
-          <Step title="Enter your email address" />
-          <Step title="Create a strong password" />
-          <Step title="Set up two-factor authentication" />
-          <Step title="Verify your identity" />
-        </ul>
-      </div>
-      <p className="text-neutral-300 mt-4 relative z-20 text-sm">
-        Ensuring your account is properly secured helps protect your personal
-        information and data.
-      </p>
-    </CardSpotlight>
+    <div className=" ">
+      <CardSpotlight className="h-96 w-96 flex flex-col justify-center items-center relative overflow-hidden group  p-6 ">
+        <div className="flex justify-center items-center z-50 ">
+          <img
+            src="/photo.png"
+            alt=""
+            className=" rounded-lg   w-16 h-16 object-contain mb-4"
+          />
+        </div>
+
+        <div className="flex flex-col justify-center  text-white items-center text-center">
+          <p className="text-2xl font-bold relative z-20 mt-2 ">{event.name}</p>
+          <p className="text-lg font-bold relative z-20 mt-2 ">
+            Mode: {event.mode}
+          </p>
+        </div>
+
+        <div className=" mt-4 relative  text-white z-40 text-center">
+          {event.tagline}
+        </div>
+
+        <Button
+          onClick={() =>
+            router.push(
+              `/events/${event.name.toLowerCase().replace(/ /g, "-")}`
+            )
+          }
+          className="z-20 mt-4 bg-[#E9B04E]  w-full text-black text-sm
+           hover:bg-yellow-500  "
+        >
+          View
+        </Button>
+      </CardSpotlight>
+    </div>
   );
 }
 

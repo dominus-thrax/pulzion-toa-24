@@ -1,63 +1,56 @@
 "use client";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import EventDetailsCard from "@/components/events/event-details-card";
 import { useAuth } from "@/context";
 import { EventType } from "@/types";
 import { eventDetails } from "@/data/events";
-
+import { ThreeDCardDemo } from "@/components/events/details";
 
 const EventDetailsPage = () => {
   const params = useParams();
-  const title = params.title;
-
-  console.log(title);
+  const title = Array.isArray(params.title) ? params.title[0] : params.title;
 
   const { events } = useAuth();
-  const [event, setEvent] = useState<EventType>({
-    id: 0,
-    price: 0,
-    name: "",
-    tagline: "",
-    description: "",
-    rounds: "",
-    rules: "",
-    teams: "",
-    notes: "",
-    mode: "",
-    type: "",
-    logo: "",
-  });
+  const [event, setEvent] = useState<EventType | null>(null);
 
   useEffect(() => {
-    if (events.length > 0) {
-      const eventDetail = events.filter((event) => {
-        const name = event.name.toLowerCase().replace(/ /g, "-");
-        return name === event.name.toLowerCase();
+    if (events.length > 0 && title) {
+      const formattedTitle = title.toLowerCase().replace(/ /g, "-");
+      const eventDetail = events.find((event) => {
+        const eventName = event.name.toLowerCase().replace(/ /g, "-");
+        return eventName === formattedTitle;
       });
 
-      if (eventDetail.length > 0) {
-        setEvent(eventDetail[0]);
+      if (eventDetail) {
+        setEvent(eventDetail);
       }
     }
-  }, [events]);
+  }, [events, title]);
 
-  // Fallback event details in case the title doesn't match any event
-  const eventData = eventDetails[title as keyof typeof eventDetails] || {
-    id: 0,
-    mode: "N/A",
-    price: "N/A",
-    rules: "No details available.",
-    rounds: "N/A",
-    teamDistribution: "N/A",
-    eventLeads: [],
-  };
+  const eventData = event
+    ? {
+        id: event.id,
+        mode: event.mode,
+        price: event.price.toString(), // Ensure price is a string
+        rules: event.rules,
+        rounds: event.rounds,
+        teamDistribution: event.teams,
+        eventLeads: [], // Assuming eventLeads might be an empty array or you can handle it accordingly
+      }
+    : eventDetails[title as keyof typeof eventDetails] || {
+        id: 0,
+        mode: "N/A",
+        price: "N/A",
+        rules: "No details available.",
+        rounds: "N/A",
+        teamDistribution: "N/A",
+        eventLeads: [],
+      };
 
   return (
     <div className="md:relative">
       <div className="md:absolute md:top-20 md:left-20">
-        {/* Pass the extracted event data to the EventDetailsCard component */}
-        <EventDetailsCard
+        <ThreeDCardDemo
           id={eventData.id}
           title={title}
           mode={eventData.mode}

@@ -14,7 +14,7 @@ const GameEvolution = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
 
-      <div className="flex justify-center items-center h-96 bg-black text-white">
+      <div className="flex justify-center items-center h-44 lg:h-96 text-white">
         <Image
           src='/assets/Game-Evolution/GameEvolution.png'
           alt="game evolution"
@@ -25,7 +25,7 @@ const GameEvolution = () => {
         />
       </div>
       {/* Game Cards Section */}
-      <div className={`${font.className} space-y-10 p-10 bg-black`}>
+      <div className={`${font.className} space-y-10 p-10`}>
         {games.map((game: any, index: number) => (
           <GameCard
             key={index}

@@ -19,21 +19,12 @@ const font = localFont({
 });
 
 const sixtyfour = localFont({
-  src: "../../../public/font/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf",
+  src: "../../../public/font/OriginTech personal use.ttf",
 });
 
 const ContactUs: React.FC = () => {
   return (
     <div className="min-h-screen w-full flex flex-col justify-center p-4 md:p-8 relative bg-black">
-      <Particles
-        className="absolute inset-0"
-        quantity={200}
-        size={1.0}
-        ease={80}
-        color="#ffffff"
-        refresh
-      />
-
       {/* Contact Us Title */}
       <h1
         className={`${sixtyfour.className} text-center mb-8 md:mb-12 text-[#cfc36d] text-4xl sm:text-5xl md:text-6xl`}
@@ -120,8 +111,7 @@ const ContactUs: React.FC = () => {
       {/* Follow Us Section */}
       <div className="text-center mb-8">
         <h3
-          className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 text-yellow-300"
-          style={{ fontFamily: "Wallpoet" }}
+          className={`${sixtyfour.className} text-[#CFC36D] text-xl sm:text-2xl md:text-3xl font-semibold mb-4`}
         >
           FOLLOW US
         </h3>

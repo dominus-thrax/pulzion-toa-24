@@ -20,6 +20,8 @@ const font = localFont({
   src: "../../../../public/font/SairaStencilOne-Regular.ttf",
 });
 
+const originText = localFont({src:"../../../../public/fonts/OriginTech personal use.ttf"})
+
 const EventsPage: React.FC = () => {
   const { events, setEvents } = useAuth();
   const [filter, setFilter] = useState<string>("All");
@@ -36,11 +38,39 @@ const EventsPage: React.FC = () => {
   });
 
   return (
-    <div>
-      <div className="flex justify-center gap-8 mt-12">
-        <CardSpotlight onClick={() => handleFilterChange("Technical")}>
-          <div className="text-center z-20 relative px-6 text-xl cursor-pointer text-white py-4 my-auto">
-            Technical
+    <div className="flex flex-col items-center justify-center min-h-screen p-4">
+      <h1
+        className={`${sixtyfour.className} text-xl md:text-5xl font-diary font-bold mb-8 text-white`}
+        style={{
+          marginTop: "50px",
+          color: "#CFC36D",
+        }}
+      >
+        EVENTS
+      </h1>
+
+      {/* Container for the banners and ellipses */}
+      <div
+        className="relative w-full flex justify-center items-center mb-16"
+        style={{
+          marginBottom: "25px",
+          marginTop: "30px",
+        }}
+      >
+        {/* Event Banners */}
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 gap-20 max-w-4xl"
+          style={{
+            marginBottom: "0px",
+            marginRight: "120px",
+          }}
+        >
+          <div
+            style={{ marginRight: "50px", position: "relative", left: "-20px" }}
+          >
+            {" "}
+            {/* Space between the two banners */}
+            <EventBanner title="TECHNICAL EVENTS" />
           </div>
         </CardSpotlight>
         <CardSpotlight onClick={() => handleFilterChange("Non Technical")}>

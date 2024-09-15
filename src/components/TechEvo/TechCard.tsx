@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function TechCard() {
   return (
-    <div className="w-full bg-black flex flex-col overflow-hidden text-[#94fbcf]">
+    <div className="w-full flex flex-col text-[#94fbcf]">
       {/* Logo */}
       <div className="flex justify-center mt-[50px]">
         <Image

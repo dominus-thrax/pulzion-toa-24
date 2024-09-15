@@ -1,8 +1,6 @@
 import ContactUs from "@/components/landing/contact-us";
 import About from "@/components/landing/about-us";
-import Glimpses from "@/components/landing/glimpses";
 import Hero from "@/components/landing/hero";
-import Sponsors from "@/components/landing/sponsers";
 import Navbar from "@/components/layout/navbar";
 import Events from "@/components/landing/events";
 import { BackgroundBeams } from "@/components/ui/background-beams";
@@ -19,9 +17,6 @@ export default function Home() {
           </div>
           <div id="about">
             <About />
-          </div>
-          <div id="events">
-            <Events />
           </div>
           <ContactUs />
         </div>

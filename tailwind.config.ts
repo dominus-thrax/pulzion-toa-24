@@ -73,6 +73,14 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        aurora: {
+          from: {
+            backgroundPosition: "50% 50%, 50% 50%",
+          },
+          to: {
+            backgroundPosition: "350% 50%, 350% 50%",
+          },
+        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -111,6 +119,7 @@ const config = {
         marquee: "marquee 10s linear infinite",
         swing: "swing 6s infinite ease-in-out",
         rotate: "rotate 5s linear infinite",
+        aurora: "aurora 60s linear infinite",
       },
       fontFamily: {
         WallpoetFont: ["WallpoetFont", "sans-serif"], // Add the custom font here

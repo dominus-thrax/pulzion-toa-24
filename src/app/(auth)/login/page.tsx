@@ -23,7 +23,7 @@ const font = localFont({
 });
 
 const heading = localFont({
-  src: "../../../../public/font/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf",
+  src: "../../../../public/font/OriginTech personal use.ttf",
 });
 
 const LoginPage: NextPage = () => {

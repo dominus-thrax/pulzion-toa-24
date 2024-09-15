@@ -48,7 +48,7 @@ const CarouselComponent: FC = () => {
           </CarouselContent>
 
           {/* Navigation Buttons Container */}
-          <div className="sm:flex sm:justify-center sm:space-x-2 md:hidden mt-2 z-30">
+          <div className="hidden sm:flex sm:justify-center sm:space-x-2 md:hidden mt-2 z-30">
             <CarouselPrevious className="bg-transparent text-[#00C853] border-[#F0C66B]" />
             <CarouselNext className="bg-transparent text-[#00C853] border-[#F0C66B]" />
           </div>

@@ -9,7 +9,7 @@ const font = localFont({
 
 const TechEvo = () => {
   return (
-    <div className={`min-h-screen ${font.className}`}>
+    <div className={`${font.className}`}>
       {/* Hero Section */}
       <TechCard />
     </div>

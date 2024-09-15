@@ -9,15 +9,7 @@ const sponsors = [sponser, sponser, sponser, sponser, sponser];
 
 const Sponsors: React.FC = () => {
   return (
-    <div className="bg-black min-h-screen flex items-center justify-center relative overflow-x-hidden">
-      <Particles
-        className="absolute inset-0 z-10"
-        quantity={200}
-        size={1.0}
-        ease={80}
-        color="#ffffff"
-        refresh
-      />
+    <div className="bg-black min-h-screen flex items-center justify-center relative">
       <div className="flex flex-col justify-center items-center mx-auto py-8 relative z-20">
         <h1 className="text-center mb-12 text-[#cfc36d] text-2xl md:text-6xl">
           Our Sponsors

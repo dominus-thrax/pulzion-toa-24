@@ -12,7 +12,7 @@ export default function Page() {
     return (
         <>
         <div className="mt-5">
-            <h1 className={` ${originText.className} text-white text-5xl text-center mt-20`}>GLIMPSES</h1>
+            <h1 className={` ${originText.className} text-[#cfc36d] text-2xl md:text-6xl text-center mt-20`}>GLIMPSES</h1>
         </div>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20 mx-auto mt-4 p-4 justify-items-center items-center'>
             {images.map((image,index)=>{

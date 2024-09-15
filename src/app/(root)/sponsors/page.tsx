@@ -1,10 +1,14 @@
 "use client";
 import Sponsors from "@/components/landing/sponsers";
 import { color } from "framer-motion";
+import localFont from "next/font/local";
 import React from "react";
+
+
+const originText = localFont({src:"../../../../public/fonts/OriginTech personal use.ttf"})
 const Sponsers = () => {
     return (
-        <div className="text-white text-3xl mt-12">
+        <div className={`${originText.className} text-[#cfc36d] text-3xl mt-12`}>
           <Sponsors />
           
   <h1 className="text-center font-bold mb-4 mt-10">

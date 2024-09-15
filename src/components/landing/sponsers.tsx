@@ -15,11 +15,11 @@ const Sponsors: React.FC = () => {
           Our Sponsors
         </h1>
 
-        <div className="flex flex-wrap justify-center gap-8 mt-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-32 mt-8 max-w-6xl mx-auto px-4 lg:px-0">
           {sponsors.map((imagePath, index) => (
             <div
               key={index}
-              className="flex justify-center relative w-[320px] h-[320px]"
+              className="relative w-[250px] h-[250px] lg:w-[320px] lg:h-[320px] mx-auto overflow-hidden"
             >
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="absolute w-full h-full rounded-full border-r-[4px] border-primary animate-spin-slow z-20 border-x-emerald-400"></div>
@@ -28,15 +28,17 @@ const Sponsors: React.FC = () => {
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="absolute w-[90%] h-[90%] rounded-full border-l-[4px] border-secondary animate-reverse-spin z-0 border-yellow-300"></div>
               </div>
+
               <div className="absolute inset-0 flex items-center justify-center z-30">
                 <Image
                   src={imagePath}
-                  alt="sponsers image"
+                  alt="sponsors image"
                   height={200}
                   width={200}
                   quality={100}
-                  layout="fixed"
                   className="rounded-full"
+                  layout="fixed"
+                  priority // Preloads the images to avoid flicker
                 />
               </div>
             </div>

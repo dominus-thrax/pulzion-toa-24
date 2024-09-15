@@ -18,6 +18,8 @@ const font = localFont({
   src: "../../../../public/font/SairaStencilOne-Regular.ttf",
 });
 
+const originText = localFont({src:"../../../../public/fonts/OriginTech personal use.ttf"})
+
 const EventsPage: React.FC = () => {
   const { events, setEvents } = useAuth();
 
@@ -26,7 +28,7 @@ const EventsPage: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4">
       <h1
-        className={`${sixtyfour.className} text-xl md:text-5xl font-diary font-bold mb-8 text-white`}
+        className={`${originText.className} text-2xl md:text-6xl font-diary font-bold mb-8 text-white`}
         style={{
           marginTop: "50px",
           color: "#CFC36D",

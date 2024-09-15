@@ -20,6 +20,7 @@ import {
 import { Button } from "../ui/button";
 import api from "@/api/api";
 import { toast } from "sonner";
+import path from "path";
 
 const font = localFont({
   src: "../../../public/font/SairaStencilOne-Regular.ttf",
@@ -74,8 +75,10 @@ const Navbar = () => {
     { label: "EVENTS", path: "/events" },
     { label: "GAME EVO", path: "/game-evolution" },
     { label: "TECH EVO", path: "/tech-evolution" },
-    { label: "DEVELOPERS", path: "/developers" },
-    { label: "TEAM", path: "/team" },
+    // { label: "DEVELOPERS", path: "/developers" },
+    // { label: "TEAM", path: "/team" },
+    {label:'GLIMPSES', path:'/glimpses'},
+    {label:'SPONSORS', path:'/sponsors'}
   ];
 
   const handleLogout = async () => {

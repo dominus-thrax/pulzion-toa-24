@@ -1,7 +1,5 @@
-"use client";
-
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 import { FaCartPlus, FaUsers, FaPhone } from "react-icons/fa";
 
@@ -27,68 +25,74 @@ export function ThreeDCardDemo({
   eventLeads,
 }: ThreeDCardDemoProps) {
   return (
-    <div className="w-full px-4 md:px-64">
+    <div className="w-full px-4 md:px-24">
       <CardContainer className="inter-var w-full border-white/[0.5] border-2 rounded-md">
-        <CardBody className="bg-transparent relative group dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border border-black/[0.1] w-full h-auto rounded-xl p-6 overflow-hidden">
-          <CardItem
-            translateZ="50"
-            className="text-xl font-bold text-white group-hover:scale-105 transition-transform duration-300"
-          >
-            {title}
-          </CardItem>
-          <CardItem translateZ="60" className="w-full mt-4 flex justify-center">
-            <Image
-              src="/photo.png"
-              alt=""
-              width={200}
-              height={200}
-              className="object-cover rounded-xl"
-            />
-          </CardItem>
-          <CardItem
-            as="p"
-            translateZ="60"
-            className="text-white text-sm max-w-sm mt-2 font-bold"
-          >
-            Mode: {mode} - Price: ${price}
-          </CardItem>
-          <CardItem as="p" translateZ="60" className="text-white text-sm mt-2">
-            {rules.split("\n")}
-          </CardItem>
-          <CardItem as="p" translateZ="60" className="text-white text-sm mt-2">
-            {rounds}
-          </CardItem>
-          <CardItem
-            as="p"
-            translateZ="60"
-            className="text-white text-sm mt-2 font-bold flex items-center gap-2"
-          >
-            <FaUsers /> Team Distribution: {teamDistribution}
-          </CardItem>
+        <CardBody className="bg-transparent relative group dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border border-black/[0.1] w-full h-auto rounded-xl p-2 overflow-hidden grid grid-cols-12">
+          {/* Left Card */}
+          <div className="col-span-4 flex flex-col justify-center items-center mx-auto text-current">
+            <div className=" rounded-md">
+              <img
+                src="/assets/add-to-cart/Codex.png"
+                alt=""
+                className="bg-yellow-400"
+              />
+            </div>
 
-          {/* Event Leads Section */}
-          <CardItem
-            as="div"
-            translateZ="60"
-            className="text-white text-sm mt-4 flex flex-col gap-2"
-          >
-            {eventLeads.map((lead, index) => (
-              <div key={index} className="flex items-center gap-2 font-bold">
-                <span>{lead.name}</span>
-                <FaPhone />
-                <span>{lead.phone}</span>
-              </div>
-            ))}
-          </CardItem>
+            <p className="text-2xl font-bold text-white text-center">{title}</p>
+            <div className="flex gap-2 text-white text-center">
+              <p>{mode}</p>
+              <p>|</p>
+              <p>₹{price}</p>
+            </div>
+            <button className="bg-yellow-500 rounded-md text-black p-2 px-3">
+              Add to Cart
+            </button>
+            <div className="text-white mt-4">
+              {eventLeads &&
+                eventLeads.map((lead, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center gap-2 font-bold"
+                  >
+                    <span>{lead.name}</span>
+                    <FaPhone />
+                    <span>{lead.phone}</span>
+                  </div>
+                ))}
+            </div>
+            <div className="mt-2">
+              <p className="text-white flex gap-2 text-sm">
+                <FaUsers className=" my-auto" /> Team Distribution:{" "}
+                {teamDistribution}
+              </p>
+            </div>
+          </div>
 
-          <div className="mt-20">
-            <CardItem
-              translateZ={20}
-              as="button"
-              className="px-4 py-2 rounded-xl bg-yellow-500 text-white text-xs font-bold flex items-center gap-2"
-            >
-              <FaCartPlus /> Add to Cart
-            </CardItem>
+          {/* Vertical Divider */}
+          <div className="col-span-1 flex items-center justify-center">
+            <div className="border-l-2 h-full border-white/[0.5]"></div>
+          </div>
+
+          {/* Right Card */}
+          <div className="col-span-7 text-white ml-2">
+            <p className="text-xl font-semibold mt-2">Rounds</p>
+            <hr />
+            <div>
+              {rounds.split("\n").map((round, index) => (
+                <p key={index} className="mb-2 text-sm">
+                  {round}
+                </p>
+              ))}
+            </div>
+            <p className="text-xl font-semibold mt-2">Rules</p>
+            <hr />
+            <div>
+              {rules.split("\n").map((rule, index) => (
+                <p key={index} className="mb-2 text-sm">
+                  {rule}
+                </p>
+              ))}
+            </div>
           </div>
         </CardBody>
       </CardContainer>

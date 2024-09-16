@@ -19,8 +19,9 @@ import { LoginForm } from "../../../types";
 import localFont from "next/font/local";
 
 const font = localFont({
-  src: "../../../../public/font/SairaStencilOne-Regular.ttf",
+  src: "../../../../public/font/BDSupperRegular.ttf",
 });
+
 
 const heading = localFont({
   src: "../../../../public/font/OriginTech personal use.ttf",

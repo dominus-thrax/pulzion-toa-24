@@ -10,8 +10,9 @@ import Link from "next/link"; // Import Link for navigation
 import localFont from "next/font/local";
 
 const font = localFont({
-  src: "../../../public/font/SairaStencilOne-Regular.ttf",
+  src: "../../../public/font/BDSupperRegular.ttf",
 });
+
 
 const sixtyfour = localFont({
   src: "../../../public/font/OriginTech personal use.ttf",

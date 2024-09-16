@@ -23,7 +23,7 @@ import { toast } from "sonner";
 import path from "path";
 
 const font = localFont({
-  src: "../../../public/font/SairaStencilOne-Regular.ttf",
+  src: "../../../public/font/BDSupperRegular.ttf",
 });
 
 const Navbar = () => {
@@ -98,14 +98,14 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="pt-6 fixed top-0 left-0 w-full px-6 z-50 backdrop-blur-md transition-all duration-300 ease-in-out">
+    <nav className="pt-0 md:pt-6 fixed top-0 left-0 w-full md:px-6 z-30 backdrop-blur-md transition-all duration-300 ease-in-out">
       <div className="flex justify-between items-center">
         <div
-          className="transition-transform duration-300 flex flex-col justify-center items-center"
+          className="transition-transform duration-300 flex flex-col justify-center items-center pl-3"
           ref={logoRef}
         >
-          <Image src={logo} alt="Logo" width={200} height={200} />
-          <Image src={tagline} alt="tagline" width={150} height={150} />
+          <Image src={logo} alt="Logo" width={150} height={150} />
+          <Image src={tagline} alt="tagline" width={120} height={120} />
         </div>
         {/* Desktop Menu */}
         <div className="hidden md:flex text-[#CFC36D] gap-8 items-center z-30">

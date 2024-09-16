@@ -16,8 +16,9 @@ import twitter from "../../../public/assets/landing/contact-us/twitter.png";
 import { Button } from "../ui/button";
 
 const font = localFont({
-  src: "../../../public/font/SairaStencilOne-Regular.ttf",
+  src: "../../../public/font/BDSupperRegular.ttf",
 });
+
 
 const sixtyfour = localFont({
   src: "../../../public/font/OriginTech personal use.ttf",

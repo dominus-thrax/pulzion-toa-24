@@ -11,8 +11,9 @@ const sixtyfour = localFont({
 });
 
 const font = localFont({
-  src: "../../../public/font/SairaStencilOne-Regular.ttf",
+  src: "../../../public/font/BDSupperRegular.ttf",
 });
+
 
 const About: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -49,7 +50,7 @@ const About: React.FC = () => {
         <div
           id="animated-circles"
           className={`${
-            sixtyfour.className
+            font.className
           } relative w-full lg:w-1/2 flex justify-center  transition-all duration-1000 ease-in-out transform ${
             isVisible
               ? "translate-x-0 opacity-100"
@@ -60,7 +61,6 @@ const About: React.FC = () => {
             {/* Top Left Circle */}
             <div className="relative w-[150px] h-[150px] md:w-[205px] md:h-[205px] flex items-center justify-center">
               <div
-                style={{ fontFamily: "Wallpoet" }}
                 className="absolute inset-0 flex items-center justify-center text-white text-center"
               >
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -82,7 +82,6 @@ const About: React.FC = () => {
             {/* Top Right Circle */}
             <div className="relative w-[150px] h-[150px] md:w-[205px] md:h-[205px] flex items-center justify-center">
               <div
-                style={{ fontFamily: "Wallpoet" }}
                 className="absolute inset-0 flex items-center justify-center text-white text-center"
               >
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -104,7 +103,6 @@ const About: React.FC = () => {
             {/* Bottom Center Circle */}
             <div className="relative col-span-2 w-[150px] h-[150px] md:w-[205px] md:h-[205px] flex items-center justify-center">
               <div
-                style={{ fontFamily: "Wallpoet" }}
                 className="absolute inset-0 flex items-center justify-center text-white text-center"
               >
                 <div className="absolute inset-0 flex items-center justify-center">

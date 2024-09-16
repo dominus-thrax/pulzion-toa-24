@@ -63,7 +63,7 @@ const CartPage = () => {
       {!isCartEmpty && (
         <div className="md:flex gap-8">
           <div className="flex-grow my-4 md:my-0">
-            <div className="border-2 rounded-2xl w-full max-h-56 md:max-h-none overflow-y-auto custom-scrollbar">
+            <div className="border-2 border-[#8BFFCE] rounded-2xl w-full max-h-56 md:max-h-none overflow-y-auto custom-scrollbar">
               <div className="flex-grow p-4">
                 {!isCartEmpty &&
                   cartItems.length > 0 &&
@@ -83,7 +83,7 @@ const CartPage = () => {
           </div>
           <div className="">
             {!isCartEmpty && (
-              <div className="border-2 rounded-2xl">
+              <div className="border-2 border-[#8BFFCE] rounded-2xl">
                 <Order cartItems={cartItems} refetch={fetchCartItems} />
               </div>
             )}

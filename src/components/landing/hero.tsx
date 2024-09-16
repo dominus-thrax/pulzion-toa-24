@@ -7,6 +7,7 @@ import tagline from "../../../public/assets/landing/hero/tagline.png";
 import localFont from "next/font/local";
 import MatrixRain from "./MatrixRain";
 import { RxSpeakerLoud } from "react-icons/rx";
+import { Button } from "../ui/button";
 
 const sixtyfour = localFont({
   src: "../../../public/font/OriginTech personal use.ttf",
@@ -129,13 +130,12 @@ const Hero = () => {
         )}
       </div>
       <div className="w-full flex justify-center">
-      <a
-  href="/register"
-  className={`${font.className} text-black bg-[#ECAA43] px-4 py-2 rounded-2xl mx-auto block text-center absolute`}
->
-  Participate Now
-</a>
-
+        <a
+          href="/register"
+          className={`${font.className} z-10 hover:cursor-pointer text-black bg-[#ECAA43] px-4 py-2 rounded-2xl mx-auto block text-center absolute`}
+        >
+          Participate Now
+        </a>
       </div>
     </div>
   );

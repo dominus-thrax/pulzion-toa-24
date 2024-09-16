@@ -5,25 +5,27 @@ import Card from "@/components/user-events/Card";
 import api from "@/api/api";
 import isNotAuth from "@/context/user/isNotAuth";
 
-export type Item = {
+export type Transaction = {
   id: string;
-  date: string;
+  transaction_id: string;
   name: string;
   amount: number;
+  events: string[];
   status: string;
+  created_at: string;
 };
 
 const Orders: React.FC = () => {
-  const [data, setData] = useState<Item[]>([]);
+  const [data, setData] = useState<Transaction[]>([]);
   const [loading, setLoading] = useState(true);
 
   const getData = async () => {
     try {
-      const response = await api.get("/user_events");
+      const response = await api.get("/transaction");
 
-      // Extract data from the response
-      const rawData = response.data;
-      setData(rawData.events);
+      // Extracting the transaction array
+      const transactions = response.data.transactions;
+      setData(transactions);
     } catch (error: any) {
       // Error handling
       console.log(error);
@@ -53,17 +55,25 @@ const Orders: React.FC = () => {
   }
 
   return (
-    <div className="bg-black md:grid md:grid-cols-3 md:gap-3 mt-16">
-      {data.map((d) => (
-        <Card
-          key={d.id}
-          id={d.id || "1234567890"}
-          date={d.date || "30/10/2024"}
-          name={d.name}
-          amount={d.amount || 30}
-          status={d.status || "Pending"}
-        />
-      ))}
+    <div className="bg-black">
+      <div className="flex justify-center items-center pt-10 font-vt323 text-[#CFC36D] text-2xl md:text-5xl">My Orders</div>
+      <div className="md:grid md:grid-cols-3 md:gap-3 p-10  space-y-4 md:space-y-0">
+        {/* Mapping over transactions */}
+        {data.map((transaction) =>
+          transaction.events.map((event, index) => (
+            <Card
+              key={`${transaction.id}-${index}`}
+              id={transaction.transaction_id || "1234567890"}
+              name={event} // Event name
+              amount={transaction.amount || 0}
+              status={transaction.status || "Pending"}
+              transaction_id={""}
+              events={[]}
+              created_at={""}
+            />
+          ))
+        )}
+      </div>
     </div>
   );
 };

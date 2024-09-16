@@ -73,6 +73,14 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        meteor: {
+          "0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
+          "70%": { opacity: "1" },
+          "100%": {
+            transform: "rotate(215deg) translateX(-500px)",
+            opacity: "0",
+          },
+        },
         aurora: {
           from: {
             backgroundPosition: "50% 50%, 50% 50%",
@@ -122,6 +130,7 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
         "reverse-spin": "reverse-spin 4s linear infinite",
         "spin-slow": "spin 7s linear infinite",
+        meteor: "meteor 5s linear infinite",
         marquee: "marquee 10s linear infinite",
         swing: "swing 6s infinite ease-in-out",
         rotate: "rotate 5s linear infinite",

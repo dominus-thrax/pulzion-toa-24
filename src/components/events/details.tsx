@@ -1,101 +1,185 @@
-import Image from "next/image";
+"use client";
+import { CardSpotlight } from "@/components/ui/card-spotlight";
 import React, { useEffect, useState } from "react";
-import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
-import { FaCartPlus, FaUsers, FaPhone } from "react-icons/fa";
+import axios from "axios";
+import { FaCartPlus, FaUsers } from "react-icons/fa";
+import { BackgroundGradient } from "../ui/background-gradient";
+import { BorderBeam } from "@/components/magicui/border-beam";
+import { Toaster, toast } from "sonner";
+import api from "@/api/api";
+import { FaPhone } from "react-icons/fa6";
+import { Button } from "../ui/button";
+interface EventLead {
+  name: string;
+  phone: string;
+}
 
-interface ThreeDCardDemoProps {
+interface EventData {
   id: number;
-  title: string | string[];
   mode: string;
   price: string;
   rules: string;
   rounds: string;
   teamDistribution: string;
-  eventLeads: { name: string; phone: string }[];
+  eventLeads: EventLead[];
 }
 
-export function ThreeDCardDemo({
-  id,
-  title,
-  mode,
-  price,
-  rules,
-  rounds,
-  teamDistribution,
-  eventLeads,
-}: ThreeDCardDemoProps) {
+interface ThreeDCardDemoProps {
+  event: EventData;
+  title: string;
+}
+
+export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
+  const [eventData, setEventData] = useState<EventData>({
+    id: 0,
+    mode: "",
+    price: "",
+    rules: "No details available.",
+    rounds: "",
+    teamDistribution: "",
+    eventLeads: [],
+  });
+
+  useEffect(() => {
+    if (event) {
+      setEventData({
+        id: event.id,
+        mode: event.mode || "",
+        price: event.price || "",
+        rules: event.rules || "No details available.",
+        rounds: event.rounds || "",
+        teamDistribution: event.teamDistribution || "",
+        eventLeads: event.eventLeads || [],
+      });
+    }
+  }, [event]);
+
+  const addToCart = async () => {
+    try {
+      const response = await api.post("/cart", {
+        event_id: eventData.id,
+      });
+
+      toast.success("Event Added to Cart", {
+        style: { background: "green", color: "white" },
+      });
+    } catch (error: any) {
+      toast.error("Event already Added in Cart", {
+        style: { background: "red", color: "white" },
+      });
+    }
+  };
+
   return (
-    <div className="w-full px-4 md:px-24">
-      <CardContainer className="inter-var w-full border-white/[0.5] border-2 rounded-md">
-        <CardBody className="bg-transparent relative group dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border border-black/[0.1] w-full h-auto rounded-xl p-2 overflow-hidden grid grid-cols-12">
-          {/* Left Card */}
-          <div className="col-span-4 flex flex-col justify-center items-center mx-auto text-current">
-            <div className=" rounded-md">
-              <img
-                src="/assets/add-to-cart/Codex.png"
-                alt=""
-                className="bg-yellow-400"
-              />
+    <div className="w-full  flex justify-center items-center md:px-24 mb-7 mt-16 md:mt-0 px-3">
+      <Toaster position="top-right" />
+      <div className=" w-full border-white/[0.2] border-2 rounded-xl max-w-6xl">
+        <div className="bg-transparent  w-full relative rounded-xl p-4 md:grid grid-cols-12">
+          <div className="col-span-4 flex flex-col justify-between items-center mx-auto w-full ">
+            <div className="rounded-md">
+              <img src="/photo.png" alt="" className=" w-20 md:w-36" />
+            </div>
+            <div className=" w-full  text-center">
+              <p className=" text-xl md:text-3xl font-bold mt-2 text-white text-center">
+                {title}
+              </p>
+              <div className="flex items-center mt-4">
+                <div className="flex-1 text-center">
+                  <p className="text-white text-lg">{eventData.mode}</p>
+                  <p className="text-slate-300 text-xs">Location</p>
+                </div>
+
+                <div className="h-16 border-l-2 border-white/[0.2] mx-4"></div>
+
+                <div className="flex-1 text-white text-center">
+                  <p className="text-white text-lg">{eventData.price}</p>
+                  <p className="text-slate-300 text-xs">Price</p>
+                </div>
+              </div>
             </div>
 
-            <p className="text-2xl font-bold text-white text-center">{title}</p>
-            <div className="flex gap-2 text-white text-center">
-              <p>{mode}</p>
-              <p>|</p>
-              <p>₹{price}</p>
-            </div>
-            <button className="bg-yellow-500 rounded-md text-black p-2 px-3">
+            <Button
+              className="bg-[#E8AF49] rounded-xl hover:text-black hover:bg-yellow-500 my-2"
+              onClick={addToCart} // Add the click handler
+            >
               Add to Cart
-            </button>
-            <div className="text-white mt-4">
-              {eventLeads &&
-                eventLeads.map((lead, index) => (
+            </Button>
+
+            {/* Event Leads */}
+            <div className="text-white  flex gap-3 md:gap-6 mt-4 mb-1 ">
+              {eventData.eventLeads.length > 0 &&
+                eventData.eventLeads.map((lead, index) => (
                   <div
                     key={index}
-                    className="flex items-center gap-2 font-bold"
+                    className="flex items-center  text-xs md:text-sm gap-2 "
                   >
-                    <span>{lead.name}</span>
+                    <span>
+                      {lead.name}
+                      {":"}
+                    </span>
                     <FaPhone />
                     <span>{lead.phone}</span>
                   </div>
                 ))}
             </div>
-            <div className="mt-2">
+
+            {/* Team Distribution */}
+            <div className="mt-2 text-white w-full ">
+              <hr className="  border-white/[0.2] my-2 mt-4" />
               <p className="text-white flex gap-2 text-sm">
-                <FaUsers className=" my-auto" /> Team Distribution:{" "}
-                {teamDistribution}
+                <FaUsers className="my-auto text-xl font-bold " /> Team
+                Distribution:{" "}
               </p>
+              <div className="text-white mt-2">
+                {eventData.teamDistribution.split("\n").map((team, index) => (
+                  <p key={index} className="mb-2 text-xs">
+                    {team}
+                  </p>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Vertical Divider */}
-          <div className="col-span-1 flex items-center justify-center">
-            <div className="border-l-2 h-full border-white/[0.5]"></div>
+          <div className="col-span-1 flex items-center justify-center ">
+            <div className="border-l-2 h-full border-white/[0.2]"></div>
           </div>
 
-          {/* Right Card */}
-          <div className="col-span-7 text-white ml-2">
-            <p className="text-xl font-semibold mt-2">Rounds</p>
-            <hr />
+          {/* Rounds and Rules */}
+          <div className="col-span-7 text-white md:ml-2">
+            <p className="text-xl font-semibold mt-2 mb-1">Rounds</p>
+            <hr className=" text-white/[0.2]" />
             <div>
-              {rounds.split("\n").map((round, index) => (
-                <p key={index} className="mb-2 text-sm">
-                  {round}
-                </p>
-              ))}
+              {eventData.rounds.length > 0 &&
+                eventData.rounds.split("\n").map((round, index) => (
+                  <p key={index} className="mb-2 text-xs md:text-[13px]">
+                    {round}
+                  </p>
+                ))}
             </div>
-            <p className="text-xl font-semibold mt-2">Rules</p>
-            <hr />
-            <div>
-              {rules.split("\n").map((rule, index) => (
-                <p key={index} className="mb-2 text-sm">
-                  {rule}
-                </p>
-              ))}
+            <p className="text-xl font-semibold mt-4 mb-1">Rules</p>
+            <hr className=" text-white/[0.2]" />
+            <div className=" mt-1">
+              {eventData.rules.length > 0 &&
+                eventData.rules.split("\n").map((rule, index) => (
+                  <p key={index} className="mb-2 text-xs md:text-[13px]">
+                    {rule}
+                  </p>
+                ))}
             </div>
+            {/* <div className="mt-4">
+              <p className="text-white flex gap-2 ">
+                <FaUsers className="my-auto text-xl font-bold" />
+                <p className=" text-xl text-white">Team Distribution: </p>
+              </p>
+              <hr />
+              <p className=" text-xs text-white">
+                {eventData.teamDistribution}
+              </p>
+            </div> */}
           </div>
-        </CardBody>
-      </CardContainer>
+          <BorderBeam size={600} duration={12} delay={5} />
+        </div>
+      </div>
     </div>
   );
 }

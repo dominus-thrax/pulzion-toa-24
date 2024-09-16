@@ -1,17 +1,11 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import localFont from "next/font/local";
-import EventCard from "@/components/events/event-details";
-import EventBanner from "@/components/events/event-banner";
-import api from "@/api/api";
-import { EventType } from "@/types";
 import { useAuth } from "@/context";
 import { CardSpotlightDemo } from "@/components/events/event-card";
-import { CardSpotlight } from "@/components/ui/card-spotlight";
-// import Particles from "@/components/magicui/particles";
-//import Ellipse from '@/components/ui/Ellipse';
-
+import SliderCard from "@/components/events/sliderCards";
+import MobileSliderCard from "@/components/events/mobileSliderCard";
 const sixtyfour = localFont({
   src: "../../../../public/fonts/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf",
 });
@@ -25,29 +19,66 @@ const originText = localFont({
 });
 
 const EventsPage: React.FC = () => {
-  const { events, setEvents } = useAuth();
-  const [filter, setFilter] = useState<string>("All");
+  const { events }: { events: any } = useAuth();
 
-  // Function to handle category change
-  const handleFilterChange = (category: string) => {
-    setFilter(category);
-  };
-
-  // Filter the events based on the selected filter
-  const filteredEvents = events.filter((event: EventType) => {
-    if (filter === "All") return true;
-    return event.type === filter;
-  });
+  const technicalEvents = events.filter(
+    (event: any) => event.type === "Technical"
+  );
+  const nonTechnicalEvents = events.filter(
+    (event: any) => event.type === "Non Technical"
+  );
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-6  gap-9  mt-24 md:mx-36">
-        {events.length > 0 &&
-          events.map((event, index) => (
-            <div key={index} className={` ${font.className}`}>
-              <CardSpotlightDemo event={event} />
-            </div>
-          ))}
+      <div className="mt-2">
+        <h1
+          className={` ${originText.className} text-[#cfc36d] text-2xl md:text-6xl text-center mt-20`}
+        >
+          EVENTS
+        </h1>
+      </div>
+
+      <div className=" hidden md:block mt-6 ">
+        <SliderCard events={events} />
+      </div>
+      <div className="mt-6 md:hidden mx-24">
+        <MobileSliderCard events={events} />
+      </div>
+
+      <div className="mt-24  mb-20">
+        {/* Technical Events */}
+        <div>
+          <h2
+            className={` ${originText.className} text-[#cfc36d] text-xl mb-3 md:text-4xl text-center`}
+          >
+            Technical
+          </h2>
+          <div className="flex flex-wrap gap-9 justify-center">
+            {technicalEvents.length > 0 &&
+              technicalEvents.map((event: any, index: number) => (
+                <div key={index} className={` ${font.className}`}>
+                  <CardSpotlightDemo event={event} />
+                </div>
+              ))}
+          </div>
+        </div>
+
+        {/* Non-Technical Events */}
+        <div className="mt-12">
+          <h2
+            className={` ${originText.className} text-[#cfc36d] text-xl mb-2 md:text-4xl text-center`}
+          >
+            Non-Technical
+          </h2>
+          <div className="flex flex-wrap gap-9 justify-center">
+            {nonTechnicalEvents.length > 0 &&
+              nonTechnicalEvents.map((event: any, index: number) => (
+                <div key={index} className={` ${font.className}`}>
+                  <CardSpotlightDemo event={event} />
+                </div>
+              ))}
+          </div>
+        </div>
       </div>
     </>
   );

@@ -6,7 +6,6 @@ export const teamMembers = [
     linkedin:
       "https://www.linkedin.com/in/devashish-bhirdi-53835529a/?trk=opento_nprofile_details",
   },
-  
   {
     name: "Shreekar Gade",
     position: ["EMS Frontend Lead"],

@@ -1,8 +1,9 @@
 "use client";
-import images from "../../../../public/assets/data/glimpses.json";
 import { useEffect } from "react";
-import Image from "next/image";
 import localFont from "next/font/local";
+import items from "../../../../public/assets/data/glimpses.json";
+import { BentoGrid, BentoGridItem } from "../../../components/ui/bento-grid";
+import { BorderBeam } from "@/components/magicui/border-beam";
 
 const originText = localFont({
   src: "../../../../public/fonts/OriginTech personal use.ttf",
@@ -20,20 +21,15 @@ export default function Page() {
           GLIMPSES
         </h1>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20 mx-auto mt-4 p-4 justify-items-center items-center">
-        {images.map((image, index) => {
-          return (
-            <Image
-              key={index}
-              src={image.thumbnail}
-              className="rounded-lg"
-              height={300}
-              width={400}
-              alt="image"
-            />
-          );
-        })}
-      </div>
+      <BentoGrid className="max-w-4xl mx-auto my-20">
+        {items.map((item, i) => (
+          <BentoGridItem
+            key={i}
+            className={item.className}
+            original={item.original}
+          />
+        ))}
+      </BentoGrid>
     </>
   );
 }

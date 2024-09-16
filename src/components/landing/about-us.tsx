@@ -5,13 +5,14 @@ import Image from "next/image";
 import localFont from "next/font/local";
 import card from "../../../public/assets/landing/about-us/card.png";
 import NumberTicker from "../magicui/number-ticker";
+import Meteors from "../magicui/meteors";
 
 const sixtyfour = localFont({
   src: "../../../public/font/OriginTech personal use.ttf",
 });
 
 const font = localFont({
-  src: "../../../public/font/SairaStencilOne-Regular.ttf",
+  src: "../../../public/font/BDSupperRegular.ttf",
 });
 
 const About: React.FC = () => {
@@ -49,7 +50,7 @@ const About: React.FC = () => {
         <div
           id="animated-circles"
           className={`${
-            sixtyfour.className
+            font.className
           } relative w-full lg:w-1/2 flex justify-center  transition-all duration-1000 ease-in-out transform ${
             isVisible
               ? "translate-x-0 opacity-100"
@@ -59,10 +60,7 @@ const About: React.FC = () => {
           <div className="grid grid-cols-2 gap-3 md:gap-5 place-items-center justify-center items-center lg:mt-5 ">
             {/* Top Left Circle */}
             <div className="relative w-[150px] h-[150px] md:w-[205px] md:h-[205px] flex items-center justify-center">
-              <div
-                style={{ fontFamily: "Wallpoet" }}
-                className="absolute inset-0 flex items-center justify-center text-white text-center"
-              >
+              <div className="absolute inset-0 flex items-center justify-center text-white text-center">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="absolute w-full h-full rounded-full border-r-[4px] border-primary animate-spin-slow z-20 border-x-emerald-400"></div>
                 </div>
@@ -81,10 +79,7 @@ const About: React.FC = () => {
 
             {/* Top Right Circle */}
             <div className="relative w-[150px] h-[150px] md:w-[205px] md:h-[205px] flex items-center justify-center">
-              <div
-                style={{ fontFamily: "Wallpoet" }}
-                className="absolute inset-0 flex items-center justify-center text-white text-center"
-              >
+              <div className="absolute inset-0 flex items-center justify-center text-white text-center">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="absolute w-full h-full rounded-full border-r-[4px] border-primary animate-spin-slow z-20 border-x-emerald-400"></div>
                 </div>
@@ -103,10 +98,7 @@ const About: React.FC = () => {
 
             {/* Bottom Center Circle */}
             <div className="relative col-span-2 w-[150px] h-[150px] md:w-[205px] md:h-[205px] flex items-center justify-center">
-              <div
-                style={{ fontFamily: "Wallpoet" }}
-                className="absolute inset-0 flex items-center justify-center text-white text-center"
-              >
+              <div className="absolute inset-0 flex items-center justify-center text-white text-center">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="absolute w-full h-full rounded-full border-r-[4px] border-primary animate-spin-slow z-20 border-x-emerald-400"></div>
                 </div>
@@ -158,58 +150,70 @@ const About: React.FC = () => {
       </div>
 
       {/* Bottom Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 ">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 z-30">
         {/* Card 1 */}
-        <div className="relative max-w-sm w-full opacity-80 animate-pulse ">
+        <div className="relative max-w-sm w-full ">
           <div className="relative">
-            <Image
-              src={card}
-              alt="Card Background Image"
-              width={350}
-              height={200}
-              style={{ objectFit: "contain" }}
-            />
-            <div
-              className={`${font.className} absolute inset-0 flex flex-col justify-center items-center z-10 text-white p-6`}
-            >
-              <h2>PASC</h2>
-              <p className="text-xs text-center">
-                PICT ACM Student&apos;s Chapter (PASC) is the most active ACM
-                chapter in India. #UnitedWeStand At PASC, we all work together,
-                as a team. We take utmost efforts for the success of each and
-                every member of PASC.
-              </p>
+            <div className="relative border-[#ADCC8B] rounded-xl flex h-[200px] w-full flex-col items-center justify-center bg-black overflow-hidden border bg-background md:shadow-xl">
+              <Meteors number={30} />
+              <div
+                className={`${font.className} absolute inset-0 flex flex-col justify-center items-center z-10 text-white p-6`}
+              >
+                <h2 className="text-3xl font-semibold">PASC</h2>
+                <p className="text-sm text-center">
+                  PICT ACM Student&apos;s Chapter (PASC) is the most active ACM
+                  chapter in India. #UnitedWeStand At PASC, we all work
+                  together, as a team. We take utmost efforts for the success of
+                  each and every member of PASC.
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Card 2 */}
-        <div className="relative max-w-sm w-full opacity-80 animate-pulse">
+        <div className="relative max-w-sm w-full">
           <div className="relative">
-            <Image
-              src={card}
-              alt="Card Background Image"
-              width={350}
-              height={200}
-              style={{ objectFit: "contain" }}
-            />
-            <div
-              className={`${font.className} absolute inset-0 flex flex-col justify-center items-center z-10 text-white p-6`}
-            >
-              <h2>ACM-W</h2>
-              <p className="text-xs text-center">
-                With the objective to support and celebrate the full engagement
-                of women in all aspects of computing field, we conducted an
-                event ACM Pune &apos;Celebration of Women in Computing&apos;
-                (APCWIC-2018) in association with ACM-W India and ACM Pune
-                Professional Chapter.
-              </p>
+            <div className="relative border-[#ADCC8B] rounded-xl flex h-[200px] w-full flex-col items-center justify-center bg-black overflow-hidden border bg-background md:shadow-xl">
+              <Meteors number={30} />
+              <div
+                className={`${font.className} absolute inset-0 flex flex-col justify-center items-center z-10 text-white p-6`}
+              >
+                <h2 className="text-3xl font-semibold">ACM-W</h2>
+                <p className="text-sm text-center">
+                  With the objective to support and celebrate the full
+                  engagement of women in all aspects of computing field, we
+                  conducted an event ACM Pune &apos;Celebration of Women in
+                  Computing&apos; (APCWIC-2018) in association with ACM-W India
+                  and ACM Pune Professional Chapter.
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Card 3 */}
-        <div className="relative max-w-sm w-full opacity-80 animate-pulse">
+        <div className="relative max-w-sm w-full ">
+          <div className="relative">
+            <div className="relative border-[#ADCC8B] rounded-xl flex h-[200px] w-full flex-col items-center justify-center bg-black overflow-hidden border bg-background md:shadow-xl">
+              <Meteors number={30} />
+              <div
+                className={`${font.className} absolute inset-0 flex flex-col justify-center items-center z-10 text-white p-6`}
+              >
+                <h2 className="text-3xl font-semibold">ACM</h2>
+                <p className="text-sm text-center">
+                The Association for Computing Machinery (ACM) is the
+                world&apos;s largest educational and scientific society uniting
+                professionals, educators and researchers in the field of
+                computer science to inspire dialogue, share resources and
+                address the challenges in the domain.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="relative max-w-sm w-full">
           <div className="relative">
             <Image
               src={card}

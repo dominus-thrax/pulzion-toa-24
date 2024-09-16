@@ -11,8 +11,9 @@ const sixtyfour = localFont({
 });
 
 const font = localFont({
-  src: "../../../../public/font/SairaStencilOne-Regular.ttf",
+  src: "../../../../public/font/BDSupperRegular.ttf",
 });
+
 
 const originText = localFont({
   src: "../../../../public/fonts/OriginTech personal use.ttf",

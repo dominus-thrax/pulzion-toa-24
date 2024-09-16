@@ -166,3 +166,27 @@ select option {
   scrollbar-width: thin; /* Make scrollbar thin */
   scrollbar-color: #8bffce transparent; /* Scrollbar color */
 }
+
+/* Add these styles to your Tailwind CSS or custom CSS file */
+
+.video-fade-out {
+  transition: opacity 1s ease-out; /* Fade out the video */
+}
+
+.video-fade-out.fade {
+  opacity: 0;
+}
+
+.content-transition {
+  transition: transform 2s ease-in-out, opacity 2s ease-in-out; /* Smooth scaling and fading */
+}
+
+.content-transition.scale-up {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.content-transition.scale-down {
+  transform: scale(0.75);
+  opacity: 0;
+}

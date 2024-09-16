@@ -6,7 +6,7 @@ import { techs } from "@/data/data";
 import localFont from "next/font/local";
 
 const font = localFont({
-  src: "../../../../public/font/SairaStencilOne-Regular.ttf",
+  src: "../../../../public/font/BDSupperRegular.ttf",
 });
 
 const GameEvolution = () => {

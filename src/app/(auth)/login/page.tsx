@@ -19,11 +19,12 @@ import { LoginForm } from "../../../types";
 import localFont from "next/font/local";
 
 const font = localFont({
-  src: "../../../../public/font/SairaStencilOne-Regular.ttf",
+  src: "../../../../public/font/BDSupperRegular.ttf",
 });
 
+
 const heading = localFont({
-  src: "../../../../public/font/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf",
+  src: "../../../../public/font/OriginTech personal use.ttf",
 });
 
 const LoginPage: NextPage = () => {
@@ -83,7 +84,7 @@ const LoginPage: NextPage = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-black bg-cover bg-center">
-      <div className="p-8 rounded-3xl z-20 px-20 shadow-lg bg-opacity-65 bg-gradient-to-b from-registercardcolor1 to-registercardcolor2 border-loginbordercolor border-4 flex flex-col items-center">
+      <div className="p-8 rounded-3xl z-20 px-20 shadow-lg bg-opacity-65 bg-[#EDA93F]/20 border-2 border-[#CFC36D] flex flex-col items-center">
         <div className={`flex text-2xl md:text-4xl items-center ${heading.className}`}>
           <Image
             src={phone}

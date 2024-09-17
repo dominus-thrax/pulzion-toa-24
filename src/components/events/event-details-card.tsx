@@ -8,7 +8,7 @@ import api from "@/api/api";
 import { toast } from "sonner";
 
 const font = localFont({
-  src: "../../../public/font/SairaStencilOne-Regular.ttf",
+  src: "../../../public/font/BDSupperRegular.ttf",
 });
 
 interface EventDetailsCardProps {

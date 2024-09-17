@@ -1,5 +1,9 @@
+"use client";
+
 import { Inter } from "next/font/google";
 import "../globals.css";
+import { BackgroundBeams } from "@/components/ui/background-beams";
+import MatrixRain from "@/components/landing/MatrixRain";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -10,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className}  min-h-screen`}>{children}</body>
     </html>
   );
 }

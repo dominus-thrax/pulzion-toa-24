@@ -17,11 +17,12 @@ import isAuth from "@/context/user/isAuth";
 import localFont from "next/font/local";
 
 const font = localFont({
-  src: "../../../../public/font/SairaStencilOne-Regular.ttf",
+  src: "../../../../public/font/BDSupperRegular.ttf",
 });
 
+
 const heading = localFont({
-  src: "../../../../public/font/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf",
+  src: "../../../../public/font/OriginTech personal use.ttf",
 });
 
 const RegisterForm = () => {
@@ -114,7 +115,7 @@ const RegisterForm = () => {
       //   backgroundImage: "url('/assets/auth/vector-bg.png')",
       // }}
     >
-      <div className="p-5 md:p-11 z-20 rounded-3xl shadow-lg bg-opacity-35 bg-gradient-to-b from-registercardcolor1 to-registercardcolor2 border-loginbordercolor border-4 flex flex-col items-center pt-5">
+      <div className="p-5 md:p-11 z-20 rounded-3xl shadow-lg bg-opacity-35 bg-[#EDA93F]/20 border-2 border-[#CFC36D] flex flex-col items-center pt-5">
         <h1
           className={`${heading.className} text-center text-4xl text-green-200 mb-6`}
         >

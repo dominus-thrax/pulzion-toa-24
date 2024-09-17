@@ -10,7 +10,12 @@ import Link from "next/link"; // Import Link for navigation
 import localFont from "next/font/local";
 
 const font = localFont({
-  src: "../../../public/font/SairaStencilOne-Regular.ttf",
+  src: "../../../public/font/BDSupperRegular.ttf",
+});
+
+
+const sixtyfour = localFont({
+  src: "../../../public/font/OriginTech personal use.ttf",
 });
 
 const events = [
@@ -81,9 +86,11 @@ const nonTechEvents = [
 
 const VerticalText = ({ text }: { text: string }) => {
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div
+      className={`flex flex-col justify-center items-center ${sixtyfour.className}`}
+    >
       {text.split("").map((char: string, index: number) => (
-        <span key={index} className="text-sm md:text-3xl p-2">
+        <span key={index} className="text-[#CFC36D] text-sm md:text-3xl p-2">
           {char}
         </span>
       ))}
@@ -94,15 +101,9 @@ const VerticalText = ({ text }: { text: string }) => {
 const Events = () => {
   return (
     <div className="bg-black text-white relative w-full min-h-content pt-10">
-      <Particles
-        className="absolute inset-0 z-0"
-        quantity={200}
-        size={1.0}
-        ease={80}
-        color="#ffffff"
-        refresh
-      />
-      <div className="text-[#cfc36d] text-center text-2xl md:text-6xl">
+      <div
+        className={`text-[#CFC36D] text-center text-2xl md:text-6xl ${sixtyfour.className}`}
+      >
         EVENTS
       </div>
       <div className="relative z-10 grid grid-cols-2 w-full h-full">
@@ -147,7 +148,7 @@ const Events = () => {
                   >
                     <Link href={event.path}>
                       <span
-                        className={`${font.className} text-white hover:no-underline hover:text-[#94fbcf] text-xs md:text-lg`}
+                        className={`${font.className} text-[#ADCC8B] hover:no-underline hover:text-[#CFC36D] text-xs md:text-lg`}
                       >
                         {event.name}
                       </span>
@@ -195,8 +196,7 @@ const Events = () => {
                   >
                     <Link href={event.path}>
                       <span
-                        style={{ fontFamily: "Wallpoet" }}
-                        className="text-white hover:no-underline hover:text-[#94fbcf] text-xs md:text-lg"
+                        className={`text-[#ADCC8B] hover:no-underline hover:text-[#CFC36D] text-xs md:text-lg ${font.className}`}
                       >
                         {event.name}
                       </span>

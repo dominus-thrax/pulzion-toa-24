@@ -20,9 +20,10 @@ import {
 import { Button } from "../ui/button";
 import api from "@/api/api";
 import { toast } from "sonner";
+import path from "path";
 
 const font = localFont({
-  src: "../../../public/font/SairaStencilOne-Regular.ttf",
+  src: "../../../public/font/BDSupperRegular.ttf",
 });
 
 const Navbar = () => {
@@ -72,10 +73,12 @@ const Navbar = () => {
   const PageLinks = [
     { label: "HOME", path: "/" },
     { label: "EVENTS", path: "/events" },
-    { label: "GAME EVO", path: "/game-evolution" },
     { label: "TECH EVO", path: "/tech-evolution" },
-    { label: "DEVELOPERS", path: "/developers" },
-    { label: "TEAM", path: "/team" },
+    { label: "GAME EVO", path: "/game-evolution" },
+    // { label: "DEVELOPERS", path: "/developers" },
+    // { label: "TEAM", path: "/team" },
+    {label:'GLIMPSES', path:'/glimpses'},
+    {label:'SPONSORS', path:'/sponsors'}
   ];
 
   const handleLogout = async () => {
@@ -95,22 +98,22 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="pt-6 fixed top-0 left-0 w-full px-6 z-50 backdrop-blur-md transition-all duration-300 ease-in-out">
+    <nav className="pt-0 md:pt-6 fixed top-0 left-0 w-full md:px-6 z-30 backdrop-blur-md transition-all duration-300 ease-in-out">
       <div className="flex justify-between items-center">
         <div
-          className="transition-transform duration-300 flex flex-col justify-center items-center"
+          className="transition-transform duration-300 flex flex-col justify-center items-center pl-3"
           ref={logoRef}
         >
-          <Image src={logo} alt="Logo" width={200} height={200} />
-          <Image src={tagline} alt="tagline" width={150} height={150} />
+          <Image src={logo} alt="Logo" width={150} height={150} />
+          <Image src={tagline} alt="tagline" width={120} height={120} />
         </div>
         {/* Desktop Menu */}
-        <div className="hidden md:flex text-white gap-8 items-center z-30">
+        <div className="hidden md:flex text-[#CFC36D] gap-8 items-center z-30">
           {PageLinks.map((link, index) => (
             <Link
               key={index}
               href={link.path}
-              className={`${font.className} hover:text-green-900 px-3 py-3 text-xl transition-all duration-300 ease-in-out transform hover:-translate-y-0.5`}
+              className={`${font.className} hover:text-[#ADCC8B] px-3 py-3 text-xl transition-all duration-300 ease-in-out transform hover:-translate-y-0.5`}
             >
               {link.label}
             </Link>
@@ -120,13 +123,13 @@ const Navbar = () => {
           {user.token ? (
             <DropdownMenu>
               <DropdownMenuTrigger>
-                <CgProfile className="text-white h-10 w-10" />
+                <CgProfile className="text-[#CFC36D] h-10 w-10" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-transparent border border-[#0c5325] text-[#fff]">
+              <DropdownMenuContent className="bg-transparent border border-[#CFC36D] rounded-xl text-[#fff]">
                 <DropdownMenuItem>
                   <Link
                     href="/cart"
-                    className={`${font.className} hover:text-green-900 text-center w-full py-3 text-sm transition-all duration-300 ease-in-out transform hover:-translate-y-0.5`}
+                    className={`${font.className} hover:text-[#CFC36D] text-center w-full py-3 text-sm transition-all duration-300 ease-in-out transform hover:-translate-y-0.5`}
                   >
                     My Cart
                   </Link>
@@ -134,7 +137,7 @@ const Navbar = () => {
                 <DropdownMenuItem>
                   <Link
                     href="/orders"
-                    className={`${font.className} hover:text-green-900 text-center w-full py-3 text-sm transition-all duration-300 ease-in-out transform hover:-translate-y-0.5`}
+                    className={`${font.className} hover:text-[#CFC36D] text-center w-full py-3 text-sm transition-all duration-300 ease-in-out transform hover:-translate-y-0.5`}
                   >
                     My Orders
                   </Link>
@@ -152,7 +155,10 @@ const Navbar = () => {
           ) : (
             <Link
               href={"/login"}
-              className={`${font.className} text-green-700 px-5 py-4 rounded-2xl text-xl transition-all duration-300 ease-in-out hover:text-white hover:border-white transform hover:-translate-y-0.5`}
+              className={`${font.className} text-[#ADCC8B] 
+              hover:text-[#CFC36D] hover:border-[#CFC36D] border 
+              p-2 px-4 rounded-2xl text-xl transition-all duration-300 
+              ease-in-out transform hover:-translate-y-0.5`}
             >
               LOGIN
             </Link>

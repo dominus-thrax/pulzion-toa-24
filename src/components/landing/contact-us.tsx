@@ -13,27 +13,20 @@ import insta from "../../../public/assets/landing/contact-us/instagram.png";
 import linkedin from "../../../public/assets/landing/contact-us/linkedin.png";
 import web from "../../../public/assets/landing/contact-us/web.png";
 import twitter from "../../../public/assets/landing/contact-us/twitter.png";
+import { Button } from "../ui/button";
 
 const font = localFont({
-  src: "../../../public/font/SairaStencilOne-Regular.ttf",
+  src: "../../../public/font/BDSupperRegular.ttf",
 });
 
+
 const sixtyfour = localFont({
-  src: "../../../public/font/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf",
+  src: "../../../public/font/OriginTech personal use.ttf",
 });
 
 const ContactUs: React.FC = () => {
   return (
     <div className="min-h-screen w-full flex flex-col justify-center p-4 md:p-8 relative bg-black">
-      <Particles
-        className="absolute inset-0"
-        quantity={200}
-        size={1.0}
-        ease={80}
-        color="#ffffff"
-        refresh
-      />
-
       {/* Contact Us Title */}
       <h1
         className={`${sixtyfour.className} text-center mb-8 md:mb-12 text-[#cfc36d] text-4xl sm:text-5xl md:text-6xl`}
@@ -46,7 +39,7 @@ const ContactUs: React.FC = () => {
         className={`${font.className} flex flex-col lg:flex-row justify-center items-center gap-8 md:gap-10 mb-8 z-30`}
       >
         {/* Contact Information */}
-        <div className="bg-[#013220]/70 p-4 md:p-6 rounded-lg w-full lg:w-1/3 h-auto lg:h-96 flex flex-col justify-between border-2 border-yellow-700">
+        <div className="bg-[#1f3b2f] opacity-70 p-4 md:p-6 rounded-xl w-full lg:w-1/3 h-auto lg:h-96 flex flex-col justify-between">
           <h3 className="text-xl sm:text-2xl md:text-3xl mb-4 text-center text-white">
             Contact Information
           </h3>
@@ -85,8 +78,7 @@ const ContactUs: React.FC = () => {
 
         {/* Send a Message Form */}
         <div
-          style={{ fontFamily: "Wallpoet" }}
-          className="bg-[#013220]/70 p-4 md:p-6 rounded-lg w-full lg:w-1/3 h-auto lg:h-96 flex flex-col justify-between border-2 border-yellow-700"
+          className="bg-[#1f3b2f] opacity-70 p-4 md:p-6 w-full lg:w-1/3 h-auto lg:h-96 flex flex-col justify-between rounded-xl"
         >
           <h3 className="text-xl sm:text-2xl md:text-3xl mb-4 text-center text-white">
             Send a Message
@@ -107,12 +99,12 @@ const ContactUs: React.FC = () => {
               className="w-full p-2 mb-4 text-xs sm:text-sm md:text-base text-white rounded-md focus:outline-none bg-transparent border-b border-gray-300"
               rows={3}
             ></textarea>
-            <button
+            <Button
               type="submit"
-              className="w-full bg-transparent border border-white text-white p-2 rounded-md text-xs sm:text-sm md:text-base transition"
+              className="w-full bg-transparent border border-white text-white p-2 rounded-xl text-xs sm:text-sm md:text-base transition"
             >
               SUBMIT
-            </button>
+            </Button>
           </form>
         </div>
       </div>
@@ -120,8 +112,7 @@ const ContactUs: React.FC = () => {
       {/* Follow Us Section */}
       <div className="text-center mb-8">
         <h3
-          className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 text-yellow-300"
-          style={{ fontFamily: "Wallpoet" }}
+          className={`${sixtyfour.className} text-[#CFC36D] text-xl sm:text-2xl md:text-3xl font-semibold mb-4`}
         >
           FOLLOW US
         </h3>
@@ -206,7 +197,7 @@ const ContactUs: React.FC = () => {
       </div>
 
       {/* Google Maps Section */}
-      <div className="flex justify-center">
+      <div className="flex justify-center z-50">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.576077647539!2d73.8482586737186!3d18.45754717109928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2eac85230ba47%3A0x871eddd0a8a0a108!2sSCTR&#39;S%20Pune%20Institute%20of%20Computer%20Technology!5e0!3m2!1sen!2sin!4v1723792742131!5m2!1sen!2sin"
           width="100%"

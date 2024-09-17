@@ -2,11 +2,14 @@
 import React from "react";
 import Image from "next/image";
 import GameCard from "@/components/GameEvo/Gamecard"; // Import the generalized game component
-import { games } from "@/data/data";
+// import { games } from "@/data/data";
 import localFont from "next/font/local";
+import Timeline from "@/components/TechEvo/Timeline";
+import { games } from "@/data/data";
+import { SiNintendo3Ds } from "react-icons/si";
 
 const font = localFont({
-  src: "../../../../public/font/SairaStencilOne-Regular.ttf",
+  src: "../../../../public/font/BDSupperRegular.ttf",
 });
 
 const GameEvolution = () => {
@@ -14,7 +17,7 @@ const GameEvolution = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
 
-      <div className="flex justify-center items-center h-96 bg-black text-white">
+      <div className="flex justify-center items-center h-44 lg:h-96 text-white">
         <Image
           src='/assets/Game-Evolution/GameEvolution.png'
           alt="game evolution"
@@ -25,7 +28,7 @@ const GameEvolution = () => {
         />
       </div>
       {/* Game Cards Section */}
-      <div className={`${font.className} space-y-10 p-10 bg-black`}>
+      {/* <div className={`${font.className} space-y-10 p-10`}>
         {games.map((game: any, index: number) => (
           <GameCard
             key={index}
@@ -37,7 +40,8 @@ const GameEvolution = () => {
             marquee={game.marquee}
           />
         ))}
-      </div>
+      </div> */}
+      <Timeline datas={games} icon={SiNintendo3Ds}/>
     </div>
   );
 };

@@ -1,131 +1,142 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import "../../styles/font.css";
-import Particles from "@/components/magicui/particles";
-import RetroGrid from "@/components/magicui/retro-grid";
-
-import left from "../../../public/assets/landing/hero/mountain-left.png";
-import right from "../../../public/assets/landing/hero/mountain-right.png";
 import logo from "../../../public/assets/landing/hero/logo.png";
 import tagline from "../../../public/assets/landing/hero/tagline.png";
+import localFont from "next/font/local";
+import MatrixRain from "./MatrixRain";
+import { RxSpeakerLoud } from "react-icons/rx";
+import { Button } from "../ui/button";
+
+const sixtyfour = localFont({
+  src: "../../../public/font/OriginTech personal use.ttf",
+});
+
+const font = localFont({
+  src: "../../../public/font/BDSupperRegular.ttf",
+});
 
 const Hero = () => {
-  const logoRef = useRef<HTMLImageElement>(null);
-  const tagRef = useRef<HTMLImageElement>(null);
+  const [videoEnded, setVideoEnded] = useState(false);
+  const [contentVisible, setContentVisible] = useState(false);
+  const [audioPlaying, setAudioPlaying] = useState(false);
+
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    let ticking = false;
+    if (videoRef.current && audioRef.current) {
+      const videoElement = videoRef.current;
+      const audioElement = audioRef.current;
 
-    const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const scrollValue = window.scrollY;
+      const handleVideoEnd = () => {
+        setVideoEnded(true);
+        setTimeout(() => setContentVisible(true), 0); // Adjust delay as needed
+      };
 
-          // Parallax for Logo
-          if (logoRef.current) {
-            logoRef.current.style.transform = `translateY(${
-              scrollValue * 0.5
-            }px)`;
-            const newOpacity = 1 - scrollValue * 0.003;
-            logoRef.current.style.opacity = (
-              newOpacity >= 0 ? newOpacity : 0
-            ).toString();
-          }
-          //Parallax for Tagline
-          if (tagRef.current) {
-            tagRef.current.style.transform = `translateY(${
-              scrollValue * 0.5
-            }px)`;
-            const newOpacity = 1 - scrollValue * 0.005;
-            tagRef.current.style.opacity = (
-              newOpacity >= 0 ? newOpacity : 0
-            ).toString();
-          }
-          ticking = false;
-        });
+      const syncAudioWithVideo = () => {
+        audioElement.currentTime = videoElement.currentTime;
+      };
 
-        ticking = true;
-      }
-    };
+      videoElement.addEventListener("ended", handleVideoEnd);
+      videoElement.addEventListener("timeupdate", syncAudioWithVideo);
 
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+      return () => {
+        videoElement.removeEventListener("ended", handleVideoEnd);
+        videoElement.removeEventListener("timeupdate", syncAudioWithVideo);
+      };
+    }
   }, []);
 
+  const handlePlayAudio = () => {
+    if (audioRef.current) {
+      audioRef.current.play();
+      setAudioPlaying(true);
+    }
+  };
+
   return (
-    <div className="relative h-screen overflow-hidden bg-black border-b border-b-green-500">
-      {/* Main Content */}
-      <Particles
-        className="absolute inset-0"
-        quantity={200}
-        size={1.0}
-        ease={80}
-        color="#ffffff"
-        refresh
-      />
-      <div className="relative mt-10 flex flex-col h-[500px] w-full justify-center">
-        <div className="flex justify-center items-center relative z-10">
-          <Particles
-            className="absolute inset-0"
-            quantity={100}
-            size={1.0}
-            ease={80}
-            color="#ffffff"
-            refresh
+    <div className="relative overflow-hidden bg-black w-full h-screen">
+      {/* Video Player - Visible until video ends */}
+      {!videoEnded && (
+        <>
+          <video
+            ref={videoRef}
+            className="w-full h-screen object-cover md:object-contain sm:object-fill scale-110  transition-transform duration-500 ease-in-out"
+            autoPlay
+            muted
+            playsInline
+            preload="none"
+          >
+            <source src="/assets/landing/hero/animation.mp4" type="video/mp4" />
+          </video>
+          <audio
+            ref={audioRef}
+            autoPlay
+            preload="auto"
+            src="/assets/landing/hero/animation.mp3" // Provide your audio file
           />
+        </>
+      )}
+
+      {/* Main Content Wrapper */}
+      <div
+        className={`relative flex flex-col pt-[3rem] md:pt-[9rem] w-full justify-center transition-transform duration-500 ease-in-out ${
+          contentVisible ? "scale-100 opacity-100" : "scale-50 opacity-0"
+        }`}
+      >
+        <MatrixRain></MatrixRain>
+        <div className="flex flex-col justify-center items-center relative z-10 space-y-[5rem] p-10 md:p-0">
+          {/* Logo and Tagline */}
           <div className="flex flex-col justify-center items-center w-full">
-            <div>
-              <Image
-                ref={logoRef}
-                src={logo}
-                alt="Main Logo"
-                width={700}
-                height={300}
-                quality={100}
-                layout="fixed"
-                className=""
-              />
-            </div>
-            <div className="flex items-center h-full">
-              <Image
-                ref={tagRef}
-                src={tagline}
-                alt="Main Logo"
-                width={600}
-                quality={100}
-                layout="fixed"
-                height={150}
-                className="flex justify-center items-start"
-              />
-            </div>
+            <Image
+              src={logo}
+              alt="Main Logo"
+              width={700}
+              height={300}
+              quality={100}
+              layout="fixed"
+              className="mt-28"
+            />
+            <Image
+              src={tagline}
+              alt="Tagline"
+              width={600}
+              height={150}
+              quality={100}
+              layout="fixed"
+              className="flex justify-center items-start"
+            />
+          </div>
+          <div
+            className={`${sixtyfour.className} pb-10 md:pb-[3rem] text-[#CFC36D] space-y-4 text-center text-xl md:text-3xl`}
+          >
+            <div>The annual techfest of PICT ACM Student Chapter</div>
+            <div className="">4th, 5th & 6th October</div>
           </div>
         </div>
-
-        <Image
-          src={left}
-          alt="left-mountain"
-          height={400}
-          width={400}
-          quality={100}
-          layout="fixed"
-          className="z-10 absolute left-0 bottom-24"
-        />
-        <Image
-          src={right}
-          alt="right-mountain"
-          height={400}
-          width={400}
-          quality={100}
-          layout="fixed"
-          className="z-10 absolute right-0 bottom-24"
-        />
-        <RetroGrid className="mt-96" />
       </div>
-      {/* </div> */}
+
+      {/* Play Audio Button */}
+      <div className="absolute bottom-10 w-full flex justify-end pr-4 md:pr-12">
+        {!audioPlaying && (
+          <button
+            onClick={handlePlayAudio}
+            className="bg-[#ECAA43] text-black p-4 rounded-full shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105"
+          >
+            <RxSpeakerLoud />
+          </button>
+        )}
+      </div>
+      <div className="w-full flex justify-center">
+        <a
+          href="/register"
+          className={`${font.className} z-10 hover:cursor-pointer text-black bg-[#ECAA43] px-4 py-2 rounded-2xl mx-auto block text-center absolute`}
+        >
+          Participate Now
+        </a>
+      </div>
     </div>
   );
 };

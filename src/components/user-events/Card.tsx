@@ -28,20 +28,20 @@ const Card = ({
           layout="fixed"
           className=""
         />
-        <div className="flex justify-center text-xl md:text-3xl  font-vt323 text-[#CFC36D] my-2">
+        <div className="flex justify-center text-xl md:text-3xl text-[#CFC36D] my-2">
           {name}
         </div>
         <div className="flex justify-between pl-8 pr-7 my-2">
-          <span className="font-vt323 text-xl md:text-2xl text-[#8BFFCE]">
+          {/* <span className=" text-xl md:text-2xl text-[#8BFFCE]">
             Amount:
           </span>
-          <span className="font-vt323 text-xl md:text-2xl text-[#8BFFCE]">
+          <span className=" text-xl md:text-2xl text-[#8BFFCE]">
             {amount}/-
-          </span>
+          </span> */}
         </div>
       </div>
       <div className="py-1">
-        <div className="font-vt323 text-xl md:text-2xl text-[#8BFFCE]">
+        <div className=" text-xl md:text-2xl text-[#8BFFCE]">
           Status: {status}
         </div>
       </div>

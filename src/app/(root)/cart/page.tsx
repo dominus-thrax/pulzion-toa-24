@@ -4,12 +4,21 @@ import api from "@/api/api";
 import Order from "@/components/cart/Order";
 import Card from "@/components/cart/EventsCard";
 import isNotAuth from "@/context/user/isNotAuth";
+import localFont from "next/font/local";
 interface CartItem {
   id: number;
   name: string;
   price: number;
   logo: string;
 }
+
+const font = localFont({
+  src: "../../../../public/font/BDSupperRegular.ttf",
+});
+
+const originText = localFont({
+  src: "../../../../public/fonts/OriginTech personal use.ttf",
+});
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
@@ -50,7 +59,9 @@ const CartPage = () => {
 
   return (
     <div className="mx-8 mb-10 md:mb-3">
-      <div className="font-vt323 text-4xl md:text-8xl  mt-10 mb-6 text-white text-center">
+      <div
+        className={`${originText.className} text-4xl md:text-8xl  mt-10 mb-6 text-white text-center`}
+      >
         My Cart
       </div>
       {isCartEmpty && (
@@ -61,7 +72,7 @@ const CartPage = () => {
         </div>
       )}
       {!isCartEmpty && (
-        <div className="md:flex gap-8">
+        <div className={`md:flex gap-8 ${font.className}`}>
           <div className="flex-grow my-4 md:my-0">
             <div className="border-2 border-[#8BFFCE] rounded-2xl w-full max-h-56 md:max-h-none overflow-y-auto custom-scrollbar">
               <div className="flex-grow p-4">

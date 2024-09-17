@@ -5,10 +5,11 @@ import axios from "axios";
 import { FaCartPlus, FaUsers } from "react-icons/fa";
 import { BackgroundGradient } from "../ui/background-gradient";
 import { BorderBeam } from "@/components/magicui/border-beam";
-import { Toaster, toast } from "sonner";
+import { toast } from "sonner";
 import api from "@/api/api";
 import { FaPhone } from "react-icons/fa6";
 import { Button } from "../ui/button";
+import localFont from "next/font/local";
 interface EventLead {
   name: string;
   phone: string;
@@ -28,7 +29,9 @@ interface ThreeDCardDemoProps {
   event: EventData;
   title: string;
 }
-
+const font = localFont({
+  src: "../../../public/font/BDSupperRegular.ttf",
+});
 export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
   const [eventData, setEventData] = useState<EventData>({
     id: 0,
@@ -60,30 +63,31 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
         event_id: eventData.id,
       });
 
-      toast.success("Event Added to Cart", {
-        style: { background: "green", color: "white" },
-      });
+      toast.success("Event Added to Cart");
     } catch (error: any) {
-      toast.error("Event already Added in Cart", {
-        style: { background: "red", color: "white" },
-      });
+      toast.error("Event already Added in Cart");
     }
   };
 
   return (
     <div className="w-full  flex justify-center items-center md:px-24 mb-7 mt-16 md:mt-0 px-3">
-      <Toaster position="top-right" />
       <div className=" w-full border-white/[0.2] border-2 rounded-xl max-w-6xl">
         <div className="bg-transparent  w-full relative rounded-xl p-4 md:grid grid-cols-12">
-          <div className="col-span-4 flex flex-col justify-between items-center mx-auto w-full ">
+          <div className="col-span-4 md:ml-2 flex flex-col justify-between items-center mx-auto w-full ">
             <div className="rounded-md">
-              <img src="/photo.png" alt="" className=" w-20 md:w-36" />
+              <img
+                src={`/assets/EventDetail/${title}.png`}
+                alt=""
+                className=" w-20 md:w-36"
+              />
             </div>
             <div className=" w-full  text-center">
-              <p className=" text-xl md:text-3xl font-bold mt-2 text-white text-center">
+              <p
+                className={`${font.className} text-xl md:text-3xl font-bold mt-2  text-white text-center  capitalize`}
+              >
                 {title}
               </p>
-              <div className="flex items-center mt-4">
+              <div className={`${font.className} flex items-center mt-4`}>
                 <div className="flex-1 text-center">
                   <p className="text-white text-lg">{eventData.mode}</p>
                   <p className="text-slate-300 text-xs">Location</p>
@@ -99,7 +103,7 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
             </div>
 
             <Button
-              className="bg-[#E8AF49] rounded-xl hover:text-black hover:bg-yellow-500 my-2"
+              className="bg-[#E8AF49] rounded-xl hover:text-black hover:bg-yellow-600 my-2"
               onClick={addToCart} // Add the click handler
             >
               Add to Cart
@@ -113,7 +117,7 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
                     key={index}
                     className="flex items-center  text-xs md:text-sm gap-2 "
                   >
-                    <span>
+                    <span className={`${font.className}`}>
                       {lead.name}
                       {":"}
                     </span>
@@ -126,7 +130,7 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
             {/* Team Distribution */}
             <div className="mt-2 text-white w-full ">
               <hr className="  border-white/[0.2] my-2 mt-4" />
-              <p className="text-white flex gap-2 text-sm">
+              <p className={`${font.className}text-white flex gap-2 text-sm`}>
                 <FaUsers className="my-auto text-xl font-bold " /> Team
                 Distribution:{" "}
               </p>

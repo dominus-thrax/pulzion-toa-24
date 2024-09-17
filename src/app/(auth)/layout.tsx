@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import "../globals.css";
 import Particles from "@/components/magicui/particles";
-import { Toaster } from "sonner";
+
 import { BackgroundBeams } from "@/components/ui/background-beams";
 
 const inter = Inter({ subsets: ["latin"] });

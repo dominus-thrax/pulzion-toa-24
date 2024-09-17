@@ -90,14 +90,24 @@ export default function SliderCard({ events }: SliderCardProps) {
           <SwiperSlide
             key={event.id}
             style={swiperSlideStyle}
-            className="bg-black text-white rounded-md border-2 border-yellow-500"
+            className="bg-black text-white rounded-md border-[0.3px] border-yellow-500 shadow-[0_0_15px_rgba(234,179,8,0.6)]"
           >
             <div className="flex flex-col justify-between items-center p-2 rounded-lg h-full">
-              <p className="text-2xl font-bold">{event.name}</p>
-              <img src="/photo.png" alt="" className="w-24" />
+              <p className="text-3xl font-bold">{event.name}</p>
+              <img
+                src={`/assets/EventsNew/${event.name}.png`}
+                alt=""
+                className=" w-28"
+              />
               <p className="text-xs my-3">{event.description}</p>
-              <p className="text-sm">Mode: {event.mode}</p>
-              <p className="text-sm">Price: ₹{event.price}</p>
+              <div>
+                <p className="text-lg">Mode: {event.mode}</p>
+                {event.price === 0 ? (
+                  <p className="text-lg">Price:{" Free"}</p>
+                ) : (
+                  <p className="text-lg">Price: ₹{event.price}</p>
+                )}
+              </div>
             </div>
           </SwiperSlide>
         ))}
@@ -118,10 +128,10 @@ export default function SliderCard({ events }: SliderCardProps) {
           justify-content: center !important;
         }
         .swiper-button-next {
-          right: -200px !important; /* Move the next button outside the card */
+          right: -100px !important; /* Move the next button outside the card */
         }
         .swiper-button-prev {
-          left: -200px !important; /* Move the previous button outside the card */
+          left: -100px !important; /* Move the previous button outside the card */
         }
       `}</style>
     </div>

@@ -14,7 +14,6 @@ const font = localFont({
   src: "../../../../public/font/BDSupperRegular.ttf",
 });
 
-
 const originText = localFont({
   src: "../../../../public/fonts/OriginTech personal use.ttf",
 });
@@ -39,10 +38,10 @@ const EventsPage: React.FC = () => {
         </h1>
       </div>
 
-      <div className=" hidden md:block mt-6 ">
+      <div className={` ${font.className} hidden md:block mt-6 `}>
         <SliderCard events={events} />
       </div>
-      <div className="mt-6 md:hidden mx-24">
+      <div className={`${font.className} mt-6 md:hidden mx-24`}>
         <MobileSliderCard events={events} />
       </div>
 

@@ -2,7 +2,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import axios from "axios";
 import api from "@/api/api";
-import { Toaster, toast } from "sonner"; // Import Sonner toast
+import { toast } from "sonner"; // Import Sonner toast
 
 interface CartItem {
   id: number;
@@ -55,18 +55,14 @@ function Order({ cartItems = [], refetch }: OrderProps) {
       if (transactionResponse.status === 200) {
         await api.delete("/cart");
 
-        toast.success("Checkout successful!", {
-          style: { background: "green", color: "white" },
-        });
+        toast.success("Checkout successful!");
         closeModal();
         refetch();
       } else {
         throw new Error("Transaction failed");
       }
     } catch (error) {
-      toast.error("Failed to process checkout. Please try again.", {
-        style: { background: "red", color: "white" },
-      });
+      toast.error("Failed to process checkout. Please try again.");
     } finally {
       setLoading(false); // Stop loading
     }
@@ -74,7 +70,6 @@ function Order({ cartItems = [], refetch }: OrderProps) {
 
   return (
     <div className="p-4">
-      <Toaster position="top-right" />
       <p className="text-center text-3xl md:text-5xl my-2 font-vt323 text-[#8BFFCE]">
         Order Summary
       </p>

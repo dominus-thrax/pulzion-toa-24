@@ -90,11 +90,15 @@ export default function MobileSliderCard({ events }: SliderCardProps) {
           <SwiperSlide
             key={event.id}
             style={swiperSlideStyle}
-            className="bg-black text-white rounded-md border-2 border-yellow-500"
+            className="bg-black text-white rounded-md bborder-[0.3px] border-yellow-500 shadow-[0_0_15px_rgba(234,179,8,0.6)]"
           >
             <div className="flex flex-col justify-between items-center p-2 rounded-lg h-full">
               <p className="text-xl font-bold">{event.name}</p>
-              <img src="/photo.png" alt="" className=" w-10" />
+              <img
+                src={`/assets/EventsNew/${event.name}.png`}
+                alt=""
+                className=" w-10"
+              />
               <p className="text-[8px] ">{event.description}</p>
               <p className="text-xs">Mode: {event.mode}</p>
               <p className="text-xs">Price: ₹{event.price}</p>

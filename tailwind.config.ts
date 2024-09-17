@@ -67,6 +67,7 @@ const config = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -123,6 +124,14 @@ const config = {
           "0%": { transform: "rotate(0deg)" },
           "100%": { transform: "rotate(360deg)" },
         },
+        'fade-in-left': {
+          '0%': { opacity: '0', transform: 'translateX(-100%)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        'fade-in-right': {
+          '0%': { opacity: '0', transform: 'translateX(100%)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
       },
       animation: {
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
@@ -130,11 +139,20 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
         "reverse-spin": "reverse-spin 4s linear infinite",
         "spin-slow": "spin 7s linear infinite",
+        'fade-in-left': 'fade-in-left 1s ease-out',
+        'fade-in-right': 'fade-in-right 1s ease-out',
         meteor: "meteor 5s linear infinite",
         marquee: "marquee 10s linear infinite",
         swing: "swing 6s infinite ease-in-out",
         rotate: "rotate 5s linear infinite",
         aurora: "aurora 60s linear infinite",
+      },
+      scrollbarHide: {
+        '.no-scrollbar::-webkit-scrollbar': { display: 'none' },
+        '.no-scrollbar': {
+          '-ms-overflow-style': 'none', /* IE and Edge */
+          'scrollbar-width': 'none',    /* Firefox */
+        },
       },
       fontFamily: {
         WallpoetFont: ["WallpoetFont", "sans-serif"], // Add the custom font here

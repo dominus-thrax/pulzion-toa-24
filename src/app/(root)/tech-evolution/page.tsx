@@ -4,6 +4,8 @@ import Image from "next/image";
 import TechCard from '@/components/TechEvo/TechCard' 
 import { techs } from "@/data/data";
 import localFont from "next/font/local";
+import Timeline from "@/components/TechEvo/Timeline";
+import { FaComputer } from "react-icons/fa6";
 
 const font = localFont({
   src: "../../../../public/font/BDSupperRegular.ttf",
@@ -25,7 +27,7 @@ const GameEvolution = () => {
         />
       </div>
       {/* Game Cards Section */}
-      <div className={`${font.className} space-y-10 p-10`}>
+      {/* <div className={`${font.className} space-y-10 p-10`}>
         {techs.map((game: any, index: number) => (
           <TechCard
             key={index}
@@ -35,7 +37,8 @@ const GameEvolution = () => {
             isReversed={index % 2 === 1} // Reverse layout for odd indices
           />
         ))}
-      </div>
+      </div> */}
+      <Timeline datas={techs} icon={FaComputer}/>
     </div>
   );
 };

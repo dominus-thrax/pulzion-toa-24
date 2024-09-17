@@ -92,7 +92,7 @@ const Hero = () => {
             className={`${sixtyfour.className} pb-10 md:pb-[3rem] text-[#CFC36D] space-y-4 text-center text-xl md:text-3xl`}
           >
             <div>The annual techfest of PICT ACM Student Chapter</div>
-            <div className="">4th, 5th & 6th October</div>
+            <div className="">3rd, 4th & 5th October</div>
           </div>
         </div>
       </div>

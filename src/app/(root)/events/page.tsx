@@ -30,7 +30,7 @@ const EventsPage: React.FC = () => {
 
   return (
     <>
-      <div className="mt-2">
+      <div className="mt-2 mb-4 md:mb-10">
         <h1
           className={` ${originText.className} text-[#cfc36d] text-2xl md:text-6xl text-center mt-20`}
         >

@@ -6,6 +6,8 @@ import logo from "../../../public/assets/landing/hero/logo.png";
 import tagline from "../../../public/assets/landing/hero/tagline.png";
 import localFont from "next/font/local";
 import MatrixRain from "./MatrixRain";
+import { RxSpeakerLoud } from "react-icons/rx";
+import { Button } from "../ui/button";
 
 const sixtyfour = localFont({
   src: "../../../public/font/OriginTech personal use.ttf",
@@ -18,25 +20,41 @@ const font = localFont({
 const Hero = () => {
   const [videoEnded, setVideoEnded] = useState(false);
   const [contentVisible, setContentVisible] = useState(false);
+  const [audioPlaying, setAudioPlaying] = useState(false);
 
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    if (videoRef.current) {
+    if (videoRef.current && audioRef.current) {
       const videoElement = videoRef.current;
+      const audioElement = audioRef.current;
 
       const handleVideoEnd = () => {
         setVideoEnded(true);
         setTimeout(() => setContentVisible(true), 0); // Adjust delay as needed
       };
 
+      const syncAudioWithVideo = () => {
+        audioElement.currentTime = videoElement.currentTime;
+      };
+
       videoElement.addEventListener("ended", handleVideoEnd);
+      videoElement.addEventListener("timeupdate", syncAudioWithVideo);
 
       return () => {
         videoElement.removeEventListener("ended", handleVideoEnd);
+        videoElement.removeEventListener("timeupdate", syncAudioWithVideo);
       };
     }
   }, []);
+
+  const handlePlayAudio = () => {
+    if (audioRef.current) {
+      audioRef.current.play();
+      setAudioPlaying(true);
+    }
+  };
 
   return (
     <div className="relative overflow-hidden bg-black w-full h-screen">
@@ -53,6 +71,12 @@ const Hero = () => {
           >
             <source src="/assets/landing/hero/animation.mp4" type="video/mp4" />
           </video>
+          <audio
+            ref={audioRef}
+            autoPlay
+            preload="auto"
+            src="/assets/landing/hero/animation.mp3" // Provide your audio file
+          />
         </>
       )}
 
@@ -62,10 +86,7 @@ const Hero = () => {
           contentVisible ? "scale-100 opacity-100" : "scale-50 opacity-0"
         }`}
       >
-        {/* <div className="w-full"> */}
         <MatrixRain></MatrixRain>
-        {/* </div> */}
-        
         <div className="flex flex-col justify-center items-center relative z-10 space-y-[5rem] p-10 md:p-0">
           {/* Logo and Tagline */}
           <div className="flex flex-col justify-center items-center w-full">
@@ -92,11 +113,22 @@ const Hero = () => {
             className={`${sixtyfour.className} pb-10 md:pb-[3rem] text-[#CFC36D] space-y-4 text-center text-xl md:text-3xl`}
           >
             <div>The annual techfest of PICT ACM Student Chapter</div>
-            <div className="">3rd, 4th & 5th October</div>
+            <div className="">4th, 5th & 6th October</div>
           </div>
         </div>
       </div>
 
+      {/* Play Audio Button */}
+      <div className="absolute bottom-10 w-full flex justify-end pr-4 md:pr-12">
+        {!audioPlaying && (
+          <button
+            onClick={handlePlayAudio}
+            className="bg-[#ECAA43] text-black p-4 rounded-full shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105"
+          >
+            <RxSpeakerLoud />
+          </button>
+        )}
+      </div>
       <div className="w-full flex justify-center">
         <a
           href="/register"

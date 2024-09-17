@@ -127,7 +127,6 @@ const config = {
       animation: {
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
         "accordion-down": "accordion-down 0.2s ease-out",
-        "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
         "accordion-up": "accordion-up 0.2s ease-out",
         "reverse-spin": "reverse-spin 4s linear infinite",
         "spin-slow": "spin 7s linear infinite",

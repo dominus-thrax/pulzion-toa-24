@@ -4,6 +4,17 @@ import Card from "@/components/user-events/Card";
 // import { ThreeDots } from "react-loader-spinner";
 import api from "@/api/api";
 import isNotAuth from "@/context/user/isNotAuth";
+import localFont from "next/font/local";
+
+const font = localFont({
+  src: "../../../../public/font/BDSupperRegular.ttf",
+});
+
+
+const originText = localFont({
+  src: "../../../../public/fonts/OriginTech personal use.ttf",
+});
+
 
 export type Transaction = {
   id: string;
@@ -56,8 +67,8 @@ const Orders: React.FC = () => {
 
   return (
     <div className="bg-black">
-      <div className="flex justify-center items-center pt-10 font-vt323 text-[#CFC36D] text-2xl md:text-5xl">My Orders</div>
-      <div className="md:grid md:grid-cols-3 md:gap-3 p-10  space-y-4 md:space-y-0">
+      <div className={`${originText.className} flex justify-center items-center pt-10 text-[#CFC36D] text-2xl md:text-5xl`}>My Orders</div>
+      <div className={`md:grid md:grid-cols-3 md:gap-10 p-10  space-y-4 md:space-y-0 ${font.className}`}>
         {/* Mapping over transactions */}
         {data.map((transaction) =>
           transaction.events.map((event, index) => (

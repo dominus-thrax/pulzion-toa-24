@@ -17,6 +17,7 @@ export default function RootLayout({
         className={`${inter.className} min-h-screen w-full rounded-md bg-neutral-950`}
       >
         <BackgroundBeams />
+
         <div className="relative z-10 min-h-screen flex flex-col">
           <Navbar />
           <div className="pt-16 flex-grow overflow-y-auto">{children}</div>

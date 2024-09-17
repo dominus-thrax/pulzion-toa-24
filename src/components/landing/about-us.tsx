@@ -16,6 +16,7 @@ const font = localFont({
 });
 
 const About: React.FC = () => {
+  
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {

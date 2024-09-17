@@ -17,13 +17,11 @@ const originText = localFont({
 
 
 export type Transaction = {
-  id: string;
-  transaction_id: string;
-  name: string;
+  id:string;
+  transaction_id:string;
   amount: number;
   events: string[];
   status: string;
-  created_at: string;
 };
 
 const Orders: React.FC = () => {
@@ -37,6 +35,7 @@ const Orders: React.FC = () => {
       // Extracting the transaction array
       const transactions = response.data.transactions;
       setData(transactions);
+      console.log(transactions)
     } catch (error: any) {
       // Error handling
       console.log(error);
@@ -67,23 +66,18 @@ const Orders: React.FC = () => {
 
   return (
     <div className="">
-      <div className={`${originText.className} flex justify-center items-center pt-10 text-[#CFC36D] text-2xl md:text-5xl`}>My Orders</div>
+      <div className={`${originText.className} flex justify-center items-center pt-10 text-[#CFC36D] text-2xl md:text-5xl mt-10`}>My Orders</div>
       <div className={`md:grid md:grid-cols-3 md:gap-10 p-10  space-y-4 md:space-y-0 ${font.className}`}>
-        {/* Mapping over transactions */}
-        {data.map((transaction) =>
-          transaction.events.map((event, index) => (
-            <Card
-              key={`${transaction.id}-${index}`}
-              id={transaction.transaction_id || "1234567890"}
-              name={event} // Event name
-              amount={transaction.amount || 0}
-              status={transaction.status || "Pending"}
-              transaction_id={""}
-              events={[]}
-              created_at={""}
-            />
-          ))
-        )}
+        {data.map((transaction) =>(
+           <Card
+           id={transaction.id}
+           transaction_id={transaction.transaction_id}
+           amount={transaction.amount}
+           status={transaction.status}
+           events={transaction.events}
+         />
+        ))
+         }
       </div>
     </div>
   );

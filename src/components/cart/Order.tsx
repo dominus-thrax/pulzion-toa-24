@@ -70,11 +70,11 @@ function Order({ cartItems = [], refetch }: OrderProps) {
 
   return (
     <div className="p-4">
-      <p className="text-center text-3xl md:text-5xl my-2 font-vt323 text-[#8BFFCE]">
+      <p className="text-center text-xl md:text-3xl my-2  text-[#8BFFCE]">
         Order Summary
       </p>
       <hr />
-      <div className="text-white font-vt323 text-xl md:text-xl">
+      <div className="text-white text-xl md:text-xl">
         {cartItems.map((item) => (
           <div key={item.id} className="grid grid-cols-12 my-2">
             <p className="col-span-10">{item.name}</p>
@@ -83,32 +83,32 @@ function Order({ cartItems = [], refetch }: OrderProps) {
         ))}
       </div>
       <hr />
-      <div className="grid grid-cols-12 my-2 text-white font-vt323 text-lg md:text-3xl">
+      <div className="grid grid-cols-12 my-2 text-white text-lg md:text-3xl">
         <p className="col-span-10">Order Total</p>
         <p className="col-span-2 ml-auto">{total}/-</p>
       </div>
-      <div className="text-white text-xl md:text-2xl mx-14 mt-6">
+      <div className="text-white text-lg md:text-xl mx-14 mt-6">
         <button
-          className="bg-[#00910EC2] px-5 font-vt323 p-2 rounded-xl min-w-full my-1 md:my-2"
+          className="bg-[#E8AF49] px-5 p-2 rounded-xl min-w-full my-1 md:my-2"
           onClick={handleCheckoutClick}
         >
           Checkout
         </button>
         <br />
         <Link href="/events">
-          <button className="bg-[#00910EC2] px-5 font-vt323 p-2 rounded-xl min-w-full my-2 md:my-4">
+          <button className="bg-[#E8AF49] px-5  p-2 rounded-xl min-w-full my-2 md:my-4">
             Explore Events
           </button>
         </Link>
       </div>
       {/* Modal */}
       {isModalOpen && (
-        <div>
-          <div className="fixed inset-0 bg-black bg-opacity-50 z-40"></div>
+        <div className="">
+          <div className="fixed rounded-xl inset-0 bg-black bg-opacity-50 z-40"></div>
 
-          <div className="fixed inset-0 flex items-center justify-center z-50">
+          <div className="fixed rounded-xl inset-0 flex items-center justify-center z-50">
             <div className="p-8 rounded-lg shadow-lg bg-[#1F2937] w-11/12 sm:w-3/4 md:w-1/2 lg:w-1/3 text-white">
-              <h2 className="text-3xl mb-4 text-center font-vt323 text-[#00910EC2]">
+              <h2 className="text-3xl mb-4 text-center text-[#E8AF49]">
                 Checkout
               </h2>
               <p className="text-center mb-4 text-white">
@@ -143,7 +143,7 @@ function Order({ cartItems = [], refetch }: OrderProps) {
                   Cancel
                 </button>
                 <button
-                  className="bg-[#00910EC2] px-4 py-2 rounded-lg text-white"
+                  className="bg-[#E8AF49] px-4 py-2 rounded-lg text-white"
                   onClick={handleCheckout}
                   disabled={loading} // Disable button while loading
                 >

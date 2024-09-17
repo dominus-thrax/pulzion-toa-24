@@ -202,40 +202,25 @@ const About: React.FC = () => {
               >
                 <h2 className="text-3xl font-semibold">ACM</h2>
                 <p className="text-sm text-center">
-                The Association for Computing Machinery (ACM) is the
-                world&apos;s largest educational and scientific society uniting
-                professionals, educators and researchers in the field of
-                computer science to inspire dialogue, share resources and
-                address the challenges in the domain.
+                  The Association for Computing Machinery (ACM) is the
+                  world&apos;s largest educational and scientific society
+                  uniting professionals, educators and researchers in the field
+                  of computer science to inspire dialogue, share resources and
+                  address the challenges in the domain.
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="relative max-w-sm w-full">
-          <div className="relative">
-            <Image
-              src={card}
-              alt="Card Background Image"
-              width={350}
-              height={200}
-              style={{ objectFit: "contain" }}
-            />
-            <div
-              className={`${font.className} absolute inset-0 flex flex-col justify-center items-center z-10 text-white p-6`}
-            >
-              <h2>ACM</h2>
-              <p className="text-xs text-center">
-                The Association for Computing Machinery (ACM) is the
-                world&apos;s largest educational and scientific society uniting
-                professionals, educators and researchers in the field of
-                computer science to inspire dialogue, share resources and
-                address the challenges in the domain.
-              </p>
-            </div>
-          </div>
-        </div>
+        <Image
+          src={card}
+          alt="Card Background Image"
+          width={350}
+          height={200}
+          style={{ objectFit: "contain" }}
+          className="opacity-0"
+        />
       </div>
     </div>
   );

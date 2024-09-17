@@ -46,14 +46,14 @@ const Card: React.FC<CardProps> = ({
 
   return (
     <div className="m-1 md:m-4">
-      <div className="flex justify-between font-vt323">
+      <div className="flex justify-between ">
         <div className="flex gap-3 md:gap-4">
           <img
             src={`/assets/add-to-cart/${title}.png`}
             alt={title}
             className="w-16 md:w-20 p-1 bg-[#E8AF49] rounded-md"
           />
-          <p className="my-auto text-[#8BFFCE] text-xl md:text-3xl">{title}</p>
+          <p className="my-auto text-[#8BFFCE] text-lg md:text-2xl">{title}</p>
         </div>
         <div className="my-auto">
           <p className="text-[#8BFFCE] my-auto ml-auto flex justify-end text-lg md:text-3xl">

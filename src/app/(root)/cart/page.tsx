@@ -60,13 +60,13 @@ const CartPage = () => {
   return (
     <div className="mx-8 mb-10 md:mb-3">
       <div
-        className={`${originText.className} text-4xl md:text-8xl  mt-10 mb-6 text-white text-center`}
+        className={`${originText.className} text-2xl md:text-5xl  mt-20 mb-6 text-[#cfc36d] text-center`}
       >
         My Cart
       </div>
       {isCartEmpty && (
-        <div className=" h-[500px] flex justify-center items-center  text-white">
-          <div className="border-2 rounded-xl  w-2/3 p-2  py-4 text-center font-vt323  text-lg md:text-xl ">
+        <div className={`${font.className} h-[500px] flex justify-center items-center  text-[#cfc36d]`}>
+          <div className="border-2 rounded-xl  w-2/3 p-2  py-4 text-center  text-lg md:text-xl ">
             Your cart is currently empty.
           </div>
         </div>

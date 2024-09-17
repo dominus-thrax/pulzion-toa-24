@@ -73,8 +73,8 @@ const Navbar = () => {
   const PageLinks = [
     { label: "HOME", path: "/" },
     { label: "EVENTS", path: "/events" },
-    { label: "GAME EVO", path: "/game-evolution" },
     { label: "TECH EVO", path: "/tech-evolution" },
+    { label: "GAME EVO", path: "/game-evolution" },
     // { label: "DEVELOPERS", path: "/developers" },
     // { label: "TEAM", path: "/team" },
     {label:'GLIMPSES', path:'/glimpses'},
@@ -125,11 +125,11 @@ const Navbar = () => {
               <DropdownMenuTrigger>
                 <CgProfile className="text-[#CFC36D] h-10 w-10" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-transparent border border-[#0c5325] text-[#fff]">
+              <DropdownMenuContent className="bg-transparent border border-[#CFC36D] rounded-xl text-[#fff]">
                 <DropdownMenuItem>
                   <Link
                     href="/cart"
-                    className={`${font.className} hover:text-green-900 text-center w-full py-3 text-sm transition-all duration-300 ease-in-out transform hover:-translate-y-0.5`}
+                    className={`${font.className} hover:text-[#CFC36D] text-center w-full py-3 text-sm transition-all duration-300 ease-in-out transform hover:-translate-y-0.5`}
                   >
                     My Cart
                   </Link>
@@ -137,7 +137,7 @@ const Navbar = () => {
                 <DropdownMenuItem>
                   <Link
                     href="/orders"
-                    className={`${font.className} hover:text-green-900 text-center w-full py-3 text-sm transition-all duration-300 ease-in-out transform hover:-translate-y-0.5`}
+                    className={`${font.className} hover:text-[#CFC36D] text-center w-full py-3 text-sm transition-all duration-300 ease-in-out transform hover:-translate-y-0.5`}
                   >
                     My Orders
                   </Link>

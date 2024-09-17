@@ -66,7 +66,7 @@ const Orders: React.FC = () => {
   }
 
   return (
-    <div className="bg-black">
+    <div className="">
       <div className={`${originText.className} flex justify-center items-center pt-10 text-[#CFC36D] text-2xl md:text-5xl`}>My Orders</div>
       <div className={`md:grid md:grid-cols-3 md:gap-10 p-10  space-y-4 md:space-y-0 ${font.className}`}>
         {/* Mapping over transactions */}

@@ -7,7 +7,7 @@ import Image from "next/image";
 
 // images
 import phone_icon from "../../../../public/assets/auth/phone.png";
-import { toast } from "sonner";
+import { toast, Toaster } from "sonner";
 import axios from "axios";
 import { baseURL } from "@/api/api";
 import { useRouter } from "next/navigation";
@@ -19,7 +19,6 @@ import localFont from "next/font/local";
 const font = localFont({
   src: "../../../../public/font/BDSupperRegular.ttf",
 });
-
 
 const heading = localFont({
   src: "../../../../public/font/OriginTech personal use.ttf",
@@ -115,6 +114,14 @@ const RegisterForm = () => {
       //   backgroundImage: "url('/assets/auth/vector-bg.png')",
       // }}
     >
+      <Toaster
+        position="top-right"
+        richColors
+        closeButton
+        duration={2000}
+        pauseWhenPageIsHidden
+        visibleToasts={1}
+      />
       <div className="p-5 md:p-11 z-20 rounded-3xl shadow-lg bg-opacity-35 bg-[#EDA93F]/20 border-2 border-[#CFC36D] flex flex-col items-center pt-5">
         <h1
           className={`${heading.className} text-center text-4xl text-green-200 mb-6`}

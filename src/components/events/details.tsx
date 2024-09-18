@@ -5,7 +5,7 @@ import axios from "axios";
 import { FaCartPlus, FaUsers } from "react-icons/fa";
 import { BackgroundGradient } from "../ui/background-gradient";
 import { BorderBeam } from "@/components/magicui/border-beam";
-import { toast } from "sonner";
+import { toast, Toaster } from "sonner";
 import api from "@/api/api";
 import { FaPhone } from "react-icons/fa6";
 import { Button } from "../ui/button";
@@ -65,12 +65,24 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
 
       toast.success("Event Added to Cart");
     } catch (error: any) {
-      toast.error("Event already Added in Cart");
+      const errorMessage =
+        error.response?.data?.message ||
+        error.response?.data?.error ||
+        error.message;
+      toast.error(errorMessage);
     }
   };
 
   return (
     <div className="w-full  flex justify-center items-center md:px-24 mb-7 mt-16 md:mt-0 px-3">
+      <Toaster
+        position="top-right"
+        richColors
+        closeButton
+        duration={2000}
+        pauseWhenPageIsHidden
+        visibleToasts={1}
+      />
       <div className=" w-full border-white/[0.2] border-2 rounded-xl max-w-6xl">
         <div className="bg-transparent  w-full relative rounded-xl p-4 md:grid grid-cols-12">
           <div className="col-span-4 md:ml-2 flex flex-col justify-between items-center mx-auto w-full ">

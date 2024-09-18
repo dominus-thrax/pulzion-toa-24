@@ -12,7 +12,7 @@ import profile from "../../../../public/assets/auth/profile.png";
 import lock from "../../../../public/assets/auth/lock.png";
 import axios from "axios";
 import { baseURL } from "@/api/api";
-import { toast } from "sonner";
+import { toast, Toaster } from "sonner";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/context/index";
 import { LoginForm } from "../../../types";
@@ -21,7 +21,6 @@ import localFont from "next/font/local";
 const font = localFont({
   src: "../../../../public/font/BDSupperRegular.ttf",
 });
-
 
 const heading = localFont({
   src: "../../../../public/font/OriginTech personal use.ttf",
@@ -84,8 +83,18 @@ const LoginPage: NextPage = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-black bg-cover bg-center">
+      <Toaster
+        position="top-right"
+        richColors
+        closeButton
+        duration={2000}
+        pauseWhenPageIsHidden
+        visibleToasts={1}
+      />
       <div className="p-8 rounded-3xl z-20 px-20 shadow-lg bg-opacity-65 bg-[#EDA93F]/20 border-2 border-[#CFC36D] flex flex-col items-center">
-        <div className={`flex text-2xl md:text-4xl items-center ${heading.className}`}>
+        <div
+          className={`flex text-2xl md:text-4xl items-center ${heading.className}`}
+        >
           <Image
             src={phone}
             alt="Gameboy Icon"
@@ -146,7 +155,9 @@ const LoginPage: NextPage = () => {
           Forgot password?
         </Link>
 
-        <div className={`${font.className} text-sm text-start w-full text-white mt-4`}>
+        <div
+          className={`${font.className} text-sm text-start w-full text-white mt-4`}
+        >
           Don&apos;t have an account?{" "}
           <Link
             href="/register"

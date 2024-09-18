@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import axios from "axios";
-import { toast } from "sonner";
+import { toast, Toaster } from "sonner";
 import phone from "../../../../public/assets/auth/phone.png";
 import profile from "../../../../public/assets/auth/profile.png";
 import lock from "../../../../public/assets/auth/lock.png";
@@ -37,6 +37,14 @@ const ResetPassword = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-black bg-cover bg-center">
+      <Toaster
+        position="top-right"
+        richColors
+        closeButton
+        duration={2000}
+        pauseWhenPageIsHidden
+        visibleToasts={1}
+      />
       <div className="p-8 rounded-3xl z-20 shadow-lg bg-opacity-65 bg-gradient-to-b from-registercardcolor1 to-registercardcolor2 border-loginbordercolor border-4 flex flex-col items-center">
         <div className="flex text-3xl md:text-5xl items-center">
           <Image

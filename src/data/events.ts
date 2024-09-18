@@ -2,7 +2,7 @@ export const eventDetails = {
   codex: {
     id: 23,
     mode: "Offline",
-    price: "₹20",
+    price: "₹25",
     rules:
       "1. Event will be held OFFLINE.\n2. Only 1st year students from PICT can participate in this event.\n3. The 1st round will consist of 20 MCQs which participants have to answer within 15 minutes.\n4. In the 2nd round, shortlisted participants will have to code for the given problems.For this round, sample code snippets for basic loops (for, while) or conditional statements (if, elseif, else) will be given.",
     rounds:
@@ -28,9 +28,9 @@ export const eventDetails = {
     ],
   },
   "compete-and-compute": {
-    id: 26,
+    id: 35,
     mode: "Online + Offline",
-    price: "₹",
+    price: "₹35",
     rules:
       "1. Participants need to have an account on HackerRank.\n 2. The decision of the organisers will be considered final and binding on all the participants.\n3. Use of unfair means will result in direct disqualification.\n4. Participants will get a maximum of 1.5 hours to solve the questions in the first round.\n5. Shortlisted participants will be selected for the second round which will be held offline at PICT.",
     rounds:
@@ -45,21 +45,21 @@ export const eventDetails = {
   dataquest: {
     id: 18,
     mode: "Online",
-    price: "₹20",
+    price: "₹35",
     rules:
       "1.There will be two categories - FE-SE (Junior Category) and TE-BE (Senior Category).\n2.The competition will be hosted on the Submission Platform.\n3. The problem statement along with the dataset will be released on the platform.\n4. The link for the contest will be shared with the participants through email.\n5. Participants are expected to submit their CSV files along with .ipynb/py files.\n5. You can view the public leaderboard to compete against the best of the best solutions and achieve better results.\n6. The right to decide optimization metric will rest with the judges and it will be final and binding.",
     rounds:
       "Round 1:\n1. For (FE-SE) category only 1 round would be there. The winners will be decided according to the decided metrics.\n2. For (TE-BE) category 2 rounds would be there. Participants will be filtered out according to the decided metrics and qualified to round 2.\n3. A maximum of 3 submissions are allowed per day. The best score out of the submissions will be considered for evaluation.\nRound 2:\n1. For (TE-BE) category 2 rounds are going to be conducted. Participants will be filtered out from round 1 qualified to round 2.\n2. A maximum of 3 submissions are allowed per day. The best score out of the submissions will be considered for evaluation.",
     teamDistribution: "Only individual participation is allowed.",
     eventLeads: [
-      { name: "Swarup", phone: "7385165396" },
+      { name: "Soham", phone: "7620106310" },
       { name: "Tanisha", phone: "9834050189" },
     ],
   },
   "web-n-app": {
     id: 17,
     mode: "Online + Offline",
-    price: "₹70",
+    price: "₹90",
     rules:
       "1.Topics are out, and the deadline for presentation submission (Round 1) will be declared soon.\n2. Each Team can submit an entry for only one Problem Statement. Participants are expected to submit a PPT of the proposed solution and idea on the submission platform for round-1. Adding the link of the figma prototype or github repository in the PPT is optional but preferred.\n3. The shortlisted teams from round 1 will be informed by the organisers. The teams are expected to complete major implementation till round-2.\n4. Use of web frameworks and any suitable tech stack is allowed but the use of ready-made templates are prohibited.\n5. Participants should rename their PPT name according to their Leader's name as FirstName_LastName_MobileNumber.extension.\n6. All the updates will be conveyed to the leader's email id.\n7.The decision of the organisers and judges will be final and binding on all participants.",
     rounds:
@@ -74,7 +74,7 @@ export const eventDetails = {
   electroquest: {
     id: 15,
     mode: "Offline",
-    price: "₹50",
+    price: "₹60",
     rules:
       "Rules for Round 1:\n1. All the teams would be given a maximum of 2 hours to finish the treasurehunt in round 1.\n2. Use of the internet or any other resource is allowed during the treasure hunt.\n3. Only the top 5 teams from each category would qualify for the second round.\n4. The hunt is strictly restricted to the college campus.\n5. Any help or clarity on the proceedings of the event would be given by volunteers present on site.\n6. Hints related to the question will be provided by volunteers to the team by deducting the certain number of points per hint. (2 hints max).\nRules for Round 2:\n 1. For this round all teams have 1 hour for designing the circuit.\n2. Team can use the first 20 minutes for internet searching",
     rounds:
@@ -82,13 +82,13 @@ export const eventDetails = {
     teamDistribution:
       "Teams of 3 (max)\n1. FE\n2. SE/TE/BE\nNote- Only the team leader has to register for this event",
     eventLeads: [
-      { name: "Mohammed", phone: "8767474441" },
+      { name: "Aniket", phone: "8889904950" },
       { name: "Srirang", phone: "9028832111" },
     ],
   },
   "hire-hustle": {
     id: 22,
-    mode: "Online",
+    mode: "Online + Offline",
     price: "₹50",
     rules:
       "1. All rounds of the event will be held ONLINE.\n2. The first round will consist of 4 questions which participants have to successfully submit the code for, within 90 minutes.\n3. Qualified candidates will receive an interview schedule through the mail.\n4. The decision of the organisers and judges is final and binding.",
@@ -103,7 +103,7 @@ export const eventDetails = {
   dextrous: {
     id: 21,
     mode: "Offline",
-    price: "₹30",
+    price: "₹50",
     rules:
       "Rules and Regulations:1. All the rounds are elimination rounds.\n2. Selected participants would receive a mail or phone call from the team.\n3. Decision of organisers will be considered final.",
     rounds:
@@ -117,7 +117,7 @@ export const eventDetails = {
   fandom: {
     id: 24,
     mode: "Offline",
-    price: "₹30",
+    price: "₹40",
     rules:
       "1. Every participant is allowed to appear for the first round.\n2. The participants qualifying for the first round will appear in the second round.\n3. Use of any unfair means will result in direct disqualification.\n4. The decision of the organisers will be final and binding on all participants.",
     rounds:
@@ -131,7 +131,7 @@ export const eventDetails = {
   insight: {
     id: 20,
     mode: "Online + Offline",
-    price: "₹20",
+    price: "₹25",
     rules:
       "1. Plagiarised entries will be disqualified.\n2. Round 1 topics will be declared 2-3 days before the event.\n3. The decision of the organisers and judges will be final.",
     rounds:
@@ -145,7 +145,7 @@ export const eventDetails = {
   "freeze-the-second": {
     id: 19,
     mode: "Online",
-    price: "₹20",
+    price: "₹25",
     rules:
       "1. A single participant can submit only one photo\n2. Images should be shot by the person themselves and not directly taken or downloaded from the internet.\n3. Winners will be decided by the organiser.",
     rounds: "It comprises of a single round of submission of your photograph.",
@@ -158,7 +158,7 @@ export const eventDetails = {
   "paper-presentation": {
     id: 30,
     mode: "Online",
-    price: "₹",
+    price: "₹25",
     rules:
       "1.Plagiarized content will lead to immediate disqualification.\n2.Participants must submit their papers in PDF format.\n3.The decision of the judges will be final and binding.",
     rounds:
@@ -167,6 +167,21 @@ export const eventDetails = {
     eventLeads: [
       { name: "Anjali", phone: "7058443037" },
       { name: "Aditya", phone: "9426034129" },
+    ],
+  },
+  innowave: {
+    id: 29,
+    mode: "Online + Offline",
+    price: "₹40",
+    rules:
+      "1. All team members must be from the same organization or institute, but they can be from different academic years. Interdisciplinary teams can participate.\n2. All the team members are required to verify and confirm their details to form a team.\n3. There is no restriction on the number of teams from an organization/institute.\n4. Modification of team post registration will not be allowed.\n5. All the team members must be present during the final presentation; otherwise, their entry will be disqualified.",
+    rounds:
+      "Round 1: Case Submission Round\nParticipants will be judged based on their familiarity with social trends and technological advancements. Teams pick one case problem, work on a 6-slide (excluding intro and conclusion) ppt. Judging criteria include analyzing the Problem Statement and proposing innovative and practical solutions.\nRound 2: Video Pitch Submission\nSelected teams submit a 2-minute video pitch as an unlisted YouTube video.\nRound 3: Case Presentation\nTop 10-12 teams present their solutions to judges offline at PICT, Pune campus.",
+    teamDistribution:
+      "Teams of 2-4. The one who registers the team becomes the team leader.",
+    eventLeads: [
+      { name: "Harsha", phone: "9322678365" },
+      { name: "Anjali", phone: "8484802405" },
     ],
   },
 };

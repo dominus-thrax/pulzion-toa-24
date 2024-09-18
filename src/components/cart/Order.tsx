@@ -2,7 +2,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import axios from "axios";
 import api from "@/api/api";
-import { toast } from "sonner"; // Import Sonner toast
+import { toast, Toaster } from "sonner"; // Import Sonner toast
 
 interface CartItem {
   id: number;
@@ -19,6 +19,7 @@ interface OrderProps {
 function Order({ cartItems = [], refetch }: OrderProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [transactionId, setTransactionId] = useState("");
+  const [referal, setReferal] = useState("");
   const total = cartItems.reduce((sum, item) => sum + item.price, 0);
   const [loading, setLoading] = useState(false);
 
@@ -35,21 +36,22 @@ function Order({ cartItems = [], refetch }: OrderProps) {
   const handleTransactionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTransactionId(e.target.value);
   };
-
+  const handleReferalChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setReferal(e.target.value);
+  };
   const handleCheckout = async () => {
     try {
       setLoading(true);
       const eventIds = cartItems.map((item) => item.id); //
       if (transactionId === "") {
-        toast.error("Please enter transaction id", {
-          style: { background: "red", color: "white" },
-        });
+        toast.error("Please enter transaction id");
         return;
       }
 
       const transactionResponse = await api.post("/transaction", {
         event_id: eventIds,
         transaction_id: transactionId,
+        referal_code: referal,
       });
 
       if (transactionResponse.status === 200) {
@@ -70,6 +72,14 @@ function Order({ cartItems = [], refetch }: OrderProps) {
 
   return (
     <div className="p-4">
+      <Toaster
+        position="top-right"
+        richColors
+        closeButton
+        duration={2000}
+        pauseWhenPageIsHidden
+        visibleToasts={1}
+      />
       <p className="text-center text-xl md:text-3xl my-2  text-[#8BFFCE]">
         Order Summary
       </p>
@@ -126,14 +136,24 @@ function Order({ cartItems = [], refetch }: OrderProps) {
               <div className="text-center text-lg mb-4">
                 <p className=" text-white">Order Total: {total}/-</p>
               </div>
-
-              <input
-                type="text"
-                placeholder="Enter Transaction ID"
-                value={transactionId}
-                onChange={handleTransactionChange}
-                className="w-full p-2 border rounded-lg mb-4 text-black"
-              />
+              <div className=" rounded-lg">
+                <input
+                  type="text"
+                  placeholder="Enter Transaction ID"
+                  value={transactionId}
+                  onChange={handleTransactionChange}
+                  className="w-full p-2 border rounded-lg mb-4 text-black"
+                />
+              </div>
+              <div className=" rounded-lg">
+                <input
+                  type="text"
+                  placeholder="Enter Referal code"
+                  value={referal}
+                  onChange={handleReferalChange}
+                  className="w-full p-2 border rounded-lg mb-4 text-black"
+                />
+              </div>
 
               <div className="flex justify-end mt-4">
                 <button

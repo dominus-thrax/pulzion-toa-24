@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import api from "@/api/api";
 import { toast, Toaster } from "sonner"; // Import Sonner toast
+import { useRouter } from "next/navigation";
 
 interface CartItem {
   id: number;
@@ -17,6 +18,7 @@ interface OrderProps {
 }
 
 function Order({ cartItems = [], refetch }: OrderProps) {
+  const router = useRouter();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [transactionId, setTransactionId] = useState("");
   const [referal, setReferal] = useState("");
@@ -58,6 +60,7 @@ function Order({ cartItems = [], refetch }: OrderProps) {
         await api.delete("/cart");
 
         toast.success("Checkout successful!");
+        router.push("/orders");
         closeModal();
         refetch();
       } else {

@@ -29,39 +29,8 @@ const font = localFont({
 const Navbar = () => {
   const router = useRouter();
   const [navOpen, setNavOpen] = useState(false);
-  const logoRef = useRef<HTMLImageElement>(null);
   const pathName = usePathname();
   const isMainPage = pathName === "/";
-
-  useEffect(() => {
-    if (!isMainPage) return;
-    let ticking = false;
-
-    const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const scrollValue = window.scrollY;
-          if (logoRef.current) {
-            if (scrollValue <= 600) {
-              logoRef.current.style.scale = "0";
-            } else {
-              logoRef.current.style.scale = "1";
-            }
-          }
-
-          ticking = false;
-        });
-
-        ticking = true;
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   const toggleNav = () => {
     setNavOpen(!navOpen);
@@ -101,8 +70,7 @@ const Navbar = () => {
     <nav className="pt-0 md:pt-6 fixed top-0 left-0 w-full md:px-6 z-30 backdrop-blur-md transition-all duration-300 ease-in-out">
       <div className="flex justify-between items-center">
         <div
-          className="transition-transform duration-300 flex flex-col justify-center items-center pl-3"
-          ref={logoRef}
+          className="flex flex-col justify-center items-center pl-3"
         >
           <Image src={logo} alt="Logo" width={150} height={150} />
           <Image src={tagline} alt="tagline" width={120} height={120} />

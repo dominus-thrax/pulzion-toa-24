@@ -9,7 +9,7 @@ const sponsors = [sponser, sponser, sponser, sponser, sponser];
 
 const Sponsors: React.FC = () => {
   return (
-    <div className="bg-black min-h-screen flex items-center justify-center relative">
+    <div className="min-h-screen flex items-center justify-center relative">
       <div className="flex flex-col justify-center items-center mx-auto py-8 relative z-20">
         <h1 className="text-center mb-12 text-[#cfc36d] text-2xl md:text-6xl">
           Our Sponsors

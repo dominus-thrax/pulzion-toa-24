@@ -51,7 +51,7 @@ const Card: React.FC<CardProps> = ({
           <img
             src={`/assets/add-to-cart/${title}.png`}
             alt={title}
-            className="w-16 md:w-20 p-1 bg-[#E8AF49] rounded-md"
+            className="w-16 md:w-20 p-1 bg-[#E8AF49] rounded-xl"
           />
           <p className="my-auto text-[#8BFFCE] text-lg md:text-2xl">{title}</p>
         </div>
@@ -68,7 +68,7 @@ const Card: React.FC<CardProps> = ({
                 Remove
               </button>
             </AlertDialogTrigger>
-            <AlertDialogContent className="bg-[#1F2937] text-white border border-[#E8AF49] rounded-md max-w-xs md:max-w-md p-4">
+            <AlertDialogContent className="bg-[#1F2937] text-white border border-[#E8AF49] rounded-xl max-w-xs md:max-w-md p-4">
               <AlertDialogHeader className="text-[#E8AF49]">
                 <AlertDialogTitle className="text-lg md:text-xl font-bold">
                   Confirm Deletion

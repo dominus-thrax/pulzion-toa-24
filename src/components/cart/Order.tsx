@@ -50,14 +50,10 @@ function Order({ cartItems = [], refetch }: OrderProps) {
         return;
       }
 
-      if(!(referal.length > 0)) {
-        setReferal("omkarg")
-      }
-
       const transactionResponse = await api.post("/transaction", {
         event_id: eventIds,
         transaction_id: transactionId,
-        referral_code: referal,
+        referral_code: referal || "0mux2h",
         combo_id: [],
       });
 

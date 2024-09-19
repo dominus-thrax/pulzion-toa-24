@@ -87,7 +87,9 @@ const Navbar = () => {
             <Link
               key={index}
               href={link.path}
-              className={`${font.className} hover:text-[#ADCC8B] px-3 py-3 text-xl transition-all duration-300 ease-in-out transform hover:-translate-y-0.5`}
+              className={`${font.className} ${
+                pathName === link.path && "text-[#ADCC8B]"
+              } hover:text-[#ADCC8B] px-3 py-3 text-xl transition-all duration-300 ease-in-out transform hover:-translate-y-0.5`}
             >
               {link.label}
             </Link>
@@ -100,7 +102,9 @@ const Navbar = () => {
               <DialogTrigger asChild>
                 <CgProfile className="text-[#CFC36D] h-10 w-10 hover:cursor-pointer" />
               </DialogTrigger>
-              <DialogContent className={`${font.className} w-full max-w-[600px]`}>
+              <DialogContent
+                className={`${font.className} w-full max-w-[600px] bg-transparent`}
+              >
                 <DialogHeader>
                   <DialogTitle></DialogTitle>
                 </DialogHeader>
@@ -115,21 +119,28 @@ const Navbar = () => {
                       <div className="font-semibold">
                         {user.user.first_name} {user.user.last_name}
                       </div>
-                      <div className="font-semibold">
-                        {user.user.email}
-                      </div>
+                      <div className="font-semibold">{user.user.email}</div>
                       <div className="font-semibold">
                         {user.user.referral_code}
                       </div>
                     </div>
                   </div>
-                  <Link href={"/cart"} className="text-[#CFC36D] font-semibold text-xl">
+                  <Link
+                    href={"/cart"}
+                    className="text-[#CFC36D] font-semibold text-xl"
+                  >
                     My Cart
                   </Link>
-                  <Link href={"/orders"} className="text-[#CFC36D] font-semibold text-xl">
+                  <Link
+                    href={"/orders"}
+                    className="text-[#CFC36D] font-semibold text-xl"
+                  >
                     My Orders
                   </Link>
-                  <div onClick={handleLogout} className="text-red-500 font-semibold text-xl hover:cursor-pointer">
+                  <div
+                    onClick={handleLogout}
+                    className="text-red-500 font-semibold text-xl hover:cursor-pointer"
+                  >
                     Logout
                   </div>
                   <BorderBeam size={400} duration={5} delay={5} />

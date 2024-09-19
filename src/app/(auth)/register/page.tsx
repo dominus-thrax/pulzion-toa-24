@@ -74,6 +74,11 @@ const RegisterForm = () => {
       return;
     }
 
+    if(!(password.length > 8)) {
+      toast.error("Minimum 8 character password required");
+      return;
+    }
+
     if (confirmPassword !== password) {
       console.log("Error: Passwords do not match.");
       return;

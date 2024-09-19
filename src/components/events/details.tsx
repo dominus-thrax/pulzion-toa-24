@@ -141,12 +141,12 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
             </Button>
 
             {/* Event Leads */}
-            <div className="text-white  flex gap-3 md:gap-6 mt-4 mb-1 ">
+            <div className="text-white flex-col justify-center items-center flex gap-3 md:gap-6 mt-4 mb-1 ">
               {eventData.eventLeads.length > 0 &&
                 eventData.eventLeads.map((lead, index) => (
                   <div
                     key={index}
-                    className="flex items-center  text-xs md:text-sm gap-2 "
+                    className="flex items-center justify-center text-xs md:text-sm gap-2 "
                   >
                     <span className={`${font.className}`}>
                       {lead.name}

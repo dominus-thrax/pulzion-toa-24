@@ -1,6 +1,6 @@
 export const eventDetails = {
   codex: {
-    id: 23,
+    id: 3,
     mode: "Offline",
     price: "₹25",
     rules:
@@ -14,7 +14,7 @@ export const eventDetails = {
     ],
   },
   codelicious: {
-    id: 25,
+    id: 1,
     mode: "Online",
     price: "Free",
     rules:
@@ -28,7 +28,7 @@ export const eventDetails = {
     ],
   },
   "compete-and-compute": {
-    id: 35,
+    id: 13,
     mode: "Online + Offline",
     price: "₹35",
     rules:
@@ -43,7 +43,7 @@ export const eventDetails = {
     ],
   },
   dataquest: {
-    id: 18,
+    id: 5,
     mode: "Online",
     price: "₹35",
     rules:
@@ -57,7 +57,7 @@ export const eventDetails = {
     ],
   },
   "web-n-app": {
-    id: 17,
+    id: 6,
     mode: "Online + Offline",
     price: "₹90",
     rules:
@@ -72,7 +72,7 @@ export const eventDetails = {
     ],
   },
   electroquest: {
-    id: 15,
+    id: 4,
     mode: "Offline",
     price: "₹60",
     rules:
@@ -87,7 +87,7 @@ export const eventDetails = {
     ],
   },
   "hire-hustle": {
-    id: 22,
+    id: 2,
     mode: "Online + Offline",
     price: "₹50",
     rules:
@@ -101,7 +101,7 @@ export const eventDetails = {
     ],
   },
   dextrous: {
-    id: 21,
+    id: 7,
     mode: "Offline",
     price: "₹50",
     rules:
@@ -115,7 +115,7 @@ export const eventDetails = {
     ],
   },
   "fandom-tmkoc": {
-    id: 31,
+    id: 15,
     mode: "Offline",
     price: "₹40",
     rules:
@@ -129,7 +129,7 @@ export const eventDetails = {
     ],
   },
   "fandom-cricket": {
-    id: 33,
+    id: 17,
     mode: "Offline",
     price: "₹40",
     rules:
@@ -143,7 +143,7 @@ export const eventDetails = {
     ],
   },
   "fandom-football": {
-    id: 35,
+    id: 14,
     mode: "Offline",
     price: "₹40",
     rules:
@@ -157,7 +157,7 @@ export const eventDetails = {
     ],
   },
   "fandom-sitcom": {
-    id: 34,
+    id: 19,
     mode: "Offline",
     price: "₹40",
     rules:
@@ -171,7 +171,7 @@ export const eventDetails = {
     ],
   },
   "fandom-anime": {
-    id: 32,
+    id: 18,
     mode: "Offline",
     price: "₹40",
     rules:
@@ -185,7 +185,7 @@ export const eventDetails = {
     ],
   },
   insight: {
-    id: 20,
+    id: 9,
     mode: "Online + Offline",
     price: "₹25",
     rules:
@@ -199,7 +199,7 @@ export const eventDetails = {
     ],
   },
   "freeze-the-second": {
-    id: 19,
+    id: 10,
     mode: "Online",
     price: "₹25",
     rules:
@@ -212,7 +212,7 @@ export const eventDetails = {
     ],
   },
   "paper-presentation": {
-    id: 30,
+    id: 11,
     mode: "Online",
     price: "₹25",
     rules:
@@ -226,7 +226,7 @@ export const eventDetails = {
     ],
   },
   innowave: {
-    id: 29,
+    id: 12,
     mode: "Online + Offline",
     price: "₹40",
     rules:

@@ -1,8 +1,10 @@
+"use client";
+
 // ContactUs.tsx
 import { MdEmail } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
-import React from "react";
+import React, { useState } from "react";
 import localFont from "next/font/local";
 import Particles from "@/components/magicui/particles";
 
@@ -14,17 +16,33 @@ import linkedin from "../../../public/assets/landing/contact-us/linkedin.png";
 import web from "../../../public/assets/landing/contact-us/web.png";
 import twitter from "../../../public/assets/landing/contact-us/twitter.png";
 import { Button } from "../ui/button";
+import { toast } from "sonner";
 
 const font = localFont({
   src: "../../../public/font/BDSupperRegular.ttf",
 });
-
 
 const sixtyfour = localFont({
   src: "../../../public/font/OriginTech personal use.ttf",
 });
 
 const ContactUs: React.FC = () => {
+  const [details, setDetails] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const handleClick = () => {
+    const { name, email, message } = details;
+    if (!name || !email || !message) {
+      toast.error("Fill all fields!");
+      return;
+    }
+
+    toast.success("Message sent!");
+    return;
+  };
+
   return (
     <div className="min-h-screen w-full flex flex-col justify-center p-4 md:p-8 relative bg-black">
       {/* Contact Us Title */}
@@ -49,10 +67,10 @@ const ContactUs: React.FC = () => {
             <FaPhoneAlt className="h-6 w-6 text-green-500" />
             <div>
               <p className="text-xs sm:text-sm md:text-base text-white">
-                Samarth Mali: (+91) 9156931100
+                Harsha Pareek: (+91) 93226 78365
               </p>
               <p className="text-xs sm:text-sm md:text-base text-white">
-                Pritika Rohera: (+91) 8087606750
+                Aashlesh Wawge: (+91) 94203 24148
               </p>
             </div>
           </div>
@@ -77,27 +95,34 @@ const ContactUs: React.FC = () => {
         </div>
 
         {/* Send a Message Form */}
-        <div
-          className="bg-[#1f3b2f] opacity-70 p-4 md:p-6 w-full lg:w-1/3 h-auto lg:h-96 flex flex-col justify-between rounded-xl"
-        >
+        <div className="bg-[#1f3b2f] opacity-70 p-4 md:p-6 w-full lg:w-1/3 h-auto lg:h-96 flex flex-col justify-between rounded-xl">
           <h3 className="text-xl sm:text-2xl md:text-3xl mb-4 text-center text-white">
             Send a Message
           </h3>
-          <form>
+          <form onSubmit={handleClick}>
             <input
               type="text"
               placeholder="Name"
               className="w-full p-2 mb-4 text-xs sm:text-sm md:text-base text-white rounded-md focus:outline-none bg-transparent border-b border-gray-300"
+              onChange={(e) =>
+                setDetails((prev) => ({ ...prev, name: e.target.value }))
+              }
             />
             <input
               type="email"
               placeholder="Email"
               className="w-full p-2 mb-4 text-xs sm:text-sm md:text-base text-white rounded-md focus:outline-none bg-transparent border-b border-gray-300"
+              onChange={(e) =>
+                setDetails((prev) => ({ ...prev, email: e.target.value }))
+              }
             />
             <textarea
               placeholder="Message"
               className="w-full p-2 mb-4 text-xs sm:text-sm md:text-base text-white rounded-md focus:outline-none bg-transparent border-b border-gray-300"
               rows={3}
+              onChange={(e) =>
+                setDetails((prev) => ({ ...prev, message: e.target.value }))
+              }
             ></textarea>
             <Button
               type="submit"

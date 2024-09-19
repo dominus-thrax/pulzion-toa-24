@@ -52,6 +52,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
       college: "",
       year: "",
       otp: 0,
+      referral_code: "",
     },
   });
 

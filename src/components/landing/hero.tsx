@@ -6,6 +6,7 @@ import logo from "../../../public/assets/landing/hero/logo.png";
 import tagline from "../../../public/assets/landing/hero/tagline.png";
 import localFont from "next/font/local";
 import MatrixRain from "./MatrixRain";
+import { useAuth } from "@/context";
 
 const sixtyfour = localFont({
   src: "../../../public/font/OriginTech personal use.ttf",
@@ -19,6 +20,7 @@ const Hero = () => {
   const [videoEnded, setVideoEnded] = useState(false);
   const [contentVisible, setContentVisible] = useState(false);
 
+  const { authState: user } = useAuth();
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
@@ -65,7 +67,7 @@ const Hero = () => {
         {/* <div className="w-full"> */}
         <MatrixRain></MatrixRain>
         {/* </div> */}
-        
+
         <div className="flex flex-col justify-center items-center relative z-10 space-y-[5rem] p-10 md:p-0">
           {/* Logo and Tagline */}
           <div className="flex flex-col justify-center items-center w-full">
@@ -98,12 +100,21 @@ const Hero = () => {
       </div>
 
       <div className="w-full flex justify-center">
-        <a
-          href="/register"
-          className={`${font.className} z-10 hover:cursor-pointer text-black bg-[#ECAA43] px-4 py-2 rounded-2xl mx-auto block text-center absolute`}
-        >
-          Participate Now
-        </a>
+        {user.token ? (
+          <a
+            href="/events"
+            className={`${font.className} z-10 hover:cursor-pointer text-black bg-[#ECAA43] px-4 py-2 rounded-2xl mx-auto block text-center absolute`}
+          >
+            Explore Events
+          </a>
+        ) : (
+          <a
+            href="/register"
+            className={`${font.className} z-10 hover:cursor-pointer text-black bg-[#ECAA43] px-4 py-2 rounded-2xl mx-auto block text-center absolute`}
+          >
+            Participate Now
+          </a>
+        )}
       </div>
     </div>
   );

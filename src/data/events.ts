@@ -114,8 +114,64 @@ export const eventDetails = {
       { name: "Madhura", phone: "9834396355" },
     ],
   },
-  fandom: {
-    id: 24,
+  "fandom-tmkoc": {
+    id: 31,
+    mode: "Offline",
+    price: "₹40",
+    rules:
+      "1. Every participant is allowed to appear for the first round.\n2. The participants qualifying for the first round will appear in the second round.\n3. Use of any unfair means will result in direct disqualification.\n4. The decision of the organisers will be final and binding on all participants.",
+    rounds:
+      "Round 1: A general quiz of the duration of 30 minutes.\nRound 2:An interactive round having a variety of questions related to your favourite Fandoms",
+    teamDistribution: "Only individual participation is allowed.",
+    eventLeads: [
+      { name: "Devashish", phone: "9607601090" },
+      { name: "Aakanksha", phone: "8530053300" },
+    ],
+  },
+  "fandom-cricket": {
+    id: 33,
+    mode: "Offline",
+    price: "₹40",
+    rules:
+      "1. Every participant is allowed to appear for the first round.\n2. The participants qualifying for the first round will appear in the second round.\n3. Use of any unfair means will result in direct disqualification.\n4. The decision of the organisers will be final and binding on all participants.",
+    rounds:
+      "Round 1: A general quiz of the duration of 30 minutes.\nRound 2:An interactive round having a variety of questions related to your favourite Fandoms",
+    teamDistribution: "Only individual participation is allowed.",
+    eventLeads: [
+      { name: "Devashish", phone: "9607601090" },
+      { name: "Aakanksha", phone: "8530053300" },
+    ],
+  },
+  "fandom-football": {
+    id: 35,
+    mode: "Offline",
+    price: "₹40",
+    rules:
+      "1. Every participant is allowed to appear for the first round.\n2. The participants qualifying for the first round will appear in the second round.\n3. Use of any unfair means will result in direct disqualification.\n4. The decision of the organisers will be final and binding on all participants.",
+    rounds:
+      "Round 1: A general quiz of the duration of 30 minutes.\nRound 2:An interactive round having a variety of questions related to your favourite Fandoms",
+    teamDistribution: "Only individual participation is allowed.",
+    eventLeads: [
+      { name: "Devashish", phone: "9607601090" },
+      { name: "Aakanksha", phone: "8530053300" },
+    ],
+  },
+  "fandom-sitcom": {
+    id: 34,
+    mode: "Offline",
+    price: "₹40",
+    rules:
+      "1. Every participant is allowed to appear for the first round.\n2. The participants qualifying for the first round will appear in the second round.\n3. Use of any unfair means will result in direct disqualification.\n4. The decision of the organisers will be final and binding on all participants.",
+    rounds:
+      "Round 1: A general quiz of the duration of 30 minutes.\nRound 2:An interactive round having a variety of questions related to your favourite Fandoms",
+    teamDistribution: "Only individual participation is allowed.",
+    eventLeads: [
+      { name: "Devashish", phone: "9607601090" },
+      { name: "Aakanksha", phone: "8530053300" },
+    ],
+  },
+  "fandom-anime": {
+    id: 32,
     mode: "Offline",
     price: "₹40",
     rules:

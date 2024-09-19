@@ -21,6 +21,14 @@ import { Button } from "../ui/button";
 import api from "@/api/api";
 import { toast } from "sonner";
 import path from "path";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "../ui/dialog";
+import { BorderBeam } from "../magicui/border-beam";
 
 const font = localFont({
   src: "../../../public/font/BDSupperRegular.ttf",
@@ -46,8 +54,8 @@ const Navbar = () => {
     { label: "GAME EVO", path: "/game-evolution" },
     // { label: "DEVELOPERS", path: "/developers" },
     // { label: "TEAM", path: "/team" },
-    {label:'GLIMPSES', path:'/glimpses'},
-    {label:'SPONSORS', path:'/sponsors'}
+    { label: "GLIMPSES", path: "/glimpses" },
+    { label: "SPONSORS", path: "/sponsors" },
   ];
 
   const handleLogout = async () => {
@@ -69,9 +77,7 @@ const Navbar = () => {
   return (
     <nav className="pt-0 md:pt-6 fixed top-0 left-0 w-full md:px-6 z-30 backdrop-blur-md transition-all duration-300 ease-in-out">
       <div className="flex justify-between items-center">
-        <div
-          className="flex flex-col justify-center items-center pl-3"
-        >
+        <div className="flex flex-col justify-center items-center pl-3">
           <Image src={logo} alt="Logo" width={150} height={150} />
           <Image src={tagline} alt="tagline" width={120} height={120} />
         </div>
@@ -87,39 +93,49 @@ const Navbar = () => {
             </Link>
           ))}
         </div>
+
         <div className="hidden md:flex mr-10">
           {user.token ? (
-            <DropdownMenu>
-              <DropdownMenuTrigger>
+            <Dialog>
+              <DialogTrigger asChild>
                 <CgProfile className="text-[#CFC36D] h-10 w-10" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-transparent border border-[#CFC36D] rounded-xl text-[#fff]">
-                <DropdownMenuItem>
-                  <Link
-                    href="/cart"
-                    className={`${font.className} hover:text-[#CFC36D] text-center w-full py-3 text-sm transition-all duration-300 ease-in-out transform hover:-translate-y-0.5`}
-                  >
+              </DialogTrigger>
+              <DialogContent className={`${font.className} w-full max-w-[600px]`}>
+                <DialogHeader>
+                  <DialogTitle></DialogTitle>
+                </DialogHeader>
+                <div className="bg-black py-10 w-full border-white/[0.2] border-2 rounded-xl flex flex-col justify-center items-center space-y-4">
+                  <div className=" border-b border-b-white/[0.2] pb-10 max-w-sm w-full grid grid-cols-2 gap-4 text-[#CFC36D]">
+                    <div className="space-y-2">
+                      <div className="">Name: </div>
+                      <div className="">Email: </div>
+                      <div className="">Referral code: </div>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="font-semibold text-xl">
+                        {user.user.first_name} {user.user.last_name}
+                      </div>
+                      <div className="font-semibold text-xl">
+                        {user.user.email}
+                      </div>
+                      <div className="font-semibold text-xl">
+                        {user.user.referral_code}
+                      </div>
+                    </div>
+                  </div>
+                  <Link href={"/cart"} className="text-[#CFC36D] font-semibold text-xl">
                     My Cart
                   </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link
-                    href="/orders"
-                    className={`${font.className} hover:text-[#CFC36D] text-center w-full py-3 text-sm transition-all duration-300 ease-in-out transform hover:-translate-y-0.5`}
-                  >
+                  <Link href={"/orders"} className="text-[#CFC36D] font-semibold text-xl">
                     My Orders
                   </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-transparent">
-                  <Button
-                    onClick={handleLogout}
-                    className={`bg-transparent hover:bg-transparent text-red-500 hover:text-red-500 w-full text-center ${font.className}`}
-                  >
+                  <div onClick={handleLogout} className="text-red-500 font-semibold text-xl hover:cursor-pointer">
                     Logout
-                  </Button>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+                  </div>
+                  <BorderBeam size={400} duration={5} delay={5} />
+                </div>
+              </DialogContent>
+            </Dialog>
           ) : (
             <Link
               href={"/login"}

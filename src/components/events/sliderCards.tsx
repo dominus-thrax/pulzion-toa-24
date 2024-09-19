@@ -95,7 +95,15 @@ export default function SliderCard({ events }: SliderCardProps) {
             <div className="flex flex-col justify-between items-center p-2 rounded-lg h-full">
               <p className="text-3xl font-bold">{event.name}</p>
               <img
-                src={`/assets/EventsNew/${event.name}.png`}
+                src={
+                  event.name === "Fandom-TMKOC" ||
+                  event.name === "Fandom-Cricket" ||
+                  event.name === "Fandom-Football" ||
+                  event.name === "Fandom-Sitcom" ||
+                  event.name === "Fandom-Anime"
+                    ? `/assets/EventsNew/Fandom.png`
+                    : `/assets/EventsNew/${event.name}.png`
+                }
                 alt=""
                 className=" w-28"
               />

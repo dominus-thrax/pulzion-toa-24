@@ -12,7 +12,15 @@ export function CardSpotlightDemo({ event }: { event: EventType }) {
         <CardSpotlight className="flex flex-col justify-center items-center relative overflow-hidden group p-4 rounded-2xl  w-36 h-44 md:w-44 md:h-64">
           <div className="flex justify-center items-center z-50 mb-4">
             <img
-              src={`/assets/EventsNew/${event.name}.png`}
+              src={
+                event.name === "Fandom-TMKOC" ||
+                event.name === "Fandom-Cricket" ||
+                event.name === "Fandom-Football" ||
+                event.name === "Fandom-Sitcom" ||
+                event.name === "Fandom-Anime"
+                  ? `/assets/EventsNew/Fandom.png`
+                  : `/assets/EventsNew/${event.name}.png`
+              }
               alt=""
               className="rounded-lg w-16 h-16 md:w-24 md:h-24 object-cover"
             />

@@ -59,7 +59,7 @@ const About: React.FC = () => {
               <div className="flex flex-col items-center lg:p-5 p-2 space-y-6 ring-1 ring-[#ADCC8B] rounded-2xl">
                 <div className="w-full flex flex-col md:flex-row lg:flex-row mx-auto gap-10 items-center justify-center p-5">
                   <div className="w-44 text-5xl ring-1 ring-[#ADCC8B] rounded-2xl p-2 mb-4">
-                    <NumberTicker value={100} className="text-[#CFC36D]" />
+                    <NumberTicker value={13} className="text-[#CFC36D]" />
                     <p className="text-2xl">Events</p>
                   </div>
                   <div className="w-44 text-5xl ring-1 ring-[#ADCC8B] rounded-2xl p-2 mb-4">
@@ -68,7 +68,7 @@ const About: React.FC = () => {
                   </div>
                   <div className="w-44 text-5xl ring-1 ring-[#ADCC8B] rounded-2xl p-2 mb-4">
                     <NumberTicker value={8000} className="text-[#CFC36D]" />
-                    <p className="text-2xl">Events</p>
+                    <p className="text-2xl">Footfall</p>
                   </div>
                 </div>
 

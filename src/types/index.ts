@@ -8,6 +8,7 @@ export type UserData = {
   college: string;
   year: string;
   otp: number;
+  referral_code: string;
 };
 
 export type UserCredential = {

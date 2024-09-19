@@ -65,7 +65,7 @@ const MatrixRain: React.FC = () => {
         left: 0,
         zIndex: 1,
       }}
-      className="min-w-full min-h-screen opacity-40"
+      className="min-w-[100vw] min-h-screen opacity-40"
     />
   );
 };

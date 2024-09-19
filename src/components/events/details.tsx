@@ -132,10 +132,9 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
                 </div>
               </div>
             </div>
-
             <Button
               className="bg-[#E8AF49] rounded-xl hover:text-black hover:bg-yellow-600 my-2"
-              onClick={addToCart} // Add the click handler
+              onClick={addToCart}
             >
               Add to Cart
             </Button>

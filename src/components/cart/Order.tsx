@@ -54,6 +54,7 @@ function Order({ cartItems = [], refetch }: OrderProps) {
         event_id: eventIds,
         transaction_id: transactionId,
         referal_code: referal,
+        combo_id: [],
       });
 
       if (transactionResponse.status === 200) {

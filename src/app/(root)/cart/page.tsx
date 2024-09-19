@@ -33,7 +33,7 @@ const CartPage = () => {
     try {
       const response = await api.get("/cart");
 
-      const events = response.data?.events || [];
+      const events = response.data?.events.events || [];
       setCartItems(events);
     } catch (err) {
       setError("Failed to load cart items.");

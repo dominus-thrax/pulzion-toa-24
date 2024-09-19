@@ -49,9 +49,19 @@ const Card: React.FC<CardProps> = ({
       <div className="flex justify-between ">
         <div className="flex gap-3 md:gap-4">
           <img
-            src={`/assets/add-to-cart/${title}.png`}
+            src={
+              title === "Fandom-TMKOC" ||
+              title === "Fandom-Cricket" ||
+              title === "Fandom-Football" ||
+              title === "Fandom-Sitcom" ||
+              title === "Fandom-Anime"
+                ? `/assets/add-to-cart/Fandom.png`
+                : `/assets/add-to-cart/${title}.png`
+            }
             alt={title}
-            className="w-16 md:w-20 p-1 bg-[#E8AF49] rounded-xl"
+            height={50}
+            width={80}
+            className=" p-1 bg-[#E8AF49] rounded-xl"
           />
           <p className="my-auto text-[#8BFFCE] text-lg md:text-2xl">{title}</p>
         </div>

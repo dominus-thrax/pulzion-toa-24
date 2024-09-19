@@ -98,7 +98,7 @@ const Navbar = () => {
           {user.token ? (
             <Dialog>
               <DialogTrigger asChild>
-                <CgProfile className="text-[#CFC36D] h-10 w-10" />
+                <CgProfile className="text-[#CFC36D] h-10 w-10 hover:cursor-pointer" />
               </DialogTrigger>
               <DialogContent className={`${font.className} w-full max-w-[600px]`}>
                 <DialogHeader>
@@ -112,13 +112,13 @@ const Navbar = () => {
                       <div className="">Referral code: </div>
                     </div>
                     <div className="space-y-2">
-                      <div className="font-semibold text-xl">
+                      <div className="font-semibold">
                         {user.user.first_name} {user.user.last_name}
                       </div>
-                      <div className="font-semibold text-xl">
+                      <div className="font-semibold">
                         {user.user.email}
                       </div>
-                      <div className="font-semibold text-xl">
+                      <div className="font-semibold">
                         {user.user.referral_code}
                       </div>
                     </div>

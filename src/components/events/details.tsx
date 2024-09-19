@@ -92,12 +92,22 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
         pauseWhenPageIsHidden
         visibleToasts={1}
       />
-      <div className={`${font.className} w-full border-white/[0.2] border-2 rounded-xl max-w-6xl`}>
+      <div
+        className={`${font.className} w-full border-white/[0.2] border-2 rounded-xl max-w-6xl`}
+      >
         <div className="bg-transparent  w-full relative rounded-xl p-4 md:grid grid-cols-12">
           <div className="col-span-4 md:ml-2 flex flex-col justify-between items-center mx-auto w-full ">
             <div className="rounded-md">
               <img
-                src={`/assets/EventDetail/${title}.png`}
+                src={
+                  title === "fandom-tmkoc" ||
+                  title === "fandom-cricket" ||
+                  title === "fandom-football" ||
+                  title === "fandom-sitcom" ||
+                  title === "fandom-anime"
+                    ? `/assets/EventDetail/fandom.png`
+                    : `/assets/EventDetail/${title}.png`
+                }
                 alt=""
                 className=" w-20 md:w-36"
               />
@@ -208,13 +218,40 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
                   <SelectTrigger className="w-full bg-black text-[#fff] rounded-xl">
                     <SelectValue placeholder="Select a fruit" />
                   </SelectTrigger>
-                  <SelectContent className={`${font.className} bg-black text-[#fff] rounded-xl`}>
+                  <SelectContent
+                    className={`${font.className} bg-black text-[#fff] rounded-xl`}
+                  >
                     <SelectGroup>
-                      <SelectItem className="hover:cursor-pointer" value="tmkoc">TMKOC</SelectItem>
-                      <SelectItem className="hover:cursor-pointer" value="cricket">Cricket</SelectItem>
-                      <SelectItem className="hover:cursor-pointer" value="football">Football</SelectItem>
-                      <SelectItem className="hover:cursor-pointer" value="sitcom">Sitcom</SelectItem>
-                      <SelectItem className="hover:cursor-pointer" value="anime">Anime</SelectItem>
+                      <SelectItem
+                        className="hover:cursor-pointer"
+                        value="tmkoc"
+                      >
+                        TMKOC
+                      </SelectItem>
+                      <SelectItem
+                        className="hover:cursor-pointer"
+                        value="cricket"
+                      >
+                        Cricket
+                      </SelectItem>
+                      <SelectItem
+                        className="hover:cursor-pointer"
+                        value="football"
+                      >
+                        Football
+                      </SelectItem>
+                      <SelectItem
+                        className="hover:cursor-pointer"
+                        value="sitcom"
+                      >
+                        Sitcom
+                      </SelectItem>
+                      <SelectItem
+                        className="hover:cursor-pointer"
+                        value="anime"
+                      >
+                        Anime
+                      </SelectItem>
                     </SelectGroup>
                   </SelectContent>
                 </Select>

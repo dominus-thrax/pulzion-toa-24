@@ -103,7 +103,7 @@ const Navbar = () => {
                 <CgProfile className="text-[#CFC36D] h-10 w-10 hover:cursor-pointer" />
               </DialogTrigger>
               <DialogContent
-                className={`${font.className} w-full max-w-[600px] bg-transparent`}
+                className={`${font.className} w-full max-w-[600px] bg-transparent  border border-white/[0.2]`}
               >
                 <DialogHeader>
                   <DialogTitle></DialogTitle>
@@ -190,30 +190,62 @@ const Navbar = () => {
             </Link>
           ))}
           {user.token ? (
-            <div className="flex flex-col items-center">
-              <Link
-                href="/cart"
-                className={`${font.className} text-white hover:text-green-900 px-3 py-3 text-sm transition-all duration-300 ease-in-out transform hover:-translate-y-0.5`}
+            <Dialog>
+              <DialogTrigger asChild>
+                <CgProfile className="text-[#CFC36D] h-10 w-10 hover:cursor-pointer" />
+              </DialogTrigger>
+              <DialogContent
+                className={`${font.className} w-full max-w-[600px] bg-transparent border border-white/[0.2]`}
               >
-                My Cart
-              </Link>
-              <Link
-                href="/orders"
-                className={`${font.className} text-white hover:text-green-900 px-3 py-3 text-sm transition-all duration-300 ease-in-out transform hover:-translate-y-0.5`}
-              >
-                My Orders
-              </Link>
-              <Button
-                onClick={handleLogout}
-                className={`bg-transparent hover:bg-transparent text-red-500 hover:text-red-500 w-full text-center ${font.className}`}
-              >
-                Logout
-              </Button>
-            </div>
+                <DialogHeader>
+                  <DialogTitle></DialogTitle>
+                </DialogHeader>
+                <div className="bg-black py-10 w-full border-white/[0.2] border-2 rounded-xl flex flex-col justify-center items-center space-y-4">
+                  <div className=" border-b border-b-white/[0.2] pb-10 max-w-sm w-full grid grid-cols-2 gap-4 text-[#CFC36D]">
+                    <div className="space-y-2">
+                      <div className="">Name: </div>
+                      <div className="">Email: </div>
+                      <div className="">Referral code: </div>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="font-semibold">
+                        {user.user.first_name} {user.user.last_name}
+                      </div>
+                      <div className="font-semibold">{user.user.email}</div>
+                      <div className="font-semibold">
+                        {user.user.referral_code}
+                      </div>
+                    </div>
+                  </div>
+                  <Link
+                    href={"/cart"}
+                    className="text-[#CFC36D] font-semibold text-xl"
+                  >
+                    My Cart
+                  </Link>
+                  <Link
+                    href={"/orders"}
+                    className="text-[#CFC36D] font-semibold text-xl"
+                  >
+                    My Orders
+                  </Link>
+                  <div
+                    onClick={handleLogout}
+                    className="text-red-500 font-semibold text-xl hover:cursor-pointer"
+                  >
+                    Logout
+                  </div>
+                  <BorderBeam size={400} duration={5} delay={5} />
+                </div>
+              </DialogContent>
+            </Dialog>
           ) : (
             <Link
               href={"/login"}
-              className={`${font.className} text-green-700 px-5 py-4 rounded-2xl text-xl transition-all duration-300 ease-in-out hover:text-white hover:border-white transform hover:-translate-y-0.5`}
+              className={`${font.className} text-[#ADCC8B] 
+              hover:text-[#CFC36D] hover:border-[#CFC36D] border 
+              p-2 px-4 rounded-2xl text-xl transition-all duration-300 
+              ease-in-out transform hover:-translate-y-0.5`}
             >
               LOGIN
             </Link>

@@ -74,12 +74,14 @@ const RegisterForm = () => {
       return;
     }
 
-    if(!(password.length > 8)) {
+    if(!(password.length >= 8)) {
+      toast.dismiss(loadingToast);
       toast.error("Minimum 8 character password required");
       return;
     }
 
     if (confirmPassword !== password) {
+      toast.dismiss(loadingToast);
       console.log("Error: Passwords do not match.");
       return;
     }
@@ -97,6 +99,7 @@ const RegisterForm = () => {
       });
 
       if (result.status !== 200) {
+      toast.dismiss(loadingToast);
         toast.error("Error in registration");
         setLoading(false);
         return;

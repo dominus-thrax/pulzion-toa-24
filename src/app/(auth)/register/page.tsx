@@ -23,7 +23,7 @@ const font = localFont({
 const heading = localFont({
   src: "../../../../public/font/OriginTech personal use.ttf",
 });
-
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const RegisterForm = () => {
   const router = useRouter();
   const { setUserAuthInfo } = useAuth();
@@ -53,9 +53,9 @@ const RegisterForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const loadingToast = toast.loading("Registering...");
     setLoading(true);
 
+    // Validate form inputs
     if (
       !firstName ||
       !lastName ||
@@ -68,24 +68,31 @@ const RegisterForm = () => {
       !confirmPassword ||
       !year
     ) {
-      toast.dismiss(loadingToast);
       toast.error("All fields required");
       setLoading(false);
       return;
     }
 
     if (!(password.length >= 8)) {
-      toast.dismiss(loadingToast);
       toast.error("Minimum 8 character password required");
+      setLoading(false);
       return;
     }
 
     if (confirmPassword !== password) {
-      toast.dismiss(loadingToast);
       toast.error("Error: Passwords do not match");
-      console.log("Error: Passwords do not match.");
+      setLoading(false);
       return;
     }
+
+    if (!emailRegex.test(email)) {
+      toast.error("Invalid email format");
+      setLoading(false);
+      return;
+    }
+
+    // All validations passed, show the loading toast
+    const loadingToast = toast.loading("Registering...");
 
     try {
       const result = await axios.post(`${baseURL}/user/signup`, {
@@ -99,23 +106,25 @@ const RegisterForm = () => {
         year: year,
       });
 
-      console.log(result)
+      console.log(result);
 
       if (result.status !== 200) {
         toast.dismiss(loadingToast);
-        toast.error("");
+        toast.error("Registration failed");
         setLoading(false);
         return;
       }
+
       setUserAuthInfo(result.data);
       toast.dismiss(loadingToast);
-      toast.success("Registration successfull!");
+      toast.success("Registration successful!");
       router.push("/");
     } catch (error: any) {
-      console.log(error);
-      toast.dismiss(loadingToast);
       console.error("Signup error:", error.response.data.error);
+      toast.dismiss(loadingToast);
       toast.error(error.response.data.error);
+    } finally {
+      setLoading(false);
     }
   };
 

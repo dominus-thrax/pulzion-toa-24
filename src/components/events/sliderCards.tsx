@@ -5,8 +5,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import "swiper/css/navigation";
-
 import { EffectCards, Navigation, Autoplay } from "swiper/modules";
+import { Button } from "../ui/button";
+import Link from "next/link";
 
 interface Event {
   id: number;
@@ -86,39 +87,52 @@ export default function SliderCard({ events }: SliderCardProps) {
         className="mySwiper"
         style={swiperStyle}
       >
-        {events.map((event) => (
-          <SwiperSlide
-            key={event.id}
-            style={swiperSlideStyle}
-            className="bg-black text-white rounded-md border-[0.3px] border-yellow-500 shadow-[0_0_15px_rgba(234,179,8,0.6)]"
-          >
-            <div className="flex flex-col justify-between items-center p-2 rounded-lg h-full">
-              <p className="text-3xl font-bold">{event.name}</p>
-              <img
-                src={
-                  event.name === "Fandom-TMKOC" ||
-                  event.name === "Fandom-Cricket" ||
-                  event.name === "Fandom-Football" ||
-                  event.name === "Fandom-Sitcom" ||
-                  event.name === "Fandom-Anime"
-                    ? `/assets/EventsNew/Fandom.png`
-                    : `/assets/EventsNew/${event.name}.png`
-                }
-                alt=""
-                className=" w-28"
-              />
-              <p className="text-xs my-3">{event.description}</p>
-              <div>
-                <p className="text-lg">Mode: {event.mode}</p>
-                {event.price === 0 ? (
-                  <p className="text-lg">Price:{" Free"}</p>
-                ) : (
-                  <p className="text-lg">Price: ₹{event.price}</p>
-                )}
+        {events.map((event) => {
+          const eventLink = `/events/${event.name
+            .toLowerCase()
+            .replace(/ /g, "-")}`;
+          return (
+            <SwiperSlide
+              key={event.id}
+              style={swiperSlideStyle}
+              className="bg-black text-white rounded-md border-[0.3px] border-yellow-500 shadow-[0_0_15px_rgba(234,179,8,0.6)]"
+            >
+              <div className="flex flex-col justify-between items-center p-2 rounded-lg h-full">
+                <p className="text-3xl font-bold">{event.name}</p>
+                <img
+                  src={
+                    event.name === "Fandom-TMKOC" ||
+                    event.name === "Fandom-Cricket" ||
+                    event.name === "Fandom-Football" ||
+                    event.name === "Fandom-Sitcom" ||
+                    event.name === "Fandom-Anime"
+                      ? `/assets/EventsNew/Fandom.png`
+                      : `/assets/EventsNew/${event.name}.png`
+                  }
+                  alt="event image"
+                  className=" w-28"
+                />
+                <p className="text-xs my-3">{event.description}</p>
+                <div>
+                  <Link href={eventLink}>
+                    <Button className="bg-[#E8AF49] rounded-xl hover:text-black hover:bg-yellow-600 my-2">
+                      view
+                    </Button>
+                  </Link>
+                </div>
+                <div>
+                  <p className="text-lg">Mode: {event.mode}</p>
+
+                  {event.price === 0 ? (
+                    <p className="text-lg">Price: Free</p>
+                  ) : (
+                    <p className="text-lg">Price: ₹{event.price}</p>
+                  )}
+                </div>
               </div>
-            </div>
-          </SwiperSlide>
-        ))}
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
 
       <style global jsx>{`

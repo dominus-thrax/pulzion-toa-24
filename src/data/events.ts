@@ -192,7 +192,7 @@ export const eventDetails = {
       "1. Plagiarised entries will be disqualified.\n2. Round 1 topics will be declared 2-3 days before the event.\n3. The decision of the organisers and judges will be final.",
     rounds:
       "Round 1:(Online)\nStory writing: 5 story prompts would be given out of which participants have to write on any one of the topics.\nRound 2:(Offline)\nParticipants would be given a topic for picture narrative. The topic will be given on the spot. Participants will compete in a limited time frame.",
-    teamDistribution: "Teams of 3",
+    teamDistribution: "Only individual participation is allowed.",
     eventLeads: [
       { name: "Maitri", phone: "7975037272" },
       { name: "Sonali", phone: "7875257646" },

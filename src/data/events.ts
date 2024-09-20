@@ -192,7 +192,7 @@ export const eventDetails = {
       "1. Plagiarised entries will be disqualified.\n2. Round 1 topics will be declared 2-3 days before the event.\n3. The decision of the organisers and judges will be final.",
     rounds:
       "Round 1:(Online)\nThe 1st round will be a creative writing task where participants must write a letter to someone from the past or future, showcasing their imagination and writing skills.\nRound 2:(Offline)\nThe 2nd round will feature 'What if...' scenarios, challenging participants to creatively explore hypothetical situations.",
-    teamDistribution: "Teams of 3",
+    teamDistribution: "Only individual participation is allowed.",
     eventLeads: [
       { name: "Maitri", phone: "7975037272" },
       { name: "Sonali", phone: "7875257646" },

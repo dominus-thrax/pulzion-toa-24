@@ -74,7 +74,7 @@ const RegisterForm = () => {
       return;
     }
 
-    if(!(password.length >= 8)) {
+    if (!(password.length >= 8)) {
       toast.dismiss(loadingToast);
       toast.error("Minimum 8 character password required");
       return;
@@ -82,6 +82,7 @@ const RegisterForm = () => {
 
     if (confirmPassword !== password) {
       toast.dismiss(loadingToast);
+      toast.error("Error: Passwords do not match");
       console.log("Error: Passwords do not match.");
       return;
     }
@@ -98,9 +99,11 @@ const RegisterForm = () => {
         year: year,
       });
 
+      console.log(result)
+
       if (result.status !== 200) {
-      toast.dismiss(loadingToast);
-        toast.error("Error in registration");
+        toast.dismiss(loadingToast);
+        toast.error("");
         setLoading(false);
         return;
       }
@@ -109,9 +112,10 @@ const RegisterForm = () => {
       toast.success("Registration successfull!");
       router.push("/");
     } catch (error: any) {
+      console.log(error);
       toast.dismiss(loadingToast);
-      console.error("Signup error:", error.message);
-      toast.error("Error signing up");
+      console.error("Signup error:", error.response.data.error);
+      toast.error(error.response.data.error);
     }
   };
 

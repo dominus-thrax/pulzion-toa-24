@@ -16,7 +16,7 @@ import linkedin from "../../../public/assets/landing/contact-us/linkedin.png";
 import web from "../../../public/assets/landing/contact-us/web.png";
 import twitter from "../../../public/assets/landing/contact-us/twitter.png";
 import { Button } from "../ui/button";
-import { toast } from "sonner";
+import { toast, Toaster } from "sonner";
 
 const font = localFont({
   src: "../../../public/font/BDSupperRegular.ttf",
@@ -32,7 +32,8 @@ const ContactUs: React.FC = () => {
     email: "",
     message: "",
   });
-  const handleClick = () => {
+  const handleClick = (e: { preventDefault: () => void }) => {
+    e.preventDefault();
     const { name, email, message } = details;
     if (!name || !email || !message) {
       toast.error("Fill all fields!");
@@ -46,6 +47,14 @@ const ContactUs: React.FC = () => {
   return (
     <div className="min-h-screen w-full flex flex-col justify-center p-4 md:p-8 relative bg-black">
       {/* Contact Us Title */}
+      <Toaster
+        position="top-right"
+        richColors
+        closeButton
+        duration={2000}
+        pauseWhenPageIsHidden
+        visibleToasts={1}
+      />
       <h1
         className={`${sixtyfour.className} text-center mb-8 md:mb-12 text-[#cfc36d] text-4xl sm:text-5xl md:text-6xl`}
       >

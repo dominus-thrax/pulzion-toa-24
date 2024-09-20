@@ -83,7 +83,7 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
   };
 
   return (
-    <div className="w-full  flex justify-center items-center md:px-24 mb-7 mt-16 md:mt-0 px-3">
+    <div className="w-full flex justify-center items-center md:px-24 mb-7 mt-16 px-3">
       <Toaster
         position="top-right"
         richColors

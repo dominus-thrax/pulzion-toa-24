@@ -1,5 +1,5 @@
 // MatrixRain.tsx
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
 
 const MatrixRain: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -7,12 +7,15 @@ const MatrixRain: React.FC = () => {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    
-    const ctx = canvas.getContext('2d');
+
+    const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     const fontSize = 10;
-    const matrix = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}".split("");
+    const matrix =
+      "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}".split(
+        ""
+      );
     let columns = canvas.width / fontSize;
     const drops: number[] = Array.from({ length: columns }, () => 1);
 
@@ -46,12 +49,12 @@ const MatrixRain: React.FC = () => {
     };
 
     handleResize();
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
     const intervalId = setInterval(draw, 35);
 
     return () => {
       clearInterval(intervalId);
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -59,11 +62,13 @@ const MatrixRain: React.FC = () => {
     <canvas
       ref={canvasRef}
       style={{
-        display: 'block',
-        position: 'absolute',
+        display: "block",
+        position: "absolute",
         top: 0,
         left: 0,
         zIndex: 1,
+        height: "100vh",
+        width: "100vw",
       }}
       className="min-w-[100vw] min-h-screen opacity-40"
     />

@@ -103,7 +103,7 @@ const Navbar = () => {
                 <CgProfile className="text-[#CFC36D] h-10 w-10 hover:cursor-pointer" />
               </DialogTrigger>
               <DialogContent
-                className={`${font.className} w-full max-w-[600px] bg-transparent  border border-white/[0.2]`}
+                className={`${font.className} w-full max-w-[600px] bg-transparent  border border-transparent rounded-xl`}
               >
                 <DialogHeader>
                   <DialogTitle></DialogTitle>
@@ -184,7 +184,7 @@ const Navbar = () => {
             <Link
               key={index}
               href={link.path}
-              className={`${font.className} text-white hover:text-green-900 px-3 py-3 text-sm transition-all duration-300 ease-in-out transform hover:-translate-y-0.5`}
+              className={`${font.className} text-[#CFC36D] hover:border-[#ADCC8B] px-3 py-3 text-sm transition-all duration-300 ease-in-out transform hover:-translate-y-0.5`}
             >
               {link.label}
             </Link>

@@ -29,7 +29,7 @@ const EventDetailsPage = () => {
 
   return (
     <div className="md:relative">
-      <div className="md:absolute md:top-20 md:left-20">
+      <div className="md:absolute md:top-20 md:mx-auto w-full overflow-hidden">
         <ThreeDCardDemo event={event} title={title} />
       </div>
     </div>

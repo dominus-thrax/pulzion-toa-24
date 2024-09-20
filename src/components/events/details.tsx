@@ -83,7 +83,7 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
   };
 
   return (
-    <div className="w-full  flex justify-center items-center md:px-24 mb-7 mt-16 md:mt-0 px-3">
+    <div className="w-full flex justify-center items-center md:px-24 mb-7 mt-16 px-3">
       <Toaster
         position="top-right"
         richColors
@@ -185,7 +185,7 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
             <div>
               {eventData.rounds.length > 0 &&
                 eventData.rounds.split("\n").map((round, index) => (
-                  <p key={index} className="mb-2 text-xs md:text-[13px]">
+                  <p key={index} className="mb-2 mt-2 text-xs md:text-[13px]">
                     {round}
                   </p>
                 ))}
@@ -210,52 +210,6 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
                 {eventData.teamDistribution}
               </p>
             </div> */}
-
-            {title === "fandom" && (
-              <div className="w-full pt-4">
-                <Select>
-                  <SelectTrigger className="w-full bg-black text-[#fff] rounded-xl">
-                    <SelectValue placeholder="Select a fruit" />
-                  </SelectTrigger>
-                  <SelectContent
-                    className={`${font.className} bg-black text-[#fff] rounded-xl`}
-                  >
-                    <SelectGroup>
-                      <SelectItem
-                        className="hover:cursor-pointer"
-                        value="tmkoc"
-                      >
-                        TMKOC
-                      </SelectItem>
-                      <SelectItem
-                        className="hover:cursor-pointer"
-                        value="cricket"
-                      >
-                        Cricket
-                      </SelectItem>
-                      <SelectItem
-                        className="hover:cursor-pointer"
-                        value="football"
-                      >
-                        Football
-                      </SelectItem>
-                      <SelectItem
-                        className="hover:cursor-pointer"
-                        value="sitcom"
-                      >
-                        Sitcom
-                      </SelectItem>
-                      <SelectItem
-                        className="hover:cursor-pointer"
-                        value="anime"
-                      >
-                        Anime
-                      </SelectItem>
-                    </SelectGroup>
-                  </SelectContent>
-                </Select>
-              </div>
-            )}
           </div>
           <BorderBeam size={600} duration={12} delay={5} />
         </div>

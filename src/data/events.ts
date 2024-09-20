@@ -4,9 +4,9 @@ export const eventDetails = {
     mode: "Offline",
     price: "₹25",
     rules:
-      "1. Event will be held OFFLINE.\n2. Only 1st year students from PICT can participate in this event.\n3. The 1st round will consist of 20 MCQs which participants have to answer within 15 minutes.\n4. In the 2nd round, shortlisted participants will have to code for the given problems.For this round, sample code snippets for basic loops (for, while) or conditional statements (if, elseif, else) will be given.",
+      "1. Both the rounds are in OFFLINE mode.\n2. The decision of the organisers will be considered final and binding on all the participants.\n3. Use of unfair means will result in direct disqualification.\n4. Participants will get a maximum of 1 hour to solve the questions in the first round.\n5. Shortlisted participants will be selected for the second round which will be held offline at PICT.",
     rounds:
-      "Round 1 - Coding Round : This is an MCQ round consisting of questions based on various mathematical concepts.\nRound 2 - Technical Round: In this round, qualified participants will have to write code for a given set of problems. The questions are simple and designed for first-year students.",
+      "Round 1 - Coding Round : This is an MCQ round consisting of questions based on basic coding concepts.\nRound 2 - Logic based Round: The second round will focus on solving logic-based questions, where participants must explain their logic to the judges or Codex team, and the first to do so will win the event.",
     teamDistribution: "Only individual participation is allowed.",
     eventLeads: [
       { name: "Siddhesh", phone: "8856862577" },
@@ -18,7 +18,7 @@ export const eventDetails = {
     mode: "Online",
     price: "Free",
     rules:
-      "1. Participants need to have an account on CodeChef.\n2. Participants will get a maximum of 3 hours to solve the questions.\n3. Use of unfair means will result in direct disqualification.\n4. The decision of the organisers will be considered final and binding on all the participants.",
+      "1. The event will be conducted before the main event.\n2. Participants need to have an account on CodeChef.\n3. Participants will get a maximum of 2 hours to solve the questions.\n4. Use of unfair means will result in direct disqualification.\n5. The decision of the organisers will be considered final and binding on all the participants.",
     rounds:
       "Round 1: This event comprises of a single round. It is an online contest hosted on Codechef",
     teamDistribution: "Only individual participation is allowed",
@@ -91,9 +91,9 @@ export const eventDetails = {
     mode: "Online + Offline",
     price: "₹50",
     rules:
-      "1. All rounds of the event will be held ONLINE.\n2. The first round will consist of 4 questions which participants have to successfully submit the code for, within 90 minutes.\n3. Qualified candidates will receive an interview schedule through the mail.\n4. The decision of the organisers and judges is final and binding.",
+      "1. The first round will be an online coding challenge designed to assess your problem-solving skills, with a duration of 1.5 to 2 hours. \n2.Round 2 and 3 will be conducted in-person offline.\n3. Candidates who advance to subsequent rounds will receive detailed interview schedules via email.\n4. The decisions made by the organizers and judges are final and non-negotiable.",
     rounds:
-      "Round 1: This is a coding round in which participants will have to write code for a given set of problems.\n Round 2: This is a technical round, where qualified participants will undergo a technical interview similar to the one in the placement procedure.\nRound 3: In the final round, the participants will undergo an HR interview to assess soft skills of the participants.",
+      "Round 1: This is a coding round in which participants will have to write code for a given set of problems.\n Round 2:\n For FE-SE category: This is a Technical + HR interview round, where qualified participants will undergo a technical interview and HR interview similar to the one in the placement procedure.\n For TE-BE category: This is a Technical round, where qualified participants will undergo a technical interview similar to the one in the placement procedure.\nRound 3: For only TE-BE category In the final round, the participants will undergo an HR interview to assess soft skills of the participants.",
     teamDistribution: "Only individual participation is allowed.",
     eventLeads: [
       { name: "Omkar", phone: "6300656863" },
@@ -121,7 +121,7 @@ export const eventDetails = {
     rules:
       "1. Every participant is allowed to appear for the first round.\n2. The participants qualifying for the first round will appear in the second round.\n3. Use of any unfair means will result in direct disqualification.\n4. The decision of the organisers will be final and binding on all participants.",
     rounds:
-      "Round 1: A general quiz of the duration of 30 minutes.\nRound 2:An interactive round having a variety of questions related to your favourite Fandoms",
+      "Round 1: It will be an offline MCQs-based round which will be conducted on our MCQ platform in our labs. From each fandom, 8-15 individuals will move forward based on the selection criteria for the next round.\nRound 2: The second round will have a unique pattern for each fandom and will be conducted offline. In this round, one person from each sub-fandom will be selected to advance to the final, third round.\n 3. The third round will be a surprise round and conducted offline. In this final stage, one overall winner will be selected.",
     teamDistribution: "Only individual participation is allowed.",
     eventLeads: [
       { name: "Devashish", phone: "9607601090" },
@@ -135,7 +135,7 @@ export const eventDetails = {
     rules:
       "1. Every participant is allowed to appear for the first round.\n2. The participants qualifying for the first round will appear in the second round.\n3. Use of any unfair means will result in direct disqualification.\n4. The decision of the organisers will be final and binding on all participants.",
     rounds:
-      "Round 1: A general quiz of the duration of 30 minutes.\nRound 2:An interactive round having a variety of questions related to your favourite Fandoms",
+      "Round 1: It will be an offline MCQs-based round which will be conducted on our MCQ platform in our labs. From each fandom, 8-15 individuals will move forward based on the selection criteria for the next round.\nRound 2: The second round will have a unique pattern for each fandom and will be conducted offline. In this round, one person from each sub-fandom will be selected to advance to the final, third round.\n 3. The third round will be a surprise round and conducted offline. In this final stage, one overall winner will be selected.",
     teamDistribution: "Only individual participation is allowed.",
     eventLeads: [
       { name: "Devashish", phone: "9607601090" },
@@ -149,7 +149,7 @@ export const eventDetails = {
     rules:
       "1. Every participant is allowed to appear for the first round.\n2. The participants qualifying for the first round will appear in the second round.\n3. Use of any unfair means will result in direct disqualification.\n4. The decision of the organisers will be final and binding on all participants.",
     rounds:
-      "Round 1: A general quiz of the duration of 30 minutes.\nRound 2:An interactive round having a variety of questions related to your favourite Fandoms",
+      "Round 1: It will be an offline MCQs-based round which will be conducted on our MCQ platform in our labs. From each fandom, 8-15 individuals will move forward based on the selection criteria for the next round.\nRound 2: The second round will have a unique pattern for each fandom and will be conducted offline. In this round, one person from each sub-fandom will be selected to advance to the final, third round.\n 3. The third round will be a surprise round and conducted offline. In this final stage, one overall winner will be selected.",
     teamDistribution: "Only individual participation is allowed.",
     eventLeads: [
       { name: "Devashish", phone: "9607601090" },
@@ -163,7 +163,7 @@ export const eventDetails = {
     rules:
       "1. Every participant is allowed to appear for the first round.\n2. The participants qualifying for the first round will appear in the second round.\n3. Use of any unfair means will result in direct disqualification.\n4. The decision of the organisers will be final and binding on all participants.",
     rounds:
-      "Round 1: A general quiz of the duration of 30 minutes.\nRound 2:An interactive round having a variety of questions related to your favourite Fandoms",
+      "Round 1: It will be an offline MCQs-based round which will be conducted on our MCQ platform in our labs. From each fandom, 8-15 individuals will move forward based on the selection criteria for the next round.\nRound 2: The second round will have a unique pattern for each fandom and will be conducted offline. In this round, one person from each sub-fandom will be selected to advance to the final, third round.\n 3. The third round will be a surprise round and conducted offline. In this final stage, one overall winner will be selected.",
     teamDistribution: "Only individual participation is allowed.",
     eventLeads: [
       { name: "Devashish", phone: "9607601090" },
@@ -177,7 +177,7 @@ export const eventDetails = {
     rules:
       "1. Every participant is allowed to appear for the first round.\n2. The participants qualifying for the first round will appear in the second round.\n3. Use of any unfair means will result in direct disqualification.\n4. The decision of the organisers will be final and binding on all participants.",
     rounds:
-      "Round 1: A general quiz of the duration of 30 minutes.\nRound 2:An interactive round having a variety of questions related to your favourite Fandoms",
+      "Round 1: It will be an offline MCQs-based round which will be conducted on our MCQ platform in our labs. From each fandom, 8-15 individuals will move forward based on the selection criteria for the next round.\nRound 2: The second round will have a unique pattern for each fandom and will be conducted offline. In this round, one person from each sub-fandom will be selected to advance to the final, third round.\n 3. The third round will be a surprise round and conducted offline. In this final stage, one overall winner will be selected.",
     teamDistribution: "Only individual participation is allowed.",
     eventLeads: [
       { name: "Devashish", phone: "9607601090" },
@@ -191,8 +191,8 @@ export const eventDetails = {
     rules:
       "1. Plagiarised entries will be disqualified.\n2. Round 1 topics will be declared 2-3 days before the event.\n3. The decision of the organisers and judges will be final.",
     rounds:
-      "Round 1:(Online)\nStory writing: 5 story prompts would be given out of which participants have to write on any one of the topics.\nRound 2:(Offline)\nParticipants would be given a topic for picture narrative. The topic will be given on the spot. Participants will compete in a limited time frame.",
-    teamDistribution: "Only individual participation is allowed.",
+      "Round 1:(Online)\nThe 1st round will be a creative writing task where participants must write a letter to someone from the past or future, showcasing their imagination and writing skills.\nRound 2:(Offline)\nThe 2nd round will feature 'What if...' scenarios, challenging participants to creatively explore hypothetical situations.",
+    teamDistribution: "Teams of 3",
     eventLeads: [
       { name: "Maitri", phone: "7975037272" },
       { name: "Sonali", phone: "7875257646" },
@@ -216,7 +216,7 @@ export const eventDetails = {
     mode: "Online",
     price: "₹25",
     rules:
-      "1.Plagiarized content will lead to immediate disqualification.\n2.Participants must submit their papers in PDF format.\n3.The decision of the judges will be final and binding.",
+      "1.	Papers must fall under one of the following domains - Blockchain, AI & ML and Embedded Systems and VLSI.\n2. 2.	Ensure that your submission is a fully developed research paper, not merely an idea or abstract.\n3. 3.	The paper must be the original work of the participant, any plagiarized content will result in immediate disqualification.\n 4. 4.	The paper must include an abstract, details about the idea, the solution, how it works, and its advantages, with any additional fields considered a bonus.\n 5. 5.	Participants must submit their papers in PDF format.\n 6. 6.	The decision of the judges will be final and binding.",
     rounds:
       "Round 1: Participants have to submit their paper on the Submission Platform.\nRound 2: Shortlisted participants have to present their paper to the judges.",
     teamDistribution: "Only individual participation is allowed.",

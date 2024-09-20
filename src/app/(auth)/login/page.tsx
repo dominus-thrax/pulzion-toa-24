@@ -52,6 +52,7 @@ const LoginPage: NextPage = () => {
     const password = user.password;
 
     if (!email || !password) {
+      toast.dismiss(loadingToast);
       toast.error("All fields required");
       setLoading(false);
       return;
@@ -76,7 +77,7 @@ const LoginPage: NextPage = () => {
     } catch (err: any) {
       console.log(err);
       toast.dismiss(loadingToast);
-      toast.error(err.response.data.message);
+      toast.error(err.response.data.error);
       setLoading(false);
     }
   };

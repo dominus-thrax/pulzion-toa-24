@@ -8,7 +8,7 @@ import "swiper/css/navigation";
 import { EffectCards, Navigation, Autoplay } from "swiper/modules";
 import { Button } from "../ui/button";
 import Link from "next/link";
-
+import localFont from "next/font/local";
 interface Event {
   id: number;
   name: string;
@@ -21,7 +21,13 @@ interface Event {
 interface SliderCardProps {
   events: Event[];
 }
+const font = localFont({
+  src: "../../../public/font/BDSupperRegular.ttf",
+});
 
+const originText = localFont({
+  src: "../../../public/fonts/OriginTech personal use.ttf",
+});
 export default function SliderCard({ events }: SliderCardProps) {
   const swiperRef = useRef<any>(null);
   const [reverse, setReverse] = useState(false);
@@ -98,7 +104,9 @@ export default function SliderCard({ events }: SliderCardProps) {
               className="bg-black text-white rounded-md border-[0.3px] border-yellow-500 shadow-[0_0_15px_rgba(234,179,8,0.6)]"
             >
               <div className="flex flex-col justify-between items-center p-2 rounded-lg h-full">
-                <p className="text-3xl font-bold">{event.name}</p>
+                <p className={`${font.className} text-3xl font-bold`}>
+                  {event.name}
+                </p>
                 <img
                   src={
                     event.name === "Fandom-TMKOC" ||
@@ -112,7 +120,7 @@ export default function SliderCard({ events }: SliderCardProps) {
                   alt="event image"
                   className=" w-28"
                 />
-                <p className="text-xs my-3">{event.description}</p>
+                <p className="text-xs my-3 font-medium">{event.description}</p>
                 <div>
                   <Link href={eventLink}>
                     <Button className="bg-[#E8AF49] rounded-xl hover:text-black hover:bg-yellow-600 my-2">
@@ -150,10 +158,10 @@ export default function SliderCard({ events }: SliderCardProps) {
           justify-content: center !important;
         }
         .swiper-button-next {
-          right: -100px !important; /* Move the next button outside the card */
+          right: -200px !important; /* Move the next button outside the card */
         }
         .swiper-button-prev {
-          left: -100px !important; /* Move the previous button outside the card */
+          left: -200px !important; /* Move the previous button outside the card */
         }
       `}</style>
     </div>

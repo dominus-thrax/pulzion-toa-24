@@ -149,12 +149,12 @@ const LoginPage: NextPage = () => {
             Login
           </Button>
         </form>
-        <Link
+        {/* <Link
           href="/forgot-password"
           className={`${font.className} hover:underline text-sm text-white text-left mt-2 w-full`}
         >
           Forgot password?
-        </Link>
+        </Link> */}
 
         <div
           className={`${font.className} text-sm text-start w-full text-white mt-4`}

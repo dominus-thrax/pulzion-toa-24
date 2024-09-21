@@ -79,7 +79,6 @@ const Navbar = () => {
       <div className="flex justify-between items-center">
         <div className="flex flex-col justify-center items-center pl-3">
           <Image src={logo} alt="Logo" width={150} height={150} />
-          <Image src={tagline} alt="tagline" width={120} height={120} />
         </div>
         {/* Desktop Menu */}
         <div className="hidden md:flex text-[#CFC36D] gap-8 items-center z-30">

@@ -3,7 +3,6 @@ import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import "../../styles/font.css";
 import logo from "../../../public/assets/landing/hero/logo.png";
-import tagline from "../../../public/assets/landing/hero/tagline.png";
 import localFont from "next/font/local";
 import MatrixRain from "./MatrixRain";
 import { useAuth } from "@/context";
@@ -79,15 +78,6 @@ const Hero = () => {
               quality={100}
               layout="fixed"
               className="mt-28"
-            />
-            <Image
-              src={tagline}
-              alt="Tagline"
-              width={600}
-              height={150}
-              quality={100}
-              layout="fixed"
-              className="flex justify-center items-start"
             />
           </div>
           <div

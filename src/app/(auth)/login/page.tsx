@@ -45,19 +45,18 @@ const LoginPage: NextPage = () => {
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    const loadingToast = toast.loading("Signin in...");
     setLoading(true);
-
+    
     const email = user.email;
     const password = user.password;
-
+    
     if (!email || !password) {
-      toast.dismiss(loadingToast);
       toast.error("All fields required");
       setLoading(false);
       return;
     }
-
+    
+    const loadingToast = toast.loading("Signin in...");
     try {
       const response = await axios.post(`${baseURL}/user/signin`, {
         email: email,
@@ -107,7 +106,7 @@ const LoginPage: NextPage = () => {
         </div>
         <form
           onSubmit={handleSubmit}
-          className={`${font.className} flex flex-col items-center space-y-10 mt-10 w-full z-10`}
+          className={`${font.className} flex flex-col items-center space-y-4 mt-10 w-full z-10`}
         >
           <div className="relative w-full">
             <input
@@ -115,14 +114,7 @@ const LoginPage: NextPage = () => {
               value={user.email}
               onChange={(e) => setUser({ ...user, email: e.target.value })}
               placeholder="Enter email address"
-              className="w-full p-3 bg-opacity-[0.92] text-[#fff] bg-inputfildcolor rounded-[39px] pl-[3.5rem] text-sm border-none placeholder:text-[#e3e3e3]"
-            />
-            <Image
-              src={profile}
-              height={40}
-              width={40}
-              className="absolute left-0 top-1/2 transform -translate-y-1/2"
-              alt="Profile Icon"
+              className="w-full bg-transparent border-2 rounded-xl border-[#CFC36D] text-[#FFF] transition-all duration-200 ease-in text-md focus:outline-none block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             />
           </div>
           <div className="relative w-full">
@@ -131,14 +123,7 @@ const LoginPage: NextPage = () => {
               value={user.password}
               onChange={(e) => setUser({ ...user, password: e.target.value })}
               placeholder="Enter passsword"
-              className="w-full p-3 bg-opacity-[0.92] text-[#fff] bg-inputfildcolor rounded-[39px] pl-[3.5rem] text-sm placeholder:text-[#e3e3e3] border-none"
-            />
-            <Image
-              src={lock}
-              height={40}
-              width={40}
-              className="absolute left-0 top-1/2 transform -translate-y-1/2"
-              alt="Lock Icon"
+              className="w-full bg-transparent border-2 rounded-xl border-[#CFC36D] text-[#FFF] transition-all duration-200 ease-in text-md focus:outline-none block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             />
           </div>
           <Button
@@ -149,12 +134,12 @@ const LoginPage: NextPage = () => {
             Login
           </Button>
         </form>
-        {/* <Link
+        <Link
           href="/forgot-password"
           className={`${font.className} hover:underline text-sm text-white text-left mt-2 w-full`}
         >
           Forgot password?
-        </Link> */}
+        </Link>
 
         <div
           className={`${font.className} text-sm text-start w-full text-white mt-4`}

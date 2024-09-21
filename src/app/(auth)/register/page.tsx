@@ -131,9 +131,6 @@ const RegisterForm = () => {
   return (
     <div
       className="flex items-center justify-center min-h-screen bg-black bg-cover bg-center p-10 md:p-20"
-      // style={{
-      //   backgroundImage: "url('/assets/auth/vector-bg.png')",
-      // }}
     >
       <Toaster
         position="top-right"
@@ -159,14 +156,14 @@ const RegisterForm = () => {
           </span>
         </h1>
         <form
-          className={`space-y-4 w-full ${font.className}`}
+          className={`space-y-4 w-full text-sm md:text-xl ${font.className}`}
           onSubmit={handleSubmit}
         >
           <div className={`${font.className} flex gap-16`}>
             <input
               type="text"
               placeholder="First Name"
-              className="w-1/2 input"
+              className="w-1/2 input text-sm md:text-xl"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
               required
@@ -174,7 +171,7 @@ const RegisterForm = () => {
             <input
               type="text"
               placeholder="Last Name"
-              className="w-1/2 input"
+              className="w-1/2 input text-sm md:text-xl"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
               required
@@ -184,13 +181,13 @@ const RegisterForm = () => {
             <input
               type="tel"
               placeholder="Enter Phone No."
-              className="w-1/2 input"
+              className="w-1/2 input text-sm md:text-xl"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               required
             />
             <select
-              className="w-1/2 input"
+              className="w-1/2 input text-sm md:text-xl"
               value={country}
               onChange={(e) => setCountry(e.target.value)}
               required
@@ -205,7 +202,7 @@ const RegisterForm = () => {
             </select>
           </div>
           <select
-            className="input"
+            className="input text-sm md:text-xl"
             value={college}
             onChange={handleSelectChange}
             required
@@ -220,7 +217,7 @@ const RegisterForm = () => {
           <input
             type="text"
             placeholder="College Name"
-            className="input"
+            className="input text-sm md:text-xl"
             value={collegeName}
             onChange={(e) => {
               if (college === "other") {
@@ -231,7 +228,7 @@ const RegisterForm = () => {
           />
 
           <select
-            className="input"
+            className="input text-sm md:text-xl"
             value={year}
             onChange={(e) => setYear(e.target.value)}
             required
@@ -247,7 +244,7 @@ const RegisterForm = () => {
           <input
             type="email"
             placeholder="Email Address"
-            className="input"
+            className="input text-sm md:text-xl"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -255,7 +252,7 @@ const RegisterForm = () => {
           <input
             type="password"
             placeholder="Password"
-            className="input"
+            className="input text-sm md:text-xl"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
@@ -263,7 +260,7 @@ const RegisterForm = () => {
           <input
             type="password"
             placeholder="Confirm Password"
-            className="input"
+            className="input text-sm md:text-xl"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             required

@@ -67,7 +67,7 @@ export const eventDetails = {
     teamDistribution:
       "1. FE-SE (Frontend only): Groups of a maximum of 3 participants.\n2. TE-BE(Full Stack Application): Groups of a maximum of 4 participants.\n3. Only the team leader has to register for this event.",
     eventLeads: [
-      { name: "Soham", phone: "7620106310" },
+      { name: "Soham", phone: "8446092629" },
       { name: "Kalyani", phone: "8080153807" },
     ],
   },

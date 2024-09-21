@@ -80,15 +80,6 @@ const Hero = () => {
               layout="fixed"
               className="mt-28"
             />
-            <Image
-              src={tagline}
-              alt="Tagline"
-              width={600}
-              height={150}
-              quality={100}
-              layout="fixed"
-              className="flex justify-center items-start"
-            />
           </div>
           <div
             className={`${sixtyfour.className} pb-10 md:pb-[3rem] text-[#CFC36D] space-y-4 text-center text-xl md:text-3xl`}

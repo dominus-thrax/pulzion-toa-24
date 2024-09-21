@@ -3,7 +3,6 @@ import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import "../../styles/font.css";
 import logo from "../../../public/assets/landing/hero/logo.png";
-import tagline from "../../../public/assets/landing/hero/tagline.png";
 import localFont from "next/font/local";
 import MatrixRain from "./MatrixRain";
 import { useAuth } from "@/context";

@@ -184,10 +184,12 @@ const Navbar = () => {
               key={index}
               href={link.path}
               className={`${font.className} text-[#CFC36D] hover:border-[#ADCC8B] px-3 py-3 text-sm transition-all duration-300 ease-in-out transform hover:-translate-y-0.5`}
+              onClick={toggleNav}
             >
               {link.label}
             </Link>
           ))}
+
           {user.token ? (
             <Dialog>
               <DialogTrigger asChild>

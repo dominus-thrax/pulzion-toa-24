@@ -13,16 +13,27 @@ interface CartItem {
 }
 
 interface OrderProps {
+  cartCombo: any[];
   cartItems: CartItem[];
   refetch: () => void;
 }
 
-function Order({ cartItems = [], refetch }: OrderProps) {
+function Order({ cartCombo = [], cartItems = [], refetch }: OrderProps) {
   const router = useRouter();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [transactionId, setTransactionId] = useState("");
   const [referal, setReferal] = useState("");
-  const total = cartItems.reduce((sum, item) => sum + item.price, 0);
+  const total = cartItems.reduce(
+    (sum, item) => sum + parseFloat(item.price.toString()),
+    0
+  );
+  const comboTotal = cartCombo.reduce(
+    (sum, item) => sum + parseFloat(item.discounted_price.toString()),
+    0
+  );
+
+  const cartTotal = total + comboTotal;
+
   const [loading, setLoading] = useState(false);
 
   const handleCheckoutClick = () => {
@@ -45,16 +56,26 @@ function Order({ cartItems = [], refetch }: OrderProps) {
     try {
       setLoading(true);
       const eventIds = cartItems.map((item) => item.id); //
+      const combo_ids = cartCombo.map((item) => item.id);
+
+      const event_combo_ids = cartCombo.map((item) => item.array_of_evid);
+      const event_ids: any[] = [];
+      event_combo_ids.forEach((item) =>
+        item.forEach((i: number) => event_ids.push(i))
+      );
+
+      eventIds.forEach((item) => event_ids.push(item));
+
       if (transactionId === "") {
         toast.error("Please enter transaction id");
         return;
       }
 
       const transactionResponse = await api.post("/transaction", {
-        event_id: eventIds,
+        event_id: event_ids,
         transaction_id: transactionId,
         referral_code: referal || "0mux2h",
-        combo_id: [],
+        combo_id: combo_ids || [],
       });
 
       if (transactionResponse.status === 200) {
@@ -96,10 +117,18 @@ function Order({ cartItems = [], refetch }: OrderProps) {
           </div>
         ))}
       </div>
+      <div className="text-white text-xl md:text-xl">
+        {cartCombo.map((item) => (
+          <div key={item.id} className="grid grid-cols-12 my-2">
+            <p className="col-span-10">{item.combo_name}</p>
+            <p className="col-span-2 ml-auto">{item.discounted_price}/-</p>
+          </div>
+        ))}
+      </div>
       <hr />
       <div className="grid grid-cols-12 my-2 text-white text-lg md:text-3xl">
         <p className="col-span-10">Order Total</p>
-        <p className="col-span-2 ml-auto">{total}/-</p>
+        <p className="col-span-2 ml-auto">{cartTotal}/-</p>
       </div>
       <div className="text-white text-lg md:text-xl mx-14 mt-6">
         <button
@@ -138,7 +167,7 @@ function Order({ cartItems = [], refetch }: OrderProps) {
               </div>
 
               <div className="text-center text-lg mb-4">
-                <p className=" text-white">Order Total: {total}/-</p>
+                <p className=" text-white">Order Total: {cartTotal}/-</p>
               </div>
               <div className=" rounded-lg">
                 <input

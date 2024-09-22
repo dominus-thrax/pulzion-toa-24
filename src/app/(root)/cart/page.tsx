@@ -126,7 +126,7 @@ const CartPage = () => {
                     >
                         {combo.array_of_evname.map(
                           (eve: any, index: number) => (
-                            <div className="flex flex-col justify-center items-center text-xs">
+                            <div key={index} className="flex flex-col justify-center items-center text-xs">
                               <Image
                                 src={eve.logo}
                                 alt="combo_image"

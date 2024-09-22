@@ -50,7 +50,7 @@ const CartPage = () => {
   };
   useEffect(() => {
     fetchCartItems();
-  }, []);
+  }, [cartItems]);
 
   if (loading)
     return (
@@ -58,9 +58,6 @@ const CartPage = () => {
         Loading...
       </div>
     );
-
-  // if (error)
-  //   return <div className="text-red-500 text-center mt-8">{error}</div>;
 
   return (
     <div className="mx-8 mb-5 border md:mb-10">

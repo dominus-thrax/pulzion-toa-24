@@ -82,7 +82,7 @@ const LoginPage: NextPage = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-black bg-cover bg-center">
+    <div className="p-10 md:p-0 flex items-center justify-center min-h-screen bg-black bg-cover bg-center">
       <Toaster
         position="top-right"
         richColors
@@ -91,7 +91,7 @@ const LoginPage: NextPage = () => {
         pauseWhenPageIsHidden
         visibleToasts={1}
       />
-      <div className="p-8 rounded-3xl z-20 px-20 shadow-lg bg-opacity-65 bg-[#EDA93F]/20 border-2 border-[#CFC36D] flex flex-col items-center">
+      <div className="p-8 rounded-3xl z-20 md:px-10 shadow-lg bg-opacity-65 bg-[#EDA93F]/20 border-2 border-[#CFC36D] flex flex-col items-center">
         <div
           className={`flex text-2xl md:text-4xl items-center ${heading.className}`}
         >

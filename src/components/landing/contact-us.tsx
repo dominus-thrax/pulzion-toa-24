@@ -154,7 +154,7 @@ const ContactUs: React.FC = () => {
           {/* Social Media Links */}
           <Link
             className="z-10 hover:cursor-pointer"
-            href="https://www.facebook.com/PICTOfficial/"
+            href="https://www.facebook.com/acmpict/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -169,7 +169,7 @@ const ContactUs: React.FC = () => {
           </Link>
           <Link
             className="z-10 hover:cursor-pointer"
-            href="https://www.instagram.com/pict.pune/?hl=en"
+            href="https://www.instagram.com/acm.pict/?hl=en"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -184,7 +184,7 @@ const ContactUs: React.FC = () => {
           </Link>
           <Link
             className="z-10 hover:cursor-pointer"
-            href="https://pict.edu/"
+            href="https://pict.acm.org/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -199,7 +199,7 @@ const ContactUs: React.FC = () => {
           </Link>
           <Link
             className="z-10 hover:cursor-pointer"
-            href="https://www.linkedin.com/school/pune-institute-of-computer-technology/?originalSubdomain=in"
+            href="https://www.linkedin.com/company/pict-acm-student-chapter/posts/?feedView=all"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -214,7 +214,7 @@ const ContactUs: React.FC = () => {
           </Link>
           <Link
             className="z-10 hover:cursor-pointer"
-            href="https://x.com/punepict?lang=en"
+            href="https://x.com/_pict_acm_"
             target="_blank"
             rel="noopener noreferrer"
           >

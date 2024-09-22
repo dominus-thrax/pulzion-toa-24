@@ -120,11 +120,11 @@ export default function MobileSliderCard({ events }: SliderCardProps) {
                   alt="event image"
                   className=" w-10"
                 />
-                <p className="text-[8px] font-light ">{event.description}</p>
+                <p className="text-xs my-3 font-medium overflow-hidden truncate text-clip line-clamp-4 text-wrap max-w-[20rem] w-full">{event.description}</p>
                 <div>
                   <Link href={eventLink}>
                     <Button className="bg-[#E8AF49] rounded-xl hover:text-black hover:bg-yellow-600 my-2">
-                      view
+                      View
                     </Button>
                   </Link>
                 </div>

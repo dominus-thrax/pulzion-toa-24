@@ -270,14 +270,13 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
                 ))}
             </div>
 
-            {combos?.length > 0 && (
               <div className="">
                 <p className="text-xl font-semibold my-4 mb-1">Events Combos</p>
                 <hr className=" text-white/[0.2]" />
                 <div
                   className={`${font.className} w-full flex flex-col lg:flex-row gap-10 justify-between items-start`}
                 >
-                  {combos?.map((combo: any, index) => (
+                  {combos?.length > 0 ? combos?.map((combo: any, index) => (
                     <div
                       key={index}
                       className="w-full py-4 space-y-4 border-white/[0.2] border rounded-xl p-2 mt-4 flex flex-col justify-between items-center"
@@ -323,10 +322,13 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
                         </div>
                       </div>
                     </div>
-                  ))}
+                  )) : (
+                    <div className="text-[#FFF] text-sm">
+                      No combos available for the event
+                    </div>
+                  )}
                 </div>
               </div>
-            )}
           </div>
           <BorderBeam size={600} duration={12} delay={5} />
         </div>

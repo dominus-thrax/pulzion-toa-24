@@ -123,11 +123,11 @@ export default function SliderCard({ events }: SliderCardProps) {
                   alt="event image"
                   className="w-28"
                 />
-                <p className="text-xs my-3 font-medium">{event.description}</p>
+                <p className="text-sm my-3 font-medium overflow-hidden truncate text-clip md:line-clamp-6 text-wrap max-w-[20rem] w-full">{event.description}</p>
                 <div>
                   <Link href={eventLink}>
                     <Button className="bg-[#E8AF49] rounded-xl hover:text-black hover:bg-yellow-600 my-2">
-                      view
+                      View
                     </Button>
                   </Link>
                 </div>

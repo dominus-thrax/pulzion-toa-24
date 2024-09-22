@@ -64,10 +64,10 @@ const ForgotPassword: NextPage = () => {
         visibleToasts={1}
       />
       <div
-        className="z-50 border-[4px] translate-y-[-40px] border-[#1F6E56] rounded-[50px] flex flex-col py-[4rem] space-y-10
-      bg-gradient-to-b from-[#00910f50] via-[#88b7884f] to-[#cfc46d65] justify-between items-center h-full"
+        className="z-50 border-[4px] border-[#1F6E56] rounded-[50px] flex flex-col space-y-10
+      bg-gradient-to-b from-[#00910f50] via-[#88b7884f] to-[#cfc46d65] justify-between items-center"
       >
-        <div className="flex justify-center items-center w-full gap-4">
+        <div className="flex justify-center items-center w-full gap-4 pt-10 px-10">
           <Image
             src={phone}
             alt="Gameboy Icon"
@@ -80,29 +80,29 @@ const ForgotPassword: NextPage = () => {
           </h1>
         </div>
         <div
-          className={`flex flex-col justify-center items-center ${font.className}`}
+          className={`w-full px-4 flex flex-col justify-center items-center ${font.className}`}
         >
-          <div className=" flex my-[20px] flex-col gap-[15px] justify-center items-center ">
-            <form onSubmit={handleSendOTP} className="space-y-10">
-              <div className="flex flex-col gap-[2px] ml-[100px] ">
+          <div className="pb-5 md:pb-10 flex flex-col justify-center items-center w-full">
+            <form onSubmit={handleSendOTP} className="space-y-10 w-full">
+              <div className="flex flex-col gap-[2px] w-full">
                 <label className="block mb-2 text-sm font-medium text-white dark:text-white ">
                   Your email
                 </label>
-                <div className="w-[450px] ">
+                <div className="w-full">
                   <input
                     placeholder="Enter email"
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="bg-transparent border-2 rounded-xl border-[#1F6E56] text-[#FFF] transition-all duration-200 ease-in text-md focus:outline-none block w-3/4 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="w-full bg-transparent border-2 rounded-xl border-[#1F6E56] text-[#FFF] transition-all duration-200 ease-in text-md focus:outline-none block p-2.5 dark:bg-gray-700 dark:border-gray-600"
                   />
                 </div>
               </div>
-              <div className="my-[20px] mx-[200px]">
+              <div className="my-[20px]">
                 <Button
                   type="submit"
                   disabled={loading}
-                  className="rounded-full text-white bg-[#1F6E56] w-[150px] transition-all duration-100 ease-in  "
+                  className="rounded-xl w-full text-white bg-[#1F6E56] transition-all duration-100 ease-in  "
                   variant={"default"}
                 >
                   {loading ? "Sending..." : "Send OTP"}

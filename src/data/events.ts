@@ -65,7 +65,7 @@ export const eventDetails = {
     rounds:
       "Round 1:\nThe judgement for this round will be on the basis of the following factors:\n● The presentation of unique ideas implemented for the selected theme.\n● Core understanding of code and the tech stack used.\n● For (FE/SE- Frontend / FullStack(optional)) judged on frontend application idea/solution.\n● For (TE/BE - Full Stack) judged on techstack, frameworks, design and idea for the full-stack application.\nRound 2 (Blended):\n The selected teams from Round 1 will be asked to show the working web or app in blended mode.\nThe judgement of this round will be on the following factors:\n● Maximum end-to-end implementation of the live/on-spot changes of features as directed by the judges of the event.\n● Timely execution, cleaner code and seamless working model/prototype of the application is desired.\n● For (FE/SE- Frontend only) judged on frontend application implementation.\n● For (TE/BE - Full Stack ) judged on full- stack application implementation and extra points will be given to ML/Blockchain/AR-VR implementation and business potential.\n● Both online and offline rounds will have a time limit of 4 hours similar to hackathons.\n",
     teamDistribution:
-      "1. FE-SE (Frontend only): Groups of a maximum of 3 participants.\n2. TE-BE(Full Stack Application): Groups of a maximum of 4 participants.\n3. Only the team leader has to register for this event.",
+      "1. FE-SE : Groups of a maximum of 3 participants.\n2. TE-BE: Groups of a maximum of 4 participants.\n3. Only the team leader has to register for this event.",
     eventLeads: [
       { name: "Soham", phone: "8446092629" },
       { name: "Kalyani", phone: "8080153807" },

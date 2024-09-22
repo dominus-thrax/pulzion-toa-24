@@ -78,7 +78,14 @@ const Navbar = () => {
     <nav className="pt-0 md:pt-6 fixed top-0 left-0 w-full md:px-6 z-30 backdrop-blur-md transition-all duration-300 ease-in-out">
       <div className="flex justify-between items-center">
         <div className="flex flex-col justify-center items-center pl-3">
-          <Image src={logo} alt="Logo" width={150} height={150} />
+          <Image
+            src={logo}
+            alt="Logo"
+            width={150}
+            height={150}
+            className="hover:cursor-pointer"
+            onClick={() => router.push("/")}
+          />
         </div>
         {/* Desktop Menu */}
         <div className="hidden md:flex text-[#CFC36D] gap-8 items-center z-30">

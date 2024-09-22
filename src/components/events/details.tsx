@@ -82,6 +82,22 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
     }
   };
 
+  const handleRegister = async() => {
+    try {
+      const response = await api.post("/user_events", {
+        event_id: eventData.id,
+      });
+
+      toast.success("Event Regsitered!");
+    } catch (error: any) {
+      const errorMessage =
+        error.response?.data?.message ||
+        error.response?.data?.error ||
+        error.response?.data?.msg
+      toast.error(errorMessage);
+    }
+  }
+
   return (
     <div className="w-full flex justify-center items-center md:px-24 mb-7 mt-16 px-3">
       <Toaster
@@ -132,12 +148,19 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
                 </div>
               </div>
             </div>
-            <Button
+            {title === "codelicious" ? <Button
+              className="bg-[#E8AF49] rounded-xl hover:text-black hover:bg-yellow-600 my-2"
+              onClick={handleRegister}
+            >
+              Register
+            </Button> : (
+              <Button
               className="bg-[#E8AF49] rounded-xl hover:text-black hover:bg-yellow-600 my-2"
               onClick={addToCart}
             >
               Add to Cart
             </Button>
+            )}
 
             {/* Event Leads */}
             <div className="text-white flex-col justify-center items-center flex gap-3 md:gap-6 mt-4 mb-1 ">

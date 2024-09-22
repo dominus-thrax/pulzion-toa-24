@@ -5,6 +5,8 @@ import Card from "@/components/user-events/Card";
 import api from "@/api/api";
 import isNotAuth from "@/context/user/isNotAuth";
 import localFont from "next/font/local";
+import { CardSpotlightDemo } from "@/components/events/event-card";
+import { EventType } from "@/types";
 
 const font = localFont({
   src: "../../../../public/font/BDSupperRegular.ttf",
@@ -23,17 +25,19 @@ export type Transaction = {
 };
 
 const Orders: React.FC = () => {
-  const [data, setData] = useState<Transaction[]>([]);
+  const [transactions, setTransactions] = useState<Transaction[]>([]);
+  const [events, setEvents] = useState<EventType[]>([]);
   const [loading, setLoading] = useState(true);
 
-  const getData = async () => {
+  const fetchMyEvents = async () => {
     try {
-      const response = await api.get("/transaction");
+      const response = await api.get("/user_events");
+
+      console.log(response);
 
       // Extracting the transaction array
-      const transactions = response.data.transactions;
-      setData(transactions);
-      console.log(transactions);
+      const events = response.data.events;
+      setEvents(events);
     } catch (error: any) {
       // Error handling
       console.log(error);
@@ -42,8 +46,30 @@ const Orders: React.FC = () => {
     }
   };
 
+  const fetchMyOrders = async () => {
+    try {
+      const response = await api.get("/transaction");
+
+      console.log(response);
+
+      // Extracting the transaction array
+      const transactions = response.data.transactions;
+      setTransactions(transactions);
+    } catch (error: any) {
+      // Error handling
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const fetchDetails = () => {
+    fetchMyEvents();
+    fetchMyOrders();
+  };
+
   useEffect(() => {
-    getData();
+    fetchDetails();
   }, []);
 
   if (loading) {
@@ -55,7 +81,7 @@ const Orders: React.FC = () => {
   }
 
   return (
-    <div className="">
+    <div className="my-10">
       <div
         className={`${originText.className} flex justify-center items-center pt-10 text-[#CFC36D] text-2xl md:text-5xl mt-10`}
       >
@@ -64,7 +90,7 @@ const Orders: React.FC = () => {
       <div
         className={`md:grid md:grid-cols-3 md:gap-10 p-10  space-y-4 md:space-y-0 ${font.className}`}
       >
-        {data.map((transaction, index) => (
+        {transactions.map((transaction, index) => (
           <Card
             key={index}
             id={transaction.id}
@@ -74,6 +100,27 @@ const Orders: React.FC = () => {
             events={transaction.events}
           />
         ))}
+      </div>
+
+      <div className="mt-10">
+        <h2
+          className={` ${originText.className} text-[#cfc36d] text-xl mb-3 md:text-4xl text-center`}
+        >
+          My Events
+        </h2>
+        <div className={`flex flex-wrap gap-9 mt-5 md:mt-10 justify-center ${font.className}`}>
+          {events.length > 0 ? (
+            events.map((event: any, index: number) => (
+              <div key={index} className={` ${font.className}`}>
+                <CardSpotlightDemo event={event} />
+              </div>
+            ))
+          ) : (
+            <div className="text-[#CFC36D] w-full text-center">
+              No events accepted yet
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

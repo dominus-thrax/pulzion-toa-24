@@ -11,7 +11,7 @@ const Card = ({ id, transaction_id, amount, events, status }: Transaction) => {
     <BackgroundGradient className="rounded-[22px] p-4 border border-[#ADCC8B] bg-black text-white h-full">
       <div className="relative flex flex-col items-center p-4 ">
         {/* Display transaction ID */}
-        <p className="text-2xl text-[#8BFFCE] mb-2">
+        <p className="text-xl text-[#8BFFCE] mb-2">
           Transaction ID: {transaction_id}
         </p>
 

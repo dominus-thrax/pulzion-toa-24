@@ -72,11 +72,10 @@ export default function MobileSliderCard({ events }: SliderCardProps) {
         ref={swiperRef}
         effect={"cards"}
         grabCursor={true}
-        modules={[EffectCards, Navigation, Autoplay]}
-        navigation={true}
-        allowTouchMove={false}
+        modules={[EffectCards, Autoplay]} // Removed Navigation module
+        allowTouchMove={true} // Enable touch swipe
         autoplay={{
-          delay: 3000,
+          delay: 4000,
           reverseDirection: reverse,
           disableOnInteraction: false,
         }}

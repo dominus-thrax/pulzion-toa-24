@@ -9,6 +9,7 @@ import { EffectCards, Navigation, Autoplay } from "swiper/modules";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import localFont from "next/font/local";
+
 interface Event {
   id: number;
   name: string;
@@ -21,6 +22,7 @@ interface Event {
 interface SliderCardProps {
   events: Event[];
 }
+
 const font = localFont({
   src: "../../../public/font/BDSupperRegular.ttf",
 });
@@ -28,6 +30,7 @@ const font = localFont({
 const originText = localFont({
   src: "../../../public/fonts/OriginTech personal use.ttf",
 });
+
 export default function SliderCard({ events }: SliderCardProps) {
   const swiperRef = useRef<any>(null);
   const [reverse, setReverse] = useState(false);
@@ -71,12 +74,12 @@ export default function SliderCard({ events }: SliderCardProps) {
       <Swiper
         ref={swiperRef}
         effect={"cards"}
-        grabCursor={true}
+        grabCursor={false}
         modules={[EffectCards, Navigation, Autoplay]}
         navigation={true}
-        allowTouchMove={false}
+        allowTouchMove={true}
         autoplay={{
-          delay: 3000,
+          delay: 8000,
           reverseDirection: reverse,
           disableOnInteraction: false,
         }}
@@ -90,7 +93,7 @@ export default function SliderCard({ events }: SliderCardProps) {
             startAutoplay(); // Restart autoplay after reversing
           }
         }}
-        className="mySwiper"
+        className="mySwiper custom-swiper"
         style={swiperStyle}
       >
         {events.map((event) => {
@@ -118,7 +121,7 @@ export default function SliderCard({ events }: SliderCardProps) {
                       : `/assets/EventsNew/${event.name}.png`
                   }
                   alt="event image"
-                  className=" w-28"
+                  className="w-28"
                 />
                 <p className="text-xs my-3 font-medium">{event.description}</p>
                 <div>
@@ -144,8 +147,9 @@ export default function SliderCard({ events }: SliderCardProps) {
       </Swiper>
 
       <style global jsx>{`
-        .swiper-button-next,
-        .swiper-button-prev {
+        /* Increase specificity for Swiper buttons */
+        .custom-swiper .swiper-button-next,
+        .custom-swiper .swiper-button-prev {
           color: yellow !important;
           top: 50% !important;
           width: 40px !important;
@@ -157,11 +161,11 @@ export default function SliderCard({ events }: SliderCardProps) {
           align-items: center !important;
           justify-content: center !important;
         }
-        .swiper-button-next {
-          right: -200px !important; /* Move the next button outside the card */
+        .custom-swiper .swiper-button-next {
+          right: -150px !important; /* Adjust distance from card */
         }
-        .swiper-button-prev {
-          left: -200px !important; /* Move the previous button outside the card */
+        .custom-swiper .swiper-button-prev {
+          left: -150px !important; /* Adjust distance from card */
         }
       `}</style>
     </div>

@@ -64,7 +64,7 @@ const CartPage = () => {
     );
 
   return (
-    <div className="mx-8 mb-5 border md:mb-10">
+    <div className="mx-8 mb-5 md:mb-10">
       <div
         className={`${originText.className} text-2xl md:text-5xl  mt-20 mb-6 text-[#cfc36d] text-center`}
       >

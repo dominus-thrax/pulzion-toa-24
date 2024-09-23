@@ -109,7 +109,7 @@ function Order({ cartCombo = [], cartItems = [], refetch }: OrderProps) {
         Order Summary
       </p>
       <hr />
-      <div className="text-white text-xl md:text-xl">
+      <div className="text-white text-xl md:text-xl px-4">
         {cartItems.map((item) => (
           <div key={item.id} className="grid grid-cols-12 my-2">
             <p className="col-span-10">{item.name}</p>
@@ -117,7 +117,7 @@ function Order({ cartCombo = [], cartItems = [], refetch }: OrderProps) {
           </div>
         ))}
       </div>
-      <div className="text-white text-md md:text-xl">
+      <div className="text-white text-md md:text-xl px-4">
         {cartCombo.map((item) => (
           <div key={item.id} className="grid grid-cols-12 my-2">
             <p className="col-span-10">{item.combo_name}</p>
@@ -126,7 +126,7 @@ function Order({ cartCombo = [], cartItems = [], refetch }: OrderProps) {
         ))}
       </div>
       <hr />
-      <div className="grid grid-cols-12 my-2 text-white text-md md:text-3xl">
+      <div className="grid grid-cols-12 my-2 text-white text-md md:text-3xl px-4">
         <p className="col-span-10">Order Total</p>
         <p className="col-span-2 ml-auto">{cartTotal}/-</p>
       </div>

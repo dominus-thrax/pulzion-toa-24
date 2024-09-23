@@ -9,11 +9,11 @@ export const eventDetails = {
       "Round 1 - This round consists of multiple-choice questions focused on logical reasoning and basic mathematics.\nRound 2 - In this round, participants will tackle logic-based questions and must explain their reasoning to the Codex team. Participants who effectively explain their reasoning will move on to the subsequent rounds of the competition. The ultimate goal is to be the first to complete the final round, thereby achieving victory in the event.",
     teamDistribution: "Only individual participation is allowed.",
     eventLeads: [
-      { name: "Siddhesh", phone: "8856862577" },
+      {name: "Siddhesh", phone: "8856862577"},
       { name: "Tejas", phone: "7058389422" },
     ],
     timeline:
-      "Round 1:- 3rd & 4th October 2024 (Offline)\nRound 2:- 5th October 2024 11:00 am Onwards (Offline).",
+      "Round 1:- 3rd & 4th October 2024 (Offline)\nRound 2:- 5th October 2024 11:00 am Onwards (Offline)."
   },
   codelicious: {
     id: 1,
@@ -28,9 +28,10 @@ export const eventDetails = {
       { name: "Shreekar", phone: "7666439458" },
       { name: "Prathamesh", phone: "8624021404" },
     ],
-    timeline: "1st October 2024 8:00 pm - 10:00 pm (Online)",
+    timeline:
+      "1st October 2024 8:00 pm - 10:00 pm (Online)"
   },
-  "compete-and-compute": {
+  "compute-and-compete": {
     id: 13,
     mode: "Online + Offline",
     price: "₹35",
@@ -45,7 +46,7 @@ export const eventDetails = {
       { name: "Shreenath", phone: "9146379805" },
     ],
     timeline:
-      "Round 1:- 2nd October 5:00 pm - 6:30 pm (Online)\nRound 2:- 4th October 12:00 pm - 2:00 pm (Offline).",
+      "Round 1:- 2nd October 5:00 pm - 6:30 pm (Online)\nRound 2:- 4th October 12:00 pm - 2:00 pm (Offline)."
   },
   dataquest: {
     id: 5,
@@ -61,7 +62,7 @@ export const eventDetails = {
       { name: "Tanisha", phone: "9834050189" },
     ],
     timeline:
-      "FE-SE Category\nRound 1:- Submission Timeline: 29th September 12:00 am - 1st October 12:00 pm (Online)\nTE-BE Category\nRound 1:- Submission Timeline: 29th September 12:00 am - 1st october 12:00 pm (Online)\nRound 2:- Submission Timeline: 2nd October 12:00 pm - 4th October 11:59 am (Online)",
+      "FE-SE Category\nRound 1:- Submission Timeline: 29th September 12:00 am - 1st October 12:00 pm (Online)\nTE-BE Category\nRound 1:- Submission Timeline: 29th September 12:00 am - 1st october 12:00 pm (Online)\nRound 2:- Submission Timeline: 2nd October 12:00 pm - 4th October 11:59 am (Online)"
   },
   "web-n-app": {
     id: 6,
@@ -78,7 +79,7 @@ export const eventDetails = {
       { name: "Kalyani", phone: "8080153807" },
     ],
     timeline:
-      "Round 1:- Submission Timeline:- 27th October 12:00 am - 1st October 11:59 pm (Online)\nRound 2: 4th October 9:00 am Onwards.",
+      "Round 1:- Submission Timeline:- 27th October 12:00 am - 1st October 11:59 pm (Online)\nRound 2: 4th October 9:00 am Onwards."
   },
   electroquest: {
     id: 4,
@@ -95,7 +96,7 @@ export const eventDetails = {
       { name: "Srirang", phone: "9028832111" },
     ],
     timeline:
-      "Round 1:- 1st October 4:00 pm  Onwards (Offline).\nRound 2:- 5th October 2:00 pm Onwards (Offline).",
+      "Round 1:- 1st October 4:00 pm  Onwards (Offline).\nRound 2:- 5th October 2:00 pm Onwards (Offline)."
   },
   "hire-hustle": {
     id: 2,
@@ -111,7 +112,7 @@ export const eventDetails = {
       { name: "Pranav", phone: "8766543106" },
     ],
     timeline:
-      "Round 1 (Both categories) : 2nd October 10 am to 12 pm (Online)\nRound 2 (Both categories): 5th October 9 am onwards (Offline)\nRound 3 (Only TE - BE) : 5th October 12 pm onwards (Offline)",
+      "Round 1 (Both categories) : 2nd October 10 am to 12 pm (Online)\nRound 2 (Both categories): 5th October 9 am onwards (Offline)\nRound 3 (Only TE - BE) : 5th October 12 pm onwards (Offline)"
   },
   dextrous: {
     id: 7,
@@ -127,7 +128,7 @@ export const eventDetails = {
       { name: "Madhura", phone: "9834396355" },
     ],
     timeline:
-      "Round 1: Dates: 3rd October & 4th October (Offline)\nRound 2: 4th October 5:00 pm Onwards (Offline)\n Round 3: 5th October 10:00 am (Offline).",
+      "Round 1: Dates: 3rd October & 4th October (Offline)\nRound 2: 4th October 5:00 pm Onwards (Offline)\n Round 3: 5th October 10:00 am (Offline)."
   },
   "fandom-tmkoc": {
     id: 15,
@@ -142,8 +143,8 @@ export const eventDetails = {
       { name: "Devashish", phone: "9607601090" },
       { name: "Aakanksha", phone: "8530053300" },
     ],
-    timeline:
-      "Round 1: 3rd October & 4th October (Offline)\n Round 2: 4th October 2:00 pm - 4:00 pm (Offline)\n Round 3: 5th October 12:00 pm Onwards (Offline)",
+    timeline: 
+      "Round 1: 3rd October & 4th October (Offline)\n Round 2: 4th October 2:00 pm - 4:00 pm (Offline)\n Round 3: 5th October 12:00 pm Onwards (Offline)"
   },
   "fandom-cricket": {
     id: 17,
@@ -158,8 +159,8 @@ export const eventDetails = {
       { name: "Devashish", phone: "9607601090" },
       { name: "Aakanksha", phone: "8530053300" },
     ],
-    timeline:
-      "Round 1: 3rd October & 4th October (Offline)\n Round 2: 4th October 2:00 pm - 4:00 pm (Offline)\n Round 3: 5th October 12:00 pm Onwards (Offline)",
+    timeline: 
+      "Round 1: 3rd October & 4th October (Offline)\n Round 2: 4th October 2:00 pm - 4:00 pm (Offline)\n Round 3: 5th October 12:00 pm Onwards (Offline)"
   },
   "fandom-football": {
     id: 14,
@@ -174,8 +175,8 @@ export const eventDetails = {
       { name: "Devashish", phone: "9607601090" },
       { name: "Aakanksha", phone: "8530053300" },
     ],
-    timeline:
-      "Round 1: 3rd October & 4th October (Offline)\n Round 2: 4th October 2:00 pm - 4:00 pm (Offline)\n Round 3: 5th October 12:00 pm Onwards (Offline)",
+    timeline: 
+      "Round 1: 3rd October & 4th October (Offline)\n Round 2: 4th October 2:00 pm - 4:00 pm (Offline)\n Round 3: 5th October 12:00 pm Onwards (Offline)"
   },
   "fandom-sitcom": {
     id: 19,
@@ -190,8 +191,8 @@ export const eventDetails = {
       { name: "Devashish", phone: "9607601090" },
       { name: "Aakanksha", phone: "8530053300" },
     ],
-    timeline:
-      "Round 1: 3rd October & 4th October (Offline)\n Round 2: 4th October 2:00 pm - 4:00 pm (Offline)\n Round 3: 5th October 12:00 pm Onwards (Offline)",
+    timeline: 
+      "Round 1: 3rd October & 4th October (Offline)\n Round 2: 4th October 2:00 pm - 4:00 pm (Offline)\n Round 3: 5th October 12:00 pm Onwards (Offline)"
   },
   "fandom-anime": {
     id: 18,
@@ -206,8 +207,8 @@ export const eventDetails = {
       { name: "Devashish", phone: "9607601090" },
       { name: "Aakanksha", phone: "8530053300" },
     ],
-    timeline:
-      "Round 1: 3rd October & 4th October (Offline)\n Round 2: 4th October 2:00 pm - 4:00 pm (Offline)\n Round 3: 5th October 12:00 pm Onwards (Offline)",
+    timeline: 
+      "Round 1: 3rd October & 4th October (Offline)\n Round 2: 4th October 2:00 pm - 4:00 pm (Offline)\n Round 3: 5th October 12:00 pm Onwards (Offline)"
   },
   insight: {
     id: 9,
@@ -215,14 +216,15 @@ export const eventDetails = {
     price: "₹25",
     rules:
       "1. Plagiarized entries will be disqualified.\n 2. Word limit for both the rounds is 400 words and participants should strictly maintain it.\n 3. Every round is an elimination round.\n 4. Any unfair means will lead to immediate disqualification.\n 5.The decision of the organizers will be considered final and binding on all the participants",
-    rounds: `Round 1- Participants write a letter to someone from the past or future (example. Someone you know, celebrity, any fictional characters, people that influence history), demonstrating their imagination and writing skills. It has to be submitted online within the given time slot. \nRound 2- The 2nd round will feature "What if..." scenarios, challenging participants to creatively explore hypothetical situations.`,
+    rounds:
+      `Round 1- Participants write a letter to someone from the past or future (example. Someone you know, celebrity, any fictional characters, people that influence history), demonstrating their imagination and writing skills. It has to be submitted online within the given time slot. \nRound 2- The 2nd round will feature "What if..." scenarios, challenging participants to creatively explore hypothetical situations.`,
     teamDistribution: "Only individual participation is allowed.",
     eventLeads: [
       { name: "Maitri", phone: "7975037272" },
       { name: "Sonali", phone: "7875257646" },
     ],
     timeline:
-      "Round 1: Submission Timeline: 30th September 12:00 am to 2nd October 12:00 pm (Online)",
+      "Round 1: Submission Timeline: 30th September 12:00 am to 2nd October 12:00 pm (Online)\nRound 2: 4th October 9:00 am Onwards (Offline)"
   },
   "freeze-the-second": {
     id: 10,
@@ -230,15 +232,14 @@ export const eventDetails = {
     price: "₹25",
     rules:
       "1. Each participant must submit only one photograph.\n2. Photographs must be taken by the submitting individual; images should not be sourced from the internet or captured by others.\n 3.Participants must upload their photographs to the submission platform within the designated timeslot.\n4. Any use of unfair means will result in immediate disqualification.\n5. The organizers' decisions are final and binding for all participants.",
-    rounds:
-      "The submission process consists of a single round in which you are required to submit your photograph",
+    rounds: "The submission process consists of a single round in which you are required to submit your photograph",
     teamDistribution: "Only individual participation is allowed.",
     eventLeads: [
       { name: "Gaurav", phone: "8484987616" },
       { name: "Soumitra", phone: "9142002323" },
     ],
     timeline:
-      "Submission Timeline: 27th September 12:00 am - 4th October 12:00 pm (Online).",
+      "Submission Timeline: 27th September 12:00 am - 4th October 12:00 pm (Online)."
   },
   "paper-presentation": {
     id: 11,
@@ -247,14 +248,14 @@ export const eventDetails = {
     rules:
       "1. Papers/Ideas must fall under one of the following domains – Blockchain, AI & ML\n 2.Ensure that your submission is a fully developed research paper, not merely an idea or abstract for the paper presentation and for Idea presentation, it must be a document which includes the idea, abstract, details, approach, and advantages. Anything else is a bonus.\n 3. The paper must be the original work of the participant, any plagiarized content will result in immediate disqualification.\n 4. All the rounds are elimination rounds.\n 5. Participants must submit their papers or ideas in PDF format.\n 6. The decision of the judges will be final and binding.",
     rounds:
-      "Round 1: Participants have to submit their paper/ Idea on the Submission Platform.\n Round 2: Shortlisted participants have to present their paper/idea to the judges.",
+      "Tracks: (Online mode)\n1) Idea presentation track - This track is for those who wish to pitch a research idea or demonstrate their understanding of a topic.\n2) Paper Presentation track -This track is for those who have done concrete research and wish to present their research findings before the judges.\nRound 1: Participants have to submit their paper/ Idea on the Submission Platform.\nRound 2:Shortlisted participants have to present their paper/idea to the judges.",
     teamDistribution: "Only individual participation is allowed.",
     eventLeads: [
       { name: "Anjali", phone: "7058443037" },
       { name: "Aditya", phone: "9426034129" },
     ],
     timeline:
-      "Round 1: Submission Timeline: 27th September 12:00 am to 30th September 12:00 pm (Online)\n Round 2: 2nd October 12:00 am to 4th October 11:59 pm (Online)",
+      "Round 1: Submission Timeline: 27th September 12:00 am to 30th September 12:00 pm (Online)\n Round 2: 2nd October 12:00 am to 4th October 11:59 pm (Online)"
   },
   innowave: {
     id: 12,
@@ -271,6 +272,6 @@ export const eventDetails = {
       { name: "Anjali", phone: "8484802405" },
     ],
     timeline:
-      "Round 1: Submission Timeline: 27th September 12:00 am to 29th September 11:59 pm (Online)\nRound 2: Submission Timeline: 1st October 3:00 pm to 3rd october 6:00 pm (Online)\n Round 3: 5th October 9:00 am Onwards",
+      "Round 1: Submission Timeline: 27th September 12:00 am to 29th September 11:59 pm (Online)\nRound 2: Submission Timeline: 1st October 3:00 pm to 3rd october 6:00 pm (Online)\n Round 3: 5th October 9:00 am Onwards (Hybrid Mode)"
   },
 };

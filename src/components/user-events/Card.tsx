@@ -19,9 +19,9 @@ const Card = ({ id, transaction_id, amount, events, status }: Transaction) => {
         <p className="text-2xl text-[#CFC36D] mb-2">Amount: {amount}/-</p>
 
         {/* Display events */}
-        <div className="my-2">
-          <h3 className="text-2xl text-[#8BFFCE] mb-1">Events:</h3>
-          <ul className="list-disc pl-5 text-sm text-neutral-300">
+        <div className="my-2 space-y-4">
+          <h3 className="text-2xl text-center w-full text-[#8BFFCE] mb-1">Events:</h3>
+          <ul className="list-disc pl-5 text-sm text-neutral-300 grid grid-cols-1 md:grid-cols-2">
             {events.map((event, index) => (
               <li key={index} className="mb-1">
                 {event}

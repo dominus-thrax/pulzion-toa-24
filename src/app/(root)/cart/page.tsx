@@ -7,14 +7,32 @@ import isNotAuth from "@/context/user/isNotAuth";
 import localFont from "next/font/local";
 import Image from "next/image";
 import { MdCurrencyRupee } from "react-icons/md";
-
+import { RiDeleteBin6Fill } from "react-icons/ri";
+import { Button } from "@/components/ui/button";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 interface CartItem {
   id: number;
   name: string;
   price: number;
   logo: string;
 }
-
+interface ComboItem {
+  id: number;
+  combo_name: string;
+  discounted_price: number;
+  total_price: number;
+  array_of_evname: { logo: string; name: string }[];
+}
 const font = localFont({
   src: "../../../../public/font/BDSupperRegular.ttf",
 });
@@ -25,7 +43,8 @@ const originText = localFont({
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
-  const [cartCombo, setCartCombo] = useState([]);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [cartCombo, setCartCombo] = useState<ComboItem[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [isCartEmpty, setIsCartEmpty] = useState<boolean>(false);
@@ -54,7 +73,7 @@ const CartPage = () => {
 
   useEffect(() => {
     fetchCartItems();
-  }, [cartItems]);
+  }, []);
 
   if (loading)
     return (
@@ -62,6 +81,18 @@ const CartPage = () => {
         Loading...
       </div>
     );
+
+  const DeleteCombo = async (id: number) => {
+    try {
+      await api.delete(`cart/combo/${id}`);
+
+      setCartCombo(cartCombo.filter((item) => item.id !== id));
+    } catch (error) {
+      console.error("Error deleting item:", error);
+    } finally {
+      setIsDialogOpen(false);
+    }
+  };
 
   return (
     <div className="mx-8 mb-5 md:mb-10">
@@ -121,6 +152,51 @@ const CartPage = () => {
                           <MdCurrencyRupee size={15} />
                           {combo.total_price}
                         </div>
+                        <AlertDialog
+                          open={isDialogOpen}
+                          onOpenChange={setIsDialogOpen}
+                        >
+                          <AlertDialogTrigger asChild>
+                            <button className="text-white text-sm md:text-lg flex gap-2 my-2">
+                              <span className="my-auto">
+                                <RiDeleteBin6Fill />
+                              </span>
+                              Remove
+                            </button>
+                          </AlertDialogTrigger>
+                          <AlertDialogContent className="bg-[#1F2937] text-white border border-[#E8AF49] rounded-xl max-w-xs md:max-w-md p-4">
+                            <AlertDialogHeader className="text-[#E8AF49]">
+                              <AlertDialogTitle className="text-lg md:text-xl font-bold">
+                                Confirm Deletion
+                              </AlertDialogTitle>
+                              <AlertDialogDescription className="text-sm md:text-md">
+                                Are you sure you want to remove{" "}
+                                <strong>{combo.combo_name}</strong> from the
+                                cart? This action cannot be undone.
+                              </AlertDialogDescription>
+                            </AlertDialogHeader>
+                            <AlertDialogFooter>
+                              <AlertDialogCancel asChild>
+                                <Button
+                                  onClick={() => setIsDialogOpen(false)}
+                                  variant="secondary"
+                                  className="bg-[#8BFFCE] text-black hover:bg-[#76ddb6]"
+                                >
+                                  Cancel
+                                </Button>
+                              </AlertDialogCancel>
+                              <AlertDialogAction asChild>
+                                <Button
+                                  onClick={() => DeleteCombo(combo.id)}
+                                  variant="destructive"
+                                  className="bg-red-600 text-white hover:bg-red-500"
+                                >
+                                  Remove
+                                </Button>
+                              </AlertDialogAction>
+                            </AlertDialogFooter>
+                          </AlertDialogContent>
+                        </AlertDialog>
                       </div>
                     </div>
                     <div className="flex flex-wrap w-full justify-center md:justify-start items-center gap-10">
@@ -140,6 +216,9 @@ const CartPage = () => {
                         </div>
                       ))}
                     </div>
+                    {index != cartCombo?.length - 1 && (
+                      <hr className="my-2 border-[#8BFFCE]" />
+                    )}
                   </div>
                 ))}
               </div>

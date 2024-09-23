@@ -34,6 +34,7 @@ interface EventData {
   rounds: string;
   teamDistribution: string;
   eventLeads: EventLead[];
+  timeline: string | null;
 }
 
 interface ThreeDCardDemoProps {
@@ -53,6 +54,7 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
     rounds: "",
     teamDistribution: "",
     eventLeads: [],
+    timeline: "",
   });
 
   useEffect(() => {
@@ -65,6 +67,7 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
         rounds: event.rounds || "",
         teamDistribution: event.teamDistribution || "",
         eventLeads: event.eventLeads || [],
+        timeline: event.timeline || "",
       });
     }
   }, [event]);
@@ -156,7 +159,7 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
         className={`${font.className} w-full border-white/[0.2] border-2 rounded-xl`}
       >
         <div className="bg-transparent  w-full relative rounded-xl p-4 md:grid grid-cols-12">
-          <div className="col-span-4 md:ml-2 flex flex-col justify-between items-center mx-auto w-full ">
+          <div className="col-span-4 md:ml-2 flex flex-col justify-start items-center mx-auto w-full ">
             <div className="rounded-md">
               <img
                 src={
@@ -241,6 +244,22 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
                 ))}
               </div>
             </div>
+
+            {eventData?.timeline && eventData?.timeline.length > 0 && (
+              <div className="mt-2 text-white w-full ">
+                <hr className="  border-white/[0.2] my-2 mt-4" />
+                <p className={`${font.className}text-white flex gap-2 text-sm`}>
+                  Timeline :
+                </p>
+                <div className="text-white mt-2">
+                  {eventData.timeline.split("\n").map((item, index) => (
+                    <p key={index} className="mb-2 text-xs">
+                      {item}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="col-span-1 flex items-center justify-center ">
@@ -270,13 +289,14 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
                 ))}
             </div>
 
-              <div className="">
-                <p className="text-xl font-semibold my-4 mb-1">Events Combos</p>
-                <hr className=" text-white/[0.2]" />
-                <div
-                  className={`${font.className} w-full flex flex-col lg:flex-row gap-10 justify-between items-start`}
-                >
-                  {combos?.length > 0 ? combos?.map((combo: any, index) => (
+            <div className="">
+              <p className="text-xl font-semibold my-4 mb-1">Events Combos</p>
+              <hr className=" text-white/[0.2]" />
+              <div
+                className={`${font.className} w-full flex flex-col lg:flex-row gap-10 justify-between items-start`}
+              >
+                {combos?.length > 0 ? (
+                  combos?.map((combo: any, index) => (
                     <div
                       key={index}
                       className="w-full py-4 space-y-4 border-white/[0.2] border rounded-xl p-2 mt-4 flex flex-col justify-between items-center"
@@ -322,13 +342,14 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
                         </div>
                       </div>
                     </div>
-                  )) : (
-                    <div className="text-[#FFF] text-sm">
-                      No combos available for the event
-                    </div>
-                  )}
-                </div>
+                  ))
+                ) : (
+                  <div className="text-[#FFF] text-sm">
+                    No combos available for the event
+                  </div>
+                )}
               </div>
+            </div>
           </div>
           <BorderBeam size={600} duration={12} delay={5} />
         </div>

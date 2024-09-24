@@ -327,7 +327,7 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
 
                       <div className="flex flex-col justify-center items-center">
                         <Button
-                          className="bg-[#E8AF49] text-black rounded-xl hover:text-black hover:bg-yellow-600 my-2"
+                          className="bg-[#E8AF49] rounded-xl hover:text-black hover:bg-yellow-600 my-2"
                           onClick={() => handleAddCombo(combo)}
                         >
                           Add Combo to Cart

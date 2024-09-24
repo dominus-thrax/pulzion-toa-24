@@ -35,7 +35,7 @@ export const CardSpotlight = ({
   return (
     <div
       className={cn(
-        "group/spotlight  rounded-md relative border border-neutral-800 bg-black dark:border-neutral-800",
+        "group/spotlight rounded-md relative border border-neutral-800 bg-black dark:border-neutral-800",
         className
       )}
       onMouseMove={handleMouseMove}
@@ -59,7 +59,7 @@ export const CardSpotlight = ({
         {isHovering && (
           <CanvasRevealEffect
             animationSpeed={5}
-            containerClassName="bg-transparent absolute inset-0 pointer-events-none"
+            containerClassName="bg-transparent absolute inset-0 pointer-events-none opacity-40"
             colors={[
               [139, 255, 206], // RGB for #8BFFCE
               [139, 255, 206], // Repeated or choose another shade if desired

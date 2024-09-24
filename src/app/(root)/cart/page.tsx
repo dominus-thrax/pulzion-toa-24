@@ -73,7 +73,7 @@ const CartPage = () => {
 
   useEffect(() => {
     fetchCartItems();
-  }, []);
+  }, [cartItems]);
 
   if (loading)
     return (
@@ -144,13 +144,16 @@ const CartPage = () => {
                       <div className="text-2xl text-[#8BFFCE] w-full">
                         {combo.combo_name}
                       </div>
-                      <div className="flex flex-col justify-center items-center gap-1">
-                        <div className="text-2xl text-white flex justify-center items-center">
-                          <MdCurrencyRupee size={30} /> {combo.discounted_price}
-                        </div>
-                        <div className="text-xs flex justify-center line-through text-gray-500 items-center">
-                          <MdCurrencyRupee size={15} />
-                          {combo.total_price}
+                      <div className="flex justify-start items-start gap-4">
+                        <div className="">
+                          <div className="text-2xl text-white flex justify-center items-center">
+                            <MdCurrencyRupee size={30} />{" "}
+                            {combo.discounted_price}
+                          </div>
+                          <div className="text-xs flex justify-center line-through text-gray-500 items-center">
+                            <MdCurrencyRupee size={15} />
+                            {combo.total_price}
+                          </div>
                         </div>
                         <AlertDialog
                           open={isDialogOpen}
@@ -158,10 +161,9 @@ const CartPage = () => {
                         >
                           <AlertDialogTrigger asChild>
                             <button className="text-white text-sm md:text-lg flex gap-2 my-2">
-                              <span className="my-auto">
+                              <span className="my-auto text-red-500">
                                 <RiDeleteBin6Fill />
                               </span>
-                              Remove
                             </button>
                           </AlertDialogTrigger>
                           <AlertDialogContent className="bg-[#1F2937] text-white border border-[#E8AF49] rounded-xl max-w-xs md:max-w-md p-4">

@@ -46,7 +46,7 @@ const Card: React.FC<CardProps> = ({
 
   return (
     <div className="m-1 md:m-4">
-      <div className="flex justify-between ">
+      <div className="flex justify-between items-start">
         <div className="flex gap-3 md:gap-4">
           <img
             src={
@@ -65,17 +65,16 @@ const Card: React.FC<CardProps> = ({
           />
           <p className="my-auto text-[#8BFFCE] text-lg md:text-2xl">{title}</p>
         </div>
-        <div className="my-auto">
-          <p className="text-[#8BFFCE] my-auto ml-auto flex justify-end text-lg md:text-3xl">
+        <div className="my-auto flex justify-start items-start gap-4">
+          <p className="text-[#FFFFFF] my-auto ml-auto flex justify-end text-lg md:text-3xl">
             {price}/-
           </p>
           <AlertDialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
             <AlertDialogTrigger asChild>
               <button className="text-white text-sm md:text-lg flex gap-2 my-2">
-                <span className="my-auto">
+                <span className="my-auto text-red-500">
                   <RiDeleteBin6Fill />
                 </span>
-                Remove
               </button>
             </AlertDialogTrigger>
             <AlertDialogContent className="bg-[#1F2937] text-white border border-[#E8AF49] rounded-xl max-w-xs md:max-w-md p-4">

@@ -122,7 +122,9 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
 
   const fetchCombos = async () => {
     try {
-      const response = await api.get("/events/allEvents");
+      const response = await api.get("/events");
+
+      console.log("get all combo res -> ", response);
 
       const data = response.data.events;
       const comboEvents = data.forEach((event: any) => {

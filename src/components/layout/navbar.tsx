@@ -203,13 +203,13 @@ const Navbar = () => {
                 <CgProfile className="text-[#CFC36D] h-10 w-10 hover:cursor-pointer" />
               </DialogTrigger>
               <DialogContent
-                className={`${font.className} w-full max-w-[600px] p-0 bg-transparent border border-white/[0.2]`}
+                className={`${font.className} w-full max-w-[600px] p-0 bg-transparent `}
               >
                 <DialogHeader>
                   <DialogTitle></DialogTitle>
                 </DialogHeader>
                 <div className="bg-black py-10 w-full border-white/[0.2] border-2 rounded-xl flex flex-col justify-center items-center space-y-4">
-                  <div className=" border-b border-b-white/[0.2] pb-10 max-w-sm w-full grid grid-cols-2 gap-4 text-[#CFC36D]">
+                  <div className=" border-b border-b-white/[0.2] pb-10 max-w-sm w-full text-sm md:text-lg grid grid-cols-2 gap-4 text-[#CFC36D]">
                     <div className="space-y-2">
                       <div className="">Name: </div>
                       <div className="">Email: </div>
@@ -227,23 +227,28 @@ const Navbar = () => {
                   </div>
                   <Link
                     href={"/cart"}
-                    className="text-[#CFC36D] font-semibold text-xl"
+                    className="text-[#CFC36D] font-semibold text-lg md:text-xl"
                   >
                     My Cart
                   </Link>
                   <Link
                     href={"/orders"}
-                    className="text-[#CFC36D] font-semibold text-xl"
+                    className="text-[#CFC36D] font-semibold text-lg md:text-xl"
                   >
                     My Orders
                   </Link>
                   <div
                     onClick={handleLogout}
-                    className="text-red-500 font-semibold text-xl hover:cursor-pointer"
+                    className="text-red-500 font-semibold text-lg md:text-xl hover:cursor-pointer"
                   >
                     Logout
                   </div>
-                  <BorderBeam size={400} duration={5} delay={5} />
+                  <BorderBeam
+                    size={400}
+                    duration={5}
+                    delay={5}
+                    className=" hidden md:block"
+                  />
                 </div>
               </DialogContent>
             </Dialog>

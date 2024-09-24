@@ -148,7 +148,7 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
   console.log("object -> ", combos);
 
   return (
-    <div className="w-full flex justify-center items-center md:px-24 mb-7 mt-16 px-3">
+    <div className="w-full flex justify-center items-center md:px-24 mb-7 mt-16 px-3 ">
       <Toaster
         position="top-right"
         richColors
@@ -158,7 +158,7 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
         visibleToasts={1}
       />
       <div
-        className={`${font.className} w-full border-white/[0.2] border-2 rounded-xl`}
+        className={`${font.className} w-full md:border-white/[0.2] md:border-2 rounded-xl border-[0.3px] border-yellow-500 shadow-[0_0_15px_rgba(234,179,8,0.6)] md:shadow-none `}
       >
         <div className="bg-transparent  w-full relative rounded-xl p-4 md:grid grid-cols-12">
           <div className="col-span-4 md:ml-2 flex flex-col justify-start items-center mx-auto w-full ">
@@ -353,7 +353,12 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
               </div>
             </div>
           </div>
-          <BorderBeam size={600} duration={12} delay={5} />
+          <BorderBeam
+            size={600}
+            duration={12}
+            delay={5}
+            className=" hidden md:block"
+          />
         </div>
       </div>
     </div>

@@ -72,13 +72,13 @@ export const eventDetails = {
     rounds:
       "Round 1: PPT Submission The team can pick any one problem statement of their choice and work on the same. Participants will have to submit a ppt for the same. The judgment for this round will be on the basis of the following factors: - The originality and uniqueness of the idea. - Appropriateness and effectiveness of the chosen technologies and frameworks. - Clarity and functionality of the solution.\nRound 2 : Hackathon The selected teams from Round 1 will be asked to show the working web or app .\n The judgment of this round will be based on the following factors:\n 1.Maximum end-to-end implementation of the live/on-spot changes of features as directed by the judges of the event. \n2.Time execution, cleaner code and seamless working model/prototype of the application is desired.\n3.Frontend application(UI/UX) implementation.Extra points will be given to ML/Blockchain/AR-VR implementation and business potential \n4.This is final round and will be of 7-8 hours and will held offline at PICT",
     teamDistribution:
-      "1. FE-SE : Groups of a maximum of 3 participants.\n2. TE-BE: Groups of a maximum of 4 participants.\n3. Only the team leader has to register for this event.",
+      "1. FE-SE (junior category) : Groups of a maximum of 3 participants.\n2. TE-BE (senior category): Groups of a maximum of 4 participants.\n3. Only the team leader has to register for this event.",
     eventLeads: [
       { name: "Soham", phone: "8446092629" },
       { name: "Sachi", phone: "9049406726" },
     ],
     timeline:
-      "Round 1:- Submission Timeline:- 27th September 12:00 am - 1st October 6:00 pm (On Pulzion Submission platform)\nRound 2: 4th October 9:00 am Onwards.\n ->Problem Statements are live",
+      "Round 1:- Submission Timeline:- 27th September 12:00 am - 1st October 6:00 pm (On Pulzion Submission platform)\nRound 2: 4th October 9:00 am Onwards.\nProblem Statements are live",
   },
   electroquest: {
     id: 4,

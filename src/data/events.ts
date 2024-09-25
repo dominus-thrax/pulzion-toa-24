@@ -229,7 +229,7 @@ export const eventDetails = {
     mode: "Online",
     price: "₹25",
     rules:
-      "1. Each participant must submit only one photograph.\n2. Photographs must be taken by the submitting individual; images should not be sourced from the internet or captured by others.\n 3.Participants must upload their photographs to the submission platform within the designated timeslot.\n4. Any use of unfair means will result in immediate disqualification.\n5. The organizers' decisions are final and binding for all participants.",
+      "1. Each participant must submit only one photograph.\n2. Photographs must be taken by the submitting individual images should not be sourced from the internet or captured by others.\n 3.Participants must upload their photographs to the submission platform within the designated timeslot.\n4. Any use of unfair means will result in immediate disqualification.\n5. The organizers decisions are final and binding for all participants.",
     rounds:
       "The submission process consists of a single round in which you are required to submit your photograph",
     teamDistribution: "Only individual participation is allowed.",

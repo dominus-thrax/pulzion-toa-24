@@ -78,7 +78,7 @@ export const eventDetails = {
       { name: "Sachi", phone: "9049406726" },
     ],
     timeline:
-      "Round 1:- Submission Timeline:- 25th October 12:00 am - 1st October 11:59 pm (Online)\nRound 2: 4th October 9:00 am Onwards.Problem Statements will be released soon\n",
+      "Round 1:- Submission Timeline:- 27th October 12:00 am - 1st October 6:00 pm (Online)\nRound 2: 4th October 9:00 am Onwards.Problem Statements will be released soon\n",
   },
   electroquest: {
     id: 4,

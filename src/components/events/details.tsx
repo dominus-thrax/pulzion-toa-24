@@ -161,7 +161,7 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
         className={`${font.className} w-full md:border-white/[0.2] md:border-2 rounded-xl border-[0.3px] border-yellow-500 shadow-[0_0_15px_rgba(234,179,8,0.6)] md:shadow-none `}
       >
         <div className="bg-transparent  w-full relative rounded-xl p-4 md:grid grid-cols-12">
-          <div className="col-span-4 md:ml-2 flex flex-col justify-start items-center mx-auto w-full ">
+          <div className="col-span-4 md:ml-2 flex flex-col justify-start items-center mx-auto w-full  text-white">
             <div className="rounded-md">
               <img
                 src={
@@ -259,6 +259,41 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
                       {item}
                     </p>
                   ))}
+                </div>
+              </div>
+            )}
+            {eventData.id === 6 && (
+              <div className=" w-full">
+                <hr className="  border-white/[0.2] my-2 mt-4 " />
+                <div className=" w-full ">
+                  <div className="flex gap-1 items-center">
+                    <p
+                      className={`${font.className} text-sm font-medium text-white
+              `}
+                    >
+                      Problem Statements:
+                    </p>
+                    <a
+                      href="https://drive.google.com/file/d/17-Dik95hKYFmPLq_c4k3vmIalf730m3O/view"
+                      className="text-blue-500 hover:underline text-sm"
+                    >
+                      Click here to view
+                    </a>
+                  </div>
+                  <div className="flex gap-2 items-center">
+                    <p
+                      className={`${font.className} text-sm font-medium text-white
+              `}
+                    >
+                      PPT Tempelate:
+                    </p>
+                    <a
+                      href="https://docs.google.com/presentation/d/1QFPxKNzQJ2wadGIoqBpN_2fEKvz_BC6ewyBrxS9MY8k/edit#slide=id.p1"
+                      className="text-blue-500 hover:underline text-sm"
+                    >
+                      Click here to view
+                    </a>
+                  </div>
                 </div>
               </div>
             )}

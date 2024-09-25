@@ -181,7 +181,7 @@ function Order({ cartCombo = [], cartItems = [], refetch }: OrderProps) {
               <div className=" rounded-lg">
                 <input
                   type="text"
-                  placeholder="Enter Referal code"
+                  placeholder="Enter Referal code (optional)"
                   value={referal}
                   onChange={handleReferalChange}
                   className="w-full p-2 border rounded-lg mb-4 text-black"

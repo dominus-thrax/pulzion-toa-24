@@ -1,32 +1,22 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import localFont from "next/font/local";
 import { CgProfile } from "react-icons/cg";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import logo from "../../../public/assets/landing/hero/logo.png";
-import tagline from "../../../public/assets/landing/hero/tagline.png";
 import { usePathname, useRouter } from "next/navigation";
 import { useAuth } from "@/context/index";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Button } from "../ui/button";
-import api from "@/api/api";
 import { toast } from "sonner";
-import path from "path";
+import api from "@/api/api";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogClose,
 } from "../ui/dialog";
 import { BorderBeam } from "../magicui/border-beam";
 
@@ -52,8 +42,6 @@ const Navbar = () => {
     { label: "EVENTS", path: "/events" },
     { label: "TECH EVO", path: "/tech-evolution" },
     { label: "GAME EVO", path: "/game-evolution" },
-    // { label: "DEVELOPERS", path: "/developers" },
-    // { label: "TEAM", path: "/team" },
     { label: "GLIMPSES", path: "/glimpses" },
     { label: "SPONSORS", path: "/sponsors" },
   ];
@@ -61,9 +49,8 @@ const Navbar = () => {
   const handleLogout = async () => {
     try {
       const response = await api.post("/user/signout");
-      console.log(response);
       if (response.data.success.length > 0) {
-        toast.success("Logout successfull!");
+        toast.success("Logout successful!");
         localStorage.removeItem("token");
         localStorage.removeItem("user");
         router.push("/");
@@ -87,7 +74,6 @@ const Navbar = () => {
             onClick={() => router.push("/")}
           />
         </div>
-        {/* Desktop Menu */}
         <div className="hidden md:flex text-[#CFC36D] gap-8 items-center z-30">
           {PageLinks.map((link, index) => (
             <Link
@@ -131,24 +117,30 @@ const Navbar = () => {
                       </div>
                     </div>
                   </div>
-                  <Link
-                    href={"/cart"}
-                    className="text-[#CFC36D] font-semibold text-xl"
-                  >
-                    My Cart
-                  </Link>
-                  <Link
-                    href={"/orders"}
-                    className="text-[#CFC36D] font-semibold text-xl"
-                  >
-                    My Orders
-                  </Link>
-                  <div
-                    onClick={handleLogout}
-                    className="text-red-500 font-semibold text-xl hover:cursor-pointer"
-                  >
-                    Logout
-                  </div>
+                  <DialogClose asChild>
+                    <Link
+                      href={"/cart"}
+                      className="text-[#CFC36D] font-semibold text-xl"
+                    >
+                      My Cart
+                    </Link>
+                  </DialogClose>
+                  <DialogClose asChild>
+                    <Link
+                      href={"/orders"}
+                      className="text-[#CFC36D] font-semibold text-xl"
+                    >
+                      My Orders
+                    </Link>
+                  </DialogClose>
+                  <DialogClose asChild>
+                    <div
+                      onClick={handleLogout}
+                      className="text-red-500 font-semibold text-xl hover:cursor-pointer"
+                    >
+                      Logout
+                    </div>
+                  </DialogClose>
                   <BorderBeam size={400} duration={5} delay={5} />
                 </div>
               </DialogContent>
@@ -165,7 +157,6 @@ const Navbar = () => {
             </Link>
           )}
         </div>
-        {/* Mobile Menu Toggle */}
         <div className="md:hidden flex items-center p-6">
           <button
             onClick={toggleNav}
@@ -179,7 +170,6 @@ const Navbar = () => {
           </button>
         </div>
       </div>
-      {/* Mobile Menu */}
       <div
         className={`${
           navOpen ? "flex" : "hidden"
@@ -225,24 +215,30 @@ const Navbar = () => {
                       </div>
                     </div>
                   </div>
-                  <Link
-                    href={"/cart"}
-                    className="text-[#CFC36D] font-semibold text-lg md:text-xl"
-                  >
-                    My Cart
-                  </Link>
-                  <Link
-                    href={"/orders"}
-                    className="text-[#CFC36D] font-semibold text-lg md:text-xl"
-                  >
-                    My Orders
-                  </Link>
-                  <div
-                    onClick={handleLogout}
-                    className="text-red-500 font-semibold text-lg md:text-xl hover:cursor-pointer"
-                  >
-                    Logout
-                  </div>
+                  <DialogClose asChild>
+                    <Link
+                      href={"/cart"}
+                      className="text-[#CFC36D] font-semibold text-lg md:text-xl"
+                    >
+                      My Cart
+                    </Link>
+                  </DialogClose>
+                  <DialogClose asChild>
+                    <Link
+                      href={"/orders"}
+                      className="text-[#CFC36D] font-semibold text-lg md:text-xl"
+                    >
+                      My Orders
+                    </Link>
+                  </DialogClose>
+                  <DialogClose asChild>
+                    <div
+                      onClick={handleLogout}
+                      className="text-red-500 font-semibold text-lg md:text-xl hover:cursor-pointer"
+                    >
+                      Logout
+                    </div>
+                  </DialogClose>
                   <BorderBeam
                     size={400}
                     duration={5}

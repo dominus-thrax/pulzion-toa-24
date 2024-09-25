@@ -1,42 +1,66 @@
 "use client";
 import Sponsors from "@/components/landing/sponsers";
-import { color } from "framer-motion";
 import localFont from "next/font/local";
 import React from "react";
+import ShineBorder from "@/components/magicui/shine-border";
+import { BorderBeam } from "@/components/magicui/border-beam";
 
 const originText = localFont({
   src: "../../../../public/fonts/OriginTech personal use.ttf",
 });
+
 const Sponsers = () => {
   return (
-    <div className={`${originText.className} text-[#CFC36D] text-3xl my-12`}>
-      {/* <Sponsors /> */}
-
-      <h1 className="text-center font-bold mb-4 mt-10 md:mt-24 text-xl md:text-2xl">
-        We are open for sponsorships!
-      </h1>
-      <h2 className="text-center font-semibold mb-6 text-lg md:text-xl">Contact Us:</h2>
-      <div className="text-center space-y-5 text-sm md:text-2xl">
-        <h3 className="flex justify-center items-center gap-4">
-          <div className="">Manasi Waghe:</div>
-          <a
-            className="underline hover:text-yellow-400"
-            href="tel:+919511997999"
-          >
-            +91 95119 97999
-          </a>
-        </h3>
-        <h3 className="flex justify-center items-center gap-4">
-          <div className="">Anish Khachane:</div>
-          <a
-            className="underline hover:text-yellow-400"
-            href="tel:+919028256928"
-          >
-            +91 90282 56928
-          </a>
-        </h3>
+    <>
+      <div className={`${originText.className} text-[#CFC36D] text-3xl my-12`}>
+        <h1 className="text-center font-bold mb-4 mt-10 md:mt-24 text-xl md:text-2xl">
+          Our Sponsors
+        </h1>
       </div>
-    </div>
+      <div className="flex flex-wrap justify-center md:justify-evenly items-center mx-6 md:mx-14 h-auto md:h-[300px] space-y-6 md:space-y-0">
+        <div className="relative w-40 h-40 md:w-60 md:h-60 p-4 md:p-6">
+          <img
+            src="/assets/sponsers/campus.png"
+            alt="Sponsor Logo"
+            className="w-full h-full object-contain"
+          />
+          <BorderBeam
+            size={600}
+            duration={12}
+            delay={5}
+            className="absolute inset-0 hidden md:block"
+          />
+        </div>
+
+        <div className="relative w-40 h-40 md:w-60 md:h-60 p-4 md:p-6">
+          <img
+            src="/assets/sponsers/imperial.png"
+            alt="Sponsor Logo"
+            className="w-full h-full object-contain"
+          />
+          <BorderBeam
+            size={600}
+            duration={12}
+            delay={5}
+            className="absolute inset-0 hidden md:block"
+          />
+        </div>
+
+        <div className="relative w-40 h-40 md:w-60 md:h-60 p-4 md:p-6">
+          <img
+            src="/assets/sponsers/workhat.png"
+            alt="Sponsor Logo"
+            className="w-full h-full object-contain"
+          />
+          <BorderBeam
+            size={600}
+            duration={12}
+            delay={5}
+            className="absolute inset-0 hidden md:block"
+          />
+        </div>
+      </div>
+    </>
   );
 };
 

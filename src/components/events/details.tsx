@@ -285,10 +285,31 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
                       className={`${font.className} text-sm font-medium text-white
               `}
                     >
-                      PPT Tempelate:
+                      PPT Template:
                     </p>
                     <a
                       href="https://docs.google.com/presentation/d/1QFPxKNzQJ2wadGIoqBpN_2fEKvz_BC6ewyBrxS9MY8k/edit#slide=id.p1"
+                      className="text-blue-500 hover:underline text-sm"
+                    >
+                      Click here to view
+                    </a>
+                  </div>
+                </div>
+              </div>
+            )}
+            {eventData.id === 12 && (
+              <div className=" w-full">
+                <hr className="  border-white/[0.2] my-2 mt-4 " />
+                <div className=" w-full ">
+                  <div className="flex gap-1 items-center">
+                    <p
+                      className={`${font.className} text-sm font-medium text-white
+              `}
+                    >
+                      Themes:
+                    </p>
+                    <a
+                      href="https://drive.google.com/file/d/15RX1rIMiQUCiqmHLaMxS7niPei1sdNBc/view?usp=sharing"
                       className="text-blue-500 hover:underline text-sm"
                     >
                       Click here to view

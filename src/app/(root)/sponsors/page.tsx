@@ -2,7 +2,7 @@
 import Sponsors from "@/components/landing/sponsers";
 import localFont from "next/font/local";
 import React from "react";
-import ShineBorder from "@/components/magicui/shine-border";
+
 import { BorderBeam } from "@/components/magicui/border-beam";
 
 const originText = localFont({

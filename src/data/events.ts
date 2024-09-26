@@ -99,19 +99,19 @@ export const eventDetails = {
   },
   "hire-hustle": {
     id: 2,
-    mode: "Online + Offline",
+    mode: "Online",
     price: "₹50",
     rules:
-      "1. The first round will be an online coding challenge with a duration of 1.5 to 2 hours, the next rounds will be conducted offline.\n2. Every round is an elimination round.\n 3. Candidates who advance to subsequent rounds will receive detailed interview schedules via email.\n 4. Any unfair means will lead to immediate disqualification.\n 5. The decisions made by the organizers and judges are final and binding.",
+      "1. For FE-SE category, first round will consist of technical and programming related MCQs and then coding questions.\n2. For TE-BE category, first round will consist of only coding questions.\n 3. Every round is an elimination round.\n 3. Candidates who advance to subsequent rounds will receive detailed interview schedules via email.\n 5. Any unfair means will lead to immediate disqualification.\n 6. The decisions made by the organizers and judges are final and binding.\n 7. All the rounds will be conducted in ONLINE mode",
     rounds:
-      "For FE-SE category:\nRound 1- Online Assessment (Coding round)\nRound 2- Technical + HR interview (Techno-HR interview)\nFor TE-BE category:\nRound 1- Online Assessment (Coding round)\nRound 2- Technical interview\nRound 3- Technical + HR interview (Techno-HR interview)",
+      "For FE-SE category:\nRound 1- Online Assessment (MCQs + 2 Coding questions)\nRound 2- Technical + HR interview (Techno-HR interview)\nFor TE-BE category:\nRound 1- Online Assessment (Coding round)\nRound 2- Technical interview\nRound 3- Technical + HR interview (Techno-HR interview)",
     teamDistribution: "Only individual participation is allowed.",
     eventLeads: [
       { name: "Omkar", phone: "6300656863" },
       { name: "Pranav", phone: "8766543106" },
     ],
     timeline:
-      "Round 1 (Both categories) : 2nd October 10 am to 12 pm (Online)\nRound 2 (Both categories): 5th October 9 am onwards (Offline)\nRound 3 (Only TE - BE) : 5th October 12 pm onwards (Offline)",
+      "Round 1 (Both categories) : 2nd October 10 am to 12 pm (Online)\nRound 2 (Both categories): 4th October (Online)\nRound 3 (Only TE - BE) : 5th October 9 onwards (Online)",
   },
   dextrous: {
     id: 7,

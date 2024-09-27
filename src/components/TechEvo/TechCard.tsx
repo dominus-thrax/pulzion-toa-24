@@ -23,7 +23,7 @@ const TechCard: React.FC<TechCardProps> = ({
   const mobileCharLimit = 150;
 
   return (
-    <div className="bg-grey-100 shadow-lg rounded-lg overflow-hidden mb-10">
+    <div className="bg-grey-100 shadow-lg rounded-lg overflow-hidden  mb-10">
       {/* Layout alternates based on isReversed prop */}
       <div
         className={`flex flex-col md:flex-row ${

@@ -1,6 +1,6 @@
-import React from 'react';
-import { IconType } from 'react-icons';
-import Image from 'next/image';
+import React from "react";
+import { IconType } from "react-icons";
+import Image from "next/image";
 
 type Data = {
   title: string;
@@ -22,12 +22,12 @@ const Timeline: React.FC<TimelineProps> = ({ datas, icon }) => {
           <div
             key={index}
             className={`flex flex-col items-center w-full animate-slide-in ${
-              index % 2 === 0 ? 'animate-fade-in-right' : 'animate-fade-in-left'
+              index % 2 === 0 ? "animate-fade-in-right" : "animate-fade-in-left"
             }`}
           >
             <div
               className={`flex flex-col ${
-                index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'
+                index % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"
               } justify-center items-center`}
             >
               <div className="w-10/12 md:w-16 h-20 md:h-16 bg-[#edaa42] text-white rounded-t-xl md:rounded-full flex items-center justify-center relative z-10 shadow-lg">
@@ -47,16 +47,20 @@ const Timeline: React.FC<TimelineProps> = ({ datas, icon }) => {
                     />
                   </div>
                   <div className="w-full md:w-5/6 px-3 h-40">
-                    <h3 className="text-lg md:text-xl font-semibold text-white uppercase">{data.title}</h3>
-                    <p className="mt-2 md:h-28 h-60 overflow-y-scroll no-scrollbar text-white">{data.description}</p>
+                    <h3 className="text-lg md:text-xl font-semibold text-white uppercase">
+                      {data.title}
+                    </h3>
+                    <p className="mt-2  md:h-36 h-60 overflow-y-scroll scrollbar-hide text-white">
+                      {data.description}
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
             <div
               className={`hidden lg:block absolute bg-pink-500 w-[2px] h-20 translate-y-32 ${
-                index % 2 === 0 ? 'right-60' : 'left-60'
-              } ${index === datas.length - 1 ? 'lg:hidden' : ''}`}
+                index % 2 === 0 ? "right-60" : "left-60"
+              } ${index === datas.length - 1 ? "lg:hidden" : ""}`}
             ></div>
           </div>
         ))}

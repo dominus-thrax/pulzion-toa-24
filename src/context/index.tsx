@@ -24,6 +24,7 @@ const useAuth = (): AuthContextType => {
 const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const [events, setEvents] = useState<EventType[]>([]);
+  const [eventId, setEventId] = useState<number>(0);
 
   const fetchAllEvents = async () => {
     try {
@@ -87,6 +88,8 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
         isUserAuthenticated,
         events,
         setEvents,
+        eventId,
+        setEventId
       }}
     >
       {children}

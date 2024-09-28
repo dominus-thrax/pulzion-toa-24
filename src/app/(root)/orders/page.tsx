@@ -32,9 +32,6 @@ const Orders: React.FC = () => {
   const fetchMyEvents = async () => {
     try {
       const response = await api.get("/user_events");
-
-      console.log(response);
-
       // Extracting the transaction array
       const events = response.data.events;
       setEvents(events);
@@ -49,8 +46,6 @@ const Orders: React.FC = () => {
   const fetchMyOrders = async () => {
     try {
       const response = await api.get("/transaction");
-
-      console.log(response);
 
       // Extracting the transaction array
       const transactions = response.data.transactions;

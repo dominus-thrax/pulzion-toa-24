@@ -9,6 +9,9 @@ import { EffectCards, Navigation, Autoplay } from "swiper/modules";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import localFont from "next/font/local";
+import { EventType } from "@/types";
+import { useAuth } from "@/context";
+import { useRouter } from "next/navigation";
 
 interface Event {
   id: number;
@@ -34,6 +37,7 @@ const originText = localFont({
 export default function SliderCard({ events }: SliderCardProps) {
   const swiperRef = useRef<any>(null);
   const [reverse, setReverse] = useState(false);
+  const router = useRouter();
 
   const swiperStyle: React.CSSProperties = {
     width: "400px",
@@ -97,9 +101,6 @@ export default function SliderCard({ events }: SliderCardProps) {
         style={swiperStyle}
       >
         {events.map((event) => {
-          const eventLink = `/events/${event.name
-            .toLowerCase()
-            .replace(/ /g, "-")}`;
           return (
             <SwiperSlide
               key={event.id}
@@ -125,11 +126,9 @@ export default function SliderCard({ events }: SliderCardProps) {
                 />
                 <p className="text-sm my-3 font-medium overflow-hidden truncate text-clip md:line-clamp-6 text-wrap max-w-[20rem] w-full">{event.description}</p>
                 <div>
-                  <Link href={eventLink}>
-                    <Button className="bg-[#E8AF49] rounded-xl hover:text-black hover:bg-yellow-600 my-2">
+                    <Button onClick={() => router.push(`/events/${event.id}`)} className="bg-[#E8AF49] rounded-xl hover:text-black hover:bg-yellow-600 my-2">
                       View
                     </Button>
-                  </Link>
                 </div>
                 <div>
                   <p className="text-lg">Mode: {event.mode}</p>

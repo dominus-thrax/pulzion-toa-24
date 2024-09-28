@@ -57,14 +57,15 @@ const CartPage = () => {
     try {
       const response = await api.get("/cart");
 
-      const events = response.data?.events.events || [];
-      const combos = response.data?.events.combos || [];
+      const events = response.data?.events?.events || [];
+      const combos = response.data?.events?.combos || [];
       setCartItems(events);
       setCartCombo(combos);
       setIsCartEmpty(events.length === 0 && combos.length === 0);
     } catch (err) {
       setError("Failed to load cart items.");
       setCartItems([]);
+      setCartCombo([]); 
       setIsCartEmpty(true);
     } finally {
       setLoading(false);
@@ -73,7 +74,7 @@ const CartPage = () => {
 
   useEffect(() => {
     fetchCartItems();
-  }, [cartItems]);
+  }, []); 
 
   if (loading)
     return (
@@ -146,13 +147,13 @@ const CartPage = () => {
                       </div>
                       <div className="flex justify-start items-start gap-4">
                         <div className="">
-                          <div className="text-2xl text-white flex justify-center items-center">
-                            <MdCurrencyRupee size={30} />{" "}
-                            {combo.discounted_price}
+                          <div className="text-2xl text-white flex justify-center items-center gap-1">
+                            <span className="text-sm md:text-xl">₹</span>{" "}
+                            {Number(combo.discounted_price)}
                           </div>
-                          <div className="text-xs flex justify-center line-through text-gray-500 items-center">
-                            <MdCurrencyRupee size={15} />
-                            {combo.total_price}
+                          <div className="text-xs flex justify-center line-through text-gray-500 items-center gap-1">
+                            <span className="text-xs">₹</span>{" "}
+                            {Number(combo.total_price)}
                           </div>
                         </div>
                         <AlertDialog

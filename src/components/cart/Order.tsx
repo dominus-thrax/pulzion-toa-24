@@ -55,24 +55,25 @@ function Order({ cartCombo = [], cartItems = [], refetch }: OrderProps) {
   const handleCheckout = async () => {
     try {
       setLoading(true);
-      const eventIds = cartItems.map((item) => item.id); //
+      const eventIds = cartItems.map((item) => item.id);
       const combo_ids = cartCombo.map((item) => item.id);
-
+      
       const event_combo_ids = cartCombo.map((item) => item.array_of_evid);
-      const event_ids: any[] = [];
+      
+      const combinedEventIds: number[] = [];
+      
       event_combo_ids.forEach((item) =>
-        item.forEach((i: number) => event_ids.push(i))
+        item.forEach((i: number) => combinedEventIds.push(i))
       );
-
-      eventIds.forEach((item) => event_ids.push(item));
-
+      
+      eventIds.forEach((item) => combinedEventIds.push(item));
       if (transactionId === "") {
         toast.error("Please enter transaction id");
         return;
       }
 
       const transactionResponse = await api.post("/transaction", {
-        event_id: event_ids,
+        event_id: combinedEventIds,
         transaction_id: transactionId,
         referral_code: referal || "0mux2h",
         combo_id: combo_ids || [],
@@ -113,7 +114,9 @@ function Order({ cartCombo = [], cartItems = [], refetch }: OrderProps) {
         {cartItems.map((item) => (
           <div key={item.id} className="grid grid-cols-12 my-2">
             <p className="col-span-10">{item.name}</p>
-            <p className="col-span-2 ml-auto">{item.price}/-</p>
+            <p className="col-span-2 ml-auto flex justify-center items-center gap-1 text-lg md:text-3xl">
+              <span className="text-sm md:text-xl">₹</span> {item.price}
+            </p>
           </div>
         ))}
       </div>
@@ -121,14 +124,19 @@ function Order({ cartCombo = [], cartItems = [], refetch }: OrderProps) {
         {cartCombo.map((item) => (
           <div key={item.id} className="grid grid-cols-12 my-2">
             <p className="col-span-10">{item.combo_name}</p>
-            <p className="col-span-2 ml-auto">{item.discounted_price}/-</p>
+            <p className="col-span-2 ml-auto flex justify-center items-center gap-1 text-lg md:text-3xl">
+              <span className="text-sm md:text-xl">₹</span>{" "}
+              {Number(item.discounted_price)}
+            </p>
           </div>
         ))}
       </div>
       <hr />
       <div className="grid grid-cols-12 my-2 text-white text-md md:text-3xl px-4">
         <p className="col-span-10">Order Total</p>
-        <p className="col-span-2 ml-auto">{cartTotal}/-</p>
+        <p className="col-span-2 ml-auto flex justify-center items-center gap-1 text-lg md:text-3xl">
+          <span className="text-sm md:text-xl">₹</span> {cartTotal}
+        </p>
       </div>
       <div className="text-white text-lg md:text-xl mx-14 mt-6">
         <button
@@ -166,8 +174,11 @@ function Order({ cartCombo = [], cartItems = [], refetch }: OrderProps) {
                 />
               </div>
 
-              <div className="text-center text-lg mb-4">
-                <p className=" text-white">Order Total: {cartTotal}/-</p>
+              <div className="text-center text-lg mb-4 flex justify-center items-center gap-2">
+                <p className=" text-white">Order Total:</p>{" "}
+                <div className="flex justify-center items-center gap-1">
+                  <span className="text-sm md:text-lg">₹</span> {cartTotal}
+                </div>
               </div>
               <div className=" rounded-lg">
                 <input

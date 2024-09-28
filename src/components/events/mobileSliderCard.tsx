@@ -8,6 +8,9 @@ import "swiper/css/navigation";
 import Link from "next/link";
 import { EffectCards, Navigation, Autoplay } from "swiper/modules";
 import { Button } from "../ui/button";
+import { EventType } from "@/types";
+import { useAuth } from "@/context";
+import { useRouter } from "next/navigation";
 const font = localFont({
   src: "../../../public/font/BDSupperRegular.ttf",
 });
@@ -29,6 +32,7 @@ interface SliderCardProps {
 }
 
 export default function MobileSliderCard({ events }: SliderCardProps) {
+  const router = useRouter();
   const swiperRef = useRef<any>(null); // Reference to Swiper instance
   const [reverse, setReverse] = useState(false); // Track reverse direction
 
@@ -120,13 +124,16 @@ export default function MobileSliderCard({ events }: SliderCardProps) {
                   alt="event image"
                   className=" w-10"
                 />
-                <p className="text-xs my-3 font-medium overflow-hidden truncate text-clip line-clamp-4 text-wrap max-w-[20rem] w-full">{event.description}</p>
+                <p className="text-xs my-3 font-medium overflow-hidden truncate text-clip line-clamp-4 text-wrap max-w-[20rem] w-full">
+                  {event.description}
+                </p>
                 <div>
-                  <Link href={eventLink}>
-                    <Button className="bg-[#E8AF49] rounded-xl hover:text-black hover:bg-yellow-600 my-2">
-                      View
-                    </Button>
-                  </Link>
+                  <Button
+                    onClick={() => router.push(`/events/${event.id}`)}
+                    className="bg-[#E8AF49] rounded-xl hover:text-black hover:bg-yellow-600 my-2"
+                  >
+                    View
+                  </Button>
                 </div>
                 <p className="text-xs">Mode: {event.mode}</p>
                 <p className="text-xs">Price: ₹{event.price}</p>

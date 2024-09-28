@@ -21,55 +21,44 @@ import {
   SelectValue,
 } from "../ui/select";
 import Image from "next/image";
-interface EventLead {
-  name: string;
-  phone: string;
-}
+import { EventType } from "@/types";
+import { convertEvent } from "@/convertion";
 
 interface EventData {
   id: number;
+  name: string;
   mode: string;
-  price: string;
+  price: number;
   rules: string;
   rounds: string;
   teamDistribution: string;
-  eventLeads: EventLead[];
-  timeline: string | null;
+  eventLeads: any[];
+  logo: string | null;
 }
 
 interface ThreeDCardDemoProps {
-  event: EventData;
-  title: string;
+  event: EventType;
+  combos: any[];
 }
 const font = localFont({
   src: "../../../public/font/BDSupperRegular.ttf",
 });
-export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
-  const [combos, setCombos] = useState([]);
+
+export function ThreeDCardDemo({ event, combos }: ThreeDCardDemoProps) {
   const [eventData, setEventData] = useState<EventData>({
     id: 0,
+    name: "",
     mode: "",
-    price: "",
+    price: 0,
     rules: "No details available.",
     rounds: "",
     teamDistribution: "",
     eventLeads: [],
-    timeline: "",
+    logo: "",
   });
 
   useEffect(() => {
-    if (event) {
-      setEventData({
-        id: event.id,
-        mode: event.mode || "",
-        price: event.price || "",
-        rules: event.rules || "No details available.",
-        rounds: event.rounds || "",
-        teamDistribution: event.teamDistribution || "",
-        eventLeads: event.eventLeads || [],
-        timeline: event.timeline || "",
-      });
-    }
+    setEventData(convertEvent(event));
   }, [event]);
 
   const addToCart = async () => {
@@ -108,8 +97,6 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
     try {
       const response = await api.post(`/cart/combo/${combo.id}`);
 
-      console.log(response);
-
       toast.success("Combo successfully added to cart");
     } catch (error: any) {
       const errorMessage =
@@ -120,32 +107,7 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
     }
   };
 
-  const fetchCombos = async () => {
-    try {
-      const response = await api.get("/events");
-
-      console.log("get all combo res -> ", response);
-
-      const data = response.data.events;
-      const comboEvents = data.forEach((event: any) => {
-        if (event.name.toLowerCase().replace(/ /g, "-") === title) {
-          setCombos(event.offers);
-        }
-      });
-    } catch (error: any) {
-      const errorMessage =
-        error.response?.data?.message ||
-        error.response?.data?.error ||
-        error.response?.data?.msg;
-      toast.error(errorMessage);
-    }
-  };
-
-  useEffect(() => {
-    fetchCombos();
-  }, []);
-
-  console.log("object -> ", combos);
+  console.log(eventData);
 
   return (
     <div className="w-full flex justify-center items-center md:px-24 mb-7 mt-16 px-3  ">
@@ -164,15 +126,7 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
           <div className="col-span-4 md:ml-2 flex flex-col justify-start items-center mx-auto w-full  text-white">
             <div className="rounded-md">
               <img
-                src={
-                  title === "fandom-tmkoc" ||
-                  title === "fandom-cricket" ||
-                  title === "fandom-football" ||
-                  title === "fandom-sitcom" ||
-                  title === "fandom-anime"
-                    ? `/assets/EventDetail/fandom.png`
-                    : `/assets/EventDetail/${title}.png`
-                }
+                src={eventData.logo || ""}
                 alt=""
                 className=" w-20 md:w-36"
               />
@@ -181,7 +135,7 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
               <p
                 className={`${font.className} text-xl md:text-3xl font-bold mt-2  text-white text-center  capitalize`}
               >
-                {title}
+                {eventData.name}
               </p>
               <div className={`${font.className} flex items-center mt-4`}>
                 <div className="flex-1 text-center">
@@ -192,12 +146,14 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
                 <div className="h-16 border-l-2 border-white/[0.2] mx-4"></div>
 
                 <div className="flex-1 text-white text-center">
-                  <p className="text-white text-lg">{eventData.price}</p>
+                  <p className="text-white text-lg">
+                    {eventData.price === 0 ? "Free" : `₹${eventData.price}`}
+                  </p>
                   <p className="text-slate-300 text-xs">Price</p>
                 </div>
               </div>
             </div>
-            {title === "codelicious" ? (
+            {eventData.name === "codelicious" ? (
               <Button
                 className="bg-[#E8AF49] rounded-xl hover:text-black hover:bg-yellow-600 my-2"
                 onClick={handleRegister}
@@ -247,7 +203,7 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
               </div>
             </div>
 
-            {eventData?.timeline && eventData?.timeline.length > 0 && (
+            {/* {eventData?.timeline && eventData?.timeline.length > 0 && (
               <div className="mt-2 text-white w-full ">
                 <hr className="  border-white/[0.2] my-2 mt-4" />
                 <p className={`${font.className}text-white flex gap-2 text-sm`}>
@@ -261,7 +217,7 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
                   ))}
                 </div>
               </div>
-            )}
+            )} */}
             {eventData.id === 6 && (
               <div className=" w-full">
                 <hr className="  border-white/[0.2] my-2 mt-4 " />
@@ -390,12 +346,10 @@ export function ThreeDCardDemo({ event, title }: ThreeDCardDemoProps) {
                         </Button>
                         <div className="flex justify-center items-center gap-1">
                           <div className="text-2xl flex justify-center items-center">
-                            <MdCurrencyRupee size={30} />{" "}
-                            {combo.discounted_price}
+                            ₹ {Number(combo.discounted_price)}
                           </div>
                           <div className="text-xs flex justify-center line-through text-gray-500 items-center">
-                            <MdCurrencyRupee size={15} />
-                            {combo.total_price}
+                            ₹ {Number(combo.total_price)}
                           </div>
                         </div>
                       </div>

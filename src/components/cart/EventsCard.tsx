@@ -66,8 +66,8 @@ const Card: React.FC<CardProps> = ({
           <p className="my-auto text-[#8BFFCE] text-lg md:text-2xl">{title}</p>
         </div>
         <div className="my-auto flex justify-start items-start gap-4">
-          <p className="text-[#FFFFFF] my-auto ml-auto flex justify-end text-lg md:text-3xl">
-            {price}/-
+          <p className="text-[#FFFFFF] my-auto ml-auto flex justify-center items-center gap-1 text-lg md:text-3xl">
+            <span className="text-sm md:text-xl">₹</span> {price}
           </p>
           <AlertDialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
             <AlertDialogTrigger asChild>

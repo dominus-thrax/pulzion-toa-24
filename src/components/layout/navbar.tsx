@@ -40,10 +40,11 @@ const Navbar = () => {
   const PageLinks = [
     { label: "HOME", path: "/" },
     { label: "EVENTS", path: "/events" },
-    { label: "TECH EVO", path: "/tech-evolution" },
-    { label: "GAME EVO", path: "/game-evolution" },
     { label: "GLIMPSES", path: "/glimpses" },
     { label: "SPONSORS", path: "/sponsors" },
+    { label: "LEADS", path: "/team" },
+    { label: "MY CART", path: "/cart" },
+    { label: "MY ORDERS", path: "/orders" },
   ];
 
   const handleLogout = async () => {

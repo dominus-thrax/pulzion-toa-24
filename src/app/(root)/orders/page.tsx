@@ -103,7 +103,9 @@ const Orders: React.FC = () => {
         >
           My Events
         </h2>
-        <div className={`flex flex-wrap gap-9 mt-5 md:mt-10 justify-center ${font.className}`}>
+        <div
+          className={`flex flex-wrap gap-9 mt-5 md:mt-10 justify-center ${font.className}`}
+        >
           {events.length > 0 ? (
             events.map((event: any, index: number) => (
               <div key={index} className={` ${font.className}`}>

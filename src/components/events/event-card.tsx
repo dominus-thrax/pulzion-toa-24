@@ -5,7 +5,12 @@ import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import api from "@/api/api";
 import { Button } from "../ui/button";
-import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogTrigger,
+} from "../ui/dialog";
 import {
   Table,
   TableBody,
@@ -38,8 +43,13 @@ export function CardSpotlightDemo({ event }: { event: EventType }) {
   >([]);
 
   const [isOpen, setIsOpen] = useState(false);
+
   const openDialog = () => {
     setIsOpen(true);
+  };
+
+  const closeDialog = () => {
+    setIsOpen(false);
   };
 
   const fetchMyEventsSlots = async (event_id: number) => {
@@ -64,13 +74,13 @@ export function CardSpotlightDemo({ event }: { event: EventType }) {
         slot_id,
       });
       if (response) {
-        setIsOpen(false);
+        closeDialog();
         toast.success("Slot booked successfully!");
       }
     } catch (error: any) {
       // Error handling
       console.log(error);
-      setIsOpen(false);
+      closeDialog();
       toast.error(error.response.data.error);
     }
   };
@@ -144,10 +154,13 @@ export function CardSpotlightDemo({ event }: { event: EventType }) {
             <p className="text-lg font-bold mt-2">{event.name}</p>
           </div>
           {pathName === "/orders" && (
-            <Dialog onOpenChange={openDialog} open={isOpen}>
+            <Dialog onOpenChange={setIsOpen} open={isOpen}>
               <DialogTrigger className="z-50">
                 <Button
-                  onClick={() => fetchMyEventsSlots(event.id)}
+                  onClick={() => {
+                    openDialog();
+                    fetchMyEventsSlots(event.id);
+                  }}
                   className="z-50 mt-10 rounded-xl text-white bg-[#E8AF49]"
                 >
                   Book a slot
@@ -162,7 +175,7 @@ export function CardSpotlightDemo({ event }: { event: EventType }) {
                     {slots.length > 0 ? (
                       <Table>
                         <TableHeader>
-                          <TableRow className="border-b border-b-gray-600">
+                          <TableRow className="border-b border-b-gray-600 hover:bg-gray-900">
                             <TableHead className="w-[100px] text-center">
                               Capacity
                             </TableHead>
@@ -249,10 +262,13 @@ export function CardSpotlightDemo({ event }: { event: EventType }) {
           </div>
 
           {pathName === "/orders" && (
-            <Dialog>
+            <Dialog onOpenChange={setIsOpen} open={isOpen}>
               <DialogTrigger className="z-50">
                 <Button
-                  onClick={() => fetchMyEventsSlots(event.id)}
+                  onClick={() => {
+                    openDialog();
+                    fetchMyEventsSlots(event.id);
+                  }}
                   className="z-50 rounded-xl text-white bg-[#E8AF49]"
                 >
                   Book a slot
@@ -267,7 +283,7 @@ export function CardSpotlightDemo({ event }: { event: EventType }) {
                     {slots.length > 0 ? (
                       <Table>
                         <TableHeader>
-                          <TableRow className="border-b border-b-gray-600">
+                          <TableRow className="border-b border-b-gray-600 hover:bg-gray-900">
                             <TableHead className="w-[100px] text-center">
                               Capacity
                             </TableHead>

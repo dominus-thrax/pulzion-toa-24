@@ -36,6 +36,12 @@ export function CardSpotlightDemo({ event }: { event: EventType }) {
       year: string;
     }[]
   >([]);
+
+  const [isOpen, setIsOpen] = useState(false);
+  const openDialog = () => {
+    setIsOpen(true);
+  };
+
   const fetchMyEventsSlots = async (event_id: number) => {
     setLoading(false);
     try {
@@ -51,8 +57,6 @@ export function CardSpotlightDemo({ event }: { event: EventType }) {
     }
   };
 
-  // event_id, slot id
-
   const bookSlot = async (event_id: number, slot_id: number) => {
     try {
       const response = await api.post(`/user_slots`, {
@@ -60,11 +64,13 @@ export function CardSpotlightDemo({ event }: { event: EventType }) {
         slot_id,
       });
       if (response) {
+        setIsOpen(false);
         toast.success("Slot booked successfully!");
       }
     } catch (error: any) {
       // Error handling
       console.log(error);
+      setIsOpen(false);
       toast.error(error.response.data.error);
     }
   };
@@ -115,7 +121,7 @@ export function CardSpotlightDemo({ event }: { event: EventType }) {
         pauseWhenPageIsHidden
         visibleToasts={1}
       />
-      
+
       {/* Only render CardSpotlight for medium and larger screens */}
       <div className="cursor-pointer hidden md:block">
         <CardSpotlight className="flex flex-col justify-center items-center relative overflow-hidden group p-4 rounded-2xl  w-36 h-44 md:w-44 md:h-64">
@@ -138,7 +144,7 @@ export function CardSpotlightDemo({ event }: { event: EventType }) {
             <p className="text-lg font-bold mt-2">{event.name}</p>
           </div>
           {pathName === "/orders" && (
-            <Dialog>
+            <Dialog onOpenChange={openDialog} open={isOpen}>
               <DialogTrigger className="z-50">
                 <Button
                   onClick={() => fetchMyEventsSlots(event.id)}

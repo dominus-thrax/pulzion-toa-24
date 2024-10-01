@@ -39,13 +39,13 @@ export const teamMembers = [
   {
     name: "Anjali Rambhad",
     position: ["Tech Member"],
-    image: "/assets/teams/images.jpeg",
+    image: "/assets/teams/profile.png",
     linkedin: "http://www.linkedin.com/in/anjali-rambhad-35504021b",
   },
   {
     name: "Pratik Patil",
     position: ["Tech Member"],
-    image: "/assets/teams/images.jpeg",
+    image: "/assets/teams/profile.png",
     linkedin: "",
   },
   {
@@ -109,7 +109,7 @@ export const teamMembers = [
   {
     name: "Kalpesh Sirsath",
     position: ["Tech Member"],
-    image: "/assets/teams/images.jpeg",
+    image: "/assets/teams/profile.png",
     linkedin: "",
   },
 ];
@@ -187,12 +187,6 @@ export const Leads = [
     position: ["EMS Backend Lead", "Hire Hustle Lead"],
     image: "/assets/teams/Omkar_Gade.jpg",
     linkedin: "https://www.linkedin.com/in/omkar-gade-214b62253/",
-  },
-  {
-    name: "Balaji Shaw",
-    position: ["EMS Backend Lead"],
-    image: "/assets/teams/Balaji_Shaw.jpg",
-    linkedin: "https://www.linkedin.com/in/balaji-s-922165258",
   },
   {
     name: "Shreyash Gajbhiye ",
@@ -275,13 +269,13 @@ export const Leads = [
   {
     name: "Ayush Deshmukh",
     position: ["Marketing Lead"],
-    image: "/assets/teams/images.jpeg",
+    image: "/assets/teams/profile.png",
     linkedin: "",
   },
   {
     name: "Vidhi Koul",
     position: ["Marketing Lead"],
-    image: "/assets/teams/images.jpeg",
+    image: "/assets/teams/profile.png",
     linkedin: "",
   },
   {
@@ -290,6 +284,12 @@ export const Leads = [
     image: "/assets/teams/Sarvesh_S.jpeg",
     linkedin:
       "https://www.linkedin.com/in/sarvesh-shelgaonkar-04a1b8248?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+  },
+  {
+    name: "Prathamesh Khanna",
+    position: ["Codelicious Lead"],
+    image: "/assets/teams/Prathamesh _Khanna.jpg",
+    linkedin: "https://www.linkedin.com/in/prathamesh-khanna-1ba320258/",
   },
   {
     name: "Pratik Survase",
@@ -381,7 +381,7 @@ export const Leads = [
   {
     name: "Tanvi Pattewar",
     position: ["Flashmob Lead"],
-    image: "/assets/teams/images.jpeg",
+    image: "/assets/teams/profile.png",
     linkedin: "",
   },
   {
@@ -400,7 +400,7 @@ export const Leads = [
   {
     name: "Srirang kalantri",
     position: ["Electroquest Lead"],
-    image: "/assets/teams/images.jpeg",
+    image: "/assets/teams/profile.png",
     linkedin: "https://www.linkedin.com/in/srirang-kalantri-536bb724a/",
   },
   {
@@ -408,12 +408,6 @@ export const Leads = [
     position: ["Electroquest Lead", "Compute and Compete Lead"],
     image: "/assets/teams/Aniket_Deore.jpg",
     linkedin: "",
-  },
-  {
-    name: "Prathamesh Khanna",
-    position: ["Codelicious Lead"],
-    image: "/assets/teams/Prathamesh _Khanna.jpg",
-    linkedin: "https://www.linkedin.com/in/prathamesh-khanna-1ba320258/",
   },
   {
     name: "Tejas Bahurupi",
@@ -443,7 +437,7 @@ export const Leads = [
   {
     name: "Anjali Rambhad",
     position: ["Content Lead", "Paper Presentation Lead"],
-    image: "/assets/teams/images.jpeg",
+    image: "/assets/teams/profile.png",
     linkedin: "http://www.linkedin.com/in/anjali-rambhad-35504021b",
   },
   {
@@ -608,22 +602,26 @@ export const games = [
 export const techs = [
   {
     title: "Transistor",
-    description: "The invention of the transistor in 1947 at Bell Labs marked a monumental shift in electronics. Replacing bulky, unreliable vacuum tubes, transistors were made of semiconductors, which allowed electrical current to be controlled more precisely.",
+    description:
+      "The invention of the transistor in 1947 at Bell Labs marked a monumental shift in electronics. Replacing bulky, unreliable vacuum tubes, transistors were made of semiconductors, which allowed electrical current to be controlled more precisely.",
     imageUrl: "/assets/Tech-Evolution/transistor.jpg",
   },
   {
     title: "First Computers",
-    description: "The advent of the first electronic computers in the mid-20th century marked the beginning of a new era in computation and data processing. Machines like the ENIAC (Electronic Numerical Integrator and Computer), built in 1945, and the UNIVAC I (Universal Automatic Computer), introduced in 1951.",
+    description:
+      "The advent of the first electronic computers in the mid-20th century marked the beginning of a new era in computation and data processing. Machines like the ENIAC (Electronic Numerical Integrator and Computer), built in 1945, and the UNIVAC I (Universal Automatic Computer), introduced in 1951.",
     imageUrl: "/assets/Tech-Evolution/First Computer.png",
   },
   {
     title: "Semiconductors",
-    description: "The development of semiconductors in the 1960s was a critical advancement that enabled the mass production of smaller, more efficient electronic components. Semiconductors, particularly silicon, are materials that can conduct electricity under certain conditions.",
+    description:
+      "The development of semiconductors in the 1960s was a critical advancement that enabled the mass production of smaller, more efficient electronic components. Semiconductors, particularly silicon, are materials that can conduct electricity under certain conditions.",
     imageUrl: "/assets/Tech-Evolution/semiconductor.png",
   },
   {
     title: "Integrated Circuits (ICs)",
-    description: "Integrated circuits, introduced in the 1960s, were a major leap forward in the evolution of technology. These small chips, which contain multiple transistors and other components, allowed for the creation of more powerful and reliable electronic devices. Before the invention of ICs, electronic devices relied on discrete components that were bulky and difficult to assemble. The development of ICs made it possible to reduce the size of electronic devices while increasing their performance. This was a key factor in the development of early computers, as well as consumer electronics like radios and televisions. ICs also reduced manufacturing costs, making electronics more affordable and accessible to the general public. The impact of integrated circuits is far-reaching, influencing not just the tech industry but also the automotive, medical, and aerospace sectors. Today, ICs are at the core of virtually all modern electronic devices, from smartphones and laptops to medical equipment and spacecraft. Their ability to pack immense computational power into tiny packages continues to drive technological progress.",
+    description:
+      "Integrated circuits, introduced in the 1960s, were a major leap forward in the evolution of technology. These small chips, which contain multiple transistors and other components, allowed for the creation of more powerful and reliable electronic devices. Before the invention of ICs, electronic devices relied on discrete components that were bulky and difficult to assemble. The development of ICs made it possible to reduce the size of electronic devices while increasing their performance. This was a key factor in the development of early computers, as well as consumer electronics like radios and televisions. ICs also reduced manufacturing costs, making electronics more affordable and accessible to the general public. The impact of integrated circuits is far-reaching, influencing not just the tech industry but also the automotive, medical, and aerospace sectors. Today, ICs are at the core of virtually all modern electronic devices, from smartphones and laptops to medical equipment and spacecraft. Their ability to pack immense computational power into tiny packages continues to drive technological progress.",
     imageUrl: "/assets/Tech-Evolution/ic.jpg",
   },
   // {
@@ -633,12 +631,14 @@ export const techs = [
   // },
   {
     title: "Networking Technologies",
-    description: "Networking technologies like Ethernet and Wi-Fi, which emerged in the 1990s, transformed the way computers communicate and share information. Ethernet allowed for fast, reliable connections between computers within local area networks (LANs), making it possible for businesses and organizations to link multiple devices and share resources like printers and servers. Wi-Fi, introduced later, extended this capability to wireless connections, enabling the growth of home networks and mobile computing. These technologies were instrumental in the expansion of the internet, which revolutionized communication, commerce, and entertainment on a global scale. Networking also laid the foundation for cloud computing, where data and applications can be accessed from anywhere with an internet connection. The rise of networked computing has had a profound impact on virtually every aspect of modern life, from the way we work and socialize to how we access information and consume media. Today, networking technologies continue to evolve, with advancements in speed, security, and connectivity, enabling the growth of smart cities, the Internet of Things (IoT), and other emerging technologies.",
+    description:
+      "Networking technologies like Ethernet and Wi-Fi, which emerged in the 1990s, transformed the way computers communicate and share information. Ethernet allowed for fast, reliable connections between computers within local area networks (LANs), making it possible for businesses and organizations to link multiple devices and share resources like printers and servers. Wi-Fi, introduced later, extended this capability to wireless connections, enabling the growth of home networks and mobile computing. These technologies were instrumental in the expansion of the internet, which revolutionized communication, commerce, and entertainment on a global scale. Networking also laid the foundation for cloud computing, where data and applications can be accessed from anywhere with an internet connection. The rise of networked computing has had a profound impact on virtually every aspect of modern life, from the way we work and socialize to how we access information and consume media. Today, networking technologies continue to evolve, with advancements in speed, security, and connectivity, enabling the growth of smart cities, the Internet of Things (IoT), and other emerging technologies.",
     imageUrl: "/assets/Tech-Evolution/Network.jpeg",
   },
   {
     title: "Virtual Reality (VR) and Augmented Reality (AR)",
-    description: "Virtual reality (VR) and augmented reality (AR) technologies have been developing since the 1990s, offering new ways to experience and interact with digital content. VR creates fully immersive virtual environments that users can explore and interact with using specialized equipment like headsets and controllers. AR, on the other hand, overlays digital information onto the real world, enhancing reality with interactive elements that can be accessed through devices like smartphones or AR glasses. These technologies have found applications in a wide range of industries, from gaming and entertainment to healthcare and education. In gaming, VR allows players to step into virtual worlds and experience gameplay in a fully immersive way, while AR games like Pokémon GO blend the digital and physical worlds. In healthcare, VR is used for training and simulation, while AR assists in surgery by providing real-time information to surgeons. As these technologies continue to evolve, their potential applications in fields like architecture, engineering, and even social interaction are expanding, promising new ways to interact with both the digital and real worlds.",
+    description:
+      "Virtual reality (VR) and augmented reality (AR) technologies have been developing since the 1990s, offering new ways to experience and interact with digital content. VR creates fully immersive virtual environments that users can explore and interact with using specialized equipment like headsets and controllers. AR, on the other hand, overlays digital information onto the real world, enhancing reality with interactive elements that can be accessed through devices like smartphones or AR glasses. These technologies have found applications in a wide range of industries, from gaming and entertainment to healthcare and education. In gaming, VR allows players to step into virtual worlds and experience gameplay in a fully immersive way, while AR games like Pokémon GO blend the digital and physical worlds. In healthcare, VR is used for training and simulation, while AR assists in surgery by providing real-time information to surgeons. As these technologies continue to evolve, their potential applications in fields like architecture, engineering, and even social interaction are expanding, promising new ways to interact with both the digital and real worlds.",
     imageUrl: "/assets/Tech-Evolution/Virtual_Reality.avif",
   },
   // {
@@ -657,22 +657,21 @@ export const techs = [
   //   imageUrl: "/assets/Tech-Evolution/smart_home.png",
   // },
   {
-    title:"5G Technology",
-    description:"5G is the fifth generation of mobile network technology, offering faster data transfer rates, low latency, and enhanced capacity. It supports more connected devices, which is crucial for the development of IoT, smart cities, and autonomous vehicles.5G will enable new innovations in fields such as healthcare (remote surgeries), autonomous driving, and industrial automation. Its high-speed connections are expected to power the next generation of communication and internet experiences.",
-    imageUrl:"/assets/Tech-Evolution/5g.jpg",
+    title: "5G Technology",
+    description:
+      "5G is the fifth generation of mobile network technology, offering faster data transfer rates, low latency, and enhanced capacity. It supports more connected devices, which is crucial for the development of IoT, smart cities, and autonomous vehicles.5G will enable new innovations in fields such as healthcare (remote surgeries), autonomous driving, and industrial automation. Its high-speed connections are expected to power the next generation of communication and internet experiences.",
+    imageUrl: "/assets/Tech-Evolution/5g.jpg",
   },
   {
-    title:"Quantum Computing",
-    description:"Quantum computing leverages the principles of quantum mechanics to perform calculations at speeds unattainable by classical computers. In 2019, Google’s Sycamore quantum processor achieved quantum supremacy by solving a complex problem faster than any supercomputer could.Quantum computing promises to revolutionize industries such as cryptography, logistics, and pharmaceuticals by enabling faster data processing and solving problems that are currently impossible for classical computers.",
-    imageUrl:"/assets/Tech-Evolution/quantum_computer.jpg",
+    title: "Quantum Computing",
+    description:
+      "Quantum computing leverages the principles of quantum mechanics to perform calculations at speeds unattainable by classical computers. In 2019, Google’s Sycamore quantum processor achieved quantum supremacy by solving a complex problem faster than any supercomputer could.Quantum computing promises to revolutionize industries such as cryptography, logistics, and pharmaceuticals by enabling faster data processing and solving problems that are currently impossible for classical computers.",
+    imageUrl: "/assets/Tech-Evolution/quantum_computer.jpg",
   },
   {
-    title:"Artificial Intelligence (AI) and Machine Learning (ML)",
-    description:"AI and ML, particularly deep learning, saw major breakthroughs in the 2010s. These technologies drive applications like natural language processing, autonomous vehicles, and image recognition.AI and ML have already transformed industries such as healthcare (diagnosis, drug discovery), finance (fraud detection, algorithmic trading), and retail (personalized recommendations). Their influence continues to grow as they become more integrated into daily life.",
-    imageUrl:"/assets/Tech-Evolution/ai.png",
+    title: "Artificial Intelligence (AI) and Machine Learning (ML)",
+    description:
+      "AI and ML, particularly deep learning, saw major breakthroughs in the 2010s. These technologies drive applications like natural language processing, autonomous vehicles, and image recognition.AI and ML have already transformed industries such as healthcare (diagnosis, drug discovery), finance (fraud detection, algorithmic trading), and retail (personalized recommendations). Their influence continues to grow as they become more integrated into daily life.",
+    imageUrl: "/assets/Tech-Evolution/ai.png",
   },
 ];
-
-
-
-

@@ -182,7 +182,7 @@ export function CardSpotlightDemo({ event }: { event: EventType }) {
                           {slots.map((slot, index) => (
                             <TableRow
                               key={index}
-                              className="border-b border-b-gray-600"
+                              className="border-b border-b-gray-600 hover:bg-gray-900 hover:cursor-pointer"
                             >
                               <TableCell className="font-medium text-center">
                                 {slot.capacity}
@@ -287,7 +287,7 @@ export function CardSpotlightDemo({ event }: { event: EventType }) {
                           {slots.map((slot, index) => (
                             <TableRow
                               key={index}
-                              className="border-b border-b-gray-600"
+                              className="border-b border-b-gray-600 hover:bg-gray-900 hover:cursor-pointer"
                             >
                               <TableCell className="font-medium text-center">
                                 {slot.capacity}

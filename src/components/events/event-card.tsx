@@ -84,7 +84,6 @@ export function CardSpotlightDemo({ event }: { event: EventType }) {
       toast.error(error.response.data.error);
     }
   };
-
   const convertDate = (dateStr: string) => {
     const date = new Date(dateStr);
 
@@ -96,23 +95,14 @@ export function CardSpotlightDemo({ event }: { event: EventType }) {
     const minutes = String(date.getUTCMinutes()).padStart(2, "0");
 
     const getAMPM = (hours: number) => {
-      const pm = [12, 12.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5];
-      const am = [8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5];
-
-      if (pm.includes(hours)) {
-        return "PM";
-      } else if (am.includes(hours)) {
-        return "AM";
-      } else {
-        return "";
-      }
+      return hours >= 12 ? "PM" : "AM";
     };
 
     const ampm = getAMPM(hours);
     hours = hours % 12 || 12;
     const formattedHours = String(hours).padStart(2, "0");
 
-    const formattedDateTime = `${day}-${month}-${year},  ${formattedHours}:${minutes} ${ampm}`;
+    const formattedDateTime = `${day}-${month}-${year}, ${formattedHours}:${minutes} ${ampm}`;
 
     return formattedDateTime;
   };

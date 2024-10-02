@@ -151,19 +151,19 @@ export function CardSpotlightDemo({ event }: { event: EventType }) {
                     openDialog();
                     fetchMyEventsSlots(event.id);
                   }}
-                  className="z-50 mt-10 rounded-xl text-white bg-[#E8AF49]"
+                  className="z-50 mt-10 rounded-xl text-white bg-[#E8AF49] hidden md:block"
                 >
                   Book a slot
                 </Button>
               </DialogTrigger>
               <DialogContent
                 className={`${font.className} bg-black max-w-[80%] w-full rounded-xl text-white md:rounded-xl
-              border-[0.3px] border-yellow-500 shadow-[0_0_15px_rgba(234,179,8,0.6)]`}
+              border-[0.3px] border-yellow-500 shadow-[0_0_15px_rgba(234,179,8,0.6)] hidden md:block`}
               >
                 {loading ? (
                   <div className="">
                     {slots.length > 0 ? (
-                      <Table>
+                      <Table className="">
                         <TableHeader>
                           <TableRow className="border-b border-b-gray-600 hover:bg-gray-900">
                             <TableHead className="w-[100px] text-center">
@@ -265,13 +265,13 @@ export function CardSpotlightDemo({ event }: { event: EventType }) {
                 </Button>
               </DialogTrigger>
               <DialogContent
-                className={`bg-black max-w-[80%] w-full rounded-xl text-white
+                className={`bg-black max-w-[80%] w-full rounded-xl text-white overflow-hidden overflow-x-scroll custom-scrollbar
               border-[0.3px] border-yellow-500 shadow-[0_0_15px_rgba(234,179,8,0.6)] ${font.className}`}
               >
                 {loading ? (
                   <div className="">
                     {slots.length > 0 ? (
-                      <Table>
+                      <Table className="">
                         <TableHeader>
                           <TableRow className="border-b border-b-gray-600 hover:bg-gray-900">
                             <TableHead className="w-[100px] text-center">
